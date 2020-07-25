@@ -9,7 +9,7 @@ SET COMPILE_FLA=True
 SET BA2_SUBFOLDER=Interface
 rem actual compilation
 if %COMPILE_FLA% equ True (
-  call flc --input-directory "./src/" --output-directory %outputDir% --include-pattern "*.fla" --interactive-compiler %flashPath%
+  call flc --input-directory "./src/" --output-directory %outputDir% --interactive-compiler %flashPath%
 ) else (
   echo FLA file compilation skipped
 )
@@ -23,8 +23,6 @@ IF %DEBUG% equ True (
 ) else (
   echo Debug is off
 )
-rem for /f "delims=" %%a in ('powershell -Command "[System.IO.Path]::GetFullPath( '%outputDir%' )"') do @set resolvedPath=%%a
-rem echo %resolvedPath%/%BA2_SUBFOLDER% > %outputDir%/source.txt
 rem creating ba2 archive
 rem cd %outputDir%
 rem %arch2Path% -?
