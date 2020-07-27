@@ -31,7 +31,7 @@ package fl.transitions
       
       public function TweenEvent(param1:String, param2:Number, param3:Number, param4:Boolean = false, param5:Boolean = false)
       {
-         // method body index: 368 method index: 368
+
          super(param1,param4,param5);
          this.time = param2;
          this.position = param3;
@@ -39,7 +39,7 @@ package fl.transitions
       
       override public function clone() : Event
       {
-         // method body index: 369 method index: 369
+
          return new TweenEvent(this.type,this.time,this.position,this.bubbles,this.cancelable);
       }
    }

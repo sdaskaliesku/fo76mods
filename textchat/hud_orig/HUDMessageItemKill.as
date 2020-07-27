@@ -9,14 +9,14 @@ package
       
       public function HUDMessageItemKill()
       {
-         // method body index: 3546 method index: 3546
+
          super();
          addFrameScript(4,this.frame5,27,this.frame28,772,this.frame773);
       }
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3542 method index: 3542
+
          if(data != null)
          {
             visible = true;
@@ -43,20 +43,20 @@ package
       
       function frame5() : *
       {
-         // method body index: 3543 method index: 3543
+
          stop();
       }
       
       function frame28() : *
       {
-         // method body index: 3544 method index: 3544
+
          OnFadeInComplete();
          stop();
       }
       
       function frame773() : *
       {
-         // method body index: 3545 method index: 3545
+
          OnFadeOutComplete();
          stop();
       }

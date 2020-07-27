@@ -15,7 +15,7 @@ package com.adobe.serialization.json
       
       public function JSONDecoder(param1:String, param2:Boolean)
       {
-         // method body index: 299 method index: 299
+
          super();
          this.strict = param2;
          this.tokenizer = new JSONTokenizer(param1,param2);
@@ -29,19 +29,19 @@ package com.adobe.serialization.json
       
       public function getValue() : *
       {
-         // method body index: 300 method index: 300
+
          return this.value;
       }
       
       private final function nextToken() : JSONToken
       {
-         // method body index: 301 method index: 301
+
          return this.token = this.tokenizer.getNextToken();
       }
       
       private final function nextValidToken() : JSONToken
       {
-         // method body index: 302 method index: 302
+
          this.token = this.tokenizer.getNextToken();
          this.checkValidToken();
          return this.token;
@@ -49,7 +49,7 @@ package com.adobe.serialization.json
       
       private final function checkValidToken() : void
       {
-         // method body index: 303 method index: 303
+
          if(this.token == null)
          {
             this.tokenizer.parseError("Unexpected end of input");
@@ -58,7 +58,7 @@ package com.adobe.serialization.json
       
       private final function parseArray() : Array
       {
-         // method body index: 304 method index: 304
+
          var _loc1_:Array = new Array();
          this.nextValidToken();
          if(this.token.type == JSONTokenType.RIGHT_BRACKET)
@@ -104,7 +104,7 @@ package com.adobe.serialization.json
       
       private final function parseObject() : Object
       {
-         // method body index: 305 method index: 305
+
          var _loc1_:String = null;
          var _loc2_:Object = new Object();
          this.nextValidToken();
@@ -168,7 +168,7 @@ package com.adobe.serialization.json
       
       private final function parseValue() : Object
       {
-         // method body index: 306 method index: 306
+
          this.checkValidToken();
          switch(this.token.type)
          {

@@ -12,20 +12,20 @@ package HUDMenu_fla
       
       public function dot2charge_176()
       {
-         // method body index: 1564 method index: 1564
+
          super();
          addFrameScript(0,this.frame1,13,this.frame14);
       }
       
       function frame1() : *
       {
-         // method body index: 1562 method index: 1562
+
          stop();
       }
       
       function frame14() : *
       {
-         // method body index: 1563 method index: 1563
+
          dispatchEvent(new Event("animationComplete"));
       }
    }

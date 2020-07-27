@@ -9,14 +9,14 @@ package
       
       public function HUDMessageItemUnderAttack()
       {
-         // method body index: 3567 method index: 3567
+
          super();
          addFrameScript(4,this.frame5,26,this.frame27,772,this.frame773);
       }
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3563 method index: 3563
+
          if(data != null)
          {
             visible = true;
@@ -33,20 +33,20 @@ package
       
       function frame5() : *
       {
-         // method body index: 3564 method index: 3564
+
          stop();
       }
       
       function frame27() : *
       {
-         // method body index: 3565 method index: 3565
+
          OnFadeInComplete();
          stop();
       }
       
       function frame773() : *
       {
-         // method body index: 3566 method index: 3566
+
          OnFadeOutComplete();
          stop();
       }

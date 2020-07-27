@@ -11,20 +11,20 @@ package Shared.AS3.Data
       
       public function FromClientDataEvent(param1:UIDataFromClient)
       {
-         // method body index: 170 method index: 170
+
          super(Event.CHANGE);
          this.m_FromClient = param1;
       }
       
       public function get fromClient() : Object
       {
-         // method body index: 171 method index: 171
+
          return this.m_FromClient;
       }
       
       public function get data() : Object
       {
-         // method body index: 172 method index: 172
+
          return this.m_FromClient.data;
       }
    }

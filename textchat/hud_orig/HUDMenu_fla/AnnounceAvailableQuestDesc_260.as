@@ -12,14 +12,14 @@ package HUDMenu_fla
       
       public function AnnounceAvailableQuestDesc_260()
       {
-         // method body index: 982 method index: 982
+
          super();
          this.__setTab_Desc_tf_AnnounceAvailableQuestDesc_Desc_tf_0();
       }
       
       function __setTab_Desc_tf_AnnounceAvailableQuestDesc_Desc_tf_0() : *
       {
-         // method body index: 981 method index: 981
+
          this.Desc_tf.tabIndex = 3;
       }
    }

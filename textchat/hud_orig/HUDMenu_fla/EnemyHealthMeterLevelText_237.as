@@ -12,14 +12,14 @@ package HUDMenu_fla
       
       public function EnemyHealthMeterLevelText_237()
       {
-         // method body index: 1049 method index: 1049
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1048 method index: 1048
+
          stop();
       }
    }

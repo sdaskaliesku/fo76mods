@@ -54,7 +54,7 @@ package
       
       public function HUDFloatingTarget()
       {
-         // method body index: 3128 method index: 3128
+
          super();
          this.Alert_mc.visible = false;
          SetIsDirty();
@@ -63,7 +63,7 @@ package
       
       public function set questDisplayType(param1:uint) : void
       {
-         // method body index: 3129 method index: 3129
+
          if(this.m_QuestDisplayType != param1)
          {
             this.m_QuestDisplayType = param1;
@@ -73,7 +73,7 @@ package
       
       public function set centerMagnitude(param1:Number) : void
       {
-         // method body index: 3130 method index: 3130
+
          if(param1 != this.m_CenterMagnitude)
          {
             SetIsDirty();
@@ -83,13 +83,13 @@ package
       
       public function get centerMagnitude() : Number
       {
-         // method body index: 3131 method index: 3131
+
          return this.m_CenterMagnitude;
       }
       
       public function set midDistance(param1:Boolean) : void
       {
-         // method body index: 3132 method index: 3132
+
          if(param1 != this.m_MidDistance)
          {
             SetIsDirty();
@@ -99,13 +99,13 @@ package
       
       public function get midDistance() : Boolean
       {
-         // method body index: 3133 method index: 3133
+
          return this.m_MidDistance;
       }
       
       public function set forceShow(param1:Boolean) : void
       {
-         // method body index: 3134 method index: 3134
+
          if(param1 != this.m_ForceShow)
          {
             SetIsDirty();
@@ -115,13 +115,13 @@ package
       
       public function get forceShow() : Boolean
       {
-         // method body index: 3135 method index: 3135
+
          return this.m_ForceShow;
       }
       
       public function set isAI(param1:Boolean) : void
       {
-         // method body index: 3136 method index: 3136
+
          if(param1 != this.m_IsAI)
          {
             SetIsDirty();
@@ -131,13 +131,13 @@ package
       
       public function get isAI() : Boolean
       {
-         // method body index: 3137 method index: 3137
+
          return this.m_IsAI;
       }
       
       public function set distanceFromPlayer(param1:Number) : void
       {
-         // method body index: 3138 method index: 3138
+
          if(param1 != this.m_DistanceFromPlayer)
          {
             SetIsDirty();
@@ -147,13 +147,13 @@ package
       
       public function get distanceFromPlayer() : Number
       {
-         // method body index: 3139 method index: 3139
+
          return this.m_DistanceFromPlayer;
       }
       
       public function set isOnScreen(param1:Boolean) : void
       {
-         // method body index: 3140 method index: 3140
+
          if(param1 != this.m_IsOnScreen)
          {
             SetIsDirty();
@@ -163,13 +163,13 @@ package
       
       public function get isOnScreen() : Boolean
       {
-         // method body index: 3141 method index: 3141
+
          return this.m_IsOnScreen;
       }
       
       public function set alertState(param1:int) : void
       {
-         // method body index: 3142 method index: 3142
+
          if(param1 != this.m_AlertState)
          {
             SetIsDirty();
@@ -179,7 +179,7 @@ package
       
       public function set alertMessage(param1:String) : void
       {
-         // method body index: 3143 method index: 3143
+
          if(param1 != this.m_AlertMessage)
          {
             SetIsDirty();
@@ -189,7 +189,7 @@ package
       
       public function set label(param1:String) : void
       {
-         // method body index: 3144 method index: 3144
+
          if(param1 != this.m_Label)
          {
             SetIsDirty();
@@ -199,19 +199,19 @@ package
       
       public function set markerID(param1:String) : void
       {
-         // method body index: 3145 method index: 3145
+
          this.m_MarkerID = param1;
       }
       
       public function get markerID() : String
       {
-         // method body index: 3146 method index: 3146
+
          return this.m_MarkerID;
       }
       
       public function set meterValue(param1:Number) : void
       {
-         // method body index: 3147 method index: 3147
+
          if(this.m_MeterValue != param1)
          {
             SetIsDirty();
@@ -221,13 +221,13 @@ package
       
       public function get type() : String
       {
-         // method body index: 3148 method index: 3148
+
          return this.m_Type;
       }
       
       public function set type(param1:String) : void
       {
-         // method body index: 3149 method index: 3149
+
          if(this.m_Type != param1)
          {
             SetIsDirty();
@@ -237,7 +237,7 @@ package
       
       private function updateQuestTypeFrame() : void
       {
-         // method body index: 3150 method index: 3150
+
          if(this.Marker_mc.Internal_mc != null)
          {
             switch(this.m_QuestDisplayType)
@@ -256,7 +256,7 @@ package
       
       private function setType() : void
       {
-         // method body index: 3151 method index: 3151
+
          var _loc1_:Array = this.Marker_mc.currentLabels;
          var _loc2_:uint = 0;
          while(_loc2_ < _loc1_.length)
@@ -291,18 +291,18 @@ package
       
       public function set showMeter(param1:Boolean) : void
       {
-         // method body index: 3152 method index: 3152
+
       }
       
       public function get showLabel() : Boolean
       {
-         // method body index: 3153 method index: 3153
+
          return this.m_ShowLabel;
       }
       
       public function set showLabel(param1:Boolean) : void
       {
-         // method body index: 3154 method index: 3154
+
          if(param1 != this.m_ShowLabel)
          {
             SetIsDirty();
@@ -312,7 +312,7 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3155 method index: 3155
+
          var _loc1_:Array = null;
          var _loc2_:String = null;
          var _loc3_:* = undefined;

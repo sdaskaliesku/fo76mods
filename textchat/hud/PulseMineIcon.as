@@ -9,7 +9,7 @@ package
       
       public function PulseMineIcon()
       {
-         // method body index: 2216 method index: 2216
+
          super();
       }
    }

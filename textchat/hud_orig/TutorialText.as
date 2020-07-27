@@ -26,7 +26,7 @@ package
       
       public function TutorialText()
       {
-         // method body index: 3228 method index: 3228
+
          super();
          this._frameTextOffset = this.TutorialText_tf.y - this.TutorialMessageFrame_mc.y;
          this._minFrameHeight = this.TutorialHeads_mc.height + 2 * this._frameTextOffset;
@@ -35,13 +35,13 @@ package
       
       public function get numberOfHeads_Inspectable() : uint
       {
-         // method body index: 3226 method index: 3226
+
          return this._numberOfHeads;
       }
       
       public function set numberOfHeads_Inspectable(aNumberOfHeads:uint) : void
       {
-         // method body index: 3227 method index: 3227
+
          if(this._numberOfHeads != aNumberOfHeads)
          {
             this._numberOfHeads = aNumberOfHeads;
@@ -51,7 +51,7 @@ package
       
       public function SetText(acText:String) : *
       {
-         // method body index: 3229 method index: 3229
+
          var uiimage:uint = Math.floor(Math.random() * this.numberOfHeads_Inspectable);
          this.TutorialHeads_mc.gotoAndPlay("Head_0" + uiimage);
          this.TutorialText_tf.autoSize = TextFieldAutoSize.LEFT;
@@ -64,7 +64,7 @@ package
       
       private function AdjustFrameToFitText() : *
       {
-         // method body index: 3230 method index: 3230
+
          var newHeight:Number = this.TutorialText_tf.textHeight + 2 * this._frameTextOffset;
          if(newHeight < this._minFrameHeight)
          {
@@ -75,7 +75,7 @@ package
       
       private function AlignVertically() : *
       {
-         // method body index: 3231 method index: 3231
+
          this.TutorialText_tf.y = Math.round((this.TutorialMessageFrame_mc.height - this.TutorialText_tf.textHeight) / 2);
          this.TutorialHeads_mc.y = Math.round((this.TutorialMessageFrame_mc.height - this.TutorialHeads_mc.height) / 2);
       }

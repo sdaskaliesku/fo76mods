@@ -9,7 +9,7 @@ package
       
       public function AmmoIcon()
       {
-         // method body index: 729 method index: 729
+
          super();
       }
    }

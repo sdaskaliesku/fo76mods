@@ -9,7 +9,7 @@ package
       
       public function FoodIcon()
       {
-         // method body index: 807 method index: 807
+
          super();
       }
    }

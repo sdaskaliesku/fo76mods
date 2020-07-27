@@ -47,7 +47,7 @@ package
       
       public function HUDReputationUpdatesWidget()
       {
-         // method body index: 2378 method index: 2378
+
          super();
          addEventListener(Event.ADDED_TO_STAGE,this.onAddedToStage);
          addEventListener(EVENT_FADEOUT_END,this.onFadeOutEnd);
@@ -56,13 +56,13 @@ package
       
       private function onDataUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 2379 method index: 2379
+
          this.evaluateQueue();
       }
       
       private function evaluateQueue() : void
       {
-         // method body index: 2380 method index: 2380
+
          var _loc1_:Array = null;
          if(!this.m_IsBusy)
          {
@@ -95,7 +95,7 @@ package
       
       private function animateUpdate(param1:Object) : void
       {
-         // method body index: 2381 method index: 2381
+
          var _loc2_:Array = null;
          if(TEST_MODE)
          {
@@ -133,7 +133,7 @@ package
       
       public function buildDeltaInfo(param1:Object) : Object
       {
-         // method body index: 2382 method index: 2382
+
          var _loc2_:Object = null;
          var _loc3_:String = null;
          var _loc4_:int = 0;
@@ -170,14 +170,14 @@ package
       
       private function onAddedToStage(param1:Event) : void
       {
-         // method body index: 2383 method index: 2383
+
          BSUIDataManager.Subscribe("ReputationData",this.onDataUpdate,TEST_MODE);
          this.m_ReputationData = BSUIDataManager.GetDataFromClient("ReputationData");
       }
       
       public function onDisplayComplete(param1:Event = null) : void
       {
-         // method body index: 2384 method index: 2384
+
          this.m_LastFullyShown = true;
          this.m_IsBusy = false;
          this.evaluateQueue();
@@ -185,7 +185,7 @@ package
       
       public function onFadeOutEnd(param1:Event) : void
       {
-         // method body index: 2385 method index: 2385
+
          dispatchEvent(new Event(EVENT_HIDDEN,true));
          this.m_LastFullyShown = false;
          this.m_IsBusy = false;

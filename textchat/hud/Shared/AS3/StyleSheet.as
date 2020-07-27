@@ -10,13 +10,13 @@ package Shared.AS3
       
       public function StyleSheet()
       {
-         // method body index: 219 method index: 219
+
          super();
       }
       
       private static function aggregateSheetProperties(param1:Object, param2:Object, param3:Object, param4:Boolean = false) : *
       {
-         // method body index: 217 method index: 217
+
          var _loc5_:XML = null;
          var _loc6_:String = null;
          var _loc7_:* = null;
@@ -53,7 +53,7 @@ package Shared.AS3
       
       public static function apply(param1:Object, param2:Boolean = false, ... rest) : *
       {
-         // method body index: 218 method index: 218
+
          var _loc4_:* = null;
          var _loc5_:Object = new Object();
          var _loc6_:* = 0;

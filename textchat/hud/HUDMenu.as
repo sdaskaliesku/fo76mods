@@ -379,7 +379,7 @@ package
       
       public function HUDMenu()
       {
-         // method body index: 3297 method index: 3297
+
          this.chatKeyTimer = new Timer(50,1);
          this.blockedPlayers = [];
          this.iniLoader = new URLLoader();
@@ -422,7 +422,7 @@ package
          BSUIDataManager.Subscribe("DeathReviveData",function(param1:FromClientDataEvent):// method body index: 3288 method index: 3288
          *
          {
-            // method body index: 3288 method index: 3288
+
             var _loc2_:Number = NaN;
             var _loc3_:* = param1.data;
             var _loc4_:Boolean = false;
@@ -477,7 +477,7 @@ package
          BSUIDataManager.Subscribe("PVPData",function(param1:FromClientDataEvent):// method body index: 3289 method index: 3289
          *
          {
-            // method body index: 3289 method index: 3289
+
             var _loc2_:* = param1.data;
             if(_loc2_.announcement.length > 0)
             {
@@ -510,38 +510,38 @@ package
          addEventListener(EVENT_LEVELUP_VISIBLE,function(param1:Event):// method body index: 3290 method index: 3290
          *
          {
-            // method body index: 3290 method index: 3290
+
             levelUpVisible = true;
          });
          addEventListener(EVENT_LEVELUP_HIDDEN,function(param1:Event):// method body index: 3291 method index: 3291
          *
          {
-            // method body index: 3291 method index: 3291
+
             levelUpVisible = false;
          });
          addEventListener(HUDReputationUpdatesWidget.EVENT_LEVELUP_VISIBLE,function(param1:Event):// method body index: 3292 method index: 3292
          *
          {
-            // method body index: 3292 method index: 3292
+
             repLevelUpVisible = true;
          });
          addEventListener(HUDReputationUpdatesWidget.EVENT_CHANGE_VISIBLE,function(param1:Event):// method body index: 3293 method index: 3293
          *
          {
-            // method body index: 3293 method index: 3293
+
             repChangeVisible = true;
          });
          addEventListener(HUDReputationUpdatesWidget.EVENT_HIDDEN,function(param1:Event):// method body index: 3294 method index: 3294
          *
          {
-            // method body index: 3294 method index: 3294
+
             repLevelUpVisible = false;
             repChangeVisible = false;
          });
          addEventListener(EVENT_LEVELUP_START,function(param1:CustomEvent):// method body index: 3295 method index: 3295
          *
          {
-            // method body index: 3295 method index: 3295
+
             LevelUpAnimation_mc.LevelUpText.textField.text = param1.params.displayText;
             LevelUpAnimation_mc.gotoAndPlay("On");
          });
@@ -555,7 +555,7 @@ package
          BSUIDataManager.Subscribe("ScoreboardFilterData",function(param1:FromClientDataEvent):// method body index: 3296 method index: 3296
          *
          {
-            // method body index: 3296 method index: 3296
+
             if(param1.data.worldRankFilter.statType == GlobalFunc.STAT_TYPE_INVALID)
             {
                m_WorldRankFilterOverride = GlobalFunc.STAT_TYPE_SURVIVAL_SCORE;
@@ -695,13 +695,13 @@ package
       
       public static function clearDelimeters(param1:String) : String
       {
-         // method body index: 3287 method index: 3287
+
          return param1.replace(/[\r\n\b]+/g,"");
       }
       
       public function emergencyClose() : void
       {
-         // method body index: 3298 method index: 3298
+
          if(this.chatOpenPressed && this.isEditingChat)
          {
             this.chatOpenPressed = false;
@@ -710,7 +710,7 @@ package
       
       public function textChatLoaded() : void
       {
-         // method body index: 3299 method index: 3299
+
          this.TextChat = this.chatUILoader.content as MovieClip;
          this.resetChatMode();
          this.TextChat.TextChatBase_mc.TextChatEntryWidget_mc.TextEntry_bg.visible = false;
@@ -727,7 +727,7 @@ package
       
       public function onCheckChatKey() : void
       {
-         // method body index: 3300 method index: 3300
+
          if(this.chatOpenPressed && this.isEditingChat && this.emergencyClosePressed)
          {
             this.emergencyClosePressed = false;
@@ -755,7 +755,7 @@ package
       
       private function loadBlockList() : void
       {
-         // method body index: 3301 method index: 3301
+
          try
          {
             this.blockLoader.load(new URLRequest("../configuration/blocklist.ini"));
@@ -770,7 +770,7 @@ package
       
       function saveTheConfig() : void
       {
-         // method body index: 3302 method index: 3302
+
          var _loc1_:* = [];
          _loc1_ = this.settingObj.concat();
          _loc1_[0] = "globalDefault=" + _loc1_[0];
@@ -815,7 +815,7 @@ package
       
       function failLoaded() : void
       {
-         // method body index: 3303 method index: 3303
+
          if(this.bFail == true)
          {
             return;
@@ -935,7 +935,7 @@ package
       
       function onLoaded(param1:Event) : void
       {
-         // method body index: 3304 method index: 3304
+
          this.iniArray = param1.target.data.split(/\r\n/);
          var _loc2_:int = 0;
          while(_loc2_ < this.iniArray.length)
@@ -1062,7 +1062,7 @@ package
       
       function saveBlockList(param1:String) : void
       {
-         // method body index: 3305 method index: 3305
+
          if(this.__SFCodeObj.call != null && this.__SFCodeObj.call("writeBlockFile",param1))
          {
             this.OnNetworkedUIEventReceived("ALERT","Block list saved successfully.",2);
@@ -1075,7 +1075,7 @@ package
       
       function saveConfiguration(param1:String) : void
       {
-         // method body index: 3306 method index: 3306
+
          if(this.__SFCodeObj.call != null && this.__SFCodeObj.call("writeChatConfigFile",param1))
          {
             this.OnNetworkedUIEventReceived("ALERT","Configuration saved successfully.",2);
@@ -1088,37 +1088,37 @@ package
       
       function onBlockLoaded(param1:Event) : void
       {
-         // method body index: 3307 method index: 3307
+
          this.blockedPlayers = param1.target.data.split("\r\n");
          this.blockedPlayers.replace(/\r?\n|\r/g,"");
       }
       
       function handleWebSocketOpen(param1:Event) : void
       {
-         // method body index: 3308 method index: 3308
+
       }
       
       function handleWebSocketMessage(param1:ProgressEvent) : void
       {
-         // method body index: 3309 method index: 3309
+
       }
       
       public function __setPerspectiveProjection_(param1:Event) : void
       {
-         // method body index: 3310 method index: 3310
+
          root.transform.perspectiveProjection.fieldOfView = 1.002611;
          root.transform.perspectiveProjection.projectionCenter = new Point(960,540);
       }
       
       private function get HUDPartyListBase_mc() : HUDTeamWidget
       {
-         // method body index: 3311 method index: 3311
+
          return this.PartyResolutionContainer_mc.HUDPartyListBase_mc;
       }
       
       private function revertScoreboardFilter() : void
       {
-         // method body index: 3312 method index: 3312
+
          if(this.m_WorldRankFilterOverride >= 0)
          {
             BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_SCOREBOARD_CATEGORY_CHANGE,{"statTypeFilter":this.m_WorldRankFilterOverride}));
@@ -1131,7 +1131,7 @@ package
       
       private function displayError(param1:String) : void
       {
-         // method body index: 3313 method index: 3313
+
          this.message.width = 1600;
          GlobalFunc.SetText(this.message,this.message.text + "\n" + param1,false);
          TextFieldEx.setTextAutoSize(this.message,TextFieldEx.TEXTAUTOSZ_SHRINK);
@@ -1148,13 +1148,13 @@ package
       
       public function uncaughtErrorHandler(param1:UncaughtErrorEvent) : *
       {
-         // method body index: 3314 method index: 3314
+
          this.displayError(param1.toString());
       }
       
       private function onHUDModeUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 3315 method index: 3315
+
          this.currentHUDMode = param1.data.hudMode;
          var _loc2_:String = param1.data.hudMode;
          var _loc3_:Number = 0;
@@ -1197,7 +1197,7 @@ package
       
       private function updateHUDNotificationsOffset() : void
       {
-         // method body index: 3316 method index: 3316
+
          var _loc1_:Number = 0;
          var _loc2_:Number = 0;
          switch(this.m_LastHUDMode)
@@ -1236,7 +1236,7 @@ package
       
       private function updateRankVis() : void
       {
-         // method body index: 3317 method index: 3317
+
          var _loc1_:Boolean = this.m_ValidWantedHUDMode && this.m_WorldType == GlobalFunc.WORLD_TYPE_SURVIVAL && (this.m_ScoreboardRank > 1 || this.m_ScoreboardValue > 0);
          if(this.ScoreboardRank_mc.visible != _loc1_)
          {
@@ -1259,7 +1259,7 @@ package
       
       private function updateWantedVis(param1:Number = 0) : void
       {
-         // method body index: 3318 method index: 3318
+
          var _loc2_:Boolean = this.m_ValidWantedHUDMode && this.m_IsWanted;
          if(this.YouAreWanted_mc.visible != _loc2_)
          {
@@ -1294,7 +1294,7 @@ package
       
       private function updateCurrencyUpdatesPos() : void
       {
-         // method body index: 3319 method index: 3319
+
          if(this.m_LevelUpVisible || this.m_RepLevelUpVisible)
          {
             this.HUDNotificationsGroup_mc.CurrencyUpdates_mc.y = this.m_CurrencyUpdateBaseY + CURRENCY_UPDATE_LEVELUP_OFFSETY;
@@ -1312,7 +1312,7 @@ package
       
       public function set levelUpVisible(param1:Boolean) : void
       {
-         // method body index: 3320 method index: 3320
+
          this.m_LevelUpVisible = param1;
          this.updateCurrencyUpdatesPos();
          if(param1)
@@ -1329,21 +1329,21 @@ package
       
       public function set repLevelUpVisible(param1:Boolean) : void
       {
-         // method body index: 3321 method index: 3321
+
          this.m_RepLevelUpVisible = param1;
          this.updateCurrencyUpdatesPos();
       }
       
       public function set repChangeVisible(param1:Boolean) : void
       {
-         // method body index: 3322 method index: 3322
+
          this.m_RepChangeVisible = param1;
          this.updateCurrencyUpdatesPos();
       }
       
       private function onLeaderboardDataUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 3323 method index: 3323
+
          var _loc2_:* = param1.data.localScoreboardEntry;
          this.m_ScoreboardRank = _loc2_.rank;
          this.m_ScoreboardValue = _loc2_.value;
@@ -1363,7 +1363,7 @@ package
       
       private function onAccountInfoUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 3324 method index: 3324
+
          this.m_WorldType = param1.data.worldType;
          this.updateHUDNotificationsOffset();
          this.updateRankVis();
@@ -1371,33 +1371,33 @@ package
       
       private function onResolutionUpdate(param1:FromClientDataEvent) : *
       {
-         // method body index: 3325 method index: 3325
+
          gotoAndStop(param1.data.AspectRatio);
       }
       
       private function onFanfareActive(param1:Event) : *
       {
-         // method body index: 3326 method index: 3326
+
          this.TopCenterGroup_mc.StealthMeter_mc.gotoAndPlay("rollOff");
          this.QuestTracker.SetAnimationBlocked(true);
       }
       
       private function onFanfareCleared(param1:Event) : *
       {
-         // method body index: 3327 method index: 3327
+
          this.TopCenterGroup_mc.StealthMeter_mc.gotoAndPlay("rollOn");
          this.QuestTracker.SetAnimationBlocked(false);
       }
       
       private function onRadialMenuStatusUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 3328 method index: 3328
+
          this.CompassWidget_mc.y = !!param1.data.isShowing?Number(Number(this.m_CompassBaseY + 1500)):Number(Number(this.m_CompassBaseY));
       }
       
       private function evaluateQuestAnnounceQueue() : void
       {
-         // method body index: 3329 method index: 3329
+
          var _loc1_:QuestEvent = null;
          if(!this.m_QuestAnnounceBusy && this.m_QuestAnnounceQueue.length > 0)
          {
@@ -1414,7 +1414,7 @@ package
       
       public function onDpadPress(param1:String) : *
       {
-         // method body index: 3330 method index: 3330
+
          var _loc2_:String = String(Math.max(BSUIDataManager.GetDataFromClient("CharacterInfoData").data.StimpakCount - 1,0));
          this.dpadMapContainer.DpadMap_mc.StimpakText_mc.StimpakText_tf.text = _loc2_;
          this.dpadMapContainer.gotoAndPlay("dPadOn");
@@ -1423,7 +1423,7 @@ package
       
       public function onQuestAvailable(param1:QuestEvent) : void
       {
-         // method body index: 3331 method index: 3331
+
          if(this.m_QuestAnnounceBusy)
          {
             this.m_QuestAnnounceQueue.push(param1);
@@ -1437,7 +1437,7 @@ package
       
       public function onPVPAnnounced(param1:Object) : void
       {
-         // method body index: 3335 method index: 3335
+
          var eData:Object = param1;
          if(this.m_QuestAnnounceBusy)
          {
@@ -1453,19 +1453,19 @@ package
          setTimeout(function():// method body index: 3332 method index: 3332
          *
          {
-            // method body index: 3332 method index: 3332
+
             AnnounceAvailableQuest_mc.gotoAndPlay("expand");
          },3000);
          setTimeout(function():// method body index: 3333 method index: 3333
          *
          {
-            // method body index: 3333 method index: 3333
+
             AnnounceAvailableQuest_mc.gotoAndPlay("rollOff");
          },8000);
          setTimeout(function():// method body index: 3334 method index: 3334
          *
          {
-            // method body index: 3334 method index: 3334
+
             m_QuestAnnounceBusy = false;
             evaluateQuestAnnounceQueue();
          },11000);
@@ -1473,13 +1473,13 @@ package
       
       public function onAddedToStageEvent(param1:Event) : void
       {
-         // method body index: 3336 method index: 3336
+
          this.onAddedToStage();
       }
       
       override public function onAddedToStage() : void
       {
-         // method body index: 3337 method index: 3337
+
          super.onAddedToStage();
          this.CharacterInfoData = BSUIDataManager.GetDataFromClient("CharacterInfoData").data;
          this.ControlMapData = BSUIDataManager.GetDataFromClient("ControlMapData").data;
@@ -1489,7 +1489,7 @@ package
       
       public function onCharacterInfoUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 3338 method index: 3338
+
          this.LocalEmote_mc.entityID = param1.data.entityID;
          this.m_IsWanted = param1.data.wanted;
          if(param1.data.showNetworkIndicator)
@@ -1506,7 +1506,7 @@ package
       
       private function timerHandler(param1:TimerEvent) : void
       {
-         // method body index: 3339 method index: 3339
+
          var e:TimerEvent = param1;
          if(this.__SFCodeObj.call != null && this.socket == null)
          {
@@ -1536,7 +1536,7 @@ package
       
       private function connectHandler(param1:Event) : void
       {
-         // method body index: 3340 method index: 3340
+
          this.OnNetworkedUIEventReceived("ALERT","Chat mod version: 2.0",2);
          this.__SFCodeObj.call("sendJoin","JOIN:" + this.account.name + ":2.0:");
          if(this.bSeenCommands == false)
@@ -1560,7 +1560,7 @@ package
       
       private function updateNearbyPlayers() : *
       {
-         // method body index: 3341 method index: 3341
+
          var _loc2_:TeammateNameplate = null;
          var _loc3_:* = undefined;
          var _loc1_:Array = new Array();
@@ -1578,23 +1578,23 @@ package
       
       private function closeHandler(param1:Event) : void
       {
-         // method body index: 3342 method index: 3342
+
          this.socket.close();
       }
       
       private function securityErrorHandler(param1:Event) : void
       {
-         // method body index: 3343 method index: 3343
+
       }
       
       private function commands() : *
       {
-         // method body index: 3344 method index: 3344
+
       }
       
       private function socketDataHandler(param1:Event) : void
       {
-         // method body index: 3345 method index: 3345
+
          var _loc2_:String = "";
          while(this.socket.bytesAvailable > 0)
          {
@@ -1611,7 +1611,7 @@ package
       
       private function parseChatData(param1:String) : void
       {
-         // method body index: 3346 method index: 3346
+
          var _loc2_:* = undefined;
          var _loc3_:* = undefined;
          var _loc4_:* = undefined;
@@ -1831,12 +1831,12 @@ package
       
       private function onError(param1:Error) : void
       {
-         // method body index: 3347 method index: 3347
+
       }
       
       public function updateEntryColors() : void
       {
-         // method body index: 3348 method index: 3348
+
          this.TextChat.TextChatBase_mc.TextChatEntryWidget_mc.ChatEntryChannel_tf.border = true;
          this.TextChat.TextChatBase_mc.TextChatEntryWidget_mc.ChatEntryChannel_tf.visible = true;
          this.TextChat.TextChatBase_mc.TextChatEntryWidget_mc.TextEntry_bg.visible = true;
@@ -1916,7 +1916,7 @@ package
       
       public function enterChatMode() : *
       {
-         // method body index: 3349 method index: 3349
+
          this.TextChat.TextChatBase_mc.TextChatWidget_mc.chatIsOpen();
          this.TextChat.TextChatBase_mc.TextChatWidget_mc.startChat();
          this.TextChat.TextChatBase_mc.TextChatWidget_mc.updateChat();
@@ -1927,7 +1927,7 @@ package
       
       function resetChatMode() : *
       {
-         // method body index: 3350 method index: 3350
+
          if(this.lastWhisperReceivedTwo != "PtRjYMpeSSkVfEDy")
          {
             this.lastWhisperReceived = this.lastWhisperReceivedTwo;
@@ -1948,7 +1948,7 @@ package
       
       function chatEntryKeyUp(param1:KeyboardEvent) : void
       {
-         // method body index: 3351 method index: 3351
+
          if(param1.keyCode == Keyboard.ENTER)
          {
             this.sendChatMessage(this.TextChat.TextChatBase_mc.TextChatEntryWidget_mc.ChatEntryText_tf.text);
@@ -1962,7 +1962,7 @@ package
       
       function fastTestFunction() : void
       {
-         // method body index: 3352 method index: 3352
+
          this.TextChat.TextChatBase_mc.TextChatEntryWidget_mc.ChatEntryChannel_tf.border = true;
          this.TextChat.TextChatBase_mc.TextChatEntryWidget_mc.ChatEntryChannel_tf.visible = true;
          this.TextChat.TextChatBase_mc.TextChatEntryWidget_mc.TextEntry_bg.visible = true;
@@ -1990,7 +1990,7 @@ package
       
       function chatEntryKeyDown(param1:KeyboardEvent) : void
       {
-         // method body index: 3353 method index: 3353
+
          var _loc2_:Number = NaN;
          if(this.TextChat.TextChatBase_mc.TextChatEntryWidget_mc.ChatEntryText_tf.text.substr(0,3) == "/r " && this.lastWhisperReceived != "PtRjYMpeSSkVfEDy")
          {
@@ -2224,20 +2224,20 @@ package
       
       function chatEntryFocusOut(param1:FocusEvent) : void
       {
-         // method body index: 3354 method index: 3354
+
          this.TextChat.TextChatBase_mc.TextChatWidget_mc.resetScrolling();
          this.resetChatMode();
       }
       
       private function escapeHtml(param1:*) : *
       {
-         // method body index: 3355 method index: 3355
+
          return param1.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;").replace(/:/g,"&#58;");
       }
       
       public function sendChatMessage(param1:String) : *
       {
-         // method body index: 3356 method index: 3356
+
          var _loc3_:* = undefined;
          var _loc4_:* = undefined;
          var _loc5_:Array = null;
@@ -2760,7 +2760,7 @@ package
       
       public function OnNetworkedUIEventReceived(param1:String, param2:String, param3:Number) : *
       {
-         // method body index: 3357 method index: 3357
+
          var _loc4_:* = "";
          param1 = param1.replace(/\[DONOR\]/g,"¬");
          if(param3 == 0)
@@ -2800,7 +2800,7 @@ package
       
       public function ProcessUserEvent(param1:String, param2:Boolean) : Boolean
       {
-         // method body index: 3358 method index: 3358
+
          var _loc3_:Boolean = false;
          if(this.FrobberWidget_mc.show)
          {
@@ -2829,44 +2829,44 @@ package
       
       override protected function onSetSafeRect() : void
       {
-         // method body index: 3359 method index: 3359
+
          GlobalFunc.LockToSafeRect(this.CenterGroup_mc,"CC",SafeX,SafeY);
       }
       
       public function onCodeObjCreate() : *
       {
-         // method body index: 3360 method index: 3360
+
          (this.RightMeters_mc.PowerArmorLowBatteryWarning_mc.WarningTextHolder_mc as PAWarningText).codeObj = this.BGSCodeObj;
       }
       
       public function onCodeObjDestruction() : *
       {
-         // method body index: 3361 method index: 3361
+
          this.BGSCodeObj = null;
          (this.RightMeters_mc.PowerArmorLowBatteryWarning_mc.WarningTextHolder_mc as PAWarningText).codeObj = null;
       }
       
       private function handleTeamInviteAccept() : *
       {
-         // method body index: 3362 method index: 3362
+
          BSUIDataManager.dispatchEvent(new NetworkedUIEvent("networked::UIEVENT","TeamInviteAccepted",this.CharacterInfoData.name,this.RequestUsername,"NoData"));
       }
       
       function frame1() : *
       {
-         // method body index: 3363 method index: 3363
+
          stop();
       }
       
       function frame2() : *
       {
-         // method body index: 3364 method index: 3364
+
          stop();
       }
       
       function frame3() : *
       {
-         // method body index: 3365 method index: 3365
+
          stop();
       }
    }

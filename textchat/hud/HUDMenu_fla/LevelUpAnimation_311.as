@@ -12,21 +12,21 @@ package HUDMenu_fla
       
       public function LevelUpAnimation_311()
       {
-         // method body index: 1057 method index: 1057
+
          super();
          addFrameScript(0,this.frame1,19,this.frame20);
       }
       
       function frame1() : *
       {
-         // method body index: 1058 method index: 1058
+
          dispatchEvent(new Event("HUD::LevelUpHidden",true));
          stop();
       }
       
       function frame20() : *
       {
-         // method body index: 1059 method index: 1059
+
          dispatchEvent(new Event("HUD::LevelUpVisible",true));
       }
    }

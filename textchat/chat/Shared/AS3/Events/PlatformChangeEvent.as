@@ -47,7 +47,7 @@ package Shared.AS3.Events
       
       public function PlatformChangeEvent(param1:uint, param2:Boolean, param3:uint, param4:uint)
       {
-         // method body index: 144 method index: 144
+
          super(PLATFORM_CHANGE,true,true);
          this.uiPlatform = param1;
          this.bPS3Switch = param2;
@@ -57,55 +57,55 @@ package Shared.AS3.Events
       
       public function get uiPlatform() : *
       {
-         // method body index: 145 method index: 145
+
          return this._uiPlatform;
       }
       
       public function set uiPlatform(param1:uint) : *
       {
-         // method body index: 146 method index: 146
+
          this._uiPlatform = param1;
       }
       
       public function get bPS3Switch() : *
       {
-         // method body index: 147 method index: 147
+
          return this._bPS3Switch;
       }
       
       public function set bPS3Switch(param1:Boolean) : *
       {
-         // method body index: 148 method index: 148
+
          this._bPS3Switch = param1;
       }
       
       public function get uiController() : *
       {
-         // method body index: 149 method index: 149
+
          return this._uiController;
       }
       
       public function set uiController(param1:uint) : *
       {
-         // method body index: 150 method index: 150
+
          this._uiController = param1;
       }
       
       public function get uiKeyboard() : *
       {
-         // method body index: 151 method index: 151
+
          return this._uiKeyboard;
       }
       
       public function set uiKeyboard(param1:uint) : *
       {
-         // method body index: 152 method index: 152
+
          this._uiKeyboard = param1;
       }
       
       override public function clone() : Event
       {
-         // method body index: 153 method index: 153
+
          return new PlatformChangeEvent(this.uiPlatform,this.bPS3Switch,this.uiController,this.uiKeyboard);
       }
    }

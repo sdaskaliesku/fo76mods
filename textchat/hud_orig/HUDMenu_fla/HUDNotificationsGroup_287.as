@@ -21,7 +21,7 @@ package HUDMenu_fla
       
       public function HUDNotificationsGroup_287()
       {
-         // method body index: 1098 method index: 1098
+
          super();
          this.__setProp_ObjectiveUpdates_mc_HUDNotificationsGroup_ObjectiveUpdates_mc_0();
          this.__setProp_Messages_mc_HUDNotificationsGroup_Messages_mc_0();
@@ -30,7 +30,7 @@ package HUDMenu_fla
       
       function __setProp_ObjectiveUpdates_mc_HUDNotificationsGroup_ObjectiveUpdates_mc_0() : *
       {
-         // method body index: 1095 method index: 1095
+
          try
          {
             this.ObjectiveUpdates_mc["componentInspectorSetting"] = true;
@@ -59,7 +59,7 @@ package HUDMenu_fla
       
       function __setProp_Messages_mc_HUDNotificationsGroup_Messages_mc_0() : *
       {
-         // method body index: 1096 method index: 1096
+
          try
          {
             this.Messages_mc["componentInspectorSetting"] = true;
@@ -88,7 +88,7 @@ package HUDMenu_fla
       
       function __setProp_PromptMessageHolder_mc_HUDNotificationsGroup_PromptMessageHolder_mc_0() : *
       {
-         // method body index: 1097 method index: 1097
+
          try
          {
             this.PromptMessageHolder_mc["componentInspectorSetting"] = true;

@@ -9,7 +9,7 @@ package
       
       public function PistolIcon()
       {
-         // method body index: 2266 method index: 2266
+
          super();
       }
    }

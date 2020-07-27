@@ -9,7 +9,7 @@ package
       
       public function LaserRifleIcon()
       {
-         // method body index: 2225 method index: 2225
+
          super();
       }
    }

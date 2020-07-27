@@ -9,7 +9,7 @@ package
       
       public function ExplosiveAmmoCount()
       {
-         // method body index: 2890 method index: 2890
+
          super();
       }
    }

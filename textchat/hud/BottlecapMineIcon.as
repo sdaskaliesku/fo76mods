@@ -9,7 +9,7 @@ package
       
       public function BottlecapMineIcon()
       {
-         // method body index: 746 method index: 746
+
          super();
       }
    }

@@ -9,14 +9,14 @@ package HUDMenu_fla
       
       public function pvpDeathX_mc_38()
       {
-         // method body index: 1611 method index: 1611
+
          super();
          addFrameScript(34,this.frame35);
       }
       
       function frame35() : *
       {
-         // method body index: 1612 method index: 1612
+
          stop();
       }
    }

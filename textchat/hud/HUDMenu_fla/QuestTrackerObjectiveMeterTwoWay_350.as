@@ -18,14 +18,14 @@ package HUDMenu_fla
       
       public function QuestTrackerObjectiveMeterTwoWay_350()
       {
-         // method body index: 1287 method index: 1287
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1288 method index: 1288
+
          stop();
       }
    }

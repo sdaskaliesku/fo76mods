@@ -110,7 +110,7 @@ package Shared.AS3
       
       public function ConditionBoy()
       {
-         // method body index: 3048 method index: 3048
+
          this.ColorFileText = new String();
          this.PrimaryCondition = {};
          this.SecondaryConditions = new Vector.<Object>();
@@ -121,24 +121,24 @@ package Shared.AS3
       
       public function set monochrome(abSingleColor:Boolean) : *
       {
-         // method body index: 3045 method index: 3045
+
       }
       
       public function get monochrome() : *
       {
-         // method body index: 3046 method index: 3046
+
          return this.Monochrome;
       }
       
       public function set isMenuInstance(aIsMenuInstance:Boolean) : *
       {
-         // method body index: 3047 method index: 3047
+
          this.IsMenuInstance = aIsMenuInstance;
       }
       
       public function PreloadConditions() : *
       {
-         // method body index: 3049 method index: 3049
+
          var id:* = undefined;
          var cachedBodyLoader:PipboyLoader = null;
          var bodyLoadRequest:URLRequest = null;
@@ -157,13 +157,13 @@ package Shared.AS3
       
       private function GetPathForCondition(aBodyId:int) : *
       {
-         // method body index: 3050 method index: 3050
+
          return CLIP_BODY_TEMPLATE_PATH + this.ColorFileText + aBodyId + ".swf";
       }
       
       public function SetData(data:Object) : *
       {
-         // method body index: 3051 method index: 3051
+
          this.UpdatePrimaryCondition(data);
          if(!this.IsMenuInstance)
          {
@@ -177,7 +177,7 @@ package Shared.AS3
       
       private function UpdatePrimaryCondition(data:Object) : *
       {
-         // method body index: 3052 method index: 3052
+
          var isHeadDamaged:Boolean = data.isHeadDamaged;
          var headFrame:uint = HEAD_NORMAL_FRAME;
          if(data.isIrradiated)
@@ -203,7 +203,7 @@ package Shared.AS3
       
       private function UpdateSecondaryConditions(data:Object) : *
       {
-         // method body index: 3053 method index: 3053
+
          var isHeadDamaged:Boolean = data.isHeadDamaged;
          if(!this.IsMutated && data.isMutated)
          {
@@ -241,7 +241,7 @@ package Shared.AS3
       
       private function ShowNextCondition() : *
       {
-         // method body index: 3054 method index: 3054
+
          var showingPersistentCondition:Boolean = false;
          var bodyLoadRequest:URLRequest = null;
          var conditionData:Object = null;
@@ -285,13 +285,13 @@ package Shared.AS3
       
       private function IsShowingCondition(conditionData:Object) : *
       {
-         // method body index: 3055 method index: 3055
+
          return conditionData && this.CurrentlyShownCondition && conditionData.headFrame == this.CurrentlyShownCondition.headFrame && conditionData.bodyId == this.CurrentlyShownCondition.bodyId;
       }
       
       private function LoadHead() : *
       {
-         // method body index: 3056 method index: 3056
+
          if(this.HeadLoader)
          {
             this.HeadLoader.unloadAndStop();
@@ -304,7 +304,7 @@ package Shared.AS3
       
       private function UnloadBody() : *
       {
-         // method body index: 3057 method index: 3057
+
          if(this.BodyLoader)
          {
             try
@@ -331,7 +331,7 @@ package Shared.AS3
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3059 method index: 3059
+
          super.redrawUIComponent();
          if(this.BodyClip && this.HeadClip && this.ShouldUpdate)
          {
@@ -349,7 +349,7 @@ package Shared.AS3
                setTimeout(function():// method body index: 3058 method index: 3058
                void
                {
-                  // method body index: 3058 method index: 3058
+
                   IsReadyForNextCondition = true;
                   ShowNextCondition();
                },CONDITION_DISPLAY_TIME);
@@ -359,7 +359,7 @@ package Shared.AS3
       
       private function onConditionBodyLoadComplete(loadCompleteEvent:Event) : *
       {
-         // method body index: 3060 method index: 3060
+
          if(this.BodyLoader)
          {
             loadCompleteEvent.target.removeEventListener(Event.COMPLETE,this.onConditionBodyLoadComplete);
@@ -380,7 +380,7 @@ package Shared.AS3
       
       private function onConditionBodyLoadFailed(event:IOErrorEvent) : *
       {
-         // method body index: 3061 method index: 3061
+
          event.target.removeEventListener(Event.COMPLETE,this.onConditionBodyLoadComplete);
          event.target.removeEventListener(IOErrorEvent.IO_ERROR,this.onConditionBodyLoadFailed);
          trace("failed to load body: " + this.GetPathForCondition(this.CurrentlyShownCondition.bodyId));
@@ -389,7 +389,7 @@ package Shared.AS3
       
       private function onConditionHeadLoadComplete(loadCompleteEvent:Event) : *
       {
-         // method body index: 3062 method index: 3062
+
          if(this.HeadLoader)
          {
             loadCompleteEvent.target.removeEventListener(Event.COMPLETE,this.onConditionHeadLoadComplete);

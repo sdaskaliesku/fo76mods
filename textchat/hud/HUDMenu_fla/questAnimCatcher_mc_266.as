@@ -11,14 +11,14 @@ package HUDMenu_fla
       
       public function questAnimCatcher_mc_266()
       {
-         // method body index: 1674 method index: 1674
+
          super();
          this.__setProp_ClipContainer_mc_questAnimCatcher_mc_clipcontainer_0();
       }
       
       function __setProp_ClipContainer_mc_questAnimCatcher_mc_clipcontainer_0() : *
       {
-         // method body index: 1675 method index: 1675
+
          try
          {
             this.ClipContainer_mc["componentInspectorSetting"] = true;

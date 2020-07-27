@@ -28,7 +28,7 @@ package HUDMenu_fla
       
       public function XPMeter_288()
       {
-         // method body index: 1449 method index: 1449
+
          super();
          this.__setProp_Optional_mc_XPMeter_Optional_mc_0();
          this.__setProp_LevelUPBar_XPMeter_LevelUPBar_0();
@@ -36,7 +36,7 @@ package HUDMenu_fla
       
       function __setProp_Optional_mc_XPMeter_Optional_mc_0() : *
       {
-         // method body index: 1447 method index: 1447
+
          try
          {
             this.Optional_mc["componentInspectorSetting"] = true;
@@ -67,7 +67,7 @@ package HUDMenu_fla
       
       function __setProp_LevelUPBar_XPMeter_LevelUPBar_0() : *
       {
-         // method body index: 1448 method index: 1448
+
          try
          {
             this.LevelUPBar["componentInspectorSetting"] = true;

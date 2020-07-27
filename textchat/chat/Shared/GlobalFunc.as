@@ -392,13 +392,13 @@ package Shared
       
       public function GlobalFunc()
       {
-         // method body index: 60 method index: 60
+
          super();
       }
       
       public static function CloneObject(param1:Object) : *
       {
-         // method body index: 18 method index: 18
+
          var _loc2_:ByteArray = new ByteArray();
          _loc2_.writeObject(param1);
          _loc2_.position = 0;
@@ -407,7 +407,7 @@ package Shared
       
       public static function Lerp(param1:Number, param2:Number, param3:Number, param4:Number, param5:Number, param6:Boolean) : Number
       {
-         // method body index: 19 method index: 19
+
          var _loc7_:Number = param1 + (param5 - param3) / (param4 - param3) * (param2 - param1);
          if(param6)
          {
@@ -425,7 +425,7 @@ package Shared
       
       public static function PadNumber(param1:Number, param2:uint) : String
       {
-         // method body index: 20 method index: 20
+
          var _loc3_:String = "" + param1;
          while(_loc3_.length < param2)
          {
@@ -436,7 +436,7 @@ package Shared
       
       public static function setChallengeRewardIcon(param1:SWFLoaderClip, param2:uint, param3:String = "") : MovieClip
       {
-         // method body index: 21 method index: 21
+
          var _loc4_:String = null;
          switch(param2)
          {
@@ -531,7 +531,7 @@ package Shared
       
       public static function parseStatValue(param1:Number, param2:uint) : String
       {
-         // method body index: 22 method index: 22
+
          switch(param2)
          {
             case GlobalFunc.STAT_VALUE_TYPE_TIME:
@@ -543,7 +543,7 @@ package Shared
       
       public static function ShortTimeString(param1:Number) : String
       {
-         // method body index: 23 method index: 23
+
          var _loc2_:Number = 0;
          var _loc3_:TextField = new TextField();
          var _loc4_:Number = Math.floor(param1 / 86400);
@@ -589,7 +589,7 @@ package Shared
       
       public static function SimpleTimeString(param1:Number) : String
       {
-         // method body index: 24 method index: 24
+
          var _loc2_:Number = 0;
          var _loc3_:TextField = new TextField();
          var _loc4_:Number = Math.floor(param1 / 86400);
@@ -650,7 +650,7 @@ package Shared
       
       public static function FormatTimeString(param1:Number) : String
       {
-         // method body index: 25 method index: 25
+
          var _loc2_:Number = 0;
          var _loc3_:Number = Math.floor(param1 / 86400);
          _loc2_ = param1 % 86400;
@@ -707,7 +707,7 @@ package Shared
       
       public static function ImageFrameFromCharacter(param1:String) : uint
       {
-         // method body index: 26 method index: 26
+
          var _loc2_:String = null;
          if(param1 != null && param1.length > 0)
          {
@@ -722,7 +722,7 @@ package Shared
       
       public static function GetAccountIconPath(param1:String) : String
       {
-         // method body index: 27 method index: 27
+
          if(param1 == null || param1.length == 0)
          {
             param1 = "Textures/ATX/Storefront/PlayerIcons/ATX_PlayerIcon_VaultBoy_76.dds";
@@ -732,30 +732,30 @@ package Shared
       
       public static function RoundDecimal(param1:Number, param2:Number) : Number
       {
-         // method body index: 28 method index: 28
+
          var _loc3_:Number = Math.pow(10,param2);
          return Math.round(_loc3_ * param1) / _loc3_;
       }
       
       public static function CloseToNumber(param1:Number, param2:Number, param3:Number = 0.001) : Boolean
       {
-         // method body index: 29 method index: 29
+
          return Math.abs(param1 - param2) < param3;
       }
       
       public static function Clamp(param1:Number, param2:Number, param3:Number) : Number
       {
-         // method body index: 30 method index: 30
+
          return Math.max(param2,Math.min(param3,param1));
       }
       
       public static function MaintainTextFormat() : *
       {
-         // method body index: 32 method index: 32
+
          TextField.prototype.SetText = function(param1:String, param2:Boolean = false, param3:Boolean = false):// method body index: 31 method index: 31
          *
          {
-            // method body index: 31 method index: 31
+
             var _loc4_:Number = NaN;
             var _loc5_:Boolean = false;
             if(!param1 || param1 == "")
@@ -789,7 +789,7 @@ package Shared
       
       public static function SetText(param1:TextField, param2:String, param3:Boolean = false, param4:Boolean = false, param5:* = false) : *
       {
-         // method body index: 33 method index: 33
+
          var _loc6_:TextFormat = null;
          var _loc7_:Number = NaN;
          var _loc8_:Boolean = false;
@@ -824,7 +824,7 @@ package Shared
       
       public static function LockToSafeRect(param1:DisplayObject, param2:String, param3:Number = 0, param4:Number = 0) : *
       {
-         // method body index: 34 method index: 34
+
          var _loc5_:Rectangle = Extensions.visibleRect;
          var _loc6_:Point = new Point(_loc5_.x + param3,_loc5_.y + param4);
          var _loc7_:Point = new Point(_loc5_.x + _loc5_.width - param3,_loc5_.y + _loc5_.height - param4);
@@ -859,11 +859,11 @@ package Shared
       
       public static function AddMovieExploreFunctions() : *
       {
-         // method body index: 37 method index: 37
+
          MovieClip.prototype.getMovieClips = function():// method body index: 35 method index: 35
          Array
          {
-            // method body index: 35 method index: 35
+
             var _loc1_:* = undefined;
             var _loc2_:* = new Array();
             for(_loc1_ in this)
@@ -878,7 +878,7 @@ package Shared
          MovieClip.prototype.showMovieClips = function():// method body index: 36 method index: 36
          *
          {
-            // method body index: 36 method index: 36
+
             var _loc1_:* = undefined;
             for(_loc1_ in this)
             {
@@ -893,7 +893,7 @@ package Shared
       
       public static function InspectObject(param1:Object, param2:Boolean = false, param3:Boolean = false) : void
       {
-         // method body index: 38 method index: 38
+
          var _loc4_:String = getQualifiedClassName(param1);
          trace("Inspecting object with type " + _loc4_);
          trace("{");
@@ -903,7 +903,7 @@ package Shared
       
       private static function InspectObjectHelper(param1:Object, param2:Boolean, param3:Boolean, param4:String = "\t") : void
       {
-         // method body index: 39 method index: 39
+
          var aObject:Object = param1;
          var abRecursive:Boolean = param2;
          var abIncludeProperties:Boolean = param3;
@@ -976,11 +976,11 @@ package Shared
       
       public static function AddReverseFunctions() : *
       {
-         // method body index: 44 method index: 44
+
          MovieClip.prototype.PlayReverseCallback = function(param1:Event):// method body index: 40 method index: 40
          *
          {
-            // method body index: 40 method index: 40
+
             if(param1.currentTarget.currentFrame > 1)
             {
                param1.currentTarget.gotoAndStop(param1.currentTarget.currentFrame - 1);
@@ -993,7 +993,7 @@ package Shared
          MovieClip.prototype.PlayReverse = function():// method body index: 41 method index: 41
          *
          {
-            // method body index: 41 method index: 41
+
             if(this.currentFrame > 1)
             {
                this.gotoAndStop(this.currentFrame - 1);
@@ -1007,14 +1007,14 @@ package Shared
          MovieClip.prototype.PlayForward = function(param1:String):// method body index: 42 method index: 42
          *
          {
-            // method body index: 42 method index: 42
+
             delete this.onEnterFrame;
             this.gotoAndPlay(param1);
          };
          MovieClip.prototype.PlayForward = function(param1:Number):// method body index: 43 method index: 43
          *
          {
-            // method body index: 43 method index: 43
+
             delete this.onEnterFrame;
             this.gotoAndPlay(param1);
          };
@@ -1022,7 +1022,7 @@ package Shared
       
       public static function PlayMenuSound(param1:String) : *
       {
-         // method body index: 45 method index: 45
+
          BSUIDataManager.dispatchEvent(new CustomEvent(GlobalFunc.PLAY_MENU_SOUND,{
             "soundID":param1,
             "soundFormID":0
@@ -1031,7 +1031,7 @@ package Shared
       
       public static function PlayMenuSoundWithFormID(param1:uint) : *
       {
-         // method body index: 46 method index: 46
+
          BSUIDataManager.dispatchEvent(new CustomEvent(GlobalFunc.PLAY_MENU_SOUND,{
             "soundID":"",
             "soundFormID":param1
@@ -1040,13 +1040,13 @@ package Shared
       
       public static function ShowHUDMessage(param1:String) : *
       {
-         // method body index: 47 method index: 47
+
          BSUIDataManager.dispatchEvent(new CustomEvent(GlobalFunc.SHOW_HUD_MESSAGE,{"text":param1}));
       }
       
       public static function updateConditionMeter(param1:MovieClip, param2:Number, param3:Number, param4:Number) : void
       {
-         // method body index: 48 method index: 48
+
          var _loc5_:MovieClip = null;
          if(param3 > 0)
          {
@@ -1070,7 +1070,7 @@ package Shared
       
       public static function updateVoiceIndicator(param1:MovieClip, param2:Boolean, param3:Boolean, param4:Boolean, param5:Boolean = true, param6:Boolean = false) : void
       {
-         // method body index: 49 method index: 49
+
          if(!param2)
          {
             param1.gotoAndStop("muted");
@@ -1106,7 +1106,7 @@ package Shared
       
       public static function quickMultiLineShrinkToFit(param1:TextField, param2:Number = 0, param3:Number = 0) : void
       {
-         // method body index: 50 method index: 50
+
          var _loc4_:TextFormat = param1.getTextFormat();
          if(param2 == 0)
          {
@@ -1133,7 +1133,7 @@ package Shared
       
       public static function shrinkMultiLineTextToFit(param1:TextField, param2:Number = 0) : void
       {
-         // method body index: 51 method index: 51
+
          var _loc3_:TextFormat = param1.getTextFormat();
          if(param2 == 0)
          {
@@ -1152,7 +1152,7 @@ package Shared
       
       public static function getTextfieldSize(param1:TextField, param2:Boolean = true) : *
       {
-         // method body index: 52 method index: 52
+
          var _loc3_:Number = NaN;
          var _loc4_:uint = 0;
          if(param1.multiline)
@@ -1171,7 +1171,7 @@ package Shared
       
       public static function getDisplayObjectSize(param1:DisplayObject, param2:Boolean = false) : *
       {
-         // method body index: 53 method index: 53
+
          if(param1 is BSScrollingList)
          {
             return (param1 as BSScrollingList).shownItemsHeight;
@@ -1201,7 +1201,7 @@ package Shared
       
       public static function arrangeItems(param1:Array, param2:Boolean, param3:uint = 0, param4:Number = 0, param5:Boolean = false, param6:Number = 0) : Number
       {
-         // method body index: 54 method index: 54
+
          var _loc7_:Number = NaN;
          var _loc8_:Number = NaN;
          var _loc9_:uint = 0;
@@ -1261,7 +1261,7 @@ package Shared
       
       public static function StringTrim(param1:String) : String
       {
-         // method body index: 55 method index: 55
+
          var _loc2_:String = null;
          var _loc3_:Number = 0;
          var _loc4_:Number = 0;
@@ -1282,7 +1282,7 @@ package Shared
       
       public static function BSASSERT(param1:Boolean, param2:String) : void
       {
-         // method body index: 56 method index: 56
+
          var _loc3_:String = null;
          if(!param1)
          {
@@ -1293,7 +1293,7 @@ package Shared
       
       public static function HasFFEvent(param1:Object, param2:String) : Boolean
       {
-         // method body index: 57 method index: 57
+
          var aDataObject:Object = param1;
          var asEventString:String = param2;
          var obj:Object = null;
@@ -1322,7 +1322,7 @@ package Shared
       
       public static function LocalizeFormattedString(param1:String, ... rest) : String
       {
-         // method body index: 58 method index: 58
+
          var _loc3_:String = "";
          var _loc4_:TextField = new TextField();
          _loc4_.text = param1;
@@ -1339,7 +1339,7 @@ package Shared
       
       public static function BuildLegendaryStarsGlyphString(param1:Object) : String
       {
-         // method body index: 59 method index: 59
+
          var _loc2_:* = undefined;
          var _loc3_:TextField = null;
          var _loc4_:Boolean = false;

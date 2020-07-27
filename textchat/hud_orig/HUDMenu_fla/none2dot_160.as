@@ -10,20 +10,20 @@ package HUDMenu_fla
       
       public function none2dot_160()
       {
-         // method body index: 1665 method index: 1665
+
          super();
          addFrameScript(0,this.frame1,6,this.frame7);
       }
       
       function frame1() : *
       {
-         // method body index: 1663 method index: 1663
+
          stop();
       }
       
       function frame7() : *
       {
-         // method body index: 1664 method index: 1664
+
          dispatchEvent(new Event("animationComplete"));
       }
    }

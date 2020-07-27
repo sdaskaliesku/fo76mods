@@ -17,7 +17,7 @@ package aze.motion.specials
       
       public function PropertyBezier(target:Object, property:*, value:*, next:EazeSpecial)
       {
-         // method body index: 530 method index: 530
+
          super(target,property,value,next);
          this.fvalue = value;
          if(this.fvalue[0] is Array)
@@ -29,13 +29,13 @@ package aze.motion.specials
       
       public static function register() : void
       {
-         // method body index: 529 method index: 529
+
          EazeTween.specialProperties["__bezier"] = PropertyBezier;
       }
       
       override public function init(reverse:Boolean) : void
       {
-         // method body index: 531 method index: 531
+
          var p0:Number = NaN;
          var p1:Number = NaN;
          var current:Number = target[property];
@@ -83,7 +83,7 @@ package aze.motion.specials
       
       override public function update(ke:Number, isComplete:Boolean) : void
       {
-         // method body index: 532 method index: 532
+
          var segment:BezierSegment = null;
          var index:* = 0;
          var last:int = this.length - 1;
@@ -116,7 +116,7 @@ package aze.motion.specials
       
       override public function dispose() : void
       {
-         // method body index: 533 method index: 533
+
          this.fvalue = null;
          this.segments = null;
          super.dispose();

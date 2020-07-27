@@ -9,7 +9,7 @@ package
       
       public function GammaGunIcon()
       {
-         // method body index: 884 method index: 884
+
          super();
       }
    }

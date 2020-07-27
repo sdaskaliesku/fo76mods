@@ -11,20 +11,20 @@ package HUDMenu_fla
       
       public function dpadMapContainer_91()
       {
-         // method body index: 1589 method index: 1589
+
          super();
          addFrameScript(0,this.frame1,139,this.frame140);
       }
       
       function frame1() : *
       {
-         // method body index: 1587 method index: 1587
+
          stop();
       }
       
       function frame140() : *
       {
-         // method body index: 1588 method index: 1588
+
          stop();
       }
    }

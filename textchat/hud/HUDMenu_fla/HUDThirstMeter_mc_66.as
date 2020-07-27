@@ -17,26 +17,26 @@ package HUDMenu_fla
       
       public function HUDThirstMeter_mc_66()
       {
-         // method body index: 1042 method index: 1042
+
          super();
          addFrameScript(0,this.frame1,6,this.frame7,12,this.frame13);
       }
       
       function frame1() : *
       {
-         // method body index: 1043 method index: 1043
+
          stop();
       }
       
       function frame7() : *
       {
-         // method body index: 1044 method index: 1044
+
          stop();
       }
       
       function frame13() : *
       {
-         // method body index: 1045 method index: 1045
+
          stop();
       }
    }

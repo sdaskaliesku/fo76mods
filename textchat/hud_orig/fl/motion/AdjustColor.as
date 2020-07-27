@@ -20,13 +20,13 @@ package fl.motion
       
       public function AdjustColor()
       {
-         // method body index: 4 method index: 4
+
          super();
       }
       
       public function set brightness(param1:Number) : void
       {
-         // method body index: 5 method index: 5
+
          if(this.m_brightnessMatrix == null)
          {
             this.m_brightnessMatrix = new ColorMatrix#4();
@@ -39,7 +39,7 @@ package fl.motion
       
       public function set contrast(param1:Number) : void
       {
-         // method body index: 6 method index: 6
+
          var _loc2_:Number = param1;
          if(param1 == 0)
          {
@@ -62,7 +62,7 @@ package fl.motion
       
       public function set saturation(param1:Number) : void
       {
-         // method body index: 7 method index: 7
+
          var _loc2_:Number = param1;
          if(param1 == 0)
          {
@@ -85,7 +85,7 @@ package fl.motion
       
       public function set hue(param1:Number) : void
       {
-         // method body index: 8 method index: 8
+
          if(this.m_hueMatrix == null)
          {
             this.m_hueMatrix = new ColorMatrix#4();
@@ -98,13 +98,13 @@ package fl.motion
       
       public function AllValuesAreSet() : Boolean
       {
-         // method body index: 9 method index: 9
+
          return this.m_brightnessMatrix && this.m_contrastMatrix && this.m_saturationMatrix && this.m_hueMatrix;
       }
       
       public function CalculateFinalFlatArray() : Array
       {
-         // method body index: 10 method index: 10
+
          if(this.CalculateFinalMatrix())
          {
             return this.m_finalMatrix.GetFlatArray();
@@ -114,7 +114,7 @@ package fl.motion
       
       private function CalculateFinalMatrix() : Boolean
       {
-         // method body index: 11 method index: 11
+
          if(!this.AllValuesAreSet())
          {
             return false;

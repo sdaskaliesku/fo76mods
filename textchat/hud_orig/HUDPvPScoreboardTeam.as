@@ -49,7 +49,7 @@ package
       
       public function HUDPvPScoreboardTeam()
       {
-         // method body index: 1983 method index: 1983
+
          var i:uint = 0;
          var avatarClip:ImageFixture = null;
          super();
@@ -67,13 +67,13 @@ package
       
       public function get data() : Object
       {
-         // method body index: 1984 method index: 1984
+
          return this.m_Data;
       }
       
       public function set data(aData:Object) : void
       {
-         // method body index: 1985 method index: 1985
+
          var i:uint = 0;
          this.m_Data = aData;
          this.capsGained_mc.capsGained_tf.text = aData.capsGained;
@@ -149,7 +149,7 @@ package
       
       function frame10() : *
       {
-         // method body index: 1986 method index: 1986
+
          stop();
       }
    }

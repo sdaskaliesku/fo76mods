@@ -41,7 +41,7 @@ package aze.motion
       0;
       
       {
-         // method body index: 61 method index: 61
+
          specialProperties.alpha = true;
          specialProperties.alphaVisible = true;
          specialProperties.scale = true;
@@ -103,7 +103,7 @@ package aze.motion
       
       public function EazeTween(target:Object, autoStart:Boolean = true)
       {
-         // method body index: 69 method index: 69
+
          super();
          if(!target)
          {
@@ -116,7 +116,7 @@ package aze.motion
       
       public static function killAllTweens() : void
       {
-         // method body index: 62 method index: 62
+
          var target:* = null;
          for(target in running)
          {
@@ -126,7 +126,7 @@ package aze.motion
       
       public static function killTweensOf(target:Object) : void
       {
-         // method body index: 63 method index: 63
+
          var rprev:EazeTween = null;
          if(!target)
          {
@@ -153,7 +153,7 @@ package aze.motion
       
       public static function pauseAllTweens() : void
       {
-         // method body index: 64 method index: 64
+
          if(ticker.hasEventListener(Event.ENTER_FRAME))
          {
             pauseTime = getTimer();
@@ -163,7 +163,7 @@ package aze.motion
       
       public static function resumeAllTweens() : void
       {
-         // method body index: 65 method index: 65
+
          var delta:Number = NaN;
          var tween:EazeTween = null;
          if(!ticker.hasEventListener(Event.ENTER_FRAME))
@@ -182,7 +182,7 @@ package aze.motion
       
       private static function createTicker() : Shape
       {
-         // method body index: 66 method index: 66
+
          var sp:Shape = new Shape();
          sp.addEventListener(Event.ENTER_FRAME,tick);
          return sp;
@@ -190,7 +190,7 @@ package aze.motion
       
       private static function tick(e:Event) : void
       {
-         // method body index: 67 method index: 67
+
          if(head)
          {
             updateTweens(getTimer());
@@ -199,7 +199,7 @@ package aze.motion
       
       private static function updateTweens(time:int) : void
       {
-         // method body index: 68 method index: 68
+
          var isComplete:* = false;
          var k:Number = NaN;
          var ke:Number = NaN;
@@ -310,7 +310,7 @@ package aze.motion
       
       private function configure(duration:*, newState:Object = null, reversed:Boolean = false) : void
       {
-         // method body index: 70 method index: 70
+
          var name:* = null;
          var value:* = undefined;
          this._configured = true;
@@ -368,7 +368,7 @@ package aze.motion
       
       public function start(killTargetTweens:Boolean = true, timeOffset:Number = 0) : void
       {
-         // method body index: 71 method index: 71
+
          if(this._started)
          {
             return;
@@ -395,7 +395,7 @@ package aze.motion
       
       private function init() : void
       {
-         // method body index: 72 method index: 72
+
          if(this._inited)
          {
             return;
@@ -417,7 +417,7 @@ package aze.motion
       
       private function smartDuration(duration:String) : Number
       {
-         // method body index: 73 method index: 73
+
          var s:EazeSpecial = null;
          if(duration in defaultDuration)
          {
@@ -440,14 +440,14 @@ package aze.motion
       
       public function easing(f:Function) : EazeTween
       {
-         // method body index: 74 method index: 74
+
          this._ease = f || defaultEasing;
          return this;
       }
       
       public function filter(classRef:*, parameters:Object, removeWhenDone:Boolean = false) : EazeTween
       {
-         // method body index: 75 method index: 75
+
          if(!parameters)
          {
             parameters = {};
@@ -462,7 +462,7 @@ package aze.motion
       
       public function tint(tint:* = null, colorize:Number = 1, multiply:Number = NaN) : EazeTween
       {
-         // method body index: 76 method index: 76
+
          if(isNaN(multiply))
          {
             multiply = 1 - colorize;
@@ -473,7 +473,7 @@ package aze.motion
       
       public function colorMatrix(brightness:Number = 0, contrast:Number = 0, saturation:Number = 0, hue:Number = 0, tint:uint = 16777215, colorize:Number = 0) : EazeTween
       {
-         // method body index: 77 method index: 77
+
          var remove:Boolean = !brightness && !contrast && !saturation && !hue && !colorize;
          return this.filter(ColorMatrixFilter,{
             "brightness":brightness,
@@ -487,21 +487,21 @@ package aze.motion
       
       public function short(value:Number, name:String = "rotation", useRadian:Boolean = false) : EazeTween
       {
-         // method body index: 78 method index: 78
+
          this.addSpecial("__short",name,[value,useRadian]);
          return this;
       }
       
       public function rect(value:Rectangle, name:String = "scrollRect") : EazeTween
       {
-         // method body index: 79 method index: 79
+
          this.addSpecial("__rect",name,value);
          return this;
       }
       
       private function addSpecial(special:*, name:*, value:Object) : void
       {
-         // method body index: 80 method index: 80
+
          if(special in specialProperties && this.target)
          {
             if((!this._inited || this._duration == 0) && this.autoStart)
@@ -522,7 +522,7 @@ package aze.motion
       
       public function onStart(handler:Function, ... args) : EazeTween
       {
-         // method body index: 81 method index: 81
+
          this._onStart = handler;
          this._onStartArgs = args;
          this.slowTween = !this.autoVisible || this.specials != null || this._onUpdate != null || this._onStart != null;
@@ -531,7 +531,7 @@ package aze.motion
       
       public function onUpdate(handler:Function, ... args) : EazeTween
       {
-         // method body index: 82 method index: 82
+
          this._onUpdate = handler;
          this._onUpdateArgs = args;
          this.slowTween = !this.autoVisible || this.specials != null || this._onUpdate != null || this._onStart != null;
@@ -540,7 +540,7 @@ package aze.motion
       
       public function onComplete(handler:Function, ... args) : EazeTween
       {
-         // method body index: 83 method index: 83
+
          this._onComplete = handler;
          this._onCompleteArgs = args;
          return this;
@@ -548,7 +548,7 @@ package aze.motion
       
       public function kill(setEndValues:Boolean = false) : void
       {
-         // method body index: 84 method index: 84
+
          if(this.isDead)
          {
             return;
@@ -568,14 +568,14 @@ package aze.motion
       
       public function killTweens() : EazeTween
       {
-         // method body index: 85 method index: 85
+
          EazeTween.killTweensOf(this.target);
          return this;
       }
       
       public function updateNow() : EazeTween
       {
-         // method body index: 86 method index: 86
+
          var t:Number = NaN;
          if(this._started)
          {
@@ -593,7 +593,7 @@ package aze.motion
       
       private function update(time:Number) : void
       {
-         // method body index: 87 method index: 87
+
          var h:EazeTween = head;
          head = this;
          updateTweens(time);
@@ -602,7 +602,7 @@ package aze.motion
       
       private function attach(overwrite:Boolean) : void
       {
-         // method body index: 88 method index: 88
+
          var parallel:EazeTween = null;
          if(overwrite)
          {
@@ -637,7 +637,7 @@ package aze.motion
       
       private function detach() : void
       {
-         // method body index: 89 method index: 89
+
          var targetTweens:EazeTween = null;
          var prev:EazeTween = null;
          if(this.target && this._started)
@@ -675,7 +675,7 @@ package aze.motion
       
       private function dispose() : void
       {
-         // method body index: 90 method index: 90
+
          var tween:EazeTween = null;
          if(this._started)
          {
@@ -714,37 +714,37 @@ package aze.motion
       
       public function delay(duration:*, overwrite:Boolean = true) : EazeTween
       {
-         // method body index: 91 method index: 91
+
          return this.add(duration,null,overwrite);
       }
       
       public function apply(newState:Object = null, overwrite:Boolean = true) : EazeTween
       {
-         // method body index: 92 method index: 92
+
          return this.add(0,newState,overwrite);
       }
       
       public function play(frame:* = 0, overwrite:Boolean = true) : EazeTween
       {
-         // method body index: 93 method index: 93
+
          return this.add("auto",{"frame":frame},overwrite).easing(Linear.easeNone);
       }
       
       public function to(duration:*, newState:Object = null, overwrite:Boolean = true) : EazeTween
       {
-         // method body index: 94 method index: 94
+
          return this.add(duration,newState,overwrite);
       }
       
       public function from(duration:*, fromState:Object = null, overwrite:Boolean = true) : EazeTween
       {
-         // method body index: 95 method index: 95
+
          return this.add(duration,fromState,overwrite,true);
       }
       
       private function add(duration:*, state:Object, overwrite:Boolean, reversed:Boolean = false) : EazeTween
       {
-         // method body index: 96 method index: 96
+
          if(this.isDead)
          {
             return new EazeTween(this.target).add(duration,state,overwrite,reversed);
@@ -763,7 +763,7 @@ package aze.motion
       
       public function chain(target:Object = null) : EazeTween
       {
-         // method body index: 97 method index: 97
+
          var tween:EazeTween = new EazeTween(target || this.target,false);
          if(!this._chain)
          {
@@ -775,13 +775,13 @@ package aze.motion
       
       public function get isStarted() : Boolean
       {
-         // method body index: 98 method index: 98
+
          return this._started;
       }
       
       public function get isFinished() : Boolean
       {
-         // method body index: 99 method index: 99
+
          return this.isDead;
       }
    }

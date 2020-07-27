@@ -12,14 +12,14 @@ package HUDMenu_fla
       
       public function QuestTrackerAlertText_360()
       {
-         // method body index: 1258 method index: 1258
+
          super();
          this.__setTab_AlertText_tf_QuestTrackerAlertText_Layer1_0();
       }
       
       function __setTab_AlertText_tf_QuestTrackerAlertText_Layer1_0() : *
       {
-         // method body index: 1259 method index: 1259
+
          this.AlertText_tf.tabIndex = 11;
       }
    }

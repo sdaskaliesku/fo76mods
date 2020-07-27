@@ -12,13 +12,13 @@ package
       
       public function HUDChatEntryWidget()
       {
-         // method body index: 2856 method index: 2856
+
          super();
       }
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 2857 method index: 2857
+
       }
    }
 }

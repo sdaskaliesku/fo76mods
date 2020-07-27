@@ -9,7 +9,7 @@ package
       
       public function DiseaseIcon()
       {
-         // method body index: 792 method index: 792
+
          super();
       }
    }

@@ -10,7 +10,7 @@ package Shared.AS3.COMPANIONAPP
       
       public function CompanionAppMode()
       {
-         // method body index: 275 method index: 275
+
          super();
       }
    }

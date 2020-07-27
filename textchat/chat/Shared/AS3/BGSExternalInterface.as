@@ -7,13 +7,13 @@ package Shared.AS3
       
       public function BGSExternalInterface()
       {
-         // method body index: 103 method index: 103
+
          super();
       }
       
       public static function call(param1:Object, ... rest) : void
       {
-         // method body index: 102 method index: 102
+
          var _loc3_:String = null;
          var _loc4_:Function = null;
          if(param1 != null)

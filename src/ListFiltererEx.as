@@ -105,7 +105,7 @@ package
       
       public function ListFiltererEx(param1:Dictionary, param2:Dictionary)
       {
-         // method body index: 194 method index: 194
+
          this.ITEM_FILTER_MISC = 1 << 9;
          super();
          this.infoMap = param1;
@@ -114,7 +114,7 @@ package
       
       public static function GetFilterIndexBoundaries(param1:int) : Array
       {
-         // method body index: 192 method index: 192
+
          switch(param1)
          {
             case 0:
@@ -134,7 +134,7 @@ package
       
       public static function GetFilterText(param1:int) : String
       {
-         // method body index: 193 method index: 193
+
          switch(param1)
          {
             case FILTER_WEAP_RANGED:
@@ -180,7 +180,7 @@ package
       
       override public function EntryMatchesFilter(param1:Object) : Boolean
       {
-         // method body index: 195 method index: 195
+
          var _loc2_:Array = null;
          var _loc3_:Array = null;
          if(this.extraFilterType == -1)
@@ -297,7 +297,7 @@ package
       
       private function isFood(param1:Array) : Boolean
       {
-         // method body index: 196 method index: 196
+
          var _loc2_:* = undefined;
          for each(_loc2_ in param1)
          {
@@ -311,7 +311,7 @@ package
       
       private function isWater(param1:Array) : Boolean
       {
-         // method body index: 197 method index: 197
+
          var _loc2_:* = undefined;
          for each(_loc2_ in param1)
          {
@@ -325,7 +325,7 @@ package
       
       private function isCookedFood(param1:Array) : Boolean
       {
-         // method body index: 198 method index: 198
+
          var _loc3_:* = undefined;
          var _loc2_:int = 2;
          for each(_loc3_ in param1)
@@ -352,7 +352,7 @@ package
       
       private function isCookedWater(param1:Array) : Boolean
       {
-         // method body index: 199 method index: 199
+
          var _loc3_:* = undefined;
          var _loc2_:int = 2;
          for each(_loc3_ in param1)
@@ -379,13 +379,13 @@ package
       
       private function isChem(param1:Array) : Boolean
       {
-         // method body index: 200 method index: 200
+
          return !this.isWater(param1) && !this.isFood(param1);
       }
       
       private function isRanged(param1:Array) : Boolean
       {
-         // method body index: 201 method index: 201
+
          var _loc2_:* = undefined;
          for each(_loc2_ in param1)
          {
@@ -399,7 +399,7 @@ package
       
       private function isMelee(param1:Array) : Boolean
       {
-         // method body index: 202 method index: 202
+
          var _loc2_:* = undefined;
          for each(_loc2_ in param1)
          {
@@ -413,7 +413,7 @@ package
       
       private function isThrown(param1:Array) : Boolean
       {
-         // method body index: 203 method index: 203
+
          var _loc3_:* = undefined;
          var _loc2_:Boolean = false;
          for each(_loc3_ in param1)
@@ -436,7 +436,7 @@ package
       
       private function isOutfit(param1:Array) : Boolean
       {
-         // method body index: 204 method index: 204
+
          var _loc2_:* = undefined;
          for each(_loc2_ in param1)
          {
@@ -450,7 +450,7 @@ package
       
       private function occupiesApparelSlot(param1:Array, param2:uint, param3:Boolean = false) : Boolean
       {
-         // method body index: 205 method index: 205
+
          if(param3)
          {
             if(param1[0])
@@ -477,7 +477,7 @@ package
       
       private function isKey(param1:Array) : Boolean
       {
-         // method body index: 206 method index: 206
+
          var _loc2_:* = undefined;
          for each(_loc2_ in param1)
          {
@@ -491,13 +491,13 @@ package
       
       private function isEntryKey(param1:Object, param2:Array) : Boolean
       {
-         // method body index: 207 method index: 207
+
          return param1.filterFlag == this.ITEM_FILTER_MISC && this.isKey(param2);
       }
       
       private function hasBeenRead(param1:Object) : Boolean
       {
-         // method body index: 208 method index: 208
+
          return param1.isLearned;
       }
    }

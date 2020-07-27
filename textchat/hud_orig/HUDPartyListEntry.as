@@ -24,14 +24,14 @@ package
       
       public function HUDPartyListEntry()
       {
-         // method body index: 1968 method index: 1968
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1967 method index: 1967
+
          stop();
       }
    }

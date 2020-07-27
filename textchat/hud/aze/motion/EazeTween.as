@@ -41,7 +41,7 @@ package aze.motion
       0;
       
       {
-         // method body index: 61 method index: 61
+
          specialProperties.alpha = true;
          specialProperties.alphaVisible = true;
          specialProperties.scale = true;
@@ -103,7 +103,7 @@ package aze.motion
       
       public function EazeTween(param1:Object, param2:Boolean = true)
       {
-         // method body index: 69 method index: 69
+
          super();
          if(!param1)
          {
@@ -116,7 +116,7 @@ package aze.motion
       
       public static function killAllTweens() : void
       {
-         // method body index: 62 method index: 62
+
          var _loc1_:* = null;
          for(_loc1_ in running)
          {
@@ -126,7 +126,7 @@ package aze.motion
       
       public static function killTweensOf(param1:Object) : void
       {
-         // method body index: 63 method index: 63
+
          var _loc2_:EazeTween = null;
          if(!param1)
          {
@@ -153,7 +153,7 @@ package aze.motion
       
       public static function pauseAllTweens() : void
       {
-         // method body index: 64 method index: 64
+
          if(ticker.hasEventListener(Event.ENTER_FRAME))
          {
             pauseTime = getTimer();
@@ -163,7 +163,7 @@ package aze.motion
       
       public static function resumeAllTweens() : void
       {
-         // method body index: 65 method index: 65
+
          var _loc1_:Number = NaN;
          var _loc2_:EazeTween = null;
          if(!ticker.hasEventListener(Event.ENTER_FRAME))
@@ -182,7 +182,7 @@ package aze.motion
       
       private static function createTicker() : Shape
       {
-         // method body index: 66 method index: 66
+
          var _loc1_:Shape = new Shape();
          _loc1_.addEventListener(Event.ENTER_FRAME,tick);
          return _loc1_;
@@ -190,7 +190,7 @@ package aze.motion
       
       private static function tick(param1:Event) : void
       {
-         // method body index: 67 method index: 67
+
          if(head)
          {
             updateTweens(getTimer());
@@ -199,7 +199,7 @@ package aze.motion
       
       private static function updateTweens(param1:int) : void
       {
-         // method body index: 68 method index: 68
+
          var _loc2_:* = false;
          var _loc3_:Number = NaN;
          var _loc4_:Number = NaN;
@@ -312,7 +312,7 @@ package aze.motion
       
       private function configure(param1:*, param2:Object = null, param3:Boolean = false) : void
       {
-         // method body index: 70 method index: 70
+
          var _loc4_:* = null;
          var _loc5_:* = undefined;
          this._configured = true;
@@ -370,7 +370,7 @@ package aze.motion
       
       public function start(param1:Boolean = true, param2:Number = 0) : void
       {
-         // method body index: 71 method index: 71
+
          if(this._started)
          {
             return;
@@ -397,7 +397,7 @@ package aze.motion
       
       private function init() : void
       {
-         // method body index: 72 method index: 72
+
          if(this._inited)
          {
             return;
@@ -419,7 +419,7 @@ package aze.motion
       
       private function smartDuration(param1:String) : Number
       {
-         // method body index: 73 method index: 73
+
          var _loc2_:EazeSpecial = null;
          if(param1 in defaultDuration)
          {
@@ -442,14 +442,14 @@ package aze.motion
       
       public function easing(param1:Function) : EazeTween
       {
-         // method body index: 74 method index: 74
+
          this._ease = param1 || defaultEasing;
          return this;
       }
       
       public function filter(param1:*, param2:Object, param3:Boolean = false) : EazeTween
       {
-         // method body index: 75 method index: 75
+
          if(!param2)
          {
             param2 = {};
@@ -464,7 +464,7 @@ package aze.motion
       
       public function tint(param1:* = null, param2:Number = 1, param3:Number = NaN) : EazeTween
       {
-         // method body index: 76 method index: 76
+
          if(isNaN(param3))
          {
             param3 = 1 - param2;
@@ -475,7 +475,7 @@ package aze.motion
       
       public function colorMatrix(param1:Number = 0, param2:Number = 0, param3:Number = 0, param4:Number = 0, param5:uint = 16777215, param6:Number = 0) : EazeTween
       {
-         // method body index: 77 method index: 77
+
          var _loc7_:Boolean = !param1 && !param2 && !param3 && !param4 && !param6;
          return this.filter(ColorMatrixFilter,{
             "brightness":param1,
@@ -489,21 +489,21 @@ package aze.motion
       
       public function short(param1:Number, param2:String = "rotation", param3:Boolean = false) : EazeTween
       {
-         // method body index: 78 method index: 78
+
          this.addSpecial("__short",param2,[param1,param3]);
          return this;
       }
       
       public function rect(param1:Rectangle, param2:String = "scrollRect") : EazeTween
       {
-         // method body index: 79 method index: 79
+
          this.addSpecial("__rect",param2,param1);
          return this;
       }
       
       private function addSpecial(param1:*, param2:*, param3:Object) : void
       {
-         // method body index: 80 method index: 80
+
          if(param1 in specialProperties && this.target)
          {
             if((!this._inited || this._duration == 0) && this.autoStart)
@@ -524,7 +524,7 @@ package aze.motion
       
       public function onStart(param1:Function, ... rest) : EazeTween
       {
-         // method body index: 81 method index: 81
+
          this._onStart = param1;
          this._onStartArgs = rest;
          this.slowTween = !this.autoVisible || this.specials != null || this._onUpdate != null || this._onStart != null;
@@ -533,7 +533,7 @@ package aze.motion
       
       public function onUpdate(param1:Function, ... rest) : EazeTween
       {
-         // method body index: 82 method index: 82
+
          this._onUpdate = param1;
          this._onUpdateArgs = rest;
          this.slowTween = !this.autoVisible || this.specials != null || this._onUpdate != null || this._onStart != null;
@@ -542,7 +542,7 @@ package aze.motion
       
       public function onComplete(param1:Function, ... rest) : EazeTween
       {
-         // method body index: 83 method index: 83
+
          this._onComplete = param1;
          this._onCompleteArgs = rest;
          return this;
@@ -550,7 +550,7 @@ package aze.motion
       
       public function kill(param1:Boolean = false) : void
       {
-         // method body index: 84 method index: 84
+
          if(this.isDead)
          {
             return;
@@ -570,14 +570,14 @@ package aze.motion
       
       public function killTweens() : EazeTween
       {
-         // method body index: 85 method index: 85
+
          EazeTween.killTweensOf(this.target);
          return this;
       }
       
       public function updateNow() : EazeTween
       {
-         // method body index: 86 method index: 86
+
          var _loc1_:Number = NaN;
          if(this._started)
          {
@@ -595,7 +595,7 @@ package aze.motion
       
       private function update(param1:Number) : void
       {
-         // method body index: 87 method index: 87
+
          var _loc2_:EazeTween = head;
          head = this;
          updateTweens(param1);
@@ -604,7 +604,7 @@ package aze.motion
       
       private function attach(param1:Boolean) : void
       {
-         // method body index: 88 method index: 88
+
          var _loc2_:EazeTween = null;
          if(param1)
          {
@@ -639,7 +639,7 @@ package aze.motion
       
       private function detach() : void
       {
-         // method body index: 89 method index: 89
+
          var _loc1_:EazeTween = null;
          var _loc2_:EazeTween = null;
          if(this.target && this._started)
@@ -677,7 +677,7 @@ package aze.motion
       
       private function dispose() : void
       {
-         // method body index: 90 method index: 90
+
          var _loc1_:EazeTween = null;
          if(this._started)
          {
@@ -716,37 +716,37 @@ package aze.motion
       
       public function delay(param1:*, param2:Boolean = true) : EazeTween
       {
-         // method body index: 91 method index: 91
+
          return this.add(param1,null,param2);
       }
       
       public function apply(param1:Object = null, param2:Boolean = true) : EazeTween
       {
-         // method body index: 92 method index: 92
+
          return this.add(0,param1,param2);
       }
       
       public function play(param1:* = 0, param2:Boolean = true) : EazeTween
       {
-         // method body index: 93 method index: 93
+
          return this.add("auto",{"frame":param1},param2).easing(Linear.easeNone);
       }
       
       public function to(param1:*, param2:Object = null, param3:Boolean = true) : EazeTween
       {
-         // method body index: 94 method index: 94
+
          return this.add(param1,param2,param3);
       }
       
       public function from(param1:*, param2:Object = null, param3:Boolean = true) : EazeTween
       {
-         // method body index: 95 method index: 95
+
          return this.add(param1,param2,param3,true);
       }
       
       private function add(param1:*, param2:Object, param3:Boolean, param4:Boolean = false) : EazeTween
       {
-         // method body index: 96 method index: 96
+
          if(this.isDead)
          {
             return new EazeTween(this.target).add(param1,param2,param3,param4);
@@ -765,7 +765,7 @@ package aze.motion
       
       public function chain(param1:Object = null) : EazeTween
       {
-         // method body index: 97 method index: 97
+
          var _loc2_:EazeTween = new EazeTween(param1 || this.target,false);
          if(!this._chain)
          {
@@ -777,13 +777,13 @@ package aze.motion
       
       public function get isStarted() : Boolean
       {
-         // method body index: 98 method index: 98
+
          return this._started;
       }
       
       public function get isFinished() : Boolean
       {
-         // method body index: 99 method index: 99
+
          return this.isDead;
       }
    }

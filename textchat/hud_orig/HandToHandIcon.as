@@ -9,7 +9,7 @@ package
       
       public function HandToHandIcon()
       {
-         // method body index: 2207 method index: 2207
+
          super();
       }
    }

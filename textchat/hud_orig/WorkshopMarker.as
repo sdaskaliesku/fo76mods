@@ -24,7 +24,7 @@ package
       
       public function WorkshopMarker()
       {
-         // method body index: 2356 method index: 2356
+
          super();
          Extensions.enabled = true;
          this.Arrow.visible = false;
@@ -32,7 +32,7 @@ package
       
       public function Update(astrName:String, astrState:String, afCapturePct:Number, bIsOffScreen:Boolean, bPlayerInContestRadius:Boolean) : void
       {
-         // method body index: 2357 method index: 2357
+
          var xPct:Number = NaN;
          var yPct:Number = NaN;
          GlobalFunc.SetText(this.Name_tf,astrName,false);
@@ -58,7 +58,7 @@ package
       
       private function AdjustPosition(bPlayerInContestRadius:Boolean) : void
       {
-         // method body index: 2358 method index: 2358
+
          var fRightOffset:Number = NaN;
          var fBottomOffset:Number = NaN;
          if(bPlayerInContestRadius)

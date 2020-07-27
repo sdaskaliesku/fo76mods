@@ -31,13 +31,13 @@ package Shared.AS3
       
       public function Factions()
       {
-         // method body index: 200 method index: 200
+
          super();
       }
       
       public static function updateFaceIcon(aClip:MovieClip, aFactionInfo:Object) : void
       {
-         // method body index: 193 method index: 193
+
          aClip.gotoAndStop(aFactionInfo.code);
          aClip.Face_mc.gotoAndStop(getReputationFaceFromFromTier(aFactionInfo.tier));
          aClip.Backer_mc.gotoAndStop(getReputationBackerFrameFromTier(aFactionInfo.tier));
@@ -45,7 +45,7 @@ package Shared.AS3
       
       public static function getFactionByID(aFactionID:uint, aFactionInfoArray:Array) : Object
       {
-         // method body index: 194 method index: 194
+
          for(var i:uint = 0; i < aFactionInfoArray.length; )
          {
             if(aFactionInfoArray[i].factionID == aFactionID)
@@ -59,7 +59,7 @@ package Shared.AS3
       
       public static function buildFactionInfo(aReputationData:Object) : Array
       {
-         // method body index: 195 method index: 195
+
          var curFaction:Object = null;
          var curName:String = null;
          var curRep:int = 0;
@@ -85,7 +85,7 @@ package Shared.AS3
       
       public static function getNextReputationTierPercent(aReputation:int, aCurrentTier:uint, aTierInfo:Array) : Number
       {
-         // method body index: 196 method index: 196
+
          if(aCurrentTier + 1 >= aTierInfo.length)
          {
             return 1;
@@ -98,7 +98,7 @@ package Shared.AS3
       
       public static function getReputationTier(aReputation:int, aTierInfo:Array) : uint
       {
-         // method body index: 197 method index: 197
+
          for(var i:uint = aTierInfo.length - 1; i > 0; i--)
          {
             if(aReputation >= aTierInfo[i].fValue)
@@ -111,7 +111,7 @@ package Shared.AS3
       
       public static function getReputationBackerFrameFromTier(aTier:uint) : String
       {
-         // method body index: 198 method index: 198
+
          var useFrame:String = "";
          switch(aTier)
          {
@@ -129,7 +129,7 @@ package Shared.AS3
       
       public static function getReputationFaceFromFromTier(aTier:uint) : String
       {
-         // method body index: 199 method index: 199
+
          var useFrame:String = "";
          switch(aTier)
          {

@@ -125,7 +125,7 @@ package Shared.AS3
       
       public function BSScrollingList()
       {
-         // method body index: 2486 method index: 2486
+
          super();
          this.EntriesA = new Array();
          this._filterer = new ListFilterer();
@@ -180,13 +180,13 @@ package Shared.AS3
       
       protected function get needMobileScrollList() : Boolean
       {
-         // method body index: 2485 method index: 2485
+
          return CompanionAppMode.isOn;
       }
       
       public function onComponentInit(event:Event) : *
       {
-         // method body index: 2487 method index: 2487
+
          if(this.needMobileScrollList)
          {
             this.createMobileScrollingList();
@@ -207,7 +207,7 @@ package Shared.AS3
       
       protected function onStageInit(event:Event) : *
       {
-         // method body index: 2488 method index: 2488
+
          stage.addEventListener(PlatformChangeEvent.PLATFORM_CHANGE,this.onSetPlatform);
          if(!this.bInitialized)
          {
@@ -226,7 +226,7 @@ package Shared.AS3
       
       protected function onStageDestruct(event:Event) : *
       {
-         // method body index: 2489 method index: 2489
+
          var curClip:BSScrollingListEntry = null;
          stage.removeEventListener(PlatformChangeEvent.PLATFORM_CHANGE,this.onSetPlatform);
          removeEventListener(ListFilterer.FILTER_CHANGE,this.onFilterChange);
@@ -257,7 +257,7 @@ package Shared.AS3
       
       protected function onRender(event:Event) : *
       {
-         // method body index: 2490 method index: 2490
+
          if(!this.bInitialized)
          {
             this.SetNumListItems(this.uiNumListItems);
@@ -267,7 +267,7 @@ package Shared.AS3
       
       public function onScrollArrowClick(event:Event) : *
       {
-         // method body index: 2491 method index: 2491
+
          if(!this.bDisableInput && (!this.bDisableSelection || this.bAllowSelectionDisabledListNav))
          {
             this.doSetSelectedIndex(-1);
@@ -285,7 +285,7 @@ package Shared.AS3
       
       public function onEntryRollover(event:Event) : *
       {
-         // method body index: 2492 method index: 2492
+
          var prevSelection:* = undefined;
          this.bMouseDrivenNav = true;
          if(!this.bDisableInput && !this.bDisableSelection)
@@ -301,7 +301,7 @@ package Shared.AS3
       
       public function onEntryPress(event:MouseEvent) : *
       {
-         // method body index: 2493 method index: 2493
+
          event.stopPropagation();
          this.bMouseDrivenNav = true;
          this.onItemPress();
@@ -309,19 +309,19 @@ package Shared.AS3
       
       public function ClearList() : *
       {
-         // method body index: 2494 method index: 2494
+
          this.EntriesA.splice(0,this.EntriesA.length);
       }
       
       public function GetClipByIndex(auiIndex:uint) : BSScrollingListEntry
       {
-         // method body index: 2495 method index: 2495
+
          return auiIndex < this.EntryHolder_mc.numChildren?this.EntryHolder_mc.getChildAt(auiIndex) as BSScrollingListEntry:null;
       }
       
       public function FindClipForEntry(aEntryIndex:int) : BSScrollingListEntry
       {
-         // method body index: 2496 method index: 2496
+
          var e:* = undefined;
          var curClip:BSScrollingListEntry = null;
          if(!this.bUpdated)
@@ -349,14 +349,14 @@ package Shared.AS3
       
       public function GetEntryFromClipIndex(aiClipIndex:uint) : int
       {
-         // method body index: 2497 method index: 2497
+
          var clip:BSScrollingListEntry = this.GetClipByIndex(aiClipIndex);
          return !!clip?int(clip.itemIndex):-1;
       }
       
       public function onKeyDown(event:KeyboardEvent) : *
       {
-         // method body index: 2498 method index: 2498
+
          if(!this.bDisableInput)
          {
             if(event.keyCode == Keyboard.UP)
@@ -374,7 +374,7 @@ package Shared.AS3
       
       public function onKeyUp(event:KeyboardEvent) : *
       {
-         // method body index: 2499 method index: 2499
+
          if(!this.bDisableInput && !this.bDisableSelection && event.keyCode == Keyboard.ENTER)
          {
             this.onItemPress();
@@ -384,7 +384,7 @@ package Shared.AS3
       
       public function onMouseWheel(event:MouseEvent) : *
       {
-         // method body index: 2500 method index: 2500
+
          var scrollDistance:uint = 0;
          var prevScrollPos:* = undefined;
          var newScrollPos:* = undefined;
@@ -425,7 +425,7 @@ package Shared.AS3
       
       private function SetFocusUnderMouse() : *
       {
-         // method body index: 2501 method index: 2501
+
          var objectListEntry:BSScrollingListEntry = null;
          var borderObject:MovieClip = null;
          var testPoint:Point = null;
@@ -443,74 +443,74 @@ package Shared.AS3
       
       public function get hasBeenUpdated() : Boolean
       {
-         // method body index: 2502 method index: 2502
+
          return this.bUpdated;
       }
       
       public function get mouseDrivenNav() : Boolean
       {
-         // method body index: 2503 method index: 2503
+
          return this.bMouseDrivenNav;
       }
       
       public function get filterer() : ListFilterer
       {
-         // method body index: 2504 method index: 2504
+
          return this._filterer;
       }
       
       public function get itemsShown() : uint
       {
-         // method body index: 2505 method index: 2505
+
          return this.iListItemsShown;
       }
       
       public function get initialized() : Boolean
       {
-         // method body index: 2506 method index: 2506
+
          return this.bInitialized;
       }
       
       public function get selectedIndex() : int
       {
-         // method body index: 2507 method index: 2507
+
          return this.iSelectedIndex;
       }
       
       public function set selectedIndex(aiNewIndex:int) : *
       {
-         // method body index: 2508 method index: 2508
+
          this.doSetSelectedIndex(aiNewIndex);
       }
       
       public function get selectedClipIndex() : int
       {
-         // method body index: 2509 method index: 2509
+
          var selectedClip:BSScrollingListEntry = this.FindClipForEntry(this.iSelectedIndex);
          return selectedClip != null?int(selectedClip.clipIndex):-1;
       }
       
       public function set selectedClipIndex(aiNewIndex:int) : *
       {
-         // method body index: 2510 method index: 2510
+
          this.doSetSelectedIndex(this.GetEntryFromClipIndex(aiNewIndex));
       }
       
       public function set filterer(newFilter:ListFilterer) : *
       {
-         // method body index: 2511 method index: 2511
+
          this._filterer = newFilter;
       }
       
       public function get shownItemsHeight() : Number
       {
-         // method body index: 2512 method index: 2512
+
          return this.fShownItemsHeight;
       }
       
       protected function doSetSelectedIndex(aiNewIndex:int) : *
       {
-         // method body index: 2513 method index: 2513
+
          var ioldSelection:int = 0;
          var oldClip:BSScrollingListEntry = null;
          var currTopIndex:int = 0;
@@ -637,19 +637,19 @@ package Shared.AS3
       
       public function get scrollPosition() : uint
       {
-         // method body index: 2514 method index: 2514
+
          return this.iScrollPosition;
       }
       
       public function get maxScrollPosition() : uint
       {
-         // method body index: 2515 method index: 2515
+
          return this.iMaxScrollPosition;
       }
       
       public function set scrollPosition(aiNewPosition:uint) : *
       {
-         // method body index: 2516 method index: 2516
+
          if(aiNewPosition != this.iScrollPosition && aiNewPosition >= 0 && aiNewPosition <= this.iMaxScrollPosition)
          {
             this.updateScrollPosition(aiNewPosition);
@@ -658,26 +658,26 @@ package Shared.AS3
       
       protected function updateScrollPosition(aiPosition:uint) : *
       {
-         // method body index: 2517 method index: 2517
+
          this.iScrollPosition = aiPosition;
          this.UpdateList();
       }
       
       public function get selectedEntry() : Object
       {
-         // method body index: 2518 method index: 2518
+
          return this.EntriesA[this.iSelectedIndex];
       }
       
       public function get entryList() : Array
       {
-         // method body index: 2519 method index: 2519
+
          return this.EntriesA;
       }
       
       public function set entryList(anewArray:Array) : *
       {
-         // method body index: 2520 method index: 2520
+
          this.EntriesA = anewArray;
          if(this.EntriesA == null)
          {
@@ -687,25 +687,25 @@ package Shared.AS3
       
       public function get disableInput_Inspectable() : Boolean
       {
-         // method body index: 2521 method index: 2521
+
          return this.bDisableInput;
       }
       
       public function set disableInput_Inspectable(abFlag:Boolean) : *
       {
-         // method body index: 2522 method index: 2522
+
          this.bDisableInput = abFlag;
       }
       
       public function get textOption_Inspectable() : String
       {
-         // method body index: 2523 method index: 2523
+
          return this.strTextOption;
       }
       
       public function set textOption_Inspectable(strNewOption:String) : *
       {
-         // method body index: 2524 method index: 2524
+
          this.strTextOption = strNewOption;
          if(this.strTextOption == TEXT_OPTION_MULTILINE && this.Mask_mc == null)
          {
@@ -726,86 +726,86 @@ package Shared.AS3
       
       public function get verticalSpacing_Inspectable() : *
       {
-         // method body index: 2525 method index: 2525
+
          return this.fVerticalSpacing;
       }
       
       public function set verticalSpacing_Inspectable(afSpacing:Number) : *
       {
-         // method body index: 2526 method index: 2526
+
          this.fVerticalSpacing = afSpacing;
       }
       
       public function get numListItems_Inspectable() : uint
       {
-         // method body index: 2527 method index: 2527
+
          return this.uiNumListItems;
       }
       
       public function set numListItems_Inspectable(auiNumItems:uint) : *
       {
-         // method body index: 2528 method index: 2528
+
          this.uiNumListItems = auiNumItems;
       }
       
       public function get listEntryClass_Inspectable() : String
       {
-         // method body index: 2529 method index: 2529
+
          return this._itemRendererClassName;
       }
       
       public function set listEntryClass_Inspectable(strClass:String) : *
       {
-         // method body index: 2530 method index: 2530
+
          this.ListEntryClass = getDefinitionByName(strClass) as Class;
          this._itemRendererClassName = strClass;
       }
       
       public function get restoreListIndex_Inspectable() : Boolean
       {
-         // method body index: 2531 method index: 2531
+
          return this.bRestoreListIndex;
       }
       
       public function set restoreListIndex_Inspectable(abFlag:Boolean) : *
       {
-         // method body index: 2532 method index: 2532
+
          this.bRestoreListIndex = abFlag;
       }
       
       public function get disableSelection_Inspectable() : Boolean
       {
-         // method body index: 2533 method index: 2533
+
          return this.bDisableSelection;
       }
       
       public function set disableSelection_Inspectable(abFlag:Boolean) : *
       {
-         // method body index: 2534 method index: 2534
+
          this.bDisableSelection = abFlag;
       }
       
       public function set allowWheelScrollNoSelectionChange(abFlag:Boolean) : *
       {
-         // method body index: 2535 method index: 2535
+
          this.bAllowSelectionDisabledListNav = abFlag;
       }
       
       public function get reverseOrder() : Boolean
       {
-         // method body index: 2536 method index: 2536
+
          return this.bReverseOrder;
       }
       
       public function set reverseOrder(abFlag:Boolean) : *
       {
-         // method body index: 2537 method index: 2537
+
          this.bReverseOrder = abFlag;
       }
       
       public function SetNumListItems(auiNumItems:uint) : *
       {
-         // method body index: 2538 method index: 2538
+
          var i:uint = 0;
          var newClip:MovieClip = null;
          if(auiNumItems != this._DisplayNumListItems)
@@ -841,13 +841,13 @@ package Shared.AS3
       
       protected function GetNewListEntry(auiClipIndex:uint) : BSScrollingListEntry
       {
-         // method body index: 2539 method index: 2539
+
          return new this.ListEntryClass() as BSScrollingListEntry;
       }
       
       public function UpdateList() : *
       {
-         // method body index: 2540 method index: 2540
+
          var curClip:BSScrollingListEntry = null;
          var currEntry:BSScrollingListEntry = null;
          var faccumHeight:Number = 0;
@@ -923,7 +923,7 @@ package Shared.AS3
       
       protected function PositionEntries() : *
       {
-         // method body index: 2541 method index: 2541
+
          var clip:BSScrollingListEntry = null;
          var ientryCt:int = 0;
          var faccumHeight:Number = 0;
@@ -967,7 +967,7 @@ package Shared.AS3
       
       public function InvalidateData() : *
       {
-         // method body index: 2542 method index: 2542
+
          var iprevFilteredItem:int = 0;
          var prevSelectedClipIndex:int = !!this.bUpdated?int(this.selectedClipIndex):-1;
          var btriggerSelectionChangeEvent:Boolean = false;
@@ -1019,7 +1019,7 @@ package Shared.AS3
       
       public function UpdateSelectedEntry() : *
       {
-         // method body index: 2543 method index: 2543
+
          var selectedClip:BSScrollingListEntry = null;
          if(this.iSelectedIndex != -1)
          {
@@ -1033,7 +1033,7 @@ package Shared.AS3
       
       public function UpdateEntry(aEntryIndex:int) : *
       {
-         // method body index: 2544 method index: 2544
+
          var entry:Object = this.EntriesA[aEntryIndex];
          var clip:BSScrollingListEntry = this.FindClipForEntry(aEntryIndex);
          this.SetEntry(clip,entry);
@@ -1041,14 +1041,14 @@ package Shared.AS3
       
       public function onFilterChange() : *
       {
-         // method body index: 2545 method index: 2545
+
          this.iSelectedIndex = this._filterer.ClampIndex(this.iSelectedIndex);
          this.CalculateMaxScrollPosition();
       }
       
       protected function CalculateMaxScrollPosition() : *
       {
-         // method body index: 2546 method index: 2546
+
          var faccumHeight:Number = NaN;
          var iLastPageTopIndex:int = 0;
          var inumItemsShown:int = 0;
@@ -1102,7 +1102,7 @@ package Shared.AS3
       
       protected function GetEntryHeight(aiEntryIndex:Number) : Number
       {
-         // method body index: 2547 method index: 2547
+
          var tempClip:BSScrollingListEntry = this.GetClipByIndex(0);
          var returnHeight:Number = 0;
          if(tempClip != null)
@@ -1129,7 +1129,7 @@ package Shared.AS3
       
       public function moveSelectionUp() : *
       {
-         // method body index: 2548 method index: 2548
+
          var iprevFilterMatch:Number = NaN;
          var prevScrollPos:* = undefined;
          if(!this.bDisableSelection)
@@ -1158,7 +1158,7 @@ package Shared.AS3
       
       public function moveSelectionDown() : *
       {
-         // method body index: 2549 method index: 2549
+
          var inextFilterMatch:Number = NaN;
          var prevScrollPos:* = undefined;
          if(!this.bDisableSelection)
@@ -1187,7 +1187,7 @@ package Shared.AS3
       
       protected function onItemPress() : *
       {
-         // method body index: 2550 method index: 2550
+
          if(!this.bDisableInput && !this.bDisableSelection && this.iSelectedIndex != -1)
          {
             dispatchEvent(new Event(ITEM_PRESS,true,true));
@@ -1200,7 +1200,7 @@ package Shared.AS3
       
       protected function SetEntry(aEntryClip:BSScrollingListEntry, aEntryObject:Object) : *
       {
-         // method body index: 2551 method index: 2551
+
          if(aEntryClip != null)
          {
             aEntryClip.selected = aEntryObject == this.selectedEntry;
@@ -1217,14 +1217,14 @@ package Shared.AS3
       
       protected function onSetPlatform(event:Event) : *
       {
-         // method body index: 2552 method index: 2552
+
          var e:PlatformChangeEvent = event as PlatformChangeEvent;
          this.SetPlatform(e.uiPlatform,e.bPS3Switch,e.uiController,e.uiKeyboard);
       }
       
       public function SetPlatform(auiPlatform:uint, abPS3Switch:Boolean, auiController:uint, auiKeyboard:uint) : *
       {
-         // method body index: 2553 method index: 2553
+
          this.uiPlatform = auiPlatform;
          this.uiController = this.uiController;
          this.bMouseDrivenNav = this.uiController == 0?true:false;
@@ -1232,7 +1232,7 @@ package Shared.AS3
       
       protected function createMobileScrollingList() : void
       {
-         // method body index: 2554 method index: 2554
+
          var maskDimension:Number = NaN;
          var spaceBetweenButtons:Number = NaN;
          var scrollDirection:Number = NaN;
@@ -1263,7 +1263,7 @@ package Shared.AS3
       
       protected function destroyMobileScrollingList() : void
       {
-         // method body index: 2555 method index: 2555
+
          if(this.scrollList != null)
          {
             this.scrollList.removeEventListener(MobileScrollList.ITEM_SELECT,this.onMobileScrollListItemSelected);
@@ -1274,7 +1274,7 @@ package Shared.AS3
       
       protected function onMobileScrollListItemSelected(e:EventWithParams) : void
       {
-         // method body index: 2556 method index: 2556
+
          var renderer:MobileListItemRenderer = e.params.renderer as MobileListItemRenderer;
          if(renderer.data == null)
          {
@@ -1311,7 +1311,7 @@ package Shared.AS3
       
       protected function setMobileScrollingListData(data:Vector.<Object>) : void
       {
-         // method body index: 2557 method index: 2557
+
          if(data != null)
          {
             if(data.length > 0)

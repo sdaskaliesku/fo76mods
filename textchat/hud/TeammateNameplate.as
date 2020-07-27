@@ -166,7 +166,7 @@ package
       
       public function TeammateNameplate()
       {
-         // method body index: 3020 method index: 3020
+
          super();
          addFrameScript(0,this.frame1);
          Extensions.enabled = true;
@@ -213,11 +213,11 @@ package
       
       override public function onAddedToStage() : void
       {
-         // method body index: 3023 method index: 3023
+
          addEventListener(EmoteWidget.EVENT_CLEARED,function():// method body index: 3021 method index: 3021
          *
          {
-            // method body index: 3021 method index: 3021
+
             if(_EmoteVisible)
             {
                _EmoteVisible = false;
@@ -227,7 +227,7 @@ package
          addEventListener(EmoteWidget.EVENT_ACTIVE,function():// method body index: 3022 method index: 3022
          *
          {
-            // method body index: 3022 method index: 3022
+
             if(!_EmoteVisible)
             {
                _EmoteVisible = true;
@@ -238,20 +238,20 @@ package
       
       public function set entityID(param1:uint) : void
       {
-         // method body index: 3024 method index: 3024
+
          this._EntityID = param1;
          this.Emote_mc.entityID = param1;
       }
       
       public function get entityID() : uint
       {
-         // method body index: 3025 method index: 3025
+
          return this._EntityID;
       }
       
       public function set playerState(param1:String) : void
       {
-         // method body index: 3026 method index: 3026
+
          if(param1 != this._PlayerState)
          {
             this._PlayerState = param1;
@@ -261,7 +261,7 @@ package
       
       public function set wantedState(param1:String) : void
       {
-         // method body index: 3027 method index: 3027
+
          if(param1 != this._WantedState)
          {
             this._WantedState = param1;
@@ -271,7 +271,7 @@ package
       
       public function set displayName(param1:String) : void
       {
-         // method body index: 3028 method index: 3028
+
          if(param1 != this._Name)
          {
             this._Name = param1;
@@ -281,7 +281,7 @@ package
       
       public function set HPPct(param1:Number) : void
       {
-         // method body index: 3029 method index: 3029
+
          var _loc2_:Number = Math.min(Math.max(param1,0),1);
          if(_loc2_ != this._HPPercent)
          {
@@ -292,7 +292,7 @@ package
       
       public function set rads(param1:Number) : void
       {
-         // method body index: 3030 method index: 3030
+
          if(param1 != this._Rads)
          {
             this._Rads = param1;
@@ -302,7 +302,7 @@ package
       
       public function set distance(param1:Number) : void
       {
-         // method body index: 3031 method index: 3031
+
          if(param1 != this._Distance)
          {
             this._Distance = param1;
@@ -312,7 +312,7 @@ package
       
       public function set isLocalPlayer(param1:Boolean) : void
       {
-         // method body index: 3032 method index: 3032
+
          if(param1 != this._IsLocalPlayer)
          {
             this._IsLocalPlayer = param1;
@@ -322,7 +322,7 @@ package
       
       public function set inLOS(param1:Boolean) : void
       {
-         // method body index: 3033 method index: 3033
+
          if(param1 != this._inLOS)
          {
             this._inLOS = param1;
@@ -332,7 +332,7 @@ package
       
       public function set revengeTarget(param1:Boolean) : void
       {
-         // method body index: 3034 method index: 3034
+
          if(param1 != this._IsRevengeTarget)
          {
             this._IsRevengeTarget = param1;
@@ -342,7 +342,7 @@ package
       
       public function set isOnScreen(param1:Boolean) : void
       {
-         // method body index: 3035 method index: 3035
+
          if(param1 != this._IsOnScreen)
          {
             this._IsOnScreen = param1;
@@ -352,7 +352,7 @@ package
       
       public function set offScreenAngle(param1:Number) : void
       {
-         // method body index: 3036 method index: 3036
+
          if(param1 != this._OffScreenAngle)
          {
             this._OffScreenAngle = param1;
@@ -362,7 +362,7 @@ package
       
       public function set isBeyondRailLimits(param1:Boolean) : void
       {
-         // method body index: 3037 method index: 3037
+
          if(param1 != this._IsBeyondRailLimits)
          {
             this._IsBeyondRailLimits = param1;
@@ -372,7 +372,7 @@ package
       
       public function set isFriend(param1:Boolean) : void
       {
-         // method body index: 3038 method index: 3038
+
          if(param1 != this._IsFriend)
          {
             this._IsFriend = param1;
@@ -382,7 +382,7 @@ package
       
       public function set isFriendInvitePending(param1:Boolean) : void
       {
-         // method body index: 3039 method index: 3039
+
          if(param1 != this._isFriendInvitePending)
          {
             this._isFriendInvitePending = param1;
@@ -392,7 +392,7 @@ package
       
       public function set deadState(param1:uint) : void
       {
-         // method body index: 3040 method index: 3040
+
          if(param1 != this._deadState)
          {
             this._deadState = param1;
@@ -402,7 +402,7 @@ package
       
       public function set isTeammate(param1:Boolean) : void
       {
-         // method body index: 3041 method index: 3041
+
          if(param1 != this._isTeammate)
          {
             this._isTeammate = param1;
@@ -412,7 +412,7 @@ package
       
       public function set isLeader(param1:Boolean) : void
       {
-         // method body index: 3042 method index: 3042
+
          if(param1 != this._isLeader)
          {
             this._isLeader = param1;
@@ -422,7 +422,7 @@ package
       
       public function set isInConversation(param1:Boolean) : void
       {
-         // method body index: 3043 method index: 3043
+
          if(param1 != this._isInConversation)
          {
             this._isInConversation = param1;
@@ -432,7 +432,7 @@ package
       
       public function set isEventGroup(param1:Boolean) : void
       {
-         // method body index: 3044 method index: 3044
+
          if(param1 != this._isEventGroup)
          {
             this._isEventGroup = param1;
@@ -442,7 +442,7 @@ package
       
       public function set isHostile(param1:Boolean) : void
       {
-         // method body index: 3045 method index: 3045
+
          if(param1 != this._isHostile)
          {
             this._isHostile = param1;
@@ -452,7 +452,7 @@ package
       
       public function set isPvPFlagged(param1:Boolean) : void
       {
-         // method body index: 3046 method index: 3046
+
          if(param1 != this._isPvPFlagged)
          {
             this._isPvPFlagged = param1;
@@ -462,7 +462,7 @@ package
       
       public function set isSpeakingInSameChannel(param1:Boolean) : void
       {
-         // method body index: 3047 method index: 3047
+
          if(param1 != this._isSpeakingInSameChannel)
          {
             this._isSpeakingInSameChannel = param1;
@@ -472,7 +472,7 @@ package
       
       public function set voiceChatStatus(param1:uint) : void
       {
-         // method body index: 3048 method index: 3048
+
          if(param1 != this._voiceChatStatus)
          {
             this._voiceChatStatus = param1;
@@ -482,7 +482,7 @@ package
       
       public function set level(param1:uint) : void
       {
-         // method body index: 3049 method index: 3049
+
          if(param1 != this._Level)
          {
             this._Level = param1;
@@ -492,7 +492,7 @@ package
       
       public function set bounty(param1:uint) : void
       {
-         // method body index: 3050 method index: 3050
+
          if(param1 != this._Bounty)
          {
             this._Bounty = param1;
@@ -502,7 +502,7 @@ package
       
       public function set isNuclearWinterMode(param1:Boolean) : void
       {
-         // method body index: 3051 method index: 3051
+
          if(param1 != this._isNuclearWinterMode)
          {
             this._isNuclearWinterMode = param1;
@@ -512,7 +512,7 @@ package
       
       public function set teamType(param1:uint) : void
       {
-         // method body index: 3052 method index: 3052
+
          if(param1 != this._teamType)
          {
             this._teamType = param1;
@@ -522,7 +522,7 @@ package
       
       public function set isPublicTeamLeader(param1:Boolean) : void
       {
-         // method body index: 3053 method index: 3053
+
          if(param1 != this._isPublicTeamLeader)
          {
             this._isPublicTeamLeader = param1;
@@ -532,7 +532,7 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3054 method index: 3054
+
          var _loc15_:* = undefined;
          var _loc16_:* = undefined;
          var _loc1_:TextField = null;
@@ -823,13 +823,13 @@ package
       
       function __setTab_AlertText_tf_TeammateNameplate_AlertText_tf_wanted__0() : *
       {
-         // method body index: 3055 method index: 3055
+
          this.AlertText_tf.tabIndex = 11;
       }
       
       function frame1() : *
       {
-         // method body index: 3056 method index: 3056
+
          stop();
       }
    }

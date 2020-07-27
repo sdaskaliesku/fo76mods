@@ -13,20 +13,20 @@ package HUDMenu_fla
       
       public function QuestTrackerEntryTimer_341()
       {
-         // method body index: 1344 method index: 1344
+
          super();
          addFrameScript(0,this.frame1,35,this.frame36);
       }
       
       function frame1() : *
       {
-         // method body index: 1342 method index: 1342
+
          stop();
       }
       
       function frame36() : *
       {
-         // method body index: 1343 method index: 1343
+
          gotoAndPlay("warning");
       }
    }

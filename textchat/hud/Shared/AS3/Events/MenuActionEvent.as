@@ -112,7 +112,7 @@ package Shared.AS3.Events
       
       public function MenuActionEvent(param1:String, param2:String, param3:String, param4:Number = 0, param5:String = "", param6:Object = null, param7:Boolean = false, param8:Boolean = false)
       {
-         // method body index: 416 method index: 416
+
          this._action = param2;
          this._data = param3;
          this._index = param4;
@@ -123,67 +123,67 @@ package Shared.AS3.Events
       
       public function get Action() : *
       {
-         // method body index: 417 method index: 417
+
          return this._action;
       }
       
       public function set Action(param1:String) : *
       {
-         // method body index: 418 method index: 418
+
          this._action = param1;
       }
       
       public function get Data() : *
       {
-         // method body index: 419 method index: 419
+
          return this._data;
       }
       
       public function set Data(param1:String) : *
       {
-         // method body index: 420 method index: 420
+
          this._data = param1;
       }
       
       public function get Index() : *
       {
-         // method body index: 421 method index: 421
+
          return this._index;
       }
       
       public function set Index(param1:Number) : *
       {
-         // method body index: 422 method index: 422
+
          this._index = param1;
       }
       
       public function get Tooltip() : *
       {
-         // method body index: 423 method index: 423
+
          return this._tooltip;
       }
       
       public function set Tooltip(param1:String) : *
       {
-         // method body index: 424 method index: 424
+
          this._tooltip = param1;
       }
       
       public function get EntryObject() : *
       {
-         // method body index: 425 method index: 425
+
          return this._entryObject;
       }
       
       public function set EntryObject(param1:Object) : *
       {
-         // method body index: 426 method index: 426
+
          this._entryObject = param1;
       }
       
       override public function clone() : Event
       {
-         // method body index: 427 method index: 427
+
          return new MenuActionEvent(type,this._action,this._data,this._index,this._tooltip,this._entryObject,bubbles,cancelable);
       }
    }

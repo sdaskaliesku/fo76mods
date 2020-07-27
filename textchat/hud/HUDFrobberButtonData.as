@@ -29,25 +29,25 @@ package
       
       public function HUDFrobberButtonData()
       {
-         // method body index: 631 method index: 631
+
          super();
       }
       
       public function get canHold() : Boolean
       {
-         // method body index: 632 method index: 632
+
          return this.m_CanHold;
       }
       
       public function get canTap() : Boolean
       {
-         // method body index: 633 method index: 633
+
          return this.m_CanTap;
       }
       
       public function setInfo(param1:Boolean, param2:Object, param3:BSButtonHintData) : *
       {
-         // method body index: 634 method index: 634
+
          if(param1)
          {
             this.m_HintDataHold = param3;
@@ -70,7 +70,7 @@ package
       
       public function updateHoldPercent() : void
       {
-         // method body index: 635 method index: 635
+
          if(this.m_CanHold)
          {
             this.m_HintDataHold.holdPercent = this.heldPercent;
@@ -79,7 +79,7 @@ package
       
       public function get heldPercent() : Number
       {
-         // method body index: 636 method index: 636
+
          var _loc1_:Number = this.holdTimeElapsed;
          if(_loc1_ > 0)
          {
@@ -90,7 +90,7 @@ package
       
       public function get holdTimeElapsed() : Number
       {
-         // method body index: 637 method index: 637
+
          var _loc1_:* = undefined;
          if(this.m_CanHold && this.m_IsHolding)
          {
@@ -102,7 +102,7 @@ package
       
       public function get holdTimeMet() : Boolean
       {
-         // method body index: 638 method index: 638
+
          if(this.m_CanHold && this.m_IsHolding)
          {
             return this.holdTimeElapsed > this.m_HoldTime;
@@ -112,7 +112,7 @@ package
       
       public function set isHolding(param1:Boolean) : void
       {
-         // method body index: 639 method index: 639
+
          if(param1 != this.m_IsHolding)
          {
             if(param1)
@@ -129,7 +129,7 @@ package
       
       public function get isHolding() : Boolean
       {
-         // method body index: 640 method index: 640
+
          return this.m_IsHolding;
       }
    }

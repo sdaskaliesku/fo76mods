@@ -9,7 +9,7 @@ package
       
       public function HungerIcon()
       {
-         // method body index: 2139 method index: 2139
+
          super();
       }
    }

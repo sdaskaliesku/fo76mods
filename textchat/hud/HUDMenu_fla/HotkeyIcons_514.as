@@ -9,14 +9,14 @@ package HUDMenu_fla
       
       public function HotkeyIcons_514()
       {
-         // method body index: 1053 method index: 1053
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1054 method index: 1054
+
          stop();
       }
    }

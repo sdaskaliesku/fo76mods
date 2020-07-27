@@ -66,7 +66,7 @@ package
       
       public function ImageFixture()
       {
-         // method body index: 2689 method index: 2689
+
          this.m_ImgLoader = new Loader();
          super();
          addEventListener(Event.REMOVED_FROM_STAGE,this.onRemoveFromStageEvent);
@@ -74,37 +74,37 @@ package
       
       public function set onLoadAttemptComplete(param1:Function) : void
       {
-         // method body index: 2690 method index: 2690
+
          this.m_OnLoadAttemptComplete = param1;
       }
       
       public function set fixtureType(param1:int) : void
       {
-         // method body index: 2691 method index: 2691
+
          this.m_FixtureType = param1;
       }
       
       public function get fixtureType() : int
       {
-         // method body index: 2692 method index: 2692
+
          return this.m_FixtureType;
       }
       
       public function get clipInstance() : MovieClip
       {
-         // method body index: 2693 method index: 2693
+
          return this.m_ClipInstance;
       }
       
       public function get bitmapInstance() : Bitmap
       {
-         // method body index: 2694 method index: 2694
+
          return this.m_BitmapInstance;
       }
       
       public function LoadImageFixtureFromUIData(param1:Object, param2:String) : void
       {
-         // method body index: 2695 method index: 2695
+
          this.fixtureType = param1.fixtureType;
          switch(param1.fixtureType)
          {
@@ -124,7 +124,7 @@ package
       
       public function LoadSymbol(param1:String) : void
       {
-         // method body index: 2696 method index: 2696
+
          if(this.m_Image != param1 || this.m_State != SWF_LOADED)
          {
             this.destroyCurrent();
@@ -140,7 +140,7 @@ package
       
       public function LoadInternal(param1:String, param2:String) : void
       {
-         // method body index: 2697 method index: 2697
+
          if(this.m_Image != param1 || this.m_State != IN_LOADED)
          {
             this.destroyCurrent();
@@ -157,7 +157,7 @@ package
       
       public function LoadExternal(param1:String, param2:String) : void
       {
-         // method body index: 2698 method index: 2698
+
          if(this.m_Image != param1 || this.m_State != EX_LOADED)
          {
             this.destroyCurrent();
@@ -174,13 +174,13 @@ package
       
       public function Unload() : *
       {
-         // method body index: 2699 method index: 2699
+
          this.destroyCurrent();
       }
       
       private function destroyCurrent() : void
       {
-         // method body index: 2700 method index: 2700
+
          if(this.m_ClipInstance != null)
          {
             this.removeChild(this.m_ClipInstance);
@@ -194,7 +194,7 @@ package
       
       private function SymbolHelper(param1:String) : void
       {
-         // method body index: 2701 method index: 2701
+
          this.m_ClipInstance = this.setContainerIconClip(param1);
          if(!this.m_ClipInstance)
          {
@@ -205,7 +205,7 @@ package
       
       private function LoadBitmap() : *
       {
-         // method body index: 2702 method index: 2702
+
          BSUIDataManager.dispatchEvent(new CustomEvent(DEMAND_IMAGE,{
             "imageName":this.m_Image,
             "isExternal":this.m_State == EX_LOADED,
@@ -218,7 +218,7 @@ package
       
       private function UnloadBitmap() : *
       {
-         // method body index: 2703 method index: 2703
+
          if(this.m_BitmapInstance != null)
          {
             this.removeChild(this.m_BitmapInstance);
@@ -233,7 +233,7 @@ package
       
       private function onBitmapLoadFailed(param1:Event) : void
       {
-         // method body index: 2704 method index: 2704
+
          trace("WARNING: ImageFixture:onBitmapLoadFailed | " + this.m_Image);
          this.m_ImgLoader.contentLoaderInfo.removeEventListener(Event.COMPLETE,this.onBitmapLoaded);
          this.m_ImgLoader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR,this.onBitmapLoadFailed);
@@ -245,7 +245,7 @@ package
       
       private function onBitmapLoaded(param1:Event) : void
       {
-         // method body index: 2705 method index: 2705
+
          this.m_ImgLoader.contentLoaderInfo.removeEventListener(Event.COMPLETE,this.onBitmapLoaded);
          this.m_ImgLoader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR,this.onBitmapLoadFailed);
          BSUIDataManager.dispatchEvent(new CustomEvent(REGISTER_IMAGE,{
@@ -284,7 +284,7 @@ package
       
       private function onRemoveFromStageEvent(param1:Event) : void
       {
-         // method body index: 2706 method index: 2706
+
          this.m_ImgLoader.contentLoaderInfo.removeEventListener(Event.COMPLETE,this.onBitmapLoaded);
          this.m_ImgLoader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR,this.onBitmapLoadFailed);
          removeEventListener(Event.REMOVED_FROM_STAGE,this.onRemoveFromStageEvent);

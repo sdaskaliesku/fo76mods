@@ -41,7 +41,7 @@ package Shared.AS3
       
       public function BSScrollingListEntry()
       {
-         // method body index: 2290 method index: 2290
+
          super();
          Extensions.enabled = true;
          this.ORIG_BORDER_HEIGHT = this.border != null?Number(Number(this.border.height)):Number(Number(0));
@@ -63,102 +63,102 @@ package Shared.AS3
       
       public function Dtor() : *
       {
-         // method body index: 2291 method index: 2291
+
       }
       
       public function get parentClip() : MovieClip
       {
-         // method body index: 2292 method index: 2292
+
          return this._parentClip;
       }
       
       public function set parentClip(param1:MovieClip) : *
       {
-         // method body index: 2293 method index: 2293
+
          this._parentClip = param1;
       }
       
       public function get clipIndex() : uint
       {
-         // method body index: 2294 method index: 2294
+
          return this._clipIndex;
       }
       
       public function set clipIndex(param1:uint) : *
       {
-         // method body index: 2295 method index: 2295
+
          this._clipIndex = param1;
       }
       
       public function get clipRow() : uint
       {
-         // method body index: 2296 method index: 2296
+
          return this._clipRow;
       }
       
       public function set clipRow(param1:uint) : *
       {
-         // method body index: 2297 method index: 2297
+
          this._clipRow = param1;
       }
       
       public function get clipCol() : uint
       {
-         // method body index: 2298 method index: 2298
+
          return this._clipCol;
       }
       
       public function set clipCol(param1:uint) : *
       {
-         // method body index: 2299 method index: 2299
+
          this._clipCol = param1;
       }
       
       public function get itemIndex() : uint
       {
-         // method body index: 2300 method index: 2300
+
          return this._itemIndex;
       }
       
       public function set itemIndex(param1:uint) : *
       {
-         // method body index: 2301 method index: 2301
+
          this._itemIndex = param1;
       }
       
       public function get selected() : Boolean
       {
-         // method body index: 2302 method index: 2302
+
          return this._selected;
       }
       
       public function set selected(param1:Boolean) : *
       {
-         // method body index: 2303 method index: 2303
+
          this._selected = param1;
       }
       
       public function get hasDynamicHeight() : Boolean
       {
-         // method body index: 2304 method index: 2304
+
          return this._HasDynamicHeight;
       }
       
       public function get defaultHeight() : Number
       {
-         // method body index: 2305 method index: 2305
+
          return this.ORIG_BORDER_HEIGHT;
       }
       
       public function get defaultWidth() : Number
       {
-         // method body index: 2306 method index: 2306
+
          return this.ORIG_BORDER_WIDTH;
       }
       
       protected function SetColorTransform(param1:Object, param2:Boolean) : *
       {
-         // method body index: 2307 method index: 2307
+
          var _loc3_:ColorTransform = param1.transform.colorTransform;
          _loc3_.redOffset = !!param2?Number(Number(-255)):Number(Number(0));
          _loc3_.greenOffset = !!param2?Number(Number(-255)):Number(Number(0));
@@ -168,7 +168,7 @@ package Shared.AS3
       
       public function SetEntryText(param1:Object, param2:String) : *
       {
-         // method body index: 2308 method index: 2308
+
          var _loc3_:Number = NaN;
          if(this.textField != null && param1 != null && param1.hasOwnProperty("text"))
          {

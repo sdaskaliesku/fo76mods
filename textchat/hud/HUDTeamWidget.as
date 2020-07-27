@@ -65,7 +65,7 @@ package
       
       public function HUDTeamWidget()
       {
-         // method body index: 2919 method index: 2919
+
          this.partyListData = new Array();
          this.partyListMenuData = new Array();
          super();
@@ -85,11 +85,11 @@ package
       
       override public function onAddedToStage() : void
       {
-         // method body index: 2922 method index: 2922
+
          BSUIDataManager.Subscribe("PartyMenuList",function(param1:FromClientDataEvent):// method body index: 2920 method index: 2920
          *
          {
-            // method body index: 2920 method index: 2920
+
             m_TeamType = param1.data.teamType;
             partyListData = param1.data.members;
             partyMembers = param1.data.members;
@@ -113,7 +113,7 @@ package
          BSUIDataManager.Subscribe("HUDModeData",function(param1:FromClientDataEvent):// method body index: 2921 method index: 2921
          *
          {
-            // method body index: 2921 method index: 2921
+
             m_HudMode = param1.data.hudMode;
             SetIsDirty();
          });
@@ -121,7 +121,7 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 2923 method index: 2923
+
          var _loc1_:BSScrollingListEntry = null;
          var _loc2_:* = undefined;
          this.PartyList.visible = this.partyListMenuData.length > 0 && this.m_HudMode != HUDModes.INSPECT_MODE && this.m_HudMode != HUDModes.CONTAINER_MODE && this.m_HudMode != HUDModes.PERKS_MODE && this.m_HudMode != HUDModes.LEGENDARY_PERKS_MODE;
@@ -144,7 +144,7 @@ package
       
       private function UpdatePublicTeamsHeader() : void
       {
-         // method body index: 2924 method index: 2924
+
          var _loc1_:uint = 0;
          var _loc2_:String = null;
          var _loc3_:int = 0;
@@ -186,7 +186,7 @@ package
       
       private function onBondComplete(param1:Event) : void
       {
-         // method body index: 2925 method index: 2925
+
          this.UpdatePublicTeamsHeader();
       }
    }

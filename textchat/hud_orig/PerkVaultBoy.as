@@ -9,7 +9,7 @@ package
       
       public function PerkVaultBoy()
       {
-         // method body index: 3389 method index: 3389
+
          super();
       }
    }

@@ -9,7 +9,7 @@ package
       
       public function ActionPointBarSegment()
       {
-         // method body index: 705 method index: 705
+
          super();
       }
    }

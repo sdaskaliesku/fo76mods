@@ -57,7 +57,7 @@ package
       
       public function HealthMeter()
       {
-         // method body index: 3144 method index: 3144
+
          super();
          Extensions.enabled = true;
          if(this.OwnerInfo_mc)
@@ -78,7 +78,7 @@ package
       
       public function set IsHostile(value:Boolean) : *
       {
-         // method body index: 3145 method index: 3145
+
          if(this._IsHostile != value)
          {
             this._IsHostile = value;
@@ -89,7 +89,7 @@ package
       
       public function set IsFriendly(value:Boolean) : *
       {
-         // method body index: 3146 method index: 3146
+
          if(this._IsFriendly != value)
          {
             this._IsFriendly = value;
@@ -100,7 +100,7 @@ package
       
       public function set OwningPlayerName(aValue:String) : void
       {
-         // method body index: 3147 method index: 3147
+
          if(aValue != this._OwningPlayerName)
          {
             this._OwningPlayerName = aValue;
@@ -110,7 +110,7 @@ package
       
       public function set AvatarID(aValue:String) : void
       {
-         // method body index: 3148 method index: 3148
+
          if(aValue != this._AvatarID)
          {
             this._AvatarID = aValue;
@@ -120,7 +120,7 @@ package
       
       public function set IsBoss(value:Boolean) : *
       {
-         // method body index: 3149 method index: 3149
+
          if(this._IsBoss != value)
          {
             this._IsBoss = value;
@@ -131,7 +131,7 @@ package
       
       public function set IsAI(value:Boolean) : *
       {
-         // method body index: 3150 method index: 3150
+
          if(this._IsAI != value)
          {
             this._IsAI = value;
@@ -142,7 +142,7 @@ package
       
       public function set TargetLevel(value:int) : *
       {
-         // method body index: 3151 method index: 3151
+
          if(this._TargetLevel != value)
          {
             this._TargetLevel = value;
@@ -153,7 +153,7 @@ package
       
       public function set Bounty(value:int) : *
       {
-         // method body index: 3152 method index: 3152
+
          if(this._Bounty != value)
          {
             this._Bounty = value;
@@ -164,7 +164,7 @@ package
       
       public function set Wanted(value:Boolean) : *
       {
-         // method body index: 3153 method index: 3153
+
          if(this._Wanted != value)
          {
             this._Wanted = value;
@@ -175,7 +175,7 @@ package
       
       private function UpdateBarFlag() : *
       {
-         // method body index: 3154 method index: 3154
+
          if(this._IsHostile || this._Wanted)
          {
             gotoAndStop("Hostile");
@@ -206,13 +206,13 @@ package
       
       public function SetMeterPercent(afPercent:Number) : *
       {
-         // method body index: 3155 method index: 3155
+
          this.MeterBar_mc.Percent = afPercent / 100;
       }
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3156 method index: 3156
+
          var displayTF:TextField = null;
          if(this.OwnerInfo_mc)
          {

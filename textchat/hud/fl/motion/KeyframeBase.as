@@ -67,7 +67,7 @@ package fl.motion
       
       public function KeyframeBase(param1:XML = null)
       {
-         // method body index: 241 method index: 241
+
          super();
          this.filters = [];
          this.adjustColorObjects = new Dictionary();
@@ -75,13 +75,13 @@ package fl.motion
       
       public function get index() : int
       {
-         // method body index: 242 method index: 242
+
          return this._index;
       }
       
       public function set index(param1:int) : void
       {
-         // method body index: 243 method index: 243
+
          this._index = param1 < 0?0:int(int(param1));
          if(this._index == 0)
          {
@@ -91,13 +91,13 @@ package fl.motion
       
       public function get rotation() : Number
       {
-         // method body index: 244 method index: 244
+
          return this.skewY;
       }
       
       public function set rotation(param1:Number) : void
       {
-         // method body index: 245 method index: 245
+
          if(isNaN(this.skewX) || isNaN(this.skewY))
          {
             this.skewX = param1;
@@ -111,7 +111,7 @@ package fl.motion
       
       private function setDefaults() : void
       {
-         // method body index: 246 method index: 246
+
          if(isNaN(this.x))
          {
             this.x = 0;
@@ -152,31 +152,31 @@ package fl.motion
       
       public function getValue(param1:String) : Number
       {
-         // method body index: 247 method index: 247
+
          return Number(this[param1]);
       }
       
       public function setValue(param1:String, param2:Number) : void
       {
-         // method body index: 248 method index: 248
+
          this[param1] = param2;
       }
       
       protected function hasTween() : Boolean
       {
-         // method body index: 249 method index: 249
+
          return false;
       }
       
       public function affectsTweenable(param1:String = "") : Boolean
       {
-         // method body index: 250 method index: 250
+
          return !param1 || !isNaN(this[param1]) || param1 == "color" && this.color || param1 == "filters" && this.filters.length || param1 == "matrix3D" && this.matrix3D || param1 == "matrix" && this.matrix || this.blank || this.hasTween();
       }
       
       public function setAdjustColorProperty(param1:int, param2:String, param3:*) : void
       {
-         // method body index: 251 method index: 251
+
          var _loc4_:ColorMatrixFilter = null;
          var _loc5_:Array = null;
          if(param1 >= this.filters.length)
@@ -219,7 +219,7 @@ package fl.motion
       
       public function get tweensLength() : int
       {
-         // method body index: 252 method index: 252
+
          return 0;
       }
    }

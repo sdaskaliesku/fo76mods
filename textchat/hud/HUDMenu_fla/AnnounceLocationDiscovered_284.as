@@ -13,20 +13,20 @@ package HUDMenu_fla
       
       public function AnnounceLocationDiscovered_284()
       {
-         // method body index: 931 method index: 931
+
          super();
          addFrameScript(0,this.frame1,135,this.frame136);
       }
       
       function frame1() : *
       {
-         // method body index: 932 method index: 932
+
          stop();
       }
       
       function frame136() : *
       {
-         // method body index: 933 method index: 933
+
          stop();
       }
    }

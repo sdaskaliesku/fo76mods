@@ -9,7 +9,7 @@ package
       
       public function FlamerIcon()
       {
-         // method body index: 875 method index: 875
+
          super();
       }
    }

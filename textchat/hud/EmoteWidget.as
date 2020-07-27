@@ -49,7 +49,7 @@ package
       
       public function EmoteWidget()
       {
-         // method body index: 2361 method index: 2361
+
          super();
          addEventListener(Event.ADDED_TO_STAGE,this.onAddedToStage);
          addEventListener(Event.REMOVED_FROM_STAGE,this.onRemovedFromStage);
@@ -57,26 +57,26 @@ package
       
       public function get maxEmoteWidth() : Number
       {
-         // method body index: 2362 method index: 2362
+
          return this.m_MaxEmoteWidth;
       }
       
       public function get maxEmoteHeight() : Number
       {
-         // method body index: 2363 method index: 2363
+
          return this.m_MaxEmoteHeight;
       }
       
       public function set displayMax(param1:uint) : void
       {
-         // method body index: 2364 method index: 2364
+
          this.m_DisplayMax = param1;
          this.clear();
       }
       
       public function set scale(param1:Number) : void
       {
-         // method body index: 2365 method index: 2365
+
          this.m_Scale = param1;
          var _loc2_:int = 0;
          while(_loc2_ < this.numChildren)
@@ -89,7 +89,7 @@ package
       
       public function set align(param1:uint) : void
       {
-         // method body index: 2366 method index: 2366
+
          if(param1 != this.m_Align)
          {
             this.m_Align = param1;
@@ -102,25 +102,25 @@ package
       
       public function set entityID(param1:uint) : void
       {
-         // method body index: 2367 method index: 2367
+
          this.m_EntityID = param1;
       }
       
       public function get entityID() : uint
       {
-         // method body index: 2368 method index: 2368
+
          return this.m_EntityID;
       }
       
       private function getChildElement(param1:int) : EmoteContainer
       {
-         // method body index: 2369 method index: 2369
+
          return this.getChildAt(param1) as EmoteContainer;
       }
       
       private function updatePositions() : void
       {
-         // method body index: 2370 method index: 2370
+
          var _loc1_:Number = NaN;
          var _loc2_:EmoteContainer = null;
          var _loc3_:Number = NaN;
@@ -207,7 +207,7 @@ package
       
       private function clear() : void
       {
-         // method body index: 2371 method index: 2371
+
          var _loc1_:int = 0;
          while(_loc1_ < this.numChildren)
          {
@@ -219,7 +219,7 @@ package
       
       public function removeEntry(param1:EmoteContainer, param2:Boolean = true) : void
       {
-         // method body index: 2372 method index: 2372
+
          this.removeChild(param1);
          if(this.numChildren == 0)
          {
@@ -230,7 +230,7 @@ package
       
       private function onEmoteUpdate(param1:FromClientDataEvent) : *
       {
-         // method body index: 2373 method index: 2373
+
          var _loc2_:String = null;
          var _loc3_:EmoteContainer = null;
          var _loc4_:EmoteContainer = null;
@@ -282,13 +282,13 @@ package
       
       public function onAddedToStage(param1:Event) : void
       {
-         // method body index: 2374 method index: 2374
+
          this.m_ProviderCallback = BSUIDataManager.Subscribe("ActiveEmoteData",this.onEmoteUpdate);
       }
       
       public function onRemovedFromStage(param1:Event) : void
       {
-         // method body index: 2375 method index: 2375
+
          if(this.m_ProviderCallback != null)
          {
             BSUIDataManager.Unsubscribe("ActiveEmoteData",this.onEmoteUpdate);

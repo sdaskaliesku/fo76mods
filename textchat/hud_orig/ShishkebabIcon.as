@@ -9,7 +9,7 @@ package
       
       public function ShishkebabIcon()
       {
-         // method body index: 2315 method index: 2315
+
          super();
       }
    }

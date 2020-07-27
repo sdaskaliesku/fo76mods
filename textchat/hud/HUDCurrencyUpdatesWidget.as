@@ -59,7 +59,7 @@ package
       
       public function HUDCurrencyUpdatesWidget()
       {
-         // method body index: 858 method index: 858
+
          super();
          addFrameScript(0,this.frame1,38,this.frame39,50,this.frame51,58,this.frame59,68,this.frame69);
          addEventListener(Event.ADDED_TO_STAGE,this.onAddedToStage);
@@ -69,13 +69,13 @@ package
       
       private function onDataUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 859 method index: 859
+
          this.evaluateQueue();
       }
       
       private function evaluateQueue() : void
       {
-         // method body index: 860 method index: 860
+
          var _loc1_:Array = null;
          var _loc2_:Object = null;
          var _loc3_:uint = 0;
@@ -127,7 +127,7 @@ package
       
       private function animateTransaction(param1:Object) : void
       {
-         // method body index: 861 method index: 861
+
          this.m_IsBusy = true;
          this.m_CurTransaction = param1;
          if(this.m_CurrencyIconInstance != null)
@@ -192,7 +192,7 @@ package
       
       private function onAddedToStage(param1:Event) : void
       {
-         // method body index: 862 method index: 862
+
          var _loc2_:FrameLabel = null;
          this.m_Transactions = BSUIDataManager.GetDataFromClient("CurrencyData");
          var _loc3_:uint = 0;
@@ -214,7 +214,7 @@ package
       
       private function rollAnimationUpdate(param1:Event) : *
       {
-         // method body index: 863 method index: 863
+
          var _loc2_:Number = NaN;
          if(this.m_CurTransaction != null)
          {
@@ -232,19 +232,19 @@ package
       
       public function onNewCapsFadeOut() : void
       {
-         // method body index: 864 method index: 864
+
          GlobalFunc.PlayMenuSound("UICapsDisappear");
       }
       
       public function onBeginRollAnimation() : void
       {
-         // method body index: 865 method index: 865
+
          addEventListener(Event.ENTER_FRAME,this.rollAnimationUpdate);
       }
       
       public function onFadeout() : void
       {
-         // method body index: 866 method index: 866
+
          removeEventListener(Event.ENTER_FRAME,this.rollAnimationUpdate);
          if(!this.m_CurTransaction.isMaxEnd)
          {
@@ -262,38 +262,38 @@ package
       
       public function onAnimEnd() : void
       {
-         // method body index: 867 method index: 867
+
          this.m_IsBusy = false;
          this.evaluateQueue();
       }
       
       function frame1() : *
       {
-         // method body index: 868 method index: 868
+
          stop();
       }
       
       function frame39() : *
       {
-         // method body index: 869 method index: 869
+
          this.onNewCapsFadeOut();
       }
       
       function frame51() : *
       {
-         // method body index: 870 method index: 870
+
          this.onBeginRollAnimation();
       }
       
       function frame59() : *
       {
-         // method body index: 871 method index: 871
+
          this.onFadeout();
       }
       
       function frame69() : *
       {
-         // method body index: 872 method index: 872
+
          stop();
          this.onAnimEnd();
       }

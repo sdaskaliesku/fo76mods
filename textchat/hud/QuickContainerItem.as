@@ -52,7 +52,7 @@ package
       
       public function QuickContainerItem()
       {
-         // method body index: 2955 method index: 2955
+
          super();
          this.BaseTextFieldWidth = this.ItemName_tf.width;
          Extensions.enabled = true;
@@ -66,7 +66,7 @@ package
       
       protected function updateConditionMeter(param1:Object) : void
       {
-         // method body index: 2956 method index: 2956
+
          if(param1.maximumHealth > 0 && this.ConditionMeterEnabled)
          {
             GlobalFunc.updateConditionMeter(this.ConditionMeter_mc,param1.currentHealth,param1.maximumHealth,param1.durability);
@@ -79,33 +79,33 @@ package
       
       public function get data() : QuickContainerItemData
       {
-         // method body index: 2957 method index: 2957
+
          return this._data;
       }
       
       public function set data(param1:QuickContainerItemData) : void
       {
-         // method body index: 2958 method index: 2958
+
          this._data = param1;
          SetIsDirty();
       }
       
       public function get selected() : Boolean
       {
-         // method body index: 2959 method index: 2959
+
          return this._selected;
       }
       
       public function set selected(param1:Boolean) : void
       {
-         // method body index: 2960 method index: 2960
+
          this._selected = param1;
          SetIsDirty();
       }
       
       private function selectedColorTransform(param1:MovieClip, param2:Boolean) : void
       {
-         // method body index: 2961 method index: 2961
+
          var _loc3_:ColorTransform = param1.transform.colorTransform;
          _loc3_.redOffset = !!param2?Number(Number(255)):Number(Number(0));
          _loc3_.greenOffset = !!param2?Number(Number(255)):Number(Number(0));
@@ -115,7 +115,7 @@ package
       
       private function BuildIconList() : Array
       {
-         // method body index: 2962 method index: 2962
+
          var _loc1_:Array = [];
          _loc1_.push({
             "clip":this.FavoriteIcon_mc,
@@ -146,7 +146,7 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 2963 method index: 2963
+
          var _loc1_:Number = NaN;
          var _loc2_:Boolean = false;
          var _loc3_:Array = null;
@@ -252,7 +252,7 @@ package
       
       public function AddIconsToEntry(param1:Array) : *
       {
-         // method body index: 2964 method index: 2964
+
          var _loc2_:Object = null;
          var _loc3_:* = this.ItemName_tf.getLineMetrics(0).width + this.ItemName_tf.getLineMetrics(0).x + this.ItemName_tf.x + 2;
          var _loc4_:* = 0;

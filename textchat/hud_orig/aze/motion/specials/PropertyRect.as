@@ -16,20 +16,20 @@ package aze.motion.specials
       
       public function PropertyRect(target:Object, property:*, value:*, next:EazeSpecial)
       {
-         // method body index: 505 method index: 505
+
          super(target,property,value,next);
          this.targetRect = value && value is Rectangle?value.clone():new Rectangle();
       }
       
       public static function register() : void
       {
-         // method body index: 504 method index: 504
+
          EazeTween.specialProperties["__rect"] = PropertyRect;
       }
       
       override public function init(reverse:Boolean) : void
       {
-         // method body index: 506 method index: 506
+
          this.original = target[property] is Rectangle?target[property].clone() as Rectangle:new Rectangle(0,0,target.width,target.height);
          if(reverse)
          {
@@ -42,7 +42,7 @@ package aze.motion.specials
       
       override public function update(ke:Number, isComplete:Boolean) : void
       {
-         // method body index: 507 method index: 507
+
          if(isComplete)
          {
             target.scrollRect = this.targetRect;
@@ -59,7 +59,7 @@ package aze.motion.specials
       
       override public function dispose() : void
       {
-         // method body index: 508 method index: 508
+
          this.original = this.targetRect = this.tmpRect = null;
          super.dispose();
       }

@@ -9,7 +9,7 @@ package
       
       public function HUDCrosshair()
       {
-         // method body index: 2891 method index: 2891
+
          super();
       }
    }

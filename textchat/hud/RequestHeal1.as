@@ -9,7 +9,7 @@ package
       
       public function RequestHeal1()
       {
-         // method body index: 2228 method index: 2228
+
          super();
       }
    }

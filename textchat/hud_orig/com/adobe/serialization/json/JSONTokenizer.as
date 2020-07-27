@@ -20,7 +20,7 @@ package com.adobe.serialization.json
       
       public function JSONTokenizer(s:String, strict:Boolean)
       {
-         // method body index: 337 method index: 337
+
          super();
          this.jsonString = s;
          this.strict = strict;
@@ -30,7 +30,7 @@ package com.adobe.serialization.json
       
       public function getNextToken() : JSONToken
       {
-         // method body index: 338 method index: 338
+
          var possibleTrue:String = null;
          var possibleFalse:String = null;
          var possibleNull:String = null;
@@ -133,7 +133,7 @@ package com.adobe.serialization.json
       
       private final function readString() : JSONToken
       {
-         // method body index: 339 method index: 339
+
          var backspaceCount:int = 0;
          var backspaceIndex:int = 0;
          var quoteIndex:int = this.loc;
@@ -168,7 +168,7 @@ package com.adobe.serialization.json
       
       public function unescapeString(input:String) : String
       {
-         // method body index: 340 method index: 340
+
          var nextSubstringStartPosition:int = 0;
          var escapedChar:String = null;
          var hexValue:String = null;
@@ -253,7 +253,7 @@ package com.adobe.serialization.json
       
       private final function readNumber() : JSONToken
       {
-         // method body index: 341 method index: 341
+
          var input:* = "";
          if(this.ch == "-")
          {
@@ -344,13 +344,13 @@ package com.adobe.serialization.json
       
       private final function nextChar() : String
       {
-         // method body index: 342 method index: 342
+
          return this.ch = this.jsonString.charAt(this.loc++);
       }
       
       private final function skipIgnored() : void
       {
-         // method body index: 343 method index: 343
+
          var originalLoc:int = 0;
          do
          {
@@ -364,7 +364,7 @@ package com.adobe.serialization.json
       
       private function skipComments() : void
       {
-         // method body index: 344 method index: 344
+
          if(this.ch == "/")
          {
             this.nextChar();
@@ -410,7 +410,7 @@ package com.adobe.serialization.json
       
       private final function skipWhite() : void
       {
-         // method body index: 345 method index: 345
+
          while(this.isWhiteSpace(this.ch))
          {
             this.nextChar();
@@ -419,7 +419,7 @@ package com.adobe.serialization.json
       
       private final function isWhiteSpace(ch:String) : Boolean
       {
-         // method body index: 346 method index: 346
+
          if(ch == " " || ch == "\t" || ch == "\n" || ch == "\r")
          {
             return true;
@@ -433,19 +433,19 @@ package com.adobe.serialization.json
       
       private final function isDigit(ch:String) : Boolean
       {
-         // method body index: 347 method index: 347
+
          return ch >= "0" && ch <= "9";
       }
       
       private final function isHexDigit(ch:String) : Boolean
       {
-         // method body index: 348 method index: 348
+
          return this.isDigit(ch) || ch >= "A" && ch <= "F" || ch >= "a" && ch <= "f";
       }
       
       public final function parseError(message:String) : void
       {
-         // method body index: 349 method index: 349
+
          throw new JSONParseError(message,this.loc,this.jsonString);
       }
    }

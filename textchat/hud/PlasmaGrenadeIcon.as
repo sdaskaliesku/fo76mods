@@ -9,7 +9,7 @@ package
       
       public function PlasmaGrenadeIcon()
       {
-         // method body index: 2195 method index: 2195
+
          super();
       }
    }

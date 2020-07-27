@@ -16,7 +16,7 @@ package
       
       public function Subtitles()
       {
-         // method body index: 3065 method index: 3065
+
          super();
          this.SpeakerName_tf.autoSize = TextFieldAutoSize.CENTER;
          this.SubtitleText_tf.autoSize = TextFieldAutoSize.NONE;
@@ -24,7 +24,7 @@ package
       
       public function set VerticalAutoSize(vautoSize:String) : *
       {
-         // method body index: 3066 method index: 3066
+
          TextFieldEx.setVerticalAutoSize(this.SubtitleText_tf,vautoSize);
       }
    }

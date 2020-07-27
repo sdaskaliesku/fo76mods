@@ -12,7 +12,7 @@ package
       
       public function HUDConditionBoyWidget()
       {
-         // method body index: 2937 method index: 2937
+
          super();
          this.ConditionBoy_mc.x = -50;
          this.ConditionBoy_mc.y = 80;

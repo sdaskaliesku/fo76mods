@@ -84,7 +84,7 @@ package
       
       public function CrosshairBase()
       {
-         // method body index: 2814 method index: 2814
+
          this._collapseDelayTimer = new Timer(COLLAPSE_DELAY_SEC,1);
          super();
          this._currentAnimStart = new String();
@@ -104,7 +104,7 @@ package
       
       public function set targetIsHostile(param1:Boolean) : void
       {
-         // method body index: 2815 method index: 2815
+
          if(this._targetIsHostile != param1)
          {
             this._targetIsHostile = param1;
@@ -122,13 +122,13 @@ package
       
       public function get targetIsHostile() : Boolean
       {
-         // method body index: 2816 method index: 2816
+
          return this._targetIsHostile;
       }
       
       public function set requestedState(param1:String) : void
       {
-         // method body index: 2817 method index: 2817
+
          if(param1 != this._requestedState)
          {
             this._requestedState = param1;
@@ -138,7 +138,7 @@ package
       
       public function set requestedRadius(param1:Number) : void
       {
-         // method body index: 2818 method index: 2818
+
          if(param1 != this._requestedRadius)
          {
             this._requestedRadius = param1;
@@ -148,20 +148,20 @@ package
       
       private function onTargetDataUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 2819 method index: 2819
+
          this.targetIsHostile = param1.data.isHostile;
       }
       
       private function onAnimationComplete(param1:Event) : *
       {
-         // method body index: 2820 method index: 2820
+
          this._currentState = this._currentAnimFinish;
          this.StartNextClip();
       }
       
       private function StartNextClip() : *
       {
-         // method body index: 2821 method index: 2821
+
          var _loc1_:MovieClip = null;
          var _loc2_:* = false;
          this.CrosshairTicks_mc.visible = false;
@@ -195,7 +195,7 @@ package
       
       private function RepositionCrosshairTicks(param1:Number, param2:Function = null) : void
       {
-         // method body index: 2822 method index: 2822
+
          var _loc3_:EazeTween = eaze(this.CrosshairTicks_mc.Up).to(EAZE_TIME_SEC,{"y":-param1}).easing(Quadratic.easeIn);
          eaze(this.CrosshairTicks_mc.Down).to(EAZE_TIME_SEC,{"y":param1}).easing(Quadratic.easeIn);
          eaze(this.CrosshairTicks_mc.Left).to(EAZE_TIME_SEC,{"x":-param1}).easing(Quadratic.easeIn);
@@ -208,7 +208,7 @@ package
       
       private function BeginExpandingTicks() : void
       {
-         // method body index: 2823 method index: 2823
+
          this.CrosshairTicks_mc.visible = true;
          this.CrosshairClips_mc.visible = false;
          this.RepositionCrosshairTicks(this._requestedRadius);
@@ -216,7 +216,7 @@ package
       
       private function BeginCollapsingTicks() : void
       {
-         // method body index: 2824 method index: 2824
+
          this.CrosshairTicks_mc.visible = true;
          this.CrosshairClips_mc.visible = false;
          this.RepositionCrosshairTicks(DEFAULT_TICK_RADIUS,this.StartNextClip);
@@ -224,7 +224,7 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 2825 method index: 2825
+
          if(this._activeClipName == CLIPNAME_STANDARD_STANDARD)
          {
             if(this._requestedState != STATE_STANDARD)

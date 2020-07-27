@@ -16,20 +16,20 @@ package HUDMenu_fla
       
       public function RevivePrompt_253()
       {
-         // method body index: 1392 method index: 1392
+
          super();
          addFrameScript(0,this.frame1,99,this.frame100);
       }
       
       function frame1() : *
       {
-         // method body index: 1390 method index: 1390
+
          stop();
       }
       
       function frame100() : *
       {
-         // method body index: 1391 method index: 1391
+
          gotoAndPlay("idle");
       }
    }

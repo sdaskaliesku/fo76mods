@@ -9,7 +9,7 @@ package
       
       public function GatlingLaserIcon()
       {
-         // method body index: 887 method index: 887
+
          super();
       }
    }

@@ -43,7 +43,7 @@ package
       
       public function HUDChatWidget()
       {
-         // method body index: 2860 method index: 2860
+
          super();
          Extensions.enabled = true;
          this.ChatMessageArray = new Array();
@@ -59,7 +59,7 @@ package
       
       public function setIniProperties(param1:*, param2:*, param3:*, param4:*, param5:*, param6:*, param7:*) : *
       {
-         // method body index: 2861 method index: 2861
+
          this.ChatText_tf.alpha = param1;
          this.ChatText_tf.background = param3;
          this.ChatText_tf.backgroundColor = param2;
@@ -78,24 +78,24 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 2862 method index: 2862
+
       }
       
       public function chatIsOpen() : *
       {
-         // method body index: 2863 method index: 2863
+
          this.chatOpen = true;
       }
       
       public function chatisClosed() : *
       {
-         // method body index: 2864 method index: 2864
+
          this.chatOpen = false;
       }
       
       public function updateChat() : *
       {
-         // method body index: 2865 method index: 2865
+
          var _loc1_:Number = NaN;
          if(this.bScrolling == false)
          {
@@ -157,79 +157,79 @@ package
       
       public function disableGlobal(param1:*) : *
       {
-         // method body index: 2866 method index: 2866
+
          this.bGlobalOn = param1;
       }
       
       public function disableTrade(param1:*) : *
       {
-         // method body index: 2867 method index: 2867
+
          this.bTradeOn = param1;
       }
       
       public function disableEU(param1:*) : *
       {
-         // method body index: 2868 method index: 2868
+
          this.bEUOn = param1;
       }
       
       public function startChat() : *
       {
-         // method body index: 2869 method index: 2869
+
          clearTimeout(this.timeOut);
       }
       
       public function endChat() : *
       {
-         // method body index: 2870 method index: 2870
+
          clearTimeout(this.timeOut);
          this.timeOut = setTimeout(this.hideChat,this.DefaultOnscreenTime);
       }
       
       public function setTimer(param1:*) : *
       {
-         // method body index: 2871 method index: 2871
+
          var _loc2_:* = parseInt(param1) * 1000;
          this.DefaultOnscreenTime = _loc2_;
       }
       
       public function resetScrolling() : *
       {
-         // method body index: 2872 method index: 2872
+
          this.bScrolling = false;
       }
       
       public function hideChat() : *
       {
-         // method body index: 2873 method index: 2873
+
          this.bVarChatVisible = false;
          this.ChatText_tf.visible = false;
       }
       
       public function removeChatMessage() : *
       {
-         // method body index: 2874 method index: 2874
+
          this.ChatMessageArray.shift();
          this.updateChat();
       }
       
       public function scrollUp() : *
       {
-         // method body index: 2875 method index: 2875
+
          this.ChatText_tf.scrollV--;
          this.bScrolling = true;
       }
       
       public function scrollDown() : *
       {
-         // method body index: 2876 method index: 2876
+
          this.ChatText_tf.scrollV++;
          this.bScrolling = true;
       }
       
       public function addChatMessage(param1:String, param2:String, param3:Number, param4:String) : *
       {
-         // method body index: 2877 method index: 2877
+
          var _loc5_:* = new String();
          var _loc6_:String = "[Local]";
          var _loc7_:String = "[Global]";

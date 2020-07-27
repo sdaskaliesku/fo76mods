@@ -16,7 +16,7 @@ package aze.motion.specials
       
       public function PropertyTint(target:Object, property:*, value:*, next:EazeSpecial)
       {
-         // method body index: 492 method index: 492
+
          var mix:Number = NaN;
          var amix:Number = NaN;
          var color:uint = 0;
@@ -65,13 +65,13 @@ package aze.motion.specials
       
       public static function register() : void
       {
-         // method body index: 491 method index: 491
+
          EazeTween.specialProperties.tint = PropertyTint;
       }
       
       override public function init(reverse:Boolean) : void
       {
-         // method body index: 493 method index: 493
+
          if(reverse)
          {
             this.start = this.tvalue;
@@ -91,7 +91,7 @@ package aze.motion.specials
       
       override public function update(ke:Number, isComplete:Boolean) : void
       {
-         // method body index: 494 method index: 494
+
          var t:ColorTransform = target.transform.colorTransform;
          t.redMultiplier = this.start.redMultiplier + this.delta.redMultiplier * ke;
          t.greenMultiplier = this.start.greenMultiplier + this.delta.greenMultiplier * ke;
@@ -104,7 +104,7 @@ package aze.motion.specials
       
       override public function dispose() : void
       {
-         // method body index: 495 method index: 495
+
          this.start = this.delta = null;
          this.tvalue = null;
          super.dispose();

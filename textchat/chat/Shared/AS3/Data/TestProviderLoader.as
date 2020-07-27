@@ -14,7 +14,7 @@ package Shared.AS3.Data
       
       public function TestProviderLoader(param1:String, param2:UIDataFromClient)
       {
-         // method body index: 257 method index: 257
+
          super();
          data = new Object();
          this.m_ProviderName = param1;
@@ -23,19 +23,19 @@ package Shared.AS3.Data
       
       override public function load(param1:URLRequest) : void
       {
-         // method body index: 258 method index: 258
+
          super.load(param1);
       }
       
       public function get providerName() : String
       {
-         // method body index: 259 method index: 259
+
          return this.m_ProviderName;
       }
       
       public function get fromClient() : UIDataFromClient
       {
-         // method body index: 260 method index: 260
+
          return this.m_FromClient;
       }
    }

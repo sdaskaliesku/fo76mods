@@ -9,7 +9,7 @@ package
       
       public function StimpakIcon()
       {
-         // method body index: 2261 method index: 2261
+
          super();
       }
    }

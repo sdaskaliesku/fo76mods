@@ -19,14 +19,14 @@ package
       
       public function DamageNumbers()
       {
-         // method body index: 852 method index: 852
+
          this.DamageClipVector = new Vector.<MovieClip>();
          super();
          addFrameScript(0,this.frame1);
          BSUIDataManager.Subscribe("DamageNumberUIData",function(event:FromClientDataEvent):// method body index: 851 method index: 851
          *
          {
-            // method body index: 851 method index: 851
+
             if(event.data != null)
             {
                _DamageNumberUIData = event.data;
@@ -37,13 +37,13 @@ package
       
       public function TestFunction() : *
       {
-         // method body index: 850 method index: 850
+
          trace("test function called.");
       }
       
       public function RefreshView() : *
       {
-         // method body index: 853 method index: 853
+
          var obj:Object = null;
          if(this._DamageNumberUIData != null)
          {
@@ -59,7 +59,7 @@ package
       
       public function UpdateItem(uniqueID:int, screenX:Number, screenY:Number) : Boolean
       {
-         // method body index: 854 method index: 854
+
          var clip:MovieClip = null;
          var damageClip:DamageNumberClip = null;
          var localPointNormal:Point = null;
@@ -79,7 +79,7 @@ package
       
       public function CreateNew(uniqueID:int, enemyID:int, damageTotal:int, damageHealth:int, headshot:Boolean, xPos:Number, yPos:Number) : *
       {
-         // method body index: 855 method index: 855
+
          var damageClip:DamageNumberClip = new DamageNumberClip();
          damageClip.ParentObj = this;
          damageClip.UniqueId = uniqueID;
@@ -102,7 +102,7 @@ package
       
       public function RemoveDamageNumber(uID:int) : *
       {
-         // method body index: 856 method index: 856
+
          var item:DamageNumberClip = null;
          for(var i:int = 0; i < this.DamageClipVector.length; i++)
          {
@@ -117,13 +117,13 @@ package
       
       public function GetRandomNumber(minVal:*, maxVal:*) : *
       {
-         // method body index: 857 method index: 857
+
          return minVal + Math.floor(Math.random() * (maxVal + 1 - minVal));
       }
       
       function frame1() : *
       {
-         // method body index: 858 method index: 858
+
       }
    }
 }

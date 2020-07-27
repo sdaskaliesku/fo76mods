@@ -46,7 +46,7 @@ package Overlay.PublicTeams
       
       public function PublicTeamsBondMeter()
       {
-         // method body index: 2498 method index: 2498
+
          super();
          if(isNaN(TIME_TO_FULL_BOND))
          {
@@ -62,13 +62,13 @@ package Overlay.PublicTeams
       
       public function get bondMeterState() : int
       {
-         // method body index: 2499 method index: 2499
+
          return this.m_BondMeterState;
       }
       
       public function set bondMeterState(param1:int) : void
       {
-         // method body index: 2500 method index: 2500
+
          this.m_BondMeterState = param1;
          switch(param1)
          {
@@ -105,7 +105,7 @@ package Overlay.PublicTeams
       
       public function get elapsedTime() : Number
       {
-         // method body index: 2501 method index: 2501
+
          var _loc1_:Number = 0;
          if(LAST_BOND_UPDATE_TIME)
          {
@@ -116,19 +116,19 @@ package Overlay.PublicTeams
       
       public function get isBonded() : Boolean
       {
-         // method body index: 2502 method index: 2502
+
          return this.bondMeterState == BOND_METER_COMPLETE;
       }
       
       public function resetBondMeter() : void
       {
-         // method body index: 2503 method index: 2503
+
          this.bondMeterState = BOND_METER_OFF;
       }
       
       public function startBondMeter(param1:Number, param2:Boolean = false) : void
       {
-         // method body index: 2504 method index: 2504
+
          this.m_StartTime = param1;
          if(this.m_StartTime >= 0)
          {
@@ -160,7 +160,7 @@ package Overlay.PublicTeams
       
       private function setBondFillProgress(param1:Number) : void
       {
-         // method body index: 2505 method index: 2505
+
          var _loc2_:uint = 0;
          if(param1 <= 0)
          {
@@ -179,7 +179,7 @@ package Overlay.PublicTeams
       
       private function onEnterFrame(param1:Event = null) : void
       {
-         // method body index: 2506 method index: 2506
+
          if(this.bondMeterState == BOND_METER_FILLING)
          {
             this.setBondFillProgress(this.elapsedTime);
@@ -194,7 +194,7 @@ package Overlay.PublicTeams
       
       private function onPublicTeamsDataUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 2507 method index: 2507
+
          if(param1 && param1.data && param1.data.requiredBondTime)
          {
             TIME_TO_FULL_BOND = param1.data.requiredBondTime;

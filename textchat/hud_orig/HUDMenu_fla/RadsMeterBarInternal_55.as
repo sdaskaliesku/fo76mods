@@ -11,14 +11,14 @@ package HUDMenu_fla
       
       public function RadsMeterBarInternal_55()
       {
-         // method body index: 1371 method index: 1371
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1370 method index: 1370
+
          stop();
       }
    }

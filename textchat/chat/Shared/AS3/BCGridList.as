@@ -129,7 +129,7 @@ package Shared.AS3
       
       public function BCGridList()
       {
-         // method body index: 417 method index: 417
+
          super();
          this.m_Entries = [];
          this.m_ClipVector = new Vector.<BSScrollingListEntry>();
@@ -172,7 +172,7 @@ package Shared.AS3
       
       public function set showSelectedItem(param1:Boolean) : void
       {
-         // method body index: 418 method index: 418
+
          this.m_ShowSelectedItem = param1;
          this.m_NeedRedraw = true;
          this.setIsDirty();
@@ -180,27 +180,27 @@ package Shared.AS3
       
       public function get showSelectedItem() : Boolean
       {
-         // method body index: 419 method index: 419
+
          return this.m_ShowSelectedItem;
       }
       
       public function set maxRows(param1:uint) : void
       {
-         // method body index: 420 method index: 420
+
          this.m_MaxRows = param1;
          this.m_NeedRecreateClips = true;
       }
       
       public function set maxCols(param1:uint) : void
       {
-         // method body index: 421 method index: 421
+
          this.m_MaxCols = param1;
          this.m_NeedRecreateClips = true;
       }
       
       public function set scrollVertical(param1:Boolean) : void
       {
-         // method body index: 422 method index: 422
+
          this.m_ScrollVertical = param1;
          this.m_NeedRecalculateScrollMax = true;
          this.m_NeedRedraw = true;
@@ -209,43 +209,43 @@ package Shared.AS3
       
       public function get scrollVertical() : Boolean
       {
-         // method body index: 423 method index: 423
+
          return this.m_ScrollVertical;
       }
       
       public function get selectedEntry() : Object
       {
-         // method body index: 424 method index: 424
+
          return this.m_Entries[this.m_SelectedIndex];
       }
       
       public function get rowScrollPos() : int
       {
-         // method body index: 425 method index: 425
+
          return this.m_RowScrollPos;
       }
       
       public function get colScrollPos() : int
       {
-         // method body index: 426 method index: 426
+
          return this.m_ColScrollPos;
       }
       
       public function get displayWidth() : Number
       {
-         // method body index: 427 method index: 427
+
          return this.m_DisplayWidth;
       }
       
       public function get displayHeight() : Number
       {
-         // method body index: 428 method index: 428
+
          return this.m_DisplayHeight;
       }
       
       public function set rowScrollPos(param1:int) : void
       {
-         // method body index: 429 method index: 429
+
          param1 = GlobalFunc.Clamp(param1,0,this.m_RowScrollPosMax);
          if(param1 != this.m_RowScrollPos)
          {
@@ -258,7 +258,7 @@ package Shared.AS3
       
       public function set colScrollPos(param1:int) : void
       {
-         // method body index: 430 method index: 430
+
          param1 = GlobalFunc.Clamp(param1,0,this.m_ColScrollPosMax);
          if(param1 != this.m_ColScrollPos)
          {
@@ -271,49 +271,49 @@ package Shared.AS3
       
       public function set disableInput(param1:Boolean) : void
       {
-         // method body index: 431 method index: 431
+
          this.m_DisableInput = param1;
       }
       
       public function get selectedCol() : uint
       {
-         // method body index: 432 method index: 432
+
          return this.getColFromIndex(this.m_SelectedIndex);
       }
       
       public function get selectedRow() : uint
       {
-         // method body index: 433 method index: 433
+
          return this.getRowFromIndex(this.m_SelectedIndex);
       }
       
       public function get displayedItemCount() : uint
       {
-         // method body index: 434 method index: 434
+
          return this.m_DisplayedItemCount;
       }
       
       public function get maxDisplayedItems() : uint
       {
-         // method body index: 435 method index: 435
+
          return this.m_MaxDisplayedItems;
       }
       
       public function get entryCount() : uint
       {
-         // method body index: 436 method index: 436
+
          return this.m_Entries.length;
       }
       
       public function get selectedIndex() : int
       {
-         // method body index: 437 method index: 437
+
          return this.m_SelectedIndex;
       }
       
       public function set selectedIndex(param1:int) : *
       {
-         // method body index: 438 method index: 438
+
          var _loc2_:int = GlobalFunc.Clamp(param1,-1,this.m_Entries.length - 1);
          if(_loc2_ != this.m_SelectedIndex)
          {
@@ -327,13 +327,13 @@ package Shared.AS3
       
       public function get selectedClip() : BSScrollingListEntry
       {
-         // method body index: 439 method index: 439
+
          return this.m_SelectedClip;
       }
       
       public function set listItemClassName(param1:String) : void
       {
-         // method body index: 440 method index: 440
+
          this.m_ListItemClass = getDefinitionByName(param1) as Class;
          this.m_ListItemClassName = param1;
          this.m_NeedRedraw = true;
@@ -341,13 +341,13 @@ package Shared.AS3
       
       public function get entryData() : Array
       {
-         // method body index: 441 method index: 441
+
          return this.m_Entries;
       }
       
       public function set entryData(param1:Array) : void
       {
-         // method body index: 442 method index: 442
+
          this.m_Entries = param1;
          this.m_NeedRecalculateScrollMax = true;
          this.m_NeedRedraw = true;
@@ -356,55 +356,55 @@ package Shared.AS3
       
       public function set needRedraw(param1:*) : void
       {
-         // method body index: 443 method index: 443
+
          this.m_NeedRedraw = param1;
       }
       
       public function set wheelSelectionScroll(param1:Boolean) : void
       {
-         // method body index: 444 method index: 444
+
          this.m_WheelSelectionScroll = param1;
       }
       
       public function get wheelSelectionScroll() : Boolean
       {
-         // method body index: 445 method index: 445
+
          return this.m_WheelSelectionScroll;
       }
       
       public function set selectionScrollLockOffset(param1:int) : void
       {
-         // method body index: 446 method index: 446
+
          this.m_SelectionScrollLockOffset = param1;
       }
       
       public function get selectionScrollLockOffset() : int
       {
-         // method body index: 447 method index: 447
+
          return this.m_SelectionScrollLockOffset;
       }
       
       public function set selectionScrollLock(param1:Boolean) : void
       {
-         // method body index: 448 method index: 448
+
          this.m_SelectionScrollLock = param1;
       }
       
       public function get selectionScrollLock() : Boolean
       {
-         // method body index: 449 method index: 449
+
          return this.m_SelectionScrollLock;
       }
       
       public function get lastNavDirection() : int
       {
-         // method body index: 450 method index: 450
+
          return this.m_LastNavDirection;
       }
       
       private function getRowFromIndex(param1:int) : uint
       {
-         // method body index: 451 method index: 451
+
          if(param1 > 0)
          {
             return Math.floor(param1 / (this.m_MaxCols + this.m_ColScrollPosMax));
@@ -414,7 +414,7 @@ package Shared.AS3
       
       private function getColFromIndex(param1:int) : uint
       {
-         // method body index: 452 method index: 452
+
          if(param1 > 0)
          {
             return param1 % (this.m_MaxCols + this.m_ColScrollPosMax);
@@ -424,7 +424,7 @@ package Shared.AS3
       
       public function setIsDirty() : void
       {
-         // method body index: 453 method index: 453
+
          if(!this.m_IsDirty)
          {
             addEventListener(Event.ENTER_FRAME,this.onEnterFrame);
@@ -434,7 +434,7 @@ package Shared.AS3
       
       private function onEnterFrame(param1:Event) : void
       {
-         // method body index: 454 method index: 454
+
          this.selectedIndex = this.selectedIndex;
          removeEventListener(Event.ENTER_FRAME,this.onEnterFrame);
          this.m_IsDirty = false;
@@ -462,13 +462,13 @@ package Shared.AS3
       
       public function getIndexFromGridPos(param1:uint, param2:uint) : int
       {
-         // method body index: 455 method index: 455
+
          return param1 * this.m_MaxCols + param2;
       }
       
       private function constrainScrollToSelection() : void
       {
-         // method body index: 456 method index: 456
+
          var _loc1_:uint = 0;
          var _loc2_:uint = 0;
          var _loc3_:uint = 0;
@@ -530,7 +530,7 @@ package Shared.AS3
       
       public function onKeyDown(param1:KeyboardEvent) : *
       {
-         // method body index: 457 method index: 457
+
          var _loc2_:uint = 0;
          var _loc3_:uint = 0;
          var _loc4_:Boolean = false;
@@ -587,7 +587,7 @@ package Shared.AS3
       
       public function onKeyUp(param1:KeyboardEvent) : *
       {
-         // method body index: 458 method index: 458
+
          if(!this.m_DisableInput && !this.m_DisableSelection && param1.keyCode == Keyboard.ENTER)
          {
             this.onItemPress(param1);
@@ -597,7 +597,7 @@ package Shared.AS3
       
       private function onItemClick(param1:Event) : void
       {
-         // method body index: 459 method index: 459
+
          if(this.m_WheelSelectionScroll)
          {
             if((param1.target as BSScrollingListEntry).itemIndex != this.m_SelectedIndex)
@@ -625,7 +625,7 @@ package Shared.AS3
       
       public function onItemPress(param1:Event) : void
       {
-         // method body index: 460 method index: 460
+
          if(!this.m_DisableInput && !this.m_DisableSelection && this.m_SelectedIndex != -1)
          {
             dispatchEvent(new Event(ITEM_PRESS,true,true));
@@ -638,7 +638,7 @@ package Shared.AS3
       
       private function onItemMouseOver(param1:MouseEvent) : void
       {
-         // method body index: 461 method index: 461
+
          if(!this.m_DisableInput && !this.m_DisableSelection && !this.m_WheelSelectionScroll)
          {
             this.selectedIndex = (param1.currentTarget as BSScrollingListEntry).itemIndex;
@@ -648,7 +648,7 @@ package Shared.AS3
       
       private function onMouseWheel(param1:MouseEvent) : void
       {
-         // method body index: 462 method index: 462
+
          var _loc2_:* = false;
          if(!this.m_DisableInput)
          {
@@ -682,7 +682,7 @@ package Shared.AS3
       
       public function scrollRow(param1:Boolean, param2:* = false) : void
       {
-         // method body index: 463 method index: 463
+
          var _loc3_:int = !!param1?int(int(this.m_RowScrollPos + 1)):int(int(this.m_RowScrollPos - 1));
          if(param2)
          {
@@ -704,7 +704,7 @@ package Shared.AS3
       
       public function scrollCol(param1:Boolean, param2:* = false) : void
       {
-         // method body index: 464 method index: 464
+
          var _loc3_:int = !!param1?int(int(this.m_ColScrollPos + 1)):int(int(this.m_ColScrollPos - 1));
          if(param2)
          {
@@ -726,7 +726,7 @@ package Shared.AS3
       
       private function onSliderValueChange(param1:CustomEvent) : void
       {
-         // method body index: 465 method index: 465
+
          if(this.m_ScrollVertical && this.ScrollVert_mc != null && param1.target == this.ScrollVert_mc)
          {
             this.rowScrollPos = param1.params as uint;
@@ -739,14 +739,14 @@ package Shared.AS3
       
       private function onAddedToStage(param1:Event) : void
       {
-         // method body index: 470 method index: 470
+
          var e:Event = param1;
          if(this.ScrollUp_mc != null)
          {
             this.ScrollUp_mc.addEventListener(MouseEvent.CLICK,function(param1:MouseEvent):// method body index: 466 method index: 466
             *
             {
-               // method body index: 466 method index: 466
+
                scrollRow(false);
             });
          }
@@ -755,7 +755,7 @@ package Shared.AS3
             this.ScrollDown_mc.addEventListener(MouseEvent.CLICK,function(param1:MouseEvent):// method body index: 467 method index: 467
             *
             {
-               // method body index: 467 method index: 467
+
                scrollRow(true);
             });
          }
@@ -764,7 +764,7 @@ package Shared.AS3
             this.ScrollLeft_mc.addEventListener(MouseEvent.CLICK,function(param1:MouseEvent):// method body index: 468 method index: 468
             *
             {
-               // method body index: 468 method index: 468
+
                scrollCol(false);
             });
          }
@@ -773,7 +773,7 @@ package Shared.AS3
             this.ScrollRight_mc.addEventListener(MouseEvent.CLICK,function(param1:MouseEvent):// method body index: 469 method index: 469
             *
             {
-               // method body index: 469 method index: 469
+
                scrollCol(true);
             });
          }
@@ -786,7 +786,7 @@ package Shared.AS3
       
       protected function populateEntryClip(param1:BSScrollingListEntry, param2:Object) : *
       {
-         // method body index: 471 method index: 471
+
          var aEntryClip:BSScrollingListEntry = param1;
          var aEntryData:Object = param2;
          if(aEntryClip != null)
@@ -811,7 +811,7 @@ package Shared.AS3
       
       private function calculateListScrollMax() : void
       {
-         // method body index: 472 method index: 472
+
          var _loc1_:uint = 0;
          var _loc2_:uint = 0;
          if(this.m_ScrollVertical)
@@ -846,19 +846,19 @@ package Shared.AS3
       
       public function clearList() : void
       {
-         // method body index: 473 method index: 473
+
          this.m_Entries.splice(0,this.m_Entries.length);
       }
       
       private function getNewEntryClip() : BSScrollingListEntry
       {
-         // method body index: 474 method index: 474
+
          return new this.m_ListItemClass() as BSScrollingListEntry;
       }
       
       private function createEntryClip(param1:uint, param2:uint, param3:uint) : Boolean
       {
-         // method body index: 475 method index: 475
+
          var _loc4_:BSScrollingListEntry = this.getNewEntryClip();
          if(_loc4_ != null)
          {
@@ -878,7 +878,7 @@ package Shared.AS3
       
       private function createEntryClips() : void
       {
-         // method body index: 476 method index: 476
+
          var _loc1_:BSScrollingListEntry = null;
          while(this.EntryHolder_mc.numChildren > 0)
          {
@@ -930,13 +930,13 @@ package Shared.AS3
       
       public function getClipByIndex(param1:uint) : BSScrollingListEntry
       {
-         // method body index: 477 method index: 477
+
          return param1 < this.EntryHolder_mc.numChildren?this.m_ClipVector[param1] as BSScrollingListEntry:null;
       }
       
       private function updateScrollIndicators() : void
       {
-         // method body index: 478 method index: 478
+
          if(this.ScrollUp_mc != null)
          {
             this.ScrollUp_mc.visible = this.m_ScrollVertical && this.m_RowScrollPos > 0;
@@ -988,7 +988,7 @@ package Shared.AS3
       
       private function selectItemUnderMouse() : void
       {
-         // method body index: 479 method index: 479
+
          var _loc1_:uint = 0;
          var _loc2_:BSScrollingListEntry = null;
          var _loc3_:MovieClip = null;
@@ -1017,7 +1017,7 @@ package Shared.AS3
       
       protected function redrawList() : void
       {
-         // method body index: 480 method index: 480
+
          var _loc1_:uint = 0;
          var _loc2_:uint = 0;
          var _loc3_:uint = 0;

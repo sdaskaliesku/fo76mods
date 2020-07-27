@@ -9,7 +9,7 @@ package
       
       public function CurrencyIconContainer_mc()
       {
-         // method body index: 2735 method index: 2735
+
          super();
       }
    }

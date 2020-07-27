@@ -13,19 +13,19 @@ package fl.motion
       
       public function Color(param1:Number = 1.0, param2:Number = 1.0, param3:Number = 1.0, param4:Number = 1.0, param5:Number = 0, param6:Number = 0, param7:Number = 0, param8:Number = 0)
       {
-         // method body index: 440 method index: 440
+
          super(param1,param2,param3,param4,param5,param6,param7,param8);
       }
       
       public static function fromXML(param1:XML) : Color
       {
-         // method body index: 437 method index: 437
+
          return Color(new Color().parseXML(param1));
       }
       
       public static function interpolateTransform(param1:ColorTransform, param2:ColorTransform, param3:Number) : ColorTransform
       {
-         // method body index: 438 method index: 438
+
          var _loc4_:Number = 1 - param3;
          var _loc5_:ColorTransform = new ColorTransform(param1.redMultiplier * _loc4_ + param2.redMultiplier * param3,param1.greenMultiplier * _loc4_ + param2.greenMultiplier * param3,param1.blueMultiplier * _loc4_ + param2.blueMultiplier * param3,param1.alphaMultiplier * _loc4_ + param2.alphaMultiplier * param3,param1.redOffset * _loc4_ + param2.redOffset * param3,param1.greenOffset * _loc4_ + param2.greenOffset * param3,param1.blueOffset * _loc4_ + param2.blueOffset * param3,param1.alphaOffset * _loc4_ + param2.alphaOffset * param3);
          return _loc5_;
@@ -33,7 +33,7 @@ package fl.motion
       
       public static function interpolateColor(param1:uint, param2:uint, param3:Number) : uint
       {
-         // method body index: 439 method index: 439
+
          var _loc4_:Number = 1 - param3;
          var _loc5_:uint = param1 >> 24 & 255;
          var _loc6_:uint = param1 >> 16 & 255;
@@ -53,13 +53,13 @@ package fl.motion
       
       public function get brightness() : Number
       {
-         // method body index: 441 method index: 441
+
          return !!this.redOffset?Number(1 - this.redMultiplier):Number(this.redMultiplier - 1);
       }
       
       public function set brightness(param1:Number) : void
       {
-         // method body index: 442 method index: 442
+
          if(param1 > 1)
          {
             param1 = 1;
@@ -80,7 +80,7 @@ package fl.motion
       
       public function setTint(param1:uint, param2:Number) : void
       {
-         // method body index: 443 method index: 443
+
          this._tintColor = param1;
          this._tintMultiplier = param2;
          this.redMultiplier = this.greenMultiplier = this.blueMultiplier = 1 - param2;
@@ -94,19 +94,19 @@ package fl.motion
       
       public function get tintColor() : uint
       {
-         // method body index: 444 method index: 444
+
          return this._tintColor;
       }
       
       public function set tintColor(param1:uint) : void
       {
-         // method body index: 445 method index: 445
+
          this.setTint(param1,this.tintMultiplier);
       }
       
       private function deriveTintColor() : uint
       {
-         // method body index: 446 method index: 446
+
          var _loc1_:Number = 1 / this.tintMultiplier;
          var _loc2_:uint = Math.round(this.redOffset * _loc1_);
          var _loc3_:uint = Math.round(this.greenOffset * _loc1_);
@@ -117,19 +117,19 @@ package fl.motion
       
       public function get tintMultiplier() : Number
       {
-         // method body index: 447 method index: 447
+
          return this._tintMultiplier;
       }
       
       public function set tintMultiplier(param1:Number) : void
       {
-         // method body index: 448 method index: 448
+
          this.setTint(this.tintColor,param1);
       }
       
       private function parseXML(param1:XML = null) : Color
       {
-         // method body index: 449 method index: 449
+
          var _loc3_:XML = null;
          var _loc4_:String = null;
          var _loc5_:uint = 0;

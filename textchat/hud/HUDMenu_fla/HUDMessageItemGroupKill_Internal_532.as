@@ -16,20 +16,20 @@ package HUDMenu_fla
       
       public function HUDMessageItemGroupKill_Internal_532()
       {
-         // method body index: 1016 method index: 1016
+
          super();
          addFrameScript(0,this.frame1,1,this.frame2);
       }
       
       function frame1() : *
       {
-         // method body index: 1017 method index: 1017
+
          stop();
       }
       
       function frame2() : *
       {
-         // method body index: 1018 method index: 1018
+
          stop();
       }
    }

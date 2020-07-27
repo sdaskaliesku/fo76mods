@@ -23,7 +23,7 @@ package HUDMenu_fla
       
       public function AnnounceAvailableQuestNew_273()
       {
-         // method body index: 990 method index: 990
+
          super();
          addFrameScript(0,this.frame1,43,this.frame44,116,this.frame117,126,this.frame127);
          this.__setProp_QuestVaultBoy_mc_AnnounceAvailableQuestNew_QuestVaultBoy_mc_0();
@@ -31,7 +31,7 @@ package HUDMenu_fla
       
       function __setProp_QuestVaultBoy_mc_AnnounceAvailableQuestNew_QuestVaultBoy_mc_0() : *
       {
-         // method body index: 985 method index: 985
+
          try
          {
             this.QuestVaultBoy_mc["componentInspectorSetting"] = true;
@@ -66,25 +66,25 @@ package HUDMenu_fla
       
       function frame1() : *
       {
-         // method body index: 986 method index: 986
+
          stop();
       }
       
       function frame44() : *
       {
-         // method body index: 987 method index: 987
+
          dispatchEvent(new Event("HUDAnnouce::MarkFanfareAsDisplayed",true));
       }
       
       function frame117() : *
       {
-         // method body index: 988 method index: 988
+
          stop();
       }
       
       function frame127() : *
       {
-         // method body index: 989 method index: 989
+
          stop();
       }
    }

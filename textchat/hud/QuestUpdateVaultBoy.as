@@ -9,14 +9,14 @@ package
       
       public function QuestUpdateVaultBoy()
       {
-         // method body index: 3406 method index: 3406
+
          super();
          this.__setProp_VaultBoyImageInternal_mc_QuestUpdateVaultBoy_VaultBoyImageInternal_mc_0();
       }
       
       function __setProp_VaultBoyImageInternal_mc_QuestUpdateVaultBoy_VaultBoyImageInternal_mc_0() : *
       {
-         // method body index: 3407 method index: 3407
+
          try
          {
             VaultBoyImageInternal_mc["componentInspectorSetting"] = true;

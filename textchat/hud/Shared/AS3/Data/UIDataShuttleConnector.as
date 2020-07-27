@@ -11,20 +11,20 @@ package Shared.AS3.Data
       
       public function UIDataShuttleConnector()
       {
-         // method body index: 265 method index: 265
+
          super();
       }
       
       public function AttachToDataManager() : Boolean
       {
-         // method body index: 266 method index: 266
+
          var _loc1_:UIDataShuttleConnector = BSUIDataManager.ConnectDataShuttleConnector(this);
          return _loc1_ == this;
       }
       
       public function Watch(param1:String, param2:UIDataFromClient = null) : UIDataFromClient
       {
-         // method body index: 267 method index: 267
+
          var _loc3_:* = null;
          var _loc4_:Object = new Object();
          var _loc5_:UIDataFromClient = param2;
@@ -51,7 +51,7 @@ package Shared.AS3.Data
       
       public function onFlush(... rest) : void
       {
-         // method body index: 268 method index: 268
+
          BSUIDataManager.Flush(rest);
       }
    }

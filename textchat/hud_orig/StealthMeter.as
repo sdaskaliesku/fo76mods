@@ -45,7 +45,7 @@ package
       
       public function StealthMeter()
       {
-         // method body index: 2327 method index: 2327
+
          super();
          addFrameScript(4,this.frame5,9,this.frame10);
          addEventListener(Event.ADDED_TO_STAGE,this.onAddedToStage);
@@ -53,7 +53,7 @@ package
       
       private function onAddedToStage(e:Event) : void
       {
-         // method body index: 2328 method index: 2328
+
          this.Internal_mc.gotoAndPlay("green");
          this.StealthTextInstance = this.Internal_mc.stealthTextStates.stealthTextAnimStates.StealthTextInstance;
          this.StealthTextInstance.multiline = false;
@@ -62,7 +62,7 @@ package
       
       private function UpdateMode(aeNewMode:uint) : *
       {
-         // method body index: 2329 method index: 2329
+
          var stateName:String = MODE_TO_FRAME_LABEL[aeNewMode];
          this.Internal_mc.stealthTextStates.gotoAndPlay(stateName);
          if(aeNewMode == MODE_HIDDEN || aeNewMode == MODE_DETECTED)
@@ -82,7 +82,7 @@ package
       
       public function SetStealthMeter(astrSneakText:String, aeSneakMode:uint, aPercent:Number, abForce:Boolean) : void
       {
-         // method body index: 2330 method index: 2330
+
          var newPercent:* = aPercent - this.LastPercent;
          var speed:Number = Math.floor(Math.abs(newPercent) / 5) + 1;
          speed = Math.min(speed,4);
@@ -111,13 +111,13 @@ package
       
       function frame5() : *
       {
-         // method body index: 2331 method index: 2331
+
          stop();
       }
       
       function frame10() : *
       {
-         // method body index: 2332 method index: 2332
+
          stop();
       }
    }

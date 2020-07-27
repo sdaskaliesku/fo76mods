@@ -12,20 +12,20 @@ package HUDMenu_fla
       
       public function HUDThirstMeterLabel_mc_69()
       {
-         // method body index: 1113 method index: 1113
+
          super();
          addFrameScript(0,this.frame1,1,this.frame2);
       }
       
       function frame1() : *
       {
-         // method body index: 1111 method index: 1111
+
          stop();
       }
       
       function frame2() : *
       {
-         // method body index: 1112 method index: 1112
+
          stop();
       }
    }

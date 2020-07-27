@@ -107,7 +107,7 @@ package Mobile.ScrollList
       
       public function MobileScrollList(param1:Number, param2:Number = 0, param3:uint = 1)
       {
-         // method body index: 2531 method index: 2531
+
          this._mouseDownPoint = new Point();
          this._prevMouseDownPoint = new Point();
          super();
@@ -126,25 +126,25 @@ package Mobile.ScrollList
       
       public function get data() : Vector.<Object>
       {
-         // method body index: 2532 method index: 2532
+
          return this._data;
       }
       
       public function get renderers() : Vector.<MobileListItemRenderer>
       {
-         // method body index: 2533 method index: 2533
+
          return this._renderers;
       }
       
       public function get selectedIndex() : int
       {
-         // method body index: 2534 method index: 2534
+
          return this._selectedIndex;
       }
       
       public function set selectedIndex(param1:int) : void
       {
-         // method body index: 2535 method index: 2535
+
          var _loc2_:MobileListItemRenderer = this.getRendererAt(this._selectedIndex);
          if(_loc2_ != null)
          {
@@ -161,25 +161,25 @@ package Mobile.ScrollList
       
       public function get selectedRenderer() : MobileListItemRenderer
       {
-         // method body index: 2536 method index: 2536
+
          return this.getRendererAt(this.selectedIndex);
       }
       
       public function get position() : Number
       {
-         // method body index: 2537 method index: 2537
+
          return this._position;
       }
       
       public function set position(param1:Number) : void
       {
-         // method body index: 2538 method index: 2538
+
          this._position = param1;
       }
       
       public function set needFullRefresh(param1:Boolean) : void
       {
-         // method body index: 2539 method index: 2539
+
          if(param1)
          {
             this._selectedIndex = -1;
@@ -190,7 +190,7 @@ package Mobile.ScrollList
       
       private function get canScroll() : Boolean
       {
-         // method body index: 2540 method index: 2540
+
          var _loc1_:Boolean = this._direction == HORIZONTAL?this._scrollList.width < this._bounds.width:this._scrollList.height < this._bounds.height;
          if(!(this.noScrollShortList && _loc1_))
          {
@@ -201,103 +201,103 @@ package Mobile.ScrollList
       
       public function get itemRendererLinkageId() : String
       {
-         // method body index: 2541 method index: 2541
+
          return this._itemRendererLinkageId;
       }
       
       public function set itemRendererLinkageId(param1:String) : void
       {
-         // method body index: 2542 method index: 2542
+
          this._itemRendererLinkageId = param1;
       }
       
       public function get hasBackground() : Boolean
       {
-         // method body index: 2543 method index: 2543
+
          return this._hasBackground;
       }
       
       public function set hasBackground(param1:Boolean) : void
       {
-         // method body index: 2544 method index: 2544
+
          this._hasBackground = param1;
       }
       
       public function get backgroundColor() : int
       {
-         // method body index: 2545 method index: 2545
+
          return this._backgroundColor;
       }
       
       public function set backgroundColor(param1:int) : void
       {
-         // method body index: 2546 method index: 2546
+
          this._backgroundColor = param1;
       }
       
       public function get noScrollShortList() : Boolean
       {
-         // method body index: 2547 method index: 2547
+
          return this._noScrollShortList;
       }
       
       public function set noScrollShortList(param1:Boolean) : void
       {
-         // method body index: 2548 method index: 2548
+
          this._noScrollShortList = param1;
       }
       
       public function get clickable() : Boolean
       {
-         // method body index: 2549 method index: 2549
+
          return this._clickable;
       }
       
       public function set clickable(param1:Boolean) : void
       {
-         // method body index: 2550 method index: 2550
+
          this._clickable = param1;
       }
       
       public function get endListAlign() : Boolean
       {
-         // method body index: 2551 method index: 2551
+
          return this._endListAlign;
       }
       
       public function set endListAlign(param1:Boolean) : void
       {
-         // method body index: 2552 method index: 2552
+
          this._endListAlign = param1;
       }
       
       public function get textOption() : String
       {
-         // method body index: 2553 method index: 2553
+
          return this._textOption;
       }
       
       public function set textOption(param1:String) : void
       {
-         // method body index: 2554 method index: 2554
+
          this._textOption = param1;
       }
       
       public function get elasticity() : Boolean
       {
-         // method body index: 2555 method index: 2555
+
          return this._elasticity;
       }
       
       public function set elasticity(param1:Boolean) : void
       {
-         // method body index: 2556 method index: 2556
+
          this._elasticity = param1;
       }
       
       public function invalidateData() : void
       {
-         // method body index: 2557 method index: 2557
+
          var _loc1_:int = 0;
          if(this._data != null)
          {
@@ -341,7 +341,7 @@ package Mobile.ScrollList
       
       public function setData(param1:Vector.<Object>) : void
       {
-         // method body index: 2558 method index: 2558
+
          var _loc2_:int = 0;
          this.invalidateData();
          this._data = param1;
@@ -391,7 +391,7 @@ package Mobile.ScrollList
       
       public function setScrollIndicators(param1:MovieClip, param2:MovieClip) : void
       {
-         // method body index: 2559 method index: 2559
+
          this._prevIndicator = param1;
          this._nextIndicator = param2;
          if(this._prevIndicator)
@@ -406,7 +406,7 @@ package Mobile.ScrollList
       
       protected function setPosition() : void
       {
-         // method body index: 2560 method index: 2560
+
          var _loc1_:Number = NaN;
          if(this._data == null)
          {
@@ -478,7 +478,7 @@ package Mobile.ScrollList
       
       protected function addRenderer(param1:int, param2:Object) : MobileListItemRenderer
       {
-         // method body index: 2561 method index: 2561
+
          var _loc3_:MobileListItemRenderer = null;
          var _loc4_:MobileListItemRenderer = this.acquireRenderer();
          _loc4_.reset();
@@ -499,7 +499,7 @@ package Mobile.ScrollList
       
       protected function addRendererListeners(param1:MobileListItemRenderer) : void
       {
-         // method body index: 2562 method index: 2562
+
          param1.addEventListener(ITEM_SELECT,this.itemSelectHandler,false,0,true);
          param1.addEventListener(ITEM_RELEASE,this.itemReleaseHandler,false,0,true);
          param1.addEventListener(ITEM_RELEASE_OUTSIDE,this.itemReleaseOutsideHandler,false,0,true);
@@ -507,7 +507,7 @@ package Mobile.ScrollList
       
       protected function removeRenderer(param1:int) : void
       {
-         // method body index: 2563 method index: 2563
+
          var _loc2_:MobileListItemRenderer = this._renderers[param1];
          if(_loc2_ != null)
          {
@@ -519,7 +519,7 @@ package Mobile.ScrollList
       
       protected function removeRendererListeners(param1:MobileListItemRenderer) : void
       {
-         // method body index: 2564 method index: 2564
+
          param1.removeEventListener(ITEM_SELECT,this.itemSelectHandler);
          param1.removeEventListener(ITEM_RELEASE,this.itemReleaseHandler);
          param1.removeEventListener(ITEM_RELEASE_OUTSIDE,this.itemReleaseOutsideHandler);
@@ -527,7 +527,7 @@ package Mobile.ScrollList
       
       protected function getRendererAt(param1:int) : MobileListItemRenderer
       {
-         // method body index: 2565 method index: 2565
+
          if(this._data == null || this._renderers == null || param1 > this._data.length - 1 || param1 < 0)
          {
             return null;
@@ -541,7 +541,7 @@ package Mobile.ScrollList
       
       private function acquireRenderer() : MobileListItemRenderer
       {
-         // method body index: 2566 method index: 2566
+
          var _loc1_:MobileListItemRenderer = null;
          if(this._availableRenderers.length > 0)
          {
@@ -559,13 +559,13 @@ package Mobile.ScrollList
       
       private function releaseRenderer(param1:MobileListItemRenderer) : void
       {
-         // method body index: 2567 method index: 2567
+
          this._availableRenderers.push(param1);
       }
       
       protected function resetPressState(param1:MobileListItemRenderer) : void
       {
-         // method body index: 2568 method index: 2568
+
          if(param1 != null && param1.data != null)
          {
             if(this.selectedIndex == param1.data.id)
@@ -581,7 +581,7 @@ package Mobile.ScrollList
       
       protected function itemSelectHandler(param1:EventWithParams) : void
       {
-         // method body index: 2569 method index: 2569
+
          var _loc2_:MobileListItemRenderer = null;
          var _loc3_:int = 0;
          if(this.clickable)
@@ -596,7 +596,7 @@ package Mobile.ScrollList
       
       protected function itemReleaseHandler(param1:EventWithParams) : void
       {
-         // method body index: 2570 method index: 2570
+
          var _loc2_:MobileListItemRenderer = null;
          var _loc3_:int = 0;
          if(this.clickable)
@@ -613,7 +613,7 @@ package Mobile.ScrollList
       
       protected function itemReleaseOutsideHandler(param1:EventWithParams) : void
       {
-         // method body index: 2571 method index: 2571
+
          var _loc2_:MobileListItemRenderer = null;
          if(this.clickable)
          {
@@ -625,7 +625,7 @@ package Mobile.ScrollList
       
       protected function createMask() : void
       {
-         // method body index: 2572 method index: 2572
+
          this._scrollMask = this.createSprite(16711935,new Rectangle(this._bounds.x,this._bounds.y,this._bounds.width,this._bounds.height));
          addChild(this._scrollMask);
          this._scrollMask.mouseEnabled = false;
@@ -634,7 +634,7 @@ package Mobile.ScrollList
       
       protected function createBackground() : void
       {
-         // method body index: 2573 method index: 2573
+
          this._background = this.createSprite(this.backgroundColor,new Rectangle(this._bounds.x,this._bounds.y,this._bounds.width,this._bounds.height));
          this._background.x = this._bounds.x;
          this._background.y = this._bounds.y;
@@ -643,7 +643,7 @@ package Mobile.ScrollList
       
       protected function createSprite(param1:int, param2:Rectangle, param3:Number = 1) : Sprite
       {
-         // method body index: 2574 method index: 2574
+
          var _loc4_:* = new Sprite();
          _loc4_.graphics.beginFill(param1,param3);
          _loc4_.graphics.drawRect(param2.x,param2.y,param2.width,param2.height);
@@ -653,7 +653,7 @@ package Mobile.ScrollList
       
       protected function enterFrameHandler(param1:Event) : void
       {
-         // method body index: 2575 method index: 2575
+
          var _loc2_:* = undefined;
          var _loc3_:Number = NaN;
          var _loc4_:Number = NaN;
@@ -723,7 +723,7 @@ package Mobile.ScrollList
       
       protected function mouseDownHandler(param1:MouseEvent) : void
       {
-         // method body index: 2576 method index: 2576
+
          if(!this._mouseDown && this.canScroll)
          {
             this._mouseDownPoint = new Point(param1.stageX,param1.stageY);
@@ -738,7 +738,7 @@ package Mobile.ScrollList
       
       protected function mouseMoveHandler(param1:MouseEvent) : void
       {
-         // method body index: 2577 method index: 2577
+
          var _loc2_:Point = null;
          var _loc3_:Number = NaN;
          if(this._mouseDown && this.canScroll)
@@ -810,7 +810,7 @@ package Mobile.ScrollList
       
       protected function mouseUpHandler(param1:MouseEvent) : void
       {
-         // method body index: 2578 method index: 2578
+
          if(this._mouseDown && this.canScroll)
          {
             this._mouseDown = false;
@@ -822,7 +822,7 @@ package Mobile.ScrollList
       
       private function setDataOnVisibleRenderers() : void
       {
-         // method body index: 2579 method index: 2579
+
          var _loc1_:Number = NaN;
          var _loc2_:int = 0;
          while(_loc2_ < this._renderers.length)
@@ -841,7 +841,7 @@ package Mobile.ScrollList
       
       private function setRendererData(param1:MobileListItemRenderer, param2:Object, param3:int) : void
       {
-         // method body index: 2580 method index: 2580
+
          param2.id = param3;
          param2.textOption = this._textOption;
          param1.setData(param2);
@@ -849,7 +849,7 @@ package Mobile.ScrollList
       
       public function destroy() : void
       {
-         // method body index: 2581 method index: 2581
+
          this.invalidateData();
       }
    }

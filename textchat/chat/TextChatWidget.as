@@ -69,7 +69,7 @@ package
       
       public function TextChatWidget()
       {
-         // method body index: 597 method index: 597
+
          this.message = new TextField();
          super();
          Extensions.enabled = true;
@@ -111,7 +111,7 @@ package
       
       public function setIniProperties(param1:*, param2:*, param3:*, param4:*, param5:*, param6:*, param7:*) : void
       {
-         // method body index: 598 method index: 598
+
          this.ChatText_tf.alpha = parseFloat("1.0");
          this.ChatText_tf.background = false;
          this.ChatText_tf.height = param6;
@@ -130,25 +130,25 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 599 method index: 599
+
       }
       
       public function chatIsOpen() : void
       {
-         // method body index: 600 method index: 600
+
          this.chatOpen = true;
          parent.visible = true;
       }
       
       public function chatisClosed() : void
       {
-         // method body index: 601 method index: 601
+
          this.chatOpen = false;
       }
       
       public function updateChat() : *
       {
-         // method body index: 602 method index: 602
+
          var _loc1_:Number = NaN;
          if(this.bScrolling == false)
          {
@@ -213,7 +213,7 @@ package
       
       public function updateComplexChat(param1:TextField, param2:Array) : *
       {
-         // method body index: 603 method index: 603
+
          var _loc3_:Number = NaN;
          if(this.bScrolling == false)
          {
@@ -233,7 +233,7 @@ package
       
       public function swapTab(param1:Number) : void
       {
-         // method body index: 604 method index: 604
+
          this.currentTabIndex = param1;
          switch(param1)
          {
@@ -289,71 +289,71 @@ package
       
       public function disableGlobal(param1:*) : void
       {
-         // method body index: 605 method index: 605
+
          this.bGlobalOn = param1;
       }
       
       public function disableTrade(param1:*) : void
       {
-         // method body index: 606 method index: 606
+
          this.bTradeOn = param1;
       }
       
       public function disableEU(param1:*) : void
       {
-         // method body index: 607 method index: 607
+
          this.bEUOn = param1;
       }
       
       public function disableWhisper(param1:*) : void
       {
-         // method body index: 608 method index: 608
+
          this.bWhisperOn = param1;
       }
       
       public function startChat() : void
       {
-         // method body index: 609 method index: 609
+
          clearTimeout(this.timeOut);
       }
       
       public function endChat() : void
       {
-         // method body index: 610 method index: 610
+
          clearTimeout(this.timeOut);
          this.timeOut = setTimeout(this.hideChat,this.DefaultOnscreenTime);
       }
       
       public function setTimer(param1:*) : void
       {
-         // method body index: 611 method index: 611
+
          var _loc2_:* = parseInt(param1) * 1000;
          this.DefaultOnscreenTime = _loc2_;
       }
       
       public function resetScrolling() : void
       {
-         // method body index: 612 method index: 612
+
          this.bScrolling = false;
       }
       
       public function hideChat() : *
       {
-         // method body index: 613 method index: 613
+
          this.bVarChatVisible = false;
          parent.visible = false;
       }
       
       public function removeChatMessage() : *
       {
-         // method body index: 614 method index: 614
+
          this.ChatMessageArray.shift();
          this.updateChat();
       }
       
       public function scrollUp() : *
       {
-         // method body index: 615 method index: 615
+
          this.ChatText_tf.scrollV--;
          this.ChatTextClan_tf.scrollV--;
          this.ChatTextGlobal_tf.scrollV--;
@@ -365,7 +365,7 @@ package
       
       public function scrollDown() : *
       {
-         // method body index: 616 method index: 616
+
          this.ChatText_tf.scrollV++;
          this.ChatTextClan_tf.scrollV++;
          this.ChatTextGlobal_tf.scrollV++;
@@ -377,7 +377,7 @@ package
       
       public function scrollMax() : *
       {
-         // method body index: 617 method index: 617
+
          this.ChatText_tf.maxScrollV;
          this.ChatTextClan_tf.maxScrollV;
          this.ChatTextGlobal_tf.maxScrollV;
@@ -388,19 +388,19 @@ package
       
       public function setReduceTags(param1:Boolean) : *
       {
-         // method body index: 618 method index: 618
+
          this.reduceTags = param1;
       }
       
       public function setTimeStamps(param1:Boolean) : void
       {
-         // method body index: 619 method index: 619
+
          this.timeStamps = param1;
       }
       
       public function addChatMessage(param1:String, param2:String, param3:Number, param4:String) : *
       {
-         // method body index: 620 method index: 620
+
          var _loc5_:* = new String();
          var _loc6_:String = "[Local]";
          var _loc7_:String = "[Global]";
@@ -539,7 +539,7 @@ package
       
       private function displayError(param1:String) : void
       {
-         // method body index: 621 method index: 621
+
          this.message.width = 1600;
          GlobalFunc.SetText(this.message,this.message.text + "\n" + param1,false);
          TextFieldEx.setTextAutoSize(this.message,TextFieldEx.TEXTAUTOSZ_SHRINK);

@@ -111,25 +111,25 @@ package Shared.AS3
       
       public function SecureTradeShared()
       {
-         // method body index: 177 method index: 177
+
          super();
       }
       
       public static function IsCampVendingMenuType(param1:uint) : Boolean
       {
-         // method body index: 174 method index: 174
+
          return param1 == SecureTradeShared.MODE_VENDING_MACHINE || param1 == SecureTradeShared.MODE_DISPLAY_CASE || param1 == SecureTradeShared.MODE_ALLY || param1 == SecureTradeShared.MODE_CAMP_DISPENSER || param1 == SecureTradeShared.MODE_FERMENTER || param1 == SecureTradeShared.MODE_REFRIGERATOR;
       }
       
       public static function DoesMachineTypeMatchMode(param1:uint, param2:uint) : Boolean
       {
-         // method body index: 175 method index: 175
+
          return param1 == MACHINE_TYPE_VENDING?param2 == MODE_VENDING_MACHINE:param1 == MACHINE_TYPE_DISPLAY?param2 == MODE_DISPLAY_CASE:param1 == MACHINE_TYPE_DISPENSER?param2 == MODE_CAMP_DISPENSER:param1 == MACHINE_TYPE_FERMENTER?param2 == MODE_FERMENTER:param1 == MACHINE_TYPE_REFRIGERATOR?param2 == MODE_REFRIGERATOR:param1 == MACHINE_TYPE_ALLY?param2 == MODE_ALLY:false;
       }
       
       public static function setCurrencyIcon(param1:SWFLoaderClip, param2:uint, param3:Boolean = false) : MovieClip
       {
-         // method body index: 176 method index: 176
+
          var _loc4_:String = null;
          switch(param2)
          {

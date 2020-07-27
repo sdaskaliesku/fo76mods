@@ -156,7 +156,7 @@ package
       
       public function HUDQuestTracker()
       {
-         // method body index: 1915 method index: 1915
+
          this.m_PendingQuestEvents = [];
          this.m_PendingObjectiveEvents = [];
          this.m_TempObjectivesToRemove = new Vector.<HUDQuestTrackerObjective>();
@@ -175,7 +175,7 @@ package
       
       private function eventQuestDividerPos(param1:Number, param2:Boolean = false) : *
       {
-         // method body index: 1916 method index: 1916
+
          if(this.m_EventQuestDividerTween != null)
          {
             this.m_EventQuestDividerTween.stop();
@@ -186,7 +186,7 @@ package
       
       public function requestRearrange() : void
       {
-         // method body index: 1917 method index: 1917
+
          if(this.m_AnimationPassedRearrange)
          {
             this.m_TempNewQuestEventData = {
@@ -207,7 +207,7 @@ package
       
       public function setDisplayed(param1:Boolean) : void
       {
-         // method body index: 1918 method index: 1918
+
          this.m_ShouldDisplay = param1;
          if(this.m_IsValidHudMode)
          {
@@ -231,7 +231,7 @@ package
       
       private function onHUDModeUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 1919 method index: 1919
+
          this.m_CurrentHUDMode = param1.data.hudMode;
          this.m_IsValidHudMode = this.m_ValidHudModes.indexOf(param1.data.hudMode) != -1;
          var _loc2_:* = this.m_CurrentHUDMode == HUDModes.DIALOGUE_MODE;
@@ -256,7 +256,7 @@ package
       
       private function onMenuStackChange(param1:FromClientDataEvent) : void
       {
-         // method body index: 1920 method index: 1920
+
          var _loc2_:* = undefined;
          var _loc3_:Boolean = false;
          if(param1.data.menuStackA.length > 0)
@@ -287,7 +287,7 @@ package
       
       private function questDataHasDisplayedObjectives(param1:Object) : Boolean
       {
-         // method body index: 1921 method index: 1921
+
          var _loc2_:uint = param1.objectives.length;
          var _loc3_:Boolean = false;
          var _loc4_:uint = 0;
@@ -305,7 +305,7 @@ package
       
       private function questDataValidForDisplay(param1:Object) : Boolean
       {
-         // method body index: 1922 method index: 1922
+
          if(param1 != null)
          {
             return (param1.isActive || param1.isDisplayedToTeam) && param1.state == QUEST_STATE_INPROGRESS && this.questDataHasDisplayedObjectives(param1);
@@ -315,7 +315,7 @@ package
       
       public function set nonFocusOpacity(param1:Number) : void
       {
-         // method body index: 1923 method index: 1923
+
          var _loc2_:uint = 0;
          while(_loc2_ < this.m_DisplayedQuests.length)
          {
@@ -334,7 +334,7 @@ package
       
       private function consolidateQuestEvents() : Object
       {
-         // method body index: 1924 method index: 1924
+
          var _loc1_:* = undefined;
          var _loc2_:Array = null;
          var _loc3_:uint = 0;
@@ -375,7 +375,7 @@ package
       
       public function SetAnimationBlocked(param1:Boolean) : void
       {
-         // method body index: 1925 method index: 1925
+
          this.m_AnimationsBlocked = param1;
          if(this.CanAnimate() && this.m_EventsQueued)
          {
@@ -385,13 +385,13 @@ package
       
       public function CanAnimate() : Boolean
       {
-         // method body index: 1926 method index: 1926
+
          return !this.m_AnimationsBlocked && !this.m_BusyAnimating;
       }
       
       private function processNewQuestEventData() : void
       {
-         // method body index: 1927 method index: 1927
+
          if(DEBUG_SKIP_ANIMATIONS)
          {
             this.populateFull();
@@ -416,7 +416,7 @@ package
       
       private function UpdateTitleText() : void
       {
-         // method body index: 1928 method index: 1928
+
          var _loc1_:HUDQuestTrackerEntry = null;
          var _loc2_:Object = null;
          var _loc3_:HUDQuestTrackerObjective = null;
@@ -446,7 +446,7 @@ package
       
       private function onQuestEventsUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 1929 method index: 1929
+
          if(param1.data.testEnable == true && this.m_testEnabled == false)
          {
             this.registerTestFunctionality();
@@ -500,7 +500,7 @@ package
       
       public function show() : void
       {
-         // method body index: 1930 method index: 1930
+
          this.m_Displayed = true;
          this.clearTween();
          this.endHideTimeout();
@@ -510,7 +510,7 @@ package
       
       public function fadeOut() : void
       {
-         // method body index: 1931 method index: 1931
+
          this.m_HideTimeout = -1;
          this.m_FadeTween = new Tween(this,"alpha",Regular.easeInOut,1,0,1,true);
          this.m_Displayed = false;
@@ -518,7 +518,7 @@ package
       
       private function clearTween() : void
       {
-         // method body index: 1932 method index: 1932
+
          if(this.m_FadeTween != null)
          {
             this.m_FadeTween.stop();
@@ -528,7 +528,7 @@ package
       
       private function endHideTimeout() : void
       {
-         // method body index: 1933 method index: 1933
+
          if(this.m_HideTimeout != -1)
          {
             clearTimeout(this.m_HideTimeout);
@@ -538,7 +538,7 @@ package
       
       public function hide() : void
       {
-         // method body index: 1934 method index: 1934
+
          this.m_Displayed = false;
          this.endHideTimeout();
          this.clearTween();
@@ -547,7 +547,7 @@ package
       
       private function sortDisplayedQuests(param1:HUDQuestTrackerEntry, param2:HUDQuestTrackerEntry) : Number
       {
-         // method body index: 1935 method index: 1935
+
          if(param1.isEvent && !param2.isEvent)
          {
             return -1;
@@ -569,7 +569,7 @@ package
       
       private function eventQuestDividerVisible(param1:Boolean) : *
       {
-         // method body index: 1936 method index: 1936
+
          if(param1)
          {
             if(!this.m_EventQuestDividerVisible)
@@ -585,7 +585,7 @@ package
       
       public function arrangeQuests(param1:Boolean = false) : void
       {
-         // method body index: 1937 method index: 1937
+
          var _loc2_:int = 0;
          var _loc3_:HUDQuestTrackerEntry = null;
          _loc2_ = 0;
@@ -637,7 +637,7 @@ package
       
       private function initializeObjective(param1:Object) : HUDQuestTrackerObjective
       {
-         // method body index: 1938 method index: 1938
+
          var _loc2_:HUDQuestTrackerObjective = new HUDQuestTrackerObjective();
          _loc2_.title = param1.title;
          _loc2_.state = param1.state;
@@ -660,7 +660,7 @@ package
       
       private function initializeQuest(param1:Object, param2:Boolean = false) : HUDQuestTrackerEntry
       {
-         // method body index: 1939 method index: 1939
+
          var _loc3_:HUDQuestTrackerObjective = null;
          var _loc4_:Object = null;
          var _loc5_:* = undefined;
@@ -695,7 +695,7 @@ package
       
       private function populateFull() : void
       {
-         // method body index: 1940 method index: 1940
+
          var _loc1_:HUDQuestTrackerEntry = null;
          var _loc2_:Object = null;
          var _loc3_:HUDQuestTrackerEntry = null;
@@ -727,7 +727,7 @@ package
       
       private function getQuestDataByID(param1:uint) : Object
       {
-         // method body index: 1941 method index: 1941
+
          var _loc2_:uint = 0;
          while(_loc2_ < this.m_QuestData.length)
          {
@@ -742,7 +742,7 @@ package
       
       private function getQuestDataObjectiveByID(param1:Object, param2:uint, param3:uint) : *
       {
-         // method body index: 1942 method index: 1942
+
          var _loc4_:uint = 0;
          if(param1 != null)
          {
@@ -761,7 +761,7 @@ package
       
       private function getDisplayedQuestByID(param1:uint) : HUDQuestTrackerEntry
       {
-         // method body index: 1943 method index: 1943
+
          var _loc2_:uint = 0;
          while(_loc2_ < this.m_DisplayedQuests.length)
          {
@@ -776,7 +776,7 @@ package
       
       private function getDisplayedObjectiveByID(param1:HUDQuestTrackerEntry, param2:uint, param3:uint) : HUDQuestTrackerObjective
       {
-         // method body index: 1944 method index: 1944
+
          var _loc4_:uint = 0;
          while(_loc4_ < param1.objectives.length)
          {
@@ -791,7 +791,7 @@ package
       
       private function animateUpdatedObjectives(param1:Vector.<HUDQuestTrackerObjective>) : *
       {
-         // method body index: 1945 method index: 1945
+
          var _loc2_:uint = 0;
          while(_loc2_ < param1.length)
          {
@@ -802,7 +802,7 @@ package
       
       private function fadeDeletedQuests() : void
       {
-         // method body index: 1946 method index: 1946
+
          var _loc1_:int = this.m_DisplayedQuests.length - 1;
          while(_loc1_ >= 0)
          {
@@ -816,7 +816,7 @@ package
       
       private function fadeDeletedObjectives(param1:Vector.<HUDQuestTrackerObjective>) : void
       {
-         // method body index: 1947 method index: 1947
+
          var _loc2_:uint = 0;
          while(_loc2_ < param1.length)
          {
@@ -827,7 +827,7 @@ package
       
       private function removeDeletedQuests() : void
       {
-         // method body index: 1948 method index: 1948
+
          var _loc1_:int = this.m_DisplayedQuests.length - 1;
          while(_loc1_ >= 0)
          {
@@ -843,7 +843,7 @@ package
       
       private function removeDeletedObjectives(param1:Vector.<HUDQuestTrackerObjective>) : void
       {
-         // method body index: 1949 method index: 1949
+
          var _loc2_:uint = 0;
          while(_loc2_ < param1.length)
          {
@@ -854,7 +854,7 @@ package
       
       private function animateCompletedQuests(param1:Vector.<HUDQuestTrackerEntry>) : void
       {
-         // method body index: 1950 method index: 1950
+
          var _loc2_:uint = 0;
          while(_loc2_ < param1.length)
          {
@@ -865,7 +865,7 @@ package
       
       private function animateCompletedObjectives(param1:Vector.<HUDQuestTrackerObjective>) : void
       {
-         // method body index: 1951 method index: 1951
+
          var _loc2_:uint = 0;
          while(_loc2_ < param1.length)
          {
@@ -876,7 +876,7 @@ package
       
       private function animateObjectivesWithMergeLeaderChange(param1:Vector.<HUDQuestTrackerObjective>) : void
       {
-         // method body index: 1952 method index: 1952
+
          var _loc2_:uint = 0;
          while(_loc2_ < param1.length)
          {
@@ -887,7 +887,7 @@ package
       
       private function fadeInQuests(param1:Vector.<HUDQuestTrackerEntry>) : *
       {
-         // method body index: 1953 method index: 1953
+
          var _loc2_:uint = 0;
          while(_loc2_ < param1.length)
          {
@@ -898,7 +898,7 @@ package
       
       private function fadeInObjectives(param1:Vector.<HUDQuestTrackerObjective>) : *
       {
-         // method body index: 1954 method index: 1954
+
          var _loc2_:uint = 0;
          while(_loc2_ < param1.length)
          {
@@ -909,7 +909,7 @@ package
       
       private function focusQuestFade(param1:Number) : *
       {
-         // method body index: 1955 method index: 1955
+
          if(this.m_FocusFadeTween != null)
          {
             this.m_FocusFadeTween.stop();
@@ -921,7 +921,7 @@ package
       
       private function arrangeQuestsObjectives() : void
       {
-         // method body index: 1956 method index: 1956
+
          var _loc1_:uint = 0;
          while(_loc1_ < this.m_DisplayedQuests.length)
          {
@@ -935,7 +935,7 @@ package
       
       private function clearQuestArrangeFlags() : void
       {
-         // method body index: 1957 method index: 1957
+
          var _loc1_:uint = 0;
          while(_loc1_ < this.m_DisplayedQuests.length)
          {
@@ -946,7 +946,7 @@ package
       
       private function clearQuestFocusFlags() : void
       {
-         // method body index: 1958 method index: 1958
+
          var _loc1_:uint = 0;
          while(_loc1_ < this.m_DisplayedQuests.length)
          {
@@ -957,7 +957,7 @@ package
       
       public function queueRemoveQuestObjectives(param1:HUDQuestTrackerEntry, param2:Vector.<HUDQuestTrackerObjective>) : void
       {
-         // method body index: 1959 method index: 1959
+
          var _loc3_:* = 0;
          while(_loc3_ < param1.objectives.length)
          {
@@ -972,7 +972,7 @@ package
       
       private function queueRemoveObjectiveFromTracker(param1:HUDQuestTrackerObjective, param2:HUDQuestTrackerEntry) : void
       {
-         // method body index: 1960 method index: 1960
+
          if(!param1.toRemove)
          {
             param1.toRemove = true;
@@ -984,7 +984,7 @@ package
       
       private function queueAddNewQuestToTracker(param1:Object, param2:Vector.<HUDQuestTrackerEntry>, param3:Vector.<HUDQuestTrackerObjective>, param4:Boolean = false) : HUDQuestTrackerEntry
       {
-         // method body index: 1961 method index: 1961
+
          var _loc5_:HUDQuestTrackerEntry = this.initializeQuest(param1,true);
          _loc5_.tempDisplay = param4;
          var _loc6_:int = 0;
@@ -1001,7 +1001,7 @@ package
       
       private function initializeUpdateEventInfo(param1:String, param2:Object) : Object
       {
-         // method body index: 1962 method index: 1962
+
          return {
             "questID":param1,
             "data":param2,
@@ -1012,7 +1012,7 @@ package
       
       private function processQuestUpdateEvents() : void
       {
-         // method body index: 1964 method index: 1964
+
          this.m_BusyAnimating = true;
          this.m_AnimationPassedRearrange = false;
          var delayMS:uint = 0;
@@ -1028,7 +1028,7 @@ package
          setTimeout(function():// method body index: 1963 method index: 1963
          void
          {
-            // method body index: 1963 method index: 1963
+
             m_BusyAnimating = false;
             if(CanAnimate() && m_EventsQueued)
             {
@@ -1039,7 +1039,7 @@ package
       
       private function doProcessQuestUpdateEvents() : uint
       {
-         // method body index: 1978 method index: 1978
+
          var newQuests:Vector.<HUDQuestTrackerEntry> = null;
          var objectivesUpdated:Vector.<HUDQuestTrackerObjective> = null;
          var newObjectives:Vector.<HUDQuestTrackerObjective> = null;
@@ -1087,7 +1087,7 @@ package
          var findQuestEventByID:* = function(param1:*, param2:int, param3:Array):// method body index: 1965 method index: 1965
          Boolean
          {
-            // method body index: 1965 method index: 1965
+
             if(param1.questID == this.ID)
             {
                this.matchIndex = param2;
@@ -1098,7 +1098,7 @@ package
          var findObjEventByID:* = function(param1:*, param2:int, param3:Array):// method body index: 1966 method index: 1966
          Boolean
          {
-            // method body index: 1966 method index: 1966
+
             if(param1.objectiveID == this.ID && param1.contextQuestID == this.contextQuestID)
             {
                this.matchIndex = param2;
@@ -1326,7 +1326,7 @@ package
             setTimeout(function():// method body index: 1967 method index: 1967
             void
             {
-               // method body index: 1967 method index: 1967
+
                if(tempDisplayObjectives.length > 0)
                {
                   arrangeQuestsObjectives();
@@ -1338,7 +1338,7 @@ package
             setTimeout(function():// method body index: 1968 method index: 1968
             void
             {
-               // method body index: 1968 method index: 1968
+
                fadeInQuests(tempDisplayQuests);
                fadeInObjectives(tempDisplayObjectives);
             },delayMS);
@@ -1350,7 +1350,7 @@ package
             setTimeout(function():// method body index: 1969 method index: 1969
             void
             {
-               // method body index: 1969 method index: 1969
+
                focusQuestFade(0.5);
             },delayMS);
             delayMS = delayMS + EVENT_DURATION_QUEST_FADEINOUT;
@@ -1360,7 +1360,7 @@ package
             setTimeout(function():// method body index: 1970 method index: 1970
             void
             {
-               // method body index: 1970 method index: 1970
+
                animateUpdatedObjectives(objectivesUpdated);
             },delayMS);
             delayMS = delayMS + EVENT_DURATION_OBJECTIVE_UPDATE;
@@ -1370,7 +1370,7 @@ package
             setTimeout(function():// method body index: 1971 method index: 1971
             void
             {
-               // method body index: 1971 method index: 1971
+
                animateCompletedQuests(questsCompleted);
                animateCompletedObjectives(objectivesCompleted);
             },delayMS);
@@ -1381,7 +1381,7 @@ package
             setTimeout(function():// method body index: 1972 method index: 1972
             void
             {
-               // method body index: 1972 method index: 1972
+
                animateObjectivesWithMergeLeaderChange(objectivesMergeChanged);
             },delayMS);
             delayMS = delayMS + EVENT_DURATION_OBJECTIVE_UPDATE;
@@ -1391,7 +1391,7 @@ package
             setTimeout(function():// method body index: 1973 method index: 1973
             void
             {
-               // method body index: 1973 method index: 1973
+
                focusQuestFade(1);
             },delayMS);
             delayMS = delayMS + EVENT_DURATION_QUEST_FADEINOUT;
@@ -1401,7 +1401,7 @@ package
             setTimeout(function():// method body index: 1974 method index: 1974
             void
             {
-               // method body index: 1974 method index: 1974
+
                fadeDeletedObjectives(m_TempObjectivesToRemove);
                fadeDeletedQuests();
             },delayMS);
@@ -1413,7 +1413,7 @@ package
             setTimeout(function():// method body index: 1975 method index: 1975
             void
             {
-               // method body index: 1975 method index: 1975
+
                removeDeletedObjectives(m_TempObjectivesToRemove);
                removeDeletedQuests();
             },delayMS);
@@ -1427,7 +1427,7 @@ package
             setTimeout(function():// method body index: 1976 method index: 1976
             void
             {
-               // method body index: 1976 method index: 1976
+
                arrangeQuestsObjectives();
             },delayMS);
             delayMS = delayMS + EVENT_DURATION_REARRANGE;
@@ -1437,7 +1437,7 @@ package
             setTimeout(function():// method body index: 1977 method index: 1977
             void
             {
-               // method body index: 1977 method index: 1977
+
                if(m_TempQuestObjectiveUpdates)
                {
                   arrangeQuestsObjectives();
@@ -1461,7 +1461,7 @@ package
       
       private function test_onKeyDown(param1:KeyboardEvent) : void
       {
-         // method body index: 1979 method index: 1979
+
          switch(param1.keyCode)
          {
             case 116:
@@ -1549,14 +1549,14 @@ package
       
       private function registerTestFunctionality() : void
       {
-         // method body index: 1980 method index: 1980
+
          this.m_testEnabled = true;
          stage.addEventListener(KeyboardEvent.KEY_DOWN,this.test_onKeyDown);
       }
       
       private function test_forceQuestUpdateCallbacks() : *
       {
-         // method body index: 1981 method index: 1981
+
          var _loc1_:HUDQuestTrackerEntry = null;
          var _loc2_:HUDQuestTrackerObjective = null;
          var _loc3_:uint = 0;
@@ -1578,7 +1578,7 @@ package
       
       private function test_objectiveProgressChange() : *
       {
-         // method body index: 1982 method index: 1982
+
          var foundObjective:Boolean = false;
          var questData:Object = null;
          var objectiveData:Object = null;
@@ -1626,7 +1626,7 @@ package
       
       private function test_objectiveTimerChange() : *
       {
-         // method body index: 1983 method index: 1983
+
          var foundObjective:Boolean = false;
          var questData:Object = null;
          var objectiveData:Object = null;
@@ -1679,7 +1679,7 @@ package
       
       private function test_questTimerChange() : *
       {
-         // method body index: 1984 method index: 1984
+
          var foundQuest:Boolean = false;
          var questData:Object = null;
          var i:uint = 0;
@@ -1720,7 +1720,7 @@ package
       
       private function test_objectiveAlertChange() : *
       {
-         // method body index: 1985 method index: 1985
+
          var foundObjective:Boolean = false;
          var questData:Object = null;
          var objectiveData:Object = null;
@@ -1773,7 +1773,7 @@ package
       
       private function test_questStateUpdate(param1:String, param2:Boolean, param3:uint) : *
       {
-         // method body index: 1986 method index: 1986
+
          var aStateType:String = param1;
          var aStateEnabled:Boolean = param2;
          var aEventType:uint = param3;
@@ -1823,7 +1823,7 @@ package
       
       private function test_questComplete(param1:Boolean = false) : *
       {
-         // method body index: 1987 method index: 1987
+
          var aFailed:Boolean = param1;
          var foundQuest:Boolean = false;
          var questData:Object = null;
@@ -1873,7 +1873,7 @@ package
       
       private function test_createObjective() : Object
       {
-         // method body index: 1988 method index: 1988
+
          var _loc1_:uint = Math.floor(1 + Math.random() * 19);
          var _loc2_:* = Math.random() > 0.5;
          var _loc3_:Number = QUEST_STATE_INPROGRESS;
@@ -1895,7 +1895,7 @@ package
       
       private function test_questAdd() : *
       {
-         // method body index: 1989 method index: 1989
+
          var _loc1_:String = "tquest" + Math.floor(Math.random() * 256);
          var _loc2_:* = Math.random() > 0.4?true:false;
          var _loc3_:* = Math.random() > 0.4?_loc2_:false;
@@ -1940,7 +1940,7 @@ package
       
       private function test_questRemove() : void
       {
-         // method body index: 1990 method index: 1990
+
          var removedQuest:Boolean = false;
          var quest:Object = null;
          var i:int = 0;
@@ -1994,7 +1994,7 @@ package
       
       private function test_objectiveCountUpdate(param1:Boolean = true) : *
       {
-         // method body index: 1991 method index: 1991
+
          var aAdd:Boolean = param1;
          var foundObjective:Boolean = false;
          var quest:Object = null;
@@ -2064,7 +2064,7 @@ package
       
       private function test_objectiveRemove() : *
       {
-         // method body index: 1992 method index: 1992
+
          var foundObjective:Boolean = false;
          var quest:Object = null;
          var objectiveID:String = null;
@@ -2112,7 +2112,7 @@ package
       
       private function test_objectiveAdd() : *
       {
-         // method body index: 1993 method index: 1993
+
          var foundQuest:Boolean = false;
          var quest:Object = null;
          var objective:Object = null;
@@ -2158,7 +2158,7 @@ package
       
       private function test_objectiveComplete(param1:Boolean = false) : *
       {
-         // method body index: 1994 method index: 1994
+
          var aFailed:Boolean = param1;
          var foundQuest:Boolean = false;
          var quest:Object = null;

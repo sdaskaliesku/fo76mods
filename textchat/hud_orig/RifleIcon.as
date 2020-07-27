@@ -9,7 +9,7 @@ package
       
       public function RifleIcon()
       {
-         // method body index: 2305 method index: 2305
+
          super();
       }
    }

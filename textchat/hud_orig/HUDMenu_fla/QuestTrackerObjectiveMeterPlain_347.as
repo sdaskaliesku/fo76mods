@@ -13,14 +13,14 @@ package HUDMenu_fla
       
       public function QuestTrackerObjectiveMeterPlain_347()
       {
-         // method body index: 1358 method index: 1358
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1357 method index: 1357
+
          stop();
       }
    }

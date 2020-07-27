@@ -19,7 +19,7 @@ package HUDMenu_fla
       
       public function AnnounceAvailableQuest_256()
       {
-         // method body index: 1002 method index: 1002
+
          super();
          addFrameScript(0,this.frame1,5,this.frame6,10,this.frame11,15,this.frame16);
          this.__setProp_QuestVaultBoy_mc_AnnounceAvailableQuest_QuestVaultBoy_mc_0();
@@ -27,7 +27,7 @@ package HUDMenu_fla
       
       function __setProp_QuestVaultBoy_mc_AnnounceAvailableQuest_QuestVaultBoy_mc_0() : *
       {
-         // method body index: 997 method index: 997
+
          try
          {
             this.QuestVaultBoy_mc["componentInspectorSetting"] = true;
@@ -62,25 +62,25 @@ package HUDMenu_fla
       
       function frame1() : *
       {
-         // method body index: 998 method index: 998
+
          stop();
       }
       
       function frame6() : *
       {
-         // method body index: 999 method index: 999
+
          stop();
       }
       
       function frame11() : *
       {
-         // method body index: 1000 method index: 1000
+
          stop();
       }
       
       function frame16() : *
       {
-         // method body index: 1001 method index: 1001
+
          stop();
       }
    }

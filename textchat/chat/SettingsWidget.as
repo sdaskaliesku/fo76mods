@@ -60,7 +60,7 @@ package
       
       public function SettingsWidget()
       {
-         // method body index: 587 method index: 587
+
          super();
          Extensions.enabled = true;
          var _loc1_:TextFormat = new TextFormat();
@@ -93,7 +93,7 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 588 method index: 588
+
       }
    }
 }

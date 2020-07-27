@@ -24,7 +24,7 @@ package fl.motion
       
       public function Animator3D(param1:XML = null, param2:DisplayObject = null)
       {
-         // method body index: 760 method index: 760
+
          super(param1,param2);
          this.transformationPoint = new Point(0,0);
          this._initialPosition = null;
@@ -34,13 +34,13 @@ package fl.motion
       
       protected static function getSign(param1:Number) : int
       {
-         // method body index: 757 method index: 757
+
          return param1 < -EPSILON?-1:param1 > EPSILON?1:0;
       }
       
       protected static function convertMatrixToMatrix3D(param1:Matrix) : Matrix3D
       {
-         // method body index: 758 method index: 758
+
          var _loc2_:Vector.<Number> = new Vector.<Number>(16);
          _loc2_[0] = param1.a;
          _loc2_[1] = param1.b;
@@ -63,7 +63,7 @@ package fl.motion
       
       protected static function matrices3DEqual(param1:Matrix3D, param2:Matrix3D) : Boolean
       {
-         // method body index: 759 method index: 759
+
          var _loc3_:Vector.<Number> = param1.rawData;
          var _loc4_:Vector.<Number> = param2.rawData;
          if(_loc3_ == null || _loc3_.length != 16 || _loc4_ == null || _loc4_.length != 16)
@@ -84,7 +84,7 @@ package fl.motion
       
       override public function set initialPosition(param1:Array) : void
       {
-         // method body index: 761 method index: 761
+
          if(param1.length == 3)
          {
             this._initialPosition = new Vector3D();
@@ -96,7 +96,7 @@ package fl.motion
       
       override protected function setTargetState() : void
       {
-         // method body index: 762 method index: 762
+
          if(!motionArray && this._target.transform.matrix != null)
          {
             this._initialMatrixOfTarget = convertMatrixToMatrix3D(this._target.transform.matrix);
@@ -105,7 +105,7 @@ package fl.motion
       
       override protected function setTime3D(param1:int, param2:MotionBase) : Boolean
       {
-         // method body index: 763 method index: 763
+
          var _loc4_:Matrix3D = null;
          var _loc5_:Matrix3D = null;
          var _loc6_:Number = NaN;
@@ -183,7 +183,7 @@ package fl.motion
       
       override protected function removeChildTarget(param1:MovieClip, param2:DisplayObject, param3:String) : void
       {
-         // method body index: 764 method index: 764
+
          super.removeChildTarget(param1,param2,param3);
          if(param2.transform.matrix3D != null)
          {
@@ -193,7 +193,7 @@ package fl.motion
       
       private function getScaleSkewMatrix(param1:MotionBase, param2:int, param3:Number, param4:Number) : Matrix
       {
-         // method body index: 765 method index: 765
+
          var _loc5_:Number = param1.getValue(param2,Tweenables.SCALE_X);
          var _loc6_:Number = param1.getValue(param2,Tweenables.SCALE_Y);
          var _loc7_:Number = param1.getValue(param2,Tweenables.SKEW_X);

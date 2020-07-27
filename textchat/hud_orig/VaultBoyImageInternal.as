@@ -9,7 +9,7 @@ package
       
       public function VaultBoyImageInternal()
       {
-         // method body index: 3108 method index: 3108
+
          super();
       }
    }

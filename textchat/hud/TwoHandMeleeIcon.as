@@ -9,7 +9,7 @@ package
       
       public function TwoHandMeleeIcon()
       {
-         // method body index: 2276 method index: 2276
+
          super();
       }
    }

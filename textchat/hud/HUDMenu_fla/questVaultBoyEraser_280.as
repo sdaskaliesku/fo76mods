@@ -9,14 +9,14 @@ package HUDMenu_fla
       
       public function questVaultBoyEraser_280()
       {
-         // method body index: 1713 method index: 1713
+
          super();
          addFrameScript(58,this.frame59);
       }
       
       function frame59() : *
       {
-         // method body index: 1714 method index: 1714
+
          stop();
       }
    }

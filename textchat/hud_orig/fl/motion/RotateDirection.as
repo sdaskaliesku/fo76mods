@@ -19,7 +19,7 @@ package fl.motion
       
       public function RotateDirection()
       {
-         // method body index: 299 method index: 299
+
          super();
       }
    }

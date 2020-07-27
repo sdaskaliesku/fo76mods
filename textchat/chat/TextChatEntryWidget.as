@@ -17,13 +17,13 @@ package
       
       public function TextChatEntryWidget()
       {
-         // method body index: 591 method index: 591
+
          super();
       }
       
       public function setIniProperties(param1:*, param2:*) : void
       {
-         // method body index: 592 method index: 592
+
          if(param1 > 120)
          {
             param1 = param1 - 120;
@@ -49,7 +49,7 @@ package
       
       public function setChatTab() : void
       {
-         // method body index: 593 method index: 593
+
          var _loc1_:uint = this.ChatEntryChannel_tf.borderColor;
          this.ChatEntryChannel_tf.backgroundColor = _loc1_;
          this.ChatEntryChannel_tf.background = true;
@@ -58,7 +58,7 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 594 method index: 594
+
       }
    }
 }

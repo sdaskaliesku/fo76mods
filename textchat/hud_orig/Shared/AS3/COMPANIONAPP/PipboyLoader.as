@@ -16,13 +16,13 @@ package Shared.AS3.COMPANIONAPP
       
       public function PipboyLoader()
       {
-         // method body index: 774 method index: 774
+
          super();
       }
       
       override public function load(request:URLRequest, context:LoaderContext = null) : void
       {
-         // method body index: 775 method index: 775
+
          if(CompanionAppMode.isOn)
          {
             if(ExternalInterface.available)
@@ -44,7 +44,7 @@ package Shared.AS3.COMPANIONAPP
       
       public function OnGetAssetPathResult(assetPath:String) : void
       {
-         // method body index: 776 method index: 776
+
          this._request.url = assetPath;
          super.load(this._request,this._context);
          this._request = null;

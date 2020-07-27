@@ -14,7 +14,7 @@ package
       
       public function TextChatTabTwo()
       {
-         // method body index: 291 method index: 291
+
          super();
       }
    }

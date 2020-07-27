@@ -138,7 +138,7 @@ package
       
       public function HUDAnnounceEventWidget()
       {
-         // method body index: 929 method index: 929
+
          this.m_ProcessedEventIDList = new Array();
          this.m_AcceptButtonHint = new BSButtonHintData("$RESET","T","PSN_Y","Xenon_Y",1,null);
          super();
@@ -148,7 +148,7 @@ package
       
       private function updateIsAnimating() : void
       {
-         // method body index: 896 method index: 896
+
          var isAnimating:Boolean = this.m_IsBusy && this.m_Active;
          if(this.m_IsAnimating != isAnimating)
          {
@@ -166,7 +166,7 @@ package
       
       public function set isBusy(aBusy:Boolean) : void
       {
-         // method body index: 897 method index: 897
+
          if(aBusy != this.m_IsBusy)
          {
             this.m_IsBusy = aBusy;
@@ -176,7 +176,7 @@ package
       
       public function set active(aActive:Boolean) : void
       {
-         // method body index: 898 method index: 898
+
          var eventArray:Array = null;
          var eventsLen:uint = 0;
          var event:Object = null;
@@ -221,13 +221,13 @@ package
       
       private function updateEnabled() : void
       {
-         // method body index: 899 method index: 899
+
          this.active = this.m_Enabled && this.m_IsValidHudMode;
       }
       
       private function onDataUpdate(arEvent:FromClientDataEvent) : void
       {
-         // method body index: 900 method index: 900
+
          this.m_ProcessedEventIDList = new Array();
          this.m_Enabled = arEvent.data.isFanfareEnabled;
          this.updateEnabled();
@@ -236,7 +236,7 @@ package
       
       private function isValidFanfareQuest(aQuestID:String) : Boolean
       {
-         // method body index: 901 method index: 901
+
          var curQuest:Object = null;
          var oIndex:uint = 0;
          var questList:Array = BSUIDataManager.GetDataFromClient("QuestTrackerData").data.quests;
@@ -263,7 +263,7 @@ package
       
       private function evaluateQueue(abContinuationAnim:Boolean = false) : void
       {
-         // method body index: 902 method index: 902
+
          var startedNewAnimation:Boolean = false;
          var onlyShowCompletionRewards:Boolean = false;
          var fanfareEvent:Object = null;
@@ -340,13 +340,13 @@ package
       
       private function getEventTypeData(aType:uint) : Object
       {
-         // method body index: 903 method index: 903
+
          return aType < FANFARE_TYPE_COUNT?this.m_EventData.data.fanfareTypes[aType]:null;
       }
       
       private function animateLocationDiscovered(discoverEvent:Object) : void
       {
-         // method body index: 905 method index: 905
+
          this.m_LocationBusy = true;
          BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_LOC_BUSY,{"isLocationBusy":true}));
          this.AnnounceLocationDiscovered_mc.Area_mc.Area_tf.text = discoverEvent.locationName;
@@ -370,7 +370,7 @@ package
          setTimeout(function():// method body index: 904 method index: 904
          *
          {
-            // method body index: 904 method index: 904
+
             m_LocationBusy = false;
             BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_LOC_BUSY,{"isLocationBusy":false}));
             evaluateQueue();
@@ -379,13 +379,13 @@ package
       
       private function IsSimpleType(aType:String) : Boolean
       {
-         // method body index: 906 method index: 906
+
          return aType == "int" || aType == "uint" || aType == "Number" || aType == "String" || aType == "Boolean";
       }
       
       private function CloneKey(key:String, aClone:*, aOriginal:*) : void
       {
-         // method body index: 907 method index: 907
+
          var type:String = getQualifiedClassName(aOriginal[key]);
          if(type == "Object")
          {
@@ -404,7 +404,7 @@ package
       
       private function CloneArrayData(aArray:Array) : Array
       {
-         // method body index: 908 method index: 908
+
          var clone:Array = new Array();
          for(var i:uint = 0; i < aArray.length; i++)
          {
@@ -415,7 +415,7 @@ package
       
       private function CloneObjectData(aData:Object) : Object
       {
-         // method body index: 909 method index: 909
+
          var key:* = undefined;
          var cloneData:Object = new Object();
          for(key in aData)
@@ -427,7 +427,7 @@ package
       
       private function animateEvent(aEvent:Object) : Boolean
       {
-         // method body index: 911 method index: 911
+
          var eventClip:MovieClip = null;
          var vaultBoyImage:VaultBoyImageLoader = null;
          var description:String = null;
@@ -597,7 +597,7 @@ package
             this.m_CurTimeout = setTimeout(function():// method body index: 910 method index: 910
             *
             {
-               // method body index: 910 method index: 910
+
                if((m_CurEvent.fanfareEventType == FANFARE_TYPE_QUESTACTIVE || m_CurEvent.fanfareEventType == FANFARE_TYPE_QUESTAVAILABLE) && m_AcceptButtonHint.holdPercent > 0)
                {
                   BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_ACCEPT,{"fanfareEventID":m_CurEvent.fanfareEventID}));
@@ -614,7 +614,7 @@ package
       
       private function DisplaySimpleRewards(aEvent:Object) : void
       {
-         // method body index: 913 method index: 913
+
          var xpReward:Number = NaN;
          this.ShowCurrencyReward(aEvent.currencyID,aEvent.currencyRewarded);
          var xpDelay:Number = 700;
@@ -622,7 +622,7 @@ package
          setTimeout(function():// method body index: 912 method index: 912
          *
          {
-            // method body index: 912 method index: 912
+
             ShowXPReward(xpReward);
          },xpDelay);
          BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_CONSUME,{"fanfareEventID":aEvent.fanfareEventID}));
@@ -630,7 +630,7 @@ package
       
       private function endFanfare() : void
       {
-         // method body index: 914 method index: 914
+
          var eventTypeData:Object = null;
          var fadeTime:Number = NaN;
          var standardRollOffAnimName:String = null;
@@ -698,14 +698,14 @@ package
       
       public function onFarefanFullyDisplayed(e:Event) : void
       {
-         // method body index: 915 method index: 915
+
          this.m_CurEvent.markedAsDisplay = true;
          BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_CONSUME,{"fanfareEventID":this.m_CurEvent.fanfareEventID}));
       }
       
       public function onShowModel(e:Event) : void
       {
-         // method body index: 916 method index: 916
+
          BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_UPDATEMODEL,{
             "itemHandle":this.m_CurEvent.itemHandle,
             "showingItem":true
@@ -714,7 +714,7 @@ package
       
       public function onClearModel(e:Event) : void
       {
-         // method body index: 917 method index: 917
+
          if(this.m_CurEvent)
          {
             BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_UPDATEMODEL,{
@@ -726,11 +726,11 @@ package
       
       private function GetOnPlayItemSoundFunc(aItemIndex:uint) : Function
       {
-         // method body index: 919 method index: 919
+
          return function():// method body index: 918 method index: 918
          void
          {
-            // method body index: 918 method index: 918
+
             if(m_CurEvent.rewardsA.length > aItemIndex)
             {
                BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_PLAYITEMSOUND,{"uItemHandle":m_CurEvent.rewardsA[aItemIndex].uItemHandle}));
@@ -740,13 +740,13 @@ package
       
       private function onShowXPReward(e:Event) : void
       {
-         // method body index: 920 method index: 920
+
          this.ShowXPReward(this.m_CurEvent.xpRewarded);
       }
       
       private function ShowXPReward(aXP:Number) : void
       {
-         // method body index: 921 method index: 921
+
          if(aXP)
          {
             BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_XPREWARD,{"xpRewarded":aXP}));
@@ -755,13 +755,13 @@ package
       
       private function onShowCurrencyReward(e:Event) : void
       {
-         // method body index: 922 method index: 922
+
          this.ShowCurrencyReward(this.m_CurEvent.currencyID,this.m_CurEvent.currencyRewarded);
       }
       
       private function ShowCurrencyReward(aCurrencyID:uint, aCurrencyRewarded:uint) : void
       {
-         // method body index: 923 method index: 923
+
          if(aCurrencyRewarded)
          {
             BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_CURRENCYREWARD,{
@@ -773,7 +773,7 @@ package
       
       public function onAnimEnd(aEvaluateQueue:Boolean = true) : void
       {
-         // method body index: 924 method index: 924
+
          this.m_CurTimeout = -1;
          if(aEvaluateQueue)
          {
@@ -787,7 +787,7 @@ package
       
       private function onQuestAcceptUpdate(arEvent:FromClientDataEvent) : void
       {
-         // method body index: 925 method index: 925
+
          if(arEvent.data.totalButtonHoldTime > 0)
          {
             this.m_AcceptButtonHint.holdPercent = Math.max(0,Math.min(1,arEvent.data.timeButtonHeld / arEvent.data.totalButtonHoldTime));
@@ -800,7 +800,7 @@ package
       
       private function onHUDModeUpdate(arEvent:FromClientDataEvent) : void
       {
-         // method body index: 926 method index: 926
+
          this.m_IsValidHudMode = this.m_ValidHudModes.indexOf(arEvent.data.hudMode) != -1;
          this.updateEnabled();
          this.evaluateQueue();
@@ -808,7 +808,7 @@ package
       
       private function onQuestDataUpdate(arEvent:FromClientDataEvent) : void
       {
-         // method body index: 927 method index: 927
+
          if(!this.m_IsBusy)
          {
             this.evaluateQueue();
@@ -817,7 +817,7 @@ package
       
       private function onAddedToStage(e:Event) : void
       {
-         // method body index: 928 method index: 928
+
          this.m_ValidHudModes = new Array(HUDModes.ALL,HUDModes.ACTIVATE_TYPE,HUDModes.SIT_WAIT_MODE,HUDModes.VERTIBIRD_MODE,HUDModes.POWER_ARMOR,HUDModes.IRON_SIGHTS,HUDModes.SCOPE_MENU,HUDModes.INSIDE_MEMORY,HUDModes.WORKSHOP_MODE,HUDModes.CAMP_PLACEMENT,HUDModes.FURNITURE_ENTER_EXIT);
          this.m_EventData = BSUIDataManager.GetDataFromClient("FanfareData");
          BSUIDataManager.Subscribe("FanfareData",this.onDataUpdate);

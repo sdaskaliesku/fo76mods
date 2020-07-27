@@ -9,7 +9,7 @@ package
       
       public function AlienBlasterIcon()
       {
-         // method body index: 726 method index: 726
+
          super();
       }
    }

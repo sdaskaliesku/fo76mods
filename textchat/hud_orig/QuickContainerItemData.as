@@ -31,7 +31,7 @@ package
       
       public function QuickContainerItemData()
       {
-         // method body index: 25 method index: 25
+
          super();
          this.text = new String();
          this.count = 0;

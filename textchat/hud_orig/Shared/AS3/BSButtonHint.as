@@ -158,7 +158,7 @@ package Shared.AS3
       
       public function BSButtonHint()
       {
-         // method body index: 3259 method index: 3259
+
          var frameList:Array = null;
          var curFrame:FrameLabel = null;
          var foundHold:Boolean = false;
@@ -206,7 +206,7 @@ package Shared.AS3
       
       public function set ButtonHintData(value:BSButtonHintData) : void
       {
-         // method body index: 3260 method index: 3260
+
          if(this._buttonHintData)
          {
             this._buttonHintData.removeEventListener(BSButtonHintData.BUTTON_HINT_DATA_CHANGE,this.onButtonHintDataDirtyEvent);
@@ -221,13 +221,13 @@ package Shared.AS3
       
       private function onButtonHintDataDirtyEvent(arEvent:Event) : void
       {
-         // method body index: 3261 method index: 3261
+
          SetIsDirty();
       }
       
       public function get PCKey() : String
       {
-         // method body index: 3262 method index: 3262
+
          var pcKeyName:String = null;
          if(this._buttonHintData.PCKey)
          {
@@ -240,7 +240,7 @@ package Shared.AS3
       
       public function get SecondaryPCKey() : String
       {
-         // method body index: 3263 method index: 3263
+
          var pcKeyName:String = null;
          if(this._buttonHintData.SecondaryPCKey)
          {
@@ -253,7 +253,7 @@ package Shared.AS3
       
       private function TranslateKey(aKeyName:String) : String
       {
-         // method body index: 3264 method index: 3264
+
          switch(uiKeyboard)
          {
             case PlatformChangeEvent.PLATFORM_PC_KB_FR:
@@ -273,13 +273,13 @@ package Shared.AS3
       
       private function get UsePCKey() : Boolean
       {
-         // method body index: 3265 method index: 3265
+
          return uiController == PlatformChangeEvent.PLATFORM_PC_KB_MOUSE && !NameToTextMap.hasOwnProperty(this._buttonHintData.PCKey);
       }
       
       public function get ControllerButton() : String
       {
-         // method body index: 3266 method index: 3266
+
          var controllerButtonName:String = "";
          if(uiController != PlatformChangeEvent.PLATFORM_MOBILE && this.UsePCKey)
          {
@@ -313,7 +313,7 @@ package Shared.AS3
       
       public function get SecondaryControllerButton() : String
       {
-         // method body index: 3267 method index: 3267
+
          var controllerButtonName:String = "";
          if(this._buttonHintData.hasSecondaryButton)
          {
@@ -350,13 +350,13 @@ package Shared.AS3
       
       public function get ButtonText() : String
       {
-         // method body index: 3268 method index: 3268
+
          return this._buttonHintData.ButtonText;
       }
       
       public function get Justification() : uint
       {
-         // method body index: 3269 method index: 3269
+
          if(CompanionAppMode.isOn)
          {
             return this._buttonHintData != null?uint(this._buttonHintData.Justification):uint(JUSTIFY_LEFT);
@@ -366,37 +366,37 @@ package Shared.AS3
       
       public function get ButtonDisabled() : Boolean
       {
-         // method body index: 3270 method index: 3270
+
          return this._buttonHintData.ButtonDisabled;
       }
       
       public function get SecondaryButtonDisabled() : Boolean
       {
-         // method body index: 3271 method index: 3271
+
          return this._buttonHintData.SecondaryButtonDisabled;
       }
       
       public function get AllButtonsDisabled() : Boolean
       {
-         // method body index: 3272 method index: 3272
+
          return this.ButtonDisabled && (!this._buttonHintData.hasSecondaryButton || this.SecondaryButtonDisabled);
       }
       
       public function get ButtonVisible() : Boolean
       {
-         // method body index: 3273 method index: 3273
+
          return this._buttonHintData && this._buttonHintData.ButtonVisible;
       }
       
       public function get UseDynamicMovieClip() : Boolean
       {
-         // method body index: 3274 method index: 3274
+
          return this._buttonHintData.DynamicMovieClipName.length > 0;
       }
       
       public function onTextClick(aEvent:Event) : void
       {
-         // method body index: 3275 method index: 3275
+
          var triggerPrimaryFunction:* = undefined;
          var triggerSecondaryFunction:* = undefined;
          if(this.ButtonVisible)
@@ -421,13 +421,13 @@ package Shared.AS3
       
       public function get bButtonPressed() : Boolean
       {
-         // method body index: 3276 method index: 3276
+
          return this._bButtonPressed;
       }
       
       public function set bButtonPressed(abButtonPressed:Boolean) : *
       {
-         // method body index: 3277 method index: 3277
+
          if(this._bButtonPressed != abButtonPressed)
          {
             this._bButtonPressed = abButtonPressed;
@@ -437,13 +437,13 @@ package Shared.AS3
       
       public function get bMouseOver() : Boolean
       {
-         // method body index: 3278 method index: 3278
+
          return this._bMouseOver;
       }
       
       public function set bMouseOver(abMouseOver:Boolean) : *
       {
-         // method body index: 3279 method index: 3279
+
          if(this._bMouseOver != abMouseOver)
          {
             this._bMouseOver = abMouseOver;
@@ -453,25 +453,25 @@ package Shared.AS3
       
       private function onMouseOver(event:MouseEvent) : *
       {
-         // method body index: 3280 method index: 3280
+
          this.bMouseOver = true;
       }
       
       protected function onMouseOut(event:MouseEvent) : *
       {
-         // method body index: 3281 method index: 3281
+
          this.bMouseOver = false;
       }
       
       public function get useVaultTecColor() : Boolean
       {
-         // method body index: 3282 method index: 3282
+
          return this.m_UseVaultTecColor;
       }
       
       public function set useVaultTecColor(aUseColor:Boolean) : void
       {
-         // method body index: 3283 method index: 3283
+
          var colorFilter:AdjustColor = null;
          var matrixArray:Array = null;
          if(aUseColor != this.m_UseVaultTecColor)
@@ -506,13 +506,13 @@ package Shared.AS3
       
       public function set canHold(aHold:Boolean) : void
       {
-         // method body index: 3284 method index: 3284
+
          this.m_CanHold = aHold;
       }
       
       public function set holdPercent(aPercent:Number) : void
       {
-         // method body index: 3285 method index: 3285
+
          if(aPercent != this.m_HoldPercent)
          {
             this.m_HoldPercent = aPercent;
@@ -522,7 +522,7 @@ package Shared.AS3
       
       private function redrawHoldIndicator() : void
       {
-         // method body index: 3286 method index: 3286
+
          if(this.HoldMeter_mc != null)
          {
             if(this.m_CanHold)
@@ -550,7 +550,7 @@ package Shared.AS3
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3287 method index: 3287
+
          var minXPos:Number = NaN;
          var maxXPos:Number = NaN;
          var minYPos:Number = NaN;
@@ -603,7 +603,7 @@ package Shared.AS3
       
       public function SetFlashing(abFlash:Boolean) : *
       {
-         // method body index: 3288 method index: 3288
+
          if(abFlash != this.bButtonFlashing)
          {
             this.bButtonFlashing = abFlash;
@@ -613,7 +613,7 @@ package Shared.AS3
       
       private function UpdateIconTextField(icon_tf:TextField, controllerText:String) : *
       {
-         // method body index: 3289 method index: 3289
+
          var formatUpdate:* = undefined;
          icon_tf.text = controllerText;
          var expectedFont:String = this.GetExpectedFont();
@@ -632,7 +632,7 @@ package Shared.AS3
       
       private function redrawDynamicMovieClip() : void
       {
-         // method body index: 3290 method index: 3290
+
          var clipClass:Class = null;
          var clipScale:Number = NaN;
          if(this._buttonHintData.DynamicMovieClipName != this._strCurrentDynamicMovieClipName)
@@ -658,7 +658,7 @@ package Shared.AS3
       
       private function redrawTextField() : void
       {
-         // method body index: 3291 method index: 3291
+
          var holdButtonOffset:* = undefined;
          this.textField_tf.visible = !this.UseDynamicMovieClip;
          if(this.textField_tf.visible)
@@ -672,7 +672,7 @@ package Shared.AS3
       
       private function redrawSecondaryButton() : void
       {
-         // method body index: 3292 method index: 3292
+
          this.SecondaryIconHolderInstance.visible = this._buttonHintData.hasSecondaryButton;
          if(this.SecondaryIconHolderInstance.visible)
          {
@@ -684,7 +684,7 @@ package Shared.AS3
       
       private function redrawPrimaryButton() : void
       {
-         // method body index: 3293 method index: 3293
+
          this.UpdateIconTextField(this.IconHolderInstance.IconAnimInstance.Icon_tf,this.ControllerButton);
          this.IconHolderInstance.alpha = !!this.ButtonDisabled?Number(DISABLED_GREY_OUT_ALPHA):Number(1);
          this.IconHolderInstance.x = this.Justification == JUSTIFY_LEFT?Number(0):Number(-this.IconHolderInstance.width);
@@ -692,7 +692,7 @@ package Shared.AS3
       
       private function redrawHitArea() : void
       {
-         // method body index: 3294 method index: 3294
+
          var bounds:* = this.getBounds(this);
          this._hitArea.x = bounds.x;
          this._hitArea.width = bounds.width;
@@ -702,7 +702,7 @@ package Shared.AS3
       
       private function GetExpectedFont() : String
       {
-         // method body index: 3295 method index: 3295
+
          var expectedFormat:String = null;
          var bUseInverted:Boolean = false;
          if(this.UsePCKey)
@@ -719,14 +719,14 @@ package Shared.AS3
       
       private function SetUpTextFields(aTextField:TextField) : *
       {
-         // method body index: 3296 method index: 3296
+
          aTextField.autoSize = TextFieldAutoSize.LEFT;
          aTextField.antiAliasType = AntiAliasType.NORMAL;
       }
       
       private function updateButtonHintFilters() : void
       {
-         // method body index: 3297 method index: 3297
+
          var index:* = this.filters.indexOf(WarningColorMatrixFilter);
          if(this._buttonHintData.IsWarning)
          {

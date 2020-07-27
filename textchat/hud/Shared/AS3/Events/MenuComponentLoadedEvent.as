@@ -16,20 +16,20 @@ package Shared.AS3.Events
       
       public function MenuComponentLoadedEvent(param1:MenuComponent)
       {
-         // method body index: 372 method index: 372
+
          super(MENU_COMPONENT_LOADED,true,false);
          this._sender = param1;
       }
       
       public function RespondToEvent(param1:IMenu) : *
       {
-         // method body index: 373 method index: 373
+
          this._sender.SetParentMenu(param1);
       }
       
       override public function clone() : Event
       {
-         // method body index: 374 method index: 374
+
          return new MenuComponentLoadedEvent(this._sender);
       }
    }

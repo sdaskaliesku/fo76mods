@@ -19,7 +19,7 @@ package
       
       public function HUDWorkshopMarkers()
       {
-         // method body index: 2977 method index: 2977
+
          super();
          Extensions.enabled = true;
          this.MarkerMCs = new Vector.<WorkshopMarker>();
@@ -27,21 +27,21 @@ package
       
       override public function onAddedToStage() : void
       {
-         // method body index: 2978 method index: 2978
+
          super.onAddedToStage();
          BSUIDataManager.Subscribe(DATA_PROVIDER_KEY,this.onMarkersUpdated);
       }
       
       public function onMarkersUpdated(arEvent:FromClientDataEvent) : void
       {
-         // method body index: 2979 method index: 2979
+
          this.MarkersData = arEvent.data.markersA;
          SetIsDirty();
       }
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 2980 method index: 2980
+
          var markerMC:WorkshopMarker = null;
          var markerData:Object = null;
          for(var idx:int = 0; idx < this.MarkersData.length; idx++)

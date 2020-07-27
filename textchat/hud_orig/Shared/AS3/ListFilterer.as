@@ -17,20 +17,20 @@ package Shared.AS3
       
       public function ListFilterer()
       {
-         // method body index: 691 method index: 691
+
          super();
          this.iItemFilter = 4294967295;
       }
       
       public function get itemFilter() : int
       {
-         // method body index: 692 method index: 692
+
          return this.iItemFilter;
       }
       
       public function set itemFilter(aiNewFilter:int) : *
       {
-         // method body index: 693 method index: 693
+
          var bdifferent:* = this.iItemFilter != aiNewFilter;
          this.iItemFilter = aiNewFilter;
          if(bdifferent == true)
@@ -41,25 +41,25 @@ package Shared.AS3
       
       public function get filterArray() : Array
       {
-         // method body index: 694 method index: 694
+
          return this._filterArray;
       }
       
       public function set filterArray(aNewArray:Array) : *
       {
-         // method body index: 695 method index: 695
+
          this._filterArray = aNewArray;
       }
       
       public function EntryMatchesFilter(aEntry:Object) : Boolean
       {
-         // method body index: 696 method index: 696
+
          return aEntry != null && (!aEntry.hasOwnProperty("filterFlag") || (aEntry.filterFlag & this.iItemFilter) != 0);
       }
       
       public function GetPrevFilterMatch(aiStartIndex:int) : int
       {
-         // method body index: 697 method index: 697
+
          var ientry:int = 0;
          var imatchIndex:int = int.MAX_VALUE;
          if(aiStartIndex != int.MAX_VALUE && this._filterArray != null)
@@ -79,7 +79,7 @@ package Shared.AS3
       
       public function GetNextFilterMatch(aiStartIndex:int) : int
       {
-         // method body index: 698 method index: 698
+
          var ientry:int = 0;
          var imatchIndex:int = int.MAX_VALUE;
          if(aiStartIndex != int.MAX_VALUE && this._filterArray != null)
@@ -99,7 +99,7 @@ package Shared.AS3
       
       public function FindArrayIndexOfFilteredPosition(aiFilteredListIndex:int) : int
       {
-         // method body index: 699 method index: 699
+
          var iArrayIndex:Number = this.ClampIndex(0);
          while(aiFilteredListIndex > 0 && iArrayIndex != int.MAX_VALUE)
          {
@@ -111,7 +111,7 @@ package Shared.AS3
       
       public function ClampIndex(aiStartIndex:int) : int
       {
-         // method body index: 700 method index: 700
+
          var inextIndex:int = 0;
          var iprevIndex:int = 0;
          var ireturnVal:* = aiStartIndex;
@@ -141,7 +141,7 @@ package Shared.AS3
       
       public function IsFilterEmpty(aiFilter:int) : Boolean
       {
-         // method body index: 701 method index: 701
+
          var bresult:* = false;
          var iprevFilter:int = this.iItemFilter;
          this.iItemFilter = aiFilter;
@@ -152,7 +152,7 @@ package Shared.AS3
       
       public function IsValidIndex(aiStartIndex:int) : Boolean
       {
-         // method body index: 702 method index: 702
+
          return aiStartIndex != int.MAX_VALUE && this._filterArray != null && this.EntryMatchesFilter(this._filterArray[aiStartIndex]);
       }
    }

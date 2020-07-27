@@ -9,14 +9,14 @@ package HUDMenu_fla
       
       public function MeterClip_146()
       {
-         // method body index: 1181 method index: 1181
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1180 method index: 1180
+
          stop();
       }
    }

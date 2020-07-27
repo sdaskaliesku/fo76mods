@@ -9,7 +9,7 @@ package
       
       public function PlasmaRifleIcon()
       {
-         // method body index: 2204 method index: 2204
+
          super();
       }
    }

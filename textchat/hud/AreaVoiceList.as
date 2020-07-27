@@ -14,14 +14,14 @@ package
       
       public function AreaVoiceList()
       {
-         // method body index: 732 method index: 732
+
          super();
          addEventListener(Event.ADDED_TO_STAGE,this.onAddedToStage);
       }
       
       private function onAddedToStage(param1:Event) : void
       {
-         // method body index: 733 method index: 733
+
          this.List_mc.itemRendererClassName_Inspectable = "AreaVoiceEntry";
          this.List_mc.disableSelection_Inspectable = true;
          this.List_mc.List_mc.disableInput_Inspectable = true;
@@ -34,7 +34,7 @@ package
       
       private function onAreaVoiceUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 734 method index: 734
+
          this.List_mc.List_mc.MenuListData = param1.data.participants;
          this.List_mc.SetIsDirty();
       }

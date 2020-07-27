@@ -16,7 +16,7 @@ package
       
       public function HUDObjectiveItem()
       {
-         // method body index: 3442 method index: 3442
+
          super();
          addFrameScript(4,this.frame5,64,this.frame65,261,this.frame262,284,this.frame285);
          this.ObjectiveMessage_tf.autoSize = TextFieldAutoSize.LEFT;
@@ -26,32 +26,32 @@ package
       
       public function get data() : HUDObjectiveItemData
       {
-         // method body index: 3443 method index: 3443
+
          return this._data;
       }
       
       public function set data(value:HUDObjectiveItemData) : void
       {
-         // method body index: 3444 method index: 3444
+
          this._data = value;
          SetIsDirty();
       }
       
       private function get ObjectiveMessage_tf() : TextField
       {
-         // method body index: 3445 method index: 3445
+
          return this.HUDObjectiveItemInternal_mc.ObjectiveMessage_tf as TextField;
       }
       
       private function get ObjectiveIcons_mc() : MovieClip
       {
-         // method body index: 3446 method index: 3446
+
          return this.HUDObjectiveItemInternal_mc.ObjectiveIcons_mc as MovieClip;
       }
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3447 method index: 3447
+
          if(this.data)
          {
             visible = fadeInStarted;
@@ -70,26 +70,26 @@ package
       
       function frame5() : *
       {
-         // method body index: 3448 method index: 3448
+
          stop();
       }
       
       function frame65() : *
       {
-         // method body index: 3449 method index: 3449
+
          OnFadeInComplete();
          stop();
       }
       
       function frame262() : *
       {
-         // method body index: 3450 method index: 3450
+
          OnFastFadeOutStarted();
       }
       
       function frame285() : *
       {
-         // method body index: 3451 method index: 3451
+
          OnFadeOutComplete();
          stop();
       }

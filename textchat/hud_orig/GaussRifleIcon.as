@@ -9,7 +9,7 @@ package
       
       public function GaussRifleIcon()
       {
-         // method body index: 890 method index: 890
+
          super();
       }
    }

@@ -9,7 +9,7 @@ package
       
       public function MineIcon()
       {
-         // method body index: 2239 method index: 2239
+
          super();
       }
    }

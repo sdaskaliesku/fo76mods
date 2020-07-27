@@ -36,7 +36,7 @@ package
       
       public function HUDCompassWidget()
       {
-         // method body index: 2880 method index: 2880
+
          this.WithinClipVisibility = false;
          super();
          this.AreaQuest_WithinClipPA_mc.visible = false;
@@ -46,20 +46,20 @@ package
       
       public function get bNuclearWinterMode() : Boolean
       {
-         // method body index: 2881 method index: 2881
+
          return this._bNuclearWinterMode;
       }
       
       public function set bNuclearWinterMode(param1:Boolean) : *
       {
-         // method body index: 2882 method index: 2882
+
          this._bNuclearWinterMode = param1;
          this.OnNuclearWinterModeChange();
       }
       
       public function set isPowerArmor(param1:Boolean) : *
       {
-         // method body index: 2883 method index: 2883
+
          this.m_IsPowerArmor = param1;
          this.AreaQuest_WithinClip_mc.visible = !this.m_IsPowerArmor;
          this.AreaQuest_WithinClipPA_mc.visible = this.m_IsPowerArmor;
@@ -74,13 +74,13 @@ package
       
       private function OnNuclearWinterModeChange() : *
       {
-         // method body index: 2884 method index: 2884
+
          this.CenterMarker_mc.visible = this.bNuclearWinterMode;
       }
       
       private function onDataChanged(param1:FromClientDataEvent) : *
       {
-         // method body index: 2885 method index: 2885
+
          if(param1.fromClient.data.withinAreaMarker)
          {
             if(!this.WithinClipVisibility)

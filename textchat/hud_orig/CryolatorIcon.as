@@ -9,7 +9,7 @@ package
       
       public function CryolatorIcon()
       {
-         // method body index: 843 method index: 843
+
          super();
       }
    }

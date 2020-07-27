@@ -9,14 +9,14 @@ package HUDMenu_fla
       
       public function MessageBoxStar_530()
       {
-         // method body index: 1141 method index: 1141
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1140 method index: 1140
+
          stop();
       }
    }

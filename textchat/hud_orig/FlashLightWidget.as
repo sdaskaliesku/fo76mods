@@ -9,7 +9,7 @@ package
       
       public function FlashLightWidget()
       {
-         // method body index: 2893 method index: 2893
+
          super();
       }
    }

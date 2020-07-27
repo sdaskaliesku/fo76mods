@@ -18,20 +18,20 @@ package HUDMenu_fla
       
       public function crosshair2none_180()
       {
-         // method body index: 1539 method index: 1539
+
          super();
          addFrameScript(0,this.frame1,6,this.frame7);
       }
       
       function frame1() : *
       {
-         // method body index: 1537 method index: 1537
+
          stop();
       }
       
       function frame7() : *
       {
-         // method body index: 1538 method index: 1538
+
          dispatchEvent(new Event("animationComplete"));
       }
    }

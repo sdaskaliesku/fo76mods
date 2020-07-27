@@ -19,14 +19,14 @@ package
       
       public function ScreenEdgeHitIndicator()
       {
-         // method body index: 2237 method index: 2237
+
          super();
          BSUIDataManager.Subscribe("HitIndicators",this.onHitIndicatorsUpdate);
       }
       
       private function onHitIndicatorsUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 2238 method index: 2238
+
          var _loc2_:Array = param1.data.hits;
          var _loc3_:uint = 0;
          var _loc4_:Number = 0;

@@ -17,14 +17,14 @@ package Shared.AS3.COMPANIONAPP
       
       public function MobileButtonHint()
       {
-         // method body index: 3508 method index: 3508
+
          super();
          addEventListener(MouseEvent.MOUSE_DOWN,this.onButtonPress);
       }
       
       private function onButtonPress(e:MouseEvent) : void
       {
-         // method body index: 3509 method index: 3509
+
          if(!ButtonDisabled && ButtonVisible)
          {
             this.setPressState();
@@ -33,7 +33,7 @@ package Shared.AS3.COMPANIONAPP
       
       override protected function onMouseOut(event:MouseEvent) : *
       {
-         // method body index: 3510 method index: 3510
+
          super.onMouseOut(event);
          if(!ButtonDisabled && ButtonVisible)
          {
@@ -43,7 +43,7 @@ package Shared.AS3.COMPANIONAPP
       
       override public function onTextClick(MouseEvent:Event) : void
       {
-         // method body index: 3511 method index: 3511
+
          super.onTextClick(MouseEvent);
          if(!ButtonDisabled && ButtonVisible)
          {
@@ -53,7 +53,7 @@ package Shared.AS3.COMPANIONAPP
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3512 method index: 3512
+
          this.background.width = 1;
          this.background.height = 1;
          super.redrawUIComponent();
@@ -88,7 +88,7 @@ package Shared.AS3.COMPANIONAPP
       
       protected function setNormalState() : void
       {
-         // method body index: 3513 method index: 3513
+
          this.background.gotoAndPlay("normal");
          var colorTrans:ColorTransform = textField_tf.transform.colorTransform;
          colorTrans.redOffset = 0;
@@ -99,14 +99,14 @@ package Shared.AS3.COMPANIONAPP
       
       protected function setDisableState() : void
       {
-         // method body index: 3514 method index: 3514
+
          this.setNormalState();
          this.background.gotoAndPlay("disabled");
       }
       
       protected function setPressState() : void
       {
-         // method body index: 3515 method index: 3515
+
          this.background.gotoAndPlay("press");
          var colorTrans:ColorTransform = textField_tf.transform.colorTransform;
          colorTrans.redOffset = 255;

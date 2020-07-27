@@ -15,26 +15,26 @@ package HUDMenu_fla
       
       public function HUDFusionCoreMeter_73()
       {
-         // method body index: 1076 method index: 1076
+
          super();
          addFrameScript(0,this.frame1,6,this.frame7,12,this.frame13);
       }
       
       function frame1() : *
       {
-         // method body index: 1073 method index: 1073
+
          stop();
       }
       
       function frame7() : *
       {
-         // method body index: 1074 method index: 1074
+
          stop();
       }
       
       function frame13() : *
       {
-         // method body index: 1075 method index: 1075
+
          stop();
       }
    }

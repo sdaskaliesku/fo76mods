@@ -13,20 +13,20 @@ package HUDMenu_fla
       
       public function pvpScoreBoardsContainer_mc_10()
       {
-         // method body index: 1732 method index: 1732
+
          super();
          addFrameScript(8,this.frame9,18,this.frame19);
       }
       
       function frame9() : *
       {
-         // method body index: 1730 method index: 1730
+
          stop();
       }
       
       function frame19() : *
       {
-         // method body index: 1731 method index: 1731
+
          stop();
       }
    }

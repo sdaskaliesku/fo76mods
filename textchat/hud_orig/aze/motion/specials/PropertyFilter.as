@@ -40,7 +40,7 @@ package aze.motion.specials
       
       public function PropertyFilter(target:Object, property:*, value:*, next:EazeSpecial)
       {
-         // method body index: 514 method index: 514
+
          var prop:* = null;
          var val:* = undefined;
          super(target,property,value,next);
@@ -79,7 +79,7 @@ package aze.motion.specials
       
       public static function register() : void
       {
-         // method body index: 511 method index: 511
+
          EazeTween.specialProperties["blurFilter"] = PropertyFilter;
          EazeTween.specialProperties["glowFilter"] = PropertyFilter;
          EazeTween.specialProperties["dropShadowFilter"] = PropertyFilter;
@@ -90,7 +90,7 @@ package aze.motion.specials
       
       public static function getCurrentFilter(filterClass:Class, disp:DisplayObject, remove:Boolean) : BitmapFilter
       {
-         // method body index: 512 method index: 512
+
          var index:int = 0;
          var filters:Array = null;
          var filter:BitmapFilter = null;
@@ -116,7 +116,7 @@ package aze.motion.specials
       
       public static function addFilter(disp:DisplayObject, filter:BitmapFilter) : void
       {
-         // method body index: 513 method index: 513
+
          var filters:Array = disp.filters || [];
          filters.push(filter);
          disp.filters = filters;
@@ -124,7 +124,7 @@ package aze.motion.specials
       
       private function resolveFilterClass(property:*) : Class
       {
-         // method body index: 515 method index: 515
+
          if(property is Class)
          {
             return property;
@@ -144,7 +144,7 @@ package aze.motion.specials
       
       override public function init(reverse:Boolean) : void
       {
-         // method body index: 516 method index: 516
+
          var begin:BitmapFilter = null;
          var end:BitmapFilter = null;
          var curColor:Object = null;
@@ -224,7 +224,7 @@ package aze.motion.specials
       
       override public function update(ke:Number, isComplete:Boolean) : void
       {
-         // method body index: 517 method index: 517
+
          var prop:String = null;
          var disp:DisplayObject = DisplayObject(target);
          var current:BitmapFilter = PropertyFilter.getCurrentFilter(this.filterClass,disp,true);
@@ -254,7 +254,7 @@ package aze.motion.specials
       
       override public function dispose() : void
       {
-         // method body index: 518 method index: 518
+
          this.filterClass = null;
          this.start = this.delta = null;
          this.startColor = this.deltaColor = null;

@@ -12,14 +12,14 @@ package
       
       public function HUDMessageItemGroupKill()
       {
-         // method body index: 3514 method index: 3514
+
          super();
          addFrameScript(4,this.frame5,27,this.frame28,347,this.frame348);
       }
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3515 method index: 3515
+
          var _loc1_:uint = 0;
          if(data != null)
          {
@@ -48,20 +48,20 @@ package
       
       function frame5() : *
       {
-         // method body index: 3516 method index: 3516
+
          stop();
       }
       
       function frame28() : *
       {
-         // method body index: 3517 method index: 3517
+
          OnFadeInComplete();
          stop();
       }
       
       function frame348() : *
       {
-         // method body index: 3518 method index: 3518
+
          OnFadeOutComplete();
          stop();
       }

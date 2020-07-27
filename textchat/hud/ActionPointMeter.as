@@ -26,7 +26,7 @@ package
       
       public function ActionPointMeter()
       {
-         // method body index: 708 method index: 708
+
          super();
          while(this.ActionPointSegments_mc.numChildren > 0)
          {
@@ -40,7 +40,7 @@ package
       
       public function AddSegments(param1:Array) : *
       {
-         // method body index: 709 method index: 709
+
          var _loc2_:ActionPointBarSegment = null;
          var _loc3_:Number = NaN;
          while(this.ActionPointSegments_mc.numChildren > 0)
@@ -63,20 +63,20 @@ package
       
       public function SetMeterPercent(param1:Number) : *
       {
-         // method body index: 710 method index: 710
+
          this.MeterBar_mc.Percent = param1 / 100;
          this.OnMeterUpdated();
       }
       
       public function OnMeterUpdated() : *
       {
-         // method body index: 711 method index: 711
+
          this.ActionPointSegments_mc.x = -this.MeterBar_mc.width;
       }
       
       function __setProp_Optional_mc_ActionPointMeter_Optional_mc_0() : *
       {
-         // method body index: 712 method index: 712
+
          try
          {
             this.Optional_mc["componentInspectorSetting"] = true;
@@ -109,7 +109,7 @@ package
       
       function __setProp_MeterBar_mc_ActionPointMeter_MeterBar_mc_0() : *
       {
-         // method body index: 713 method index: 713
+
          try
          {
             this.MeterBar_mc["componentInspectorSetting"] = true;

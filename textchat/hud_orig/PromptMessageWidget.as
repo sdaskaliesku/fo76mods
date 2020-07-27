@@ -9,7 +9,7 @@ package
       
       public function PromptMessageWidget()
       {
-         // method body index: 3001 method index: 3001
+
          super();
       }
    }

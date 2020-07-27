@@ -30,7 +30,7 @@ package
       
       public function PAWarningText()
       {
-         // method body index: 2353 method index: 2353
+
          super();
          BSUIDataManager.Subscribe("HUDModeData",this.onHUDModeUpdate);
          BSUIDataManager.Subscribe("PowerArmorInfoData",this.onPowerArmorInfoUpdate);
@@ -38,7 +38,7 @@ package
       
       private function onHUDModeUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 2354 method index: 2354
+
          this.m_InPowerArmor = param1.data.inPowerArmor;
          this.m_PowerArmorHUDEnabled = param1.data.powerArmorHUDEnabled;
          this.m_PowerArmorExitButton = param1.data.powerArmorExitButton;
@@ -47,7 +47,7 @@ package
       
       private function onPowerArmorInfoUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 2355 method index: 2355
+
          this.m_FusionCorePercent = param1.data.fusionCorePercent;
          this.m_FusionCoreWarnPercent = param1.data.fusionCoreWarnPercent;
          this.m_FusionCoreCount = param1.data.fusionCoreCount;
@@ -56,7 +56,7 @@ package
       
       private function updateWarning() : void
       {
-         // method body index: 2356 method index: 2356
+
          var _loc1_:String = null;
          var _loc2_:Boolean = false;
          if(this.m_FusionCoreCount == 0 && this.m_FusionCorePercent < this.m_FusionCoreWarnPercent)
@@ -80,7 +80,7 @@ package
       
       public function set warningText(param1:String) : *
       {
-         // method body index: 2357 method index: 2357
+
          var _loc2_:Array = null;
          var _loc3_:Array = param1.split("{");
          TextFieldEx.setNoTranslate(this.PowerArmorLowBatteryWarning_tf,true);
@@ -97,7 +97,7 @@ package
       
       public function set codeObj(param1:Object) : *
       {
-         // method body index: 2358 method index: 2358
+
          this.BGSCodeObj = param1;
       }
    }

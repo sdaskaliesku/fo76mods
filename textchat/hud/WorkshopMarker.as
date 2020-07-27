@@ -24,7 +24,7 @@ package
       
       public function WorkshopMarker()
       {
-         // method body index: 2282 method index: 2282
+
          super();
          Extensions.enabled = true;
          this.Arrow.visible = false;
@@ -32,7 +32,7 @@ package
       
       public function Update(param1:String, param2:String, param3:Number, param4:Boolean, param5:Boolean) : void
       {
-         // method body index: 2283 method index: 2283
+
          var _loc6_:Number = NaN;
          var _loc7_:Number = NaN;
          GlobalFunc.SetText(this.Name_tf,param1,false);
@@ -58,7 +58,7 @@ package
       
       private function AdjustPosition(param1:Boolean) : void
       {
-         // method body index: 2284 method index: 2284
+
          var _loc2_:Number = NaN;
          var _loc3_:Number = NaN;
          if(param1)

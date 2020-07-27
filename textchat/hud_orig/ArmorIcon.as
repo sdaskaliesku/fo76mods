@@ -9,7 +9,7 @@ package
       
       public function ArmorIcon()
       {
-         // method body index: 811 method index: 811
+
          super();
       }
    }

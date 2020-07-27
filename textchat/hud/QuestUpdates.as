@@ -14,7 +14,7 @@ package
       
       public function QuestUpdates()
       {
-         // method body index: 2219 method index: 2219
+
          super();
       }
    }

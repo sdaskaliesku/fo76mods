@@ -17,26 +17,26 @@ package HUDMenu_fla
       
       public function HUDHungerMeter_mc_71()
       {
-         // method body index: 1087 method index: 1087
+
          super();
          addFrameScript(0,this.frame1,6,this.frame7,12,this.frame13);
       }
       
       function frame1() : *
       {
-         // method body index: 1084 method index: 1084
+
          stop();
       }
       
       function frame7() : *
       {
-         // method body index: 1085 method index: 1085
+
          stop();
       }
       
       function frame13() : *
       {
-         // method body index: 1086 method index: 1086
+
          stop();
       }
    }

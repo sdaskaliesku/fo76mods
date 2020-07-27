@@ -17,7 +17,7 @@ package Shared.AS3.Data
       
       public function BSUIDataManager()
       {
-         // method body index: 729 method index: 729
+
          super();
          if(_instance != null)
          {
@@ -29,7 +29,7 @@ package Shared.AS3.Data
       
       private static function GetInstance() : BSUIDataManager
       {
-         // method body index: 717 method index: 717
+
          if(!_instance)
          {
             _instance = new BSUIDataManager();
@@ -39,7 +39,7 @@ package Shared.AS3.Data
       
       public static function ConnectDataShuttleConnector(aDataShuttleConnector:UIDataShuttleConnector) : UIDataShuttleConnector
       {
-         // method body index: 718 method index: 718
+
          var fromClient:UIDataFromClient = null;
          var key:* = null;
          var dispatchChanges:Array = null;
@@ -71,13 +71,13 @@ package Shared.AS3.Data
       
       public static function InitDataManager(aEventDispatcherBackend:BSUIEventDispatcherBackend) : void
       {
-         // method body index: 719 method index: 719
+
          GetInstance().eventDispatcherBackend = aEventDispatcherBackend;
       }
       
       public static function Subscribe(aProviderName:String, aCallback:Function, aLoadTestProviders:Boolean = false) : Function
       {
-         // method body index: 720 method index: 720
+
          var fromClient:UIDataFromClient = BSUIDataManager.GetDataFromClient(aProviderName,true,aLoadTestProviders);
          if(fromClient != null)
          {
@@ -89,7 +89,7 @@ package Shared.AS3.Data
       
       public static function Flush(providerList:Array) : *
       {
-         // method body index: 721 method index: 721
+
          var dataFromClient:UIDataFromClient = null;
          var len:Number = providerList.length;
          var instance:BSUIDataManager = GetInstance();
@@ -102,7 +102,7 @@ package Shared.AS3.Data
       
       public static function Unsubscribe(aProviderName:String, aCallback:Function, aLoadTestProviders:Boolean = false) : void
       {
-         // method body index: 722 method index: 722
+
          var fromClient:UIDataFromClient = BSUIDataManager.GetDataFromClient(aProviderName,true,aLoadTestProviders);
          if(fromClient != null)
          {
@@ -112,7 +112,7 @@ package Shared.AS3.Data
       
       public static function GetDataFromClient(aProviderName:String, aCreateIfNone:Boolean = true, aLoadTestProviders:Boolean = false) : UIDataFromClient
       {
-         // method body index: 723 method index: 723
+
          var dataConnection:UIDataShuttleConnector = null;
          var testConnection:UIDataShuttleTestConnector = null;
          var dataFromClient:UIDataFromClient = null;
@@ -145,31 +145,31 @@ package Shared.AS3.Data
       
       public static function addEventListener(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = false) : void
       {
-         // method body index: 724 method index: 724
+
          GetInstance().addEventListener(type,listener,useCapture,priority,useWeakReference);
       }
       
       public static function removeEventListener(type:String, listener:Function, useCapture:Boolean = false) : void
       {
-         // method body index: 725 method index: 725
+
          GetInstance().removeEventListener(type,listener,useCapture);
       }
       
       public static function dispatchEvent(event:Event) : Boolean
       {
-         // method body index: 726 method index: 726
+
          return GetInstance().dispatchEvent(event);
       }
       
       public static function hasEventListener(type:String) : Boolean
       {
-         // method body index: 727 method index: 727
+
          return GetInstance().hasEventListener(type);
       }
       
       public static function willTrigger(type:String) : Boolean
       {
-         // method body index: 728 method index: 728
+
          return GetInstance().willTrigger(type);
       }
    }

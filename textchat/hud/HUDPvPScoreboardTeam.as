@@ -49,7 +49,7 @@ package
       
       public function HUDPvPScoreboardTeam()
       {
-         // method body index: 1909 method index: 1909
+
          var _loc1_:uint = 0;
          var _loc2_:ImageFixture = null;
          super();
@@ -69,13 +69,13 @@ package
       
       public function get data() : Object
       {
-         // method body index: 1910 method index: 1910
+
          return this.m_Data;
       }
       
       public function set data(param1:Object) : void
       {
-         // method body index: 1911 method index: 1911
+
          var _loc2_:uint = 0;
          this.m_Data = param1;
          this.capsGained_mc.capsGained_tf.text = param1.capsGained;
@@ -153,7 +153,7 @@ package
       
       function frame10() : *
       {
-         // method body index: 1912 method index: 1912
+
          stop();
       }
    }

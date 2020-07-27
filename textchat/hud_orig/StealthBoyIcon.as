@@ -9,7 +9,7 @@ package
       
       public function StealthBoyIcon()
       {
-         // method body index: 2324 method index: 2324
+
          super();
       }
    }

@@ -83,7 +83,7 @@ package
       
       public function BetterInventory()
       {
-         // method body index: 211 method index: 211
+
          this.itemInfoMap = new Dictionary();
          this.paperDollMap = new Dictionary();
          this.savedFilterMode = [-1,-1,-1,ListFiltererEx.FILTER_MISC_NON_KEYS,-1,-1,-1,-1,-1];
@@ -97,7 +97,7 @@ package
       
       private function init() : void
       {
-         // method body index: 212 method index: 212
+
          this.log("BetterInventory now initializing");
          stage.getChildAt(0)["BetterInventory"] = this;
          stage.addEventListener(PipboyChangeEvent.PIPBOY_CHANGE_EVENT,this.prePipboyChangeEvent,false,int.MAX_VALUE);
@@ -134,14 +134,14 @@ package
       
       private function onLowerPipboyAllowedChange(param1:Event) : void
       {
-         // method body index: 213 method index: 213
+
          this.log("PipboyPage::LowerPipboyAllowedChange - CanLowerPipboy:",this.invPage.CanLowerPipboy());
          this.updateFilterButton();
       }
       
       private function onBottomBarUpdate(param1:Event) : void
       {
-         // method body index: 214 method index: 214
+
          this.log("onBottomBarUpdate");
          this._stackWeightInvalidated = true;
          this.SetIsDirty();
@@ -149,7 +149,7 @@ package
       
       public function ProcessUserEvent(param1:String, param2:Boolean) : Boolean
       {
-         // method body index: 215 method index: 215
+
          if(this.shiftKeyDown && !param2)
          {
             switch(param1)
@@ -190,7 +190,7 @@ package
       
       private function addedToStageHandler(param1:Event) : void
       {
-         // method body index: 216 method index: 216
+
          this.log("Added to stage");
          var _loc2_:* = stage.getChildAt(0);
          this.pipboyMenu = "Menu_mc" in _loc2_?_loc2_.Menu_mc:null;
@@ -208,7 +208,7 @@ package
       
       private final function onRenderEvent(param1:Event) : void
       {
-         // method body index: 217 method index: 217
+
          if(stage)
          {
             stage.removeEventListener(Event.RENDER,this.onRenderEvent);
@@ -222,7 +222,7 @@ package
       
       private function invListMouseWheelHandler(param1:MouseEvent) : void
       {
-         // method body index: 218 method index: 218
+
          if(this.ctrlKeyDown)
          {
             this.disableFilterChangeOnCtrl = true;
@@ -231,7 +231,7 @@ package
       
       private function keyDownHandler(param1:KeyboardEvent) : void
       {
-         // method body index: 219 method index: 219
+
          if(param1.keyCode == Keyboard.SHIFT)
          {
             this.shiftKeyDown = true;
@@ -244,7 +244,7 @@ package
       
       private function keyUpHandler(param1:KeyboardEvent) : void
       {
-         // method body index: 220 method index: 220
+
          if(param1.keyCode == Keyboard.SHIFT)
          {
             this.shiftKeyDown = false;
@@ -276,7 +276,7 @@ package
       
       private function prePipboyChangeEvent(param1:PipboyChangeEvent) : void
       {
-         // method body index: 221 method index: 221
+
          if(param1.UpdateMask.Intersects(PipboyUpdateMask.Inventory))
          {
             if(param1.DataObj.CurrentPage == INV_PAGE_INDEX)
@@ -288,7 +288,7 @@ package
       
       private function postPipboyChangeEvent(param1:PipboyChangeEvent) : void
       {
-         // method body index: 222 method index: 222
+
          if(param1.UpdateMask.Intersects(PipboyUpdateMask.Inventory))
          {
             if(param1.DataObj.CurrentPage == INV_PAGE_INDEX)
@@ -302,13 +302,13 @@ package
       
       private function preInventoryUpdate(param1:Pipboy_DataObj) : void
       {
-         // method body index: 223 method index: 223
+
          this.populateItemInfoMap(param1.InvItems,param1.InvFilter);
       }
       
       private function postInventoryUpdate(param1:Pipboy_DataObj) : void
       {
-         // method body index: 224 method index: 224
+
          if(this.currentTab != param1.CurrentTab)
          {
             this.log("Tab changed from",this.currentTab,"to",param1.CurrentTab);
@@ -324,7 +324,7 @@ package
       
       private function applyFilter(param1:int) : void
       {
-         // method body index: 225 method index: 225
+
          this.filterer.extraFilterType = param1;
          this.updateFilterButton();
          this.calcTabWeight();
@@ -334,7 +334,7 @@ package
       
       private function updateFilterButton() : void
       {
-         // method body index: 226 method index: 226
+
          this.filterButton.ButtonVisible = this.pipboyMenu.DataObj.CurrentPage == INV_PAGE_INDEX && (this.pipboyMenu.DataObj.CurrentTab == TAB_WEAPONS_INDEX || this.pipboyMenu.DataObj.CurrentTab == TAB_APPAREL_INDEX || this.pipboyMenu.DataObj.CurrentTab == TAB_AID_INDEX || this.pipboyMenu.DataObj.CurrentTab == TAB_MISC_INDEX || this.pipboyMenu.DataObj.CurrentTab == TAB_NOTES_INDEX) && this.invPage.CanLowerPipboy();
          if(!this.filterButton.ButtonVisible)
          {
@@ -356,7 +356,7 @@ package
       
       private function setSelectedTabLabel(param1:String) : void
       {
-         // method body index: 227 method index: 227
+
          var _loc2_:Number = 12.5;
          this.pipboyMenu.Header_mc.TabHeader_mc.AlphaHolder.Selected.textField_tf.text = param1;
          this.pipboyMenu.Header_mc.TabHeader_mc.AlphaHolder.LeftOne.x = this.pipboyMenu.Header_mc.TabHeader_mc.AlphaHolder.Selected.x - this.pipboyMenu.Header_mc.TabHeader_mc.AlphaHolder.Selected.width / 2 - this.pipboyMenu.Header_mc.TabHeader_mc.AlphaHolder.LeftOne.width / 2 - _loc2_;
@@ -367,7 +367,7 @@ package
       
       private function populateItemInfoMap(param1:Array, param2:int) : void
       {
-         // method body index: 228 method index: 228
+
          var _loc5_:Object = null;
          var _loc6_:Array = null;
          var _loc7_:Array = null;
@@ -396,7 +396,7 @@ package
       
       private function onTabClicked(param1:MouseEvent) : void
       {
-         // method body index: 229 method index: 229
+
          if(this.shiftKeyDown)
          {
             this.onFilterPreviousPress();
@@ -409,7 +409,7 @@ package
       
       private function onTabMouseWheel(param1:MouseEvent) : void
       {
-         // method body index: 230 method index: 230
+
          if(param1.delta < 0)
          {
             this.onFilterButtonPress();
@@ -422,7 +422,7 @@ package
       
       private function onFilterButtonPress() : void
       {
-         // method body index: 231 method index: 231
+
          if(!this.filterButton.ButtonVisible || !this.filterButton.ButtonEnabled)
          {
             return;
@@ -433,7 +433,7 @@ package
       
       private function onFilterPreviousPress() : void
       {
-         // method body index: 232 method index: 232
+
          if(!this.filterButton.ButtonVisible || !this.filterButton.ButtonEnabled)
          {
             return;
@@ -444,7 +444,7 @@ package
       
       private function advanceFilterMode(param1:int = 1) : void
       {
-         // method body index: 233 method index: 233
+
          this.log("Advancing filter mode by",param1);
          var _loc2_:int = this.filterer.extraFilterType;
          _loc2_ = _loc2_ + param1;
@@ -466,7 +466,7 @@ package
       
       private function onSetFilterMode(param1:int) : void
       {
-         // method body index: 234 method index: 234
+
          if(!this.filterButton.ButtonVisible || !this.filterButton.ButtonEnabled)
          {
             return;
@@ -488,7 +488,7 @@ package
       
       private function calcTabWeight() : void
       {
-         // method body index: 235 method index: 235
+
          var tabWeight:Number = NaN;
          var bailoutCounter:int = 0;
          var filterer:ListFilterer = null;
@@ -539,7 +539,7 @@ package
       
       private function initButtonHints() : void
       {
-         // method body index: 236 method index: 236
+
          var _loc1_:int = 0;
          this.invPage.buttonHintDataV.splice(0,0,this.filterButton);
          if(this.pipboyMenu.uiPlatform != PlatformChangeEvent.PLATFORM_PC_KB_MOUSE)
@@ -560,7 +560,7 @@ package
       
       private function redraw() : void
       {
-         // method body index: 237 method index: 237
+
          var selectedEntry:Object = null;
          var i:int = 0;
          var itemCard:MovieClip = null;
@@ -628,13 +628,13 @@ package
       
       private function get invPage() : MovieClip
       {
-         // method body index: 238 method index: 238
+
          return this.pipboyMenu.GetPage(INV_PAGE_INDEX);
       }
       
       private function SetIsDirty() : void
       {
-         // method body index: 239 method index: 239
+
          this._bIsDirty = true;
          if(stage)
          {
@@ -645,7 +645,7 @@ package
       
       private function RoundDecimal(param1:Number, param2:uint) : String
       {
-         // method body index: 240 method index: 240
+
          var _loc5_:int = 0;
          var _loc3_:String = param1.toFixed(param2);
          var _loc4_:int = _loc3_.indexOf(".");
@@ -666,7 +666,7 @@ package
       
       private function log(... rest) : void
       {
-         // method body index: 241 method index: 241
+
          if(!DEBUG_MODE)
          {
             return;

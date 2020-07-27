@@ -19,7 +19,7 @@ package Shared.AS3.COMPANIONAPP
       
       public function MobileScrollListProperties()
       {
-         // method body index: 89 method index: 89
+
          super();
       }
    }

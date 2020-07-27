@@ -9,7 +9,7 @@ package
       
       public function MinigunIcon()
       {
-         // method body index: 2242 method index: 2242
+
          super();
       }
    }

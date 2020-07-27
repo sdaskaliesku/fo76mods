@@ -25,7 +25,7 @@ package Shared.AS3.Styles
       
       public function HUDPartyListStyle()
       {
-         // method body index: 219 method index: 219
+
          super();
       }
    }

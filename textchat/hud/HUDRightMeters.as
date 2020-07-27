@@ -78,7 +78,7 @@ package
       
       public function HUDRightMeters()
       {
-         // method body index: 2117 method index: 2117
+
          super();
          addFrameScript(0,this.frame1,1,this.frame2);
          BSUIDataManager.Subscribe("HUDRightMetersData",this.onStateUpdate);
@@ -96,7 +96,7 @@ package
       
       public function set showFusionCoreMeter(param1:Boolean) : void
       {
-         // method body index: 2118 method index: 2118
+
          if(param1 != this.bShowFusionCore)
          {
             this.bShowFusionCore = param1;
@@ -113,7 +113,7 @@ package
       
       private function updateFusionCoreMeter() : void
       {
-         // method body index: 2119 method index: 2119
+
          var _loc1_:Number = GlobalFunc.Clamp(this.m_FusionCorePercent,0,this.PercentMax) / this.PercentMax;
          var _loc2_:int = Math.ceil(_loc1_ * this.HUDFusionCoreMeter_mc.Meter_mc.totalFrames);
          this.HUDFusionCoreMeter_mc.Meter_mc.gotoAndStop(_loc2_);
@@ -131,7 +131,7 @@ package
       
       private function onPowerArmorInfoUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 2120 method index: 2120
+
          this.m_FusionCorePercent = param1.data.fusionCorePercent;
          this.m_FusionCoreWarnPercent = param1.data.fusionCoreWarnPercent;
          this.m_FusionCoreCount = param1.data.fusionCoreCount;
@@ -143,7 +143,7 @@ package
       
       private function onHudModeDataChange(param1:FromClientDataEvent) : *
       {
-         // method body index: 2121 method index: 2121
+
          this.visible = this.m_HudModes.indexOf(param1.data.hudMode) != -1;
          this.m_InPowerArmor = param1.data.inPowerArmor;
          this.m_PowerArmorHUDEnabled = param1.data.powerArmorHUDEnabled;
@@ -191,7 +191,7 @@ package
       
       private function onStateUpdate(param1:FromClientDataEvent) : *
       {
-         // method body index: 2122 method index: 2122
+
          var _loc2_:Number = NaN;
          var _loc3_:int = 0;
          var _loc4_:Number = NaN;
@@ -275,7 +275,7 @@ package
       
       public function fadeInHunger() : void
       {
-         // method body index: 2123 method index: 2123
+
          if(!this.bShowHunger)
          {
             this.bShowHunger = true;
@@ -285,7 +285,7 @@ package
       
       public function fadeOutHunger() : void
       {
-         // method body index: 2124 method index: 2124
+
          if(this.bShowHunger && !this.bIsPip)
          {
             this.HungerTimeout = -1;
@@ -296,7 +296,7 @@ package
       
       private function endHungerHideTimeout() : void
       {
-         // method body index: 2125 method index: 2125
+
          if(this.HungerTimeout != -1)
          {
             clearTimeout(this.HungerTimeout);
@@ -306,7 +306,7 @@ package
       
       public function fadeInThirst() : void
       {
-         // method body index: 2126 method index: 2126
+
          if(!this.bShowThirst)
          {
             this.bShowThirst = true;
@@ -316,7 +316,7 @@ package
       
       public function fadeOutThirst() : void
       {
-         // method body index: 2127 method index: 2127
+
          if(this.bShowThirst && !this.bIsPip)
          {
             this.ThirstTimeout = -1;
@@ -327,7 +327,7 @@ package
       
       private function endThirstHideTimeout() : void
       {
-         // method body index: 2128 method index: 2128
+
          if(this.ThirstTimeout != -1)
          {
             clearTimeout(this.ThirstTimeout);
@@ -337,13 +337,13 @@ package
       
       function frame1() : *
       {
-         // method body index: 2129 method index: 2129
+
          stop();
       }
       
       function frame2() : *
       {
-         // method body index: 2130 method index: 2130
+
          stop();
       }
    }

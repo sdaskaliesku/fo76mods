@@ -9,7 +9,7 @@ package
       
       public function RipperIcon()
       {
-         // method body index: 2308 method index: 2308
+
          super();
       }
    }

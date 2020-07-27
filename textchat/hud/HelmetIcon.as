@@ -9,7 +9,7 @@ package
       
       public function HelmetIcon()
       {
-         // method body index: 2136 method index: 2136
+
          super();
       }
    }

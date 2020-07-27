@@ -11,14 +11,14 @@ package HUDMenu_fla
       
       public function colorConditionMeter_145()
       {
-         // method body index: 1484 method index: 1484
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1483 method index: 1483
+
          stop();
       }
    }

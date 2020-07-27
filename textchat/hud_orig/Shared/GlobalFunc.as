@@ -392,13 +392,13 @@ package Shared
       
       public function GlobalFunc()
       {
-         // method body index: 151 method index: 151
+
          super();
       }
       
       public static function CloneObject(aObjectToClone:Object) : *
       {
-         // method body index: 109 method index: 109
+
          var byteArray:ByteArray = new ByteArray();
          byteArray.writeObject(aObjectToClone);
          byteArray.position = 0;
@@ -407,7 +407,7 @@ package Shared
       
       public static function Lerp(aTargetMin:Number, aTargetMax:Number, aSourceMin:Number, aSourceMax:Number, aSource:Number, abClamp:Boolean) : Number
       {
-         // method body index: 110 method index: 110
+
          var fresult:Number = aTargetMin + (aSource - aSourceMin) / (aSourceMax - aSourceMin) * (aTargetMax - aTargetMin);
          if(abClamp)
          {
@@ -425,7 +425,7 @@ package Shared
       
       public static function PadNumber(aNumber:Number, aLength:uint) : String
       {
-         // method body index: 111 method index: 111
+
          var output:String = "" + aNumber;
          while(output.length < aLength)
          {
@@ -436,7 +436,7 @@ package Shared
       
       public static function setChallengeRewardIcon(aClip:SWFLoaderClip, aChallengeType:uint, aCustomIcon:String = "") : MovieClip
       {
-         // method body index: 112 method index: 112
+
          var rewardIcon:String = null;
          switch(aChallengeType)
          {
@@ -531,7 +531,7 @@ package Shared
       
       public static function parseStatValue(aValue:Number, aValueType:uint) : String
       {
-         // method body index: 113 method index: 113
+
          switch(aValueType)
          {
             case GlobalFunc.STAT_VALUE_TYPE_TIME:
@@ -543,7 +543,7 @@ package Shared
       
       public static function ShortTimeString(aSeconds:Number) : String
       {
-         // method body index: 114 method index: 114
+
          var remain:Number = 0;
          var tmpText:TextField = new TextField();
          var days:Number = Math.floor(aSeconds / 86400);
@@ -589,7 +589,7 @@ package Shared
       
       public static function SimpleTimeString(aSeconds:Number) : String
       {
-         // method body index: 115 method index: 115
+
          var remain:Number = 0;
          var tmpText:TextField = new TextField();
          var days:Number = Math.floor(aSeconds / 86400);
@@ -650,7 +650,7 @@ package Shared
       
       public static function FormatTimeString(aSeconds:Number) : String
       {
-         // method body index: 116 method index: 116
+
          var remain:Number = 0;
          var days:Number = Math.floor(aSeconds / 86400);
          remain = aSeconds % 86400;
@@ -707,7 +707,7 @@ package Shared
       
       public static function ImageFrameFromCharacter(aInput:String) : uint
       {
-         // method body index: 117 method index: 117
+
          var firstChar:String = null;
          if(aInput != null && aInput.length > 0)
          {
@@ -722,7 +722,7 @@ package Shared
       
       public static function GetAccountIconPath(aInput:String) : String
       {
-         // method body index: 118 method index: 118
+
          if(aInput == null || aInput.length == 0)
          {
             aInput = "Textures/ATX/Storefront/PlayerIcons/ATX_PlayerIcon_VaultBoy_76.dds";
@@ -732,30 +732,30 @@ package Shared
       
       public static function RoundDecimal(aNumber:Number, aPrecision:Number) : Number
       {
-         // method body index: 119 method index: 119
+
          var decimal:Number = Math.pow(10,aPrecision);
          return Math.round(decimal * aNumber) / decimal;
       }
       
       public static function CloseToNumber(aNumber1:Number, aNumber2:Number, aEpsilon:Number = 0.001) : Boolean
       {
-         // method body index: 120 method index: 120
+
          return Math.abs(aNumber1 - aNumber2) < aEpsilon;
       }
       
       public static function Clamp(val:Number, min:Number, max:Number) : Number
       {
-         // method body index: 121 method index: 121
+
          return Math.max(min,Math.min(max,val));
       }
       
       public static function MaintainTextFormat() : *
       {
-         // method body index: 123 method index: 123
+
          TextField.prototype.SetText = function(aText:String, abHTMLText:Boolean = false, aUpperCase:Boolean = false):// method body index: 122 method index: 122
          *
          {
-            // method body index: 122 method index: 122
+
             var oldSpacing:Number = NaN;
             var oldKerning:Boolean = false;
             if(!aText || aText == "")
@@ -789,7 +789,7 @@ package Shared
       
       public static function SetText(aTextField:TextField, aText:String, abHTMLText:Boolean = false, abUpperCase:Boolean = false, abTruncate:* = false) : *
       {
-         // method body index: 124 method index: 124
+
          var format:TextFormat = null;
          var oldSpacing:Number = NaN;
          var oldKerning:Boolean = false;
@@ -824,7 +824,7 @@ package Shared
       
       public static function LockToSafeRect(aDisplayObject:DisplayObject, aPosition:String, aSafeX:Number = 0, aSafeY:Number = 0) : *
       {
-         // method body index: 125 method index: 125
+
          var visibleRect:Rectangle = Extensions.visibleRect;
          var topLeft_Global:Point = new Point(visibleRect.x + aSafeX,visibleRect.y + aSafeY);
          var bottomRight_Global:Point = new Point(visibleRect.x + visibleRect.width - aSafeX,visibleRect.y + visibleRect.height - aSafeY);
@@ -859,11 +859,11 @@ package Shared
       
       public static function AddMovieExploreFunctions() : *
       {
-         // method body index: 128 method index: 128
+
          MovieClip.prototype.getMovieClips = function():// method body index: 126 method index: 126
          Array
          {
-            // method body index: 126 method index: 126
+
             var i:* = undefined;
             var movieClips:* = new Array();
             for(i in this)
@@ -878,7 +878,7 @@ package Shared
          MovieClip.prototype.showMovieClips = function():// method body index: 127 method index: 127
          *
          {
-            // method body index: 127 method index: 127
+
             var i:* = undefined;
             for(i in this)
             {
@@ -893,7 +893,7 @@ package Shared
       
       public static function InspectObject(aObject:Object, abRecursive:Boolean = false, abIncludeProperties:Boolean = false) : void
       {
-         // method body index: 129 method index: 129
+
          var className:String = getQualifiedClassName(aObject);
          trace("Inspecting object with type " + className);
          trace("{");
@@ -903,7 +903,7 @@ package Shared
       
       private static function InspectObjectHelper(aObject:Object, abRecursive:Boolean, abIncludeProperties:Boolean, astrIndent:String = "\t") : void
       {
-         // method body index: 130 method index: 130
+
          var member:XML = null;
          var constMember:XML = null;
          var id:String = null;
@@ -972,11 +972,11 @@ package Shared
       
       public static function AddReverseFunctions() : *
       {
-         // method body index: 135 method index: 135
+
          MovieClip.prototype.PlayReverseCallback = function(event:Event):// method body index: 131 method index: 131
          *
          {
-            // method body index: 131 method index: 131
+
             if(event.currentTarget.currentFrame > 1)
             {
                event.currentTarget.gotoAndStop(event.currentTarget.currentFrame - 1);
@@ -989,7 +989,7 @@ package Shared
          MovieClip.prototype.PlayReverse = function():// method body index: 132 method index: 132
          *
          {
-            // method body index: 132 method index: 132
+
             if(this.currentFrame > 1)
             {
                this.gotoAndStop(this.currentFrame - 1);
@@ -1003,14 +1003,14 @@ package Shared
          MovieClip.prototype.PlayForward = function(aFrameLabel:String):// method body index: 133 method index: 133
          *
          {
-            // method body index: 133 method index: 133
+
             delete this.onEnterFrame;
             this.gotoAndPlay(aFrameLabel);
          };
          MovieClip.prototype.PlayForward = function(aFrame:Number):// method body index: 134 method index: 134
          *
          {
-            // method body index: 134 method index: 134
+
             delete this.onEnterFrame;
             this.gotoAndPlay(aFrame);
          };
@@ -1018,7 +1018,7 @@ package Shared
       
       public static function PlayMenuSound(aSoundID:String) : *
       {
-         // method body index: 136 method index: 136
+
          BSUIDataManager.dispatchEvent(new CustomEvent(GlobalFunc.PLAY_MENU_SOUND,{
             "soundID":aSoundID,
             "soundFormID":0
@@ -1027,7 +1027,7 @@ package Shared
       
       public static function PlayMenuSoundWithFormID(aSoundFormID:uint) : *
       {
-         // method body index: 137 method index: 137
+
          BSUIDataManager.dispatchEvent(new CustomEvent(GlobalFunc.PLAY_MENU_SOUND,{
             "soundID":"",
             "soundFormID":aSoundFormID
@@ -1036,13 +1036,13 @@ package Shared
       
       public static function ShowHUDMessage(aMessage:String) : *
       {
-         // method body index: 138 method index: 138
+
          BSUIDataManager.dispatchEvent(new CustomEvent(GlobalFunc.SHOW_HUD_MESSAGE,{"text":aMessage}));
       }
       
       public static function updateConditionMeter(aBar:MovieClip, aCurrentHealth:Number, aMaximumHealth:Number, aDurability:Number) : void
       {
-         // method body index: 139 method index: 139
+
          var conditionInternal:MovieClip = null;
          if(aMaximumHealth > 0)
          {
@@ -1066,7 +1066,7 @@ package Shared
       
       public static function updateVoiceIndicator(aClip:MovieClip, aVoiceEnabled:Boolean, aSpeaking:Boolean, aSameChannel:Boolean, aIsAlly:Boolean = true, aIsEnemy:Boolean = false) : void
       {
-         // method body index: 140 method index: 140
+
          if(!aVoiceEnabled)
          {
             aClip.gotoAndStop("muted");
@@ -1102,7 +1102,7 @@ package Shared
       
       public static function quickMultiLineShrinkToFit(aField:TextField, aBaseSize:Number = 0, aBaseLeading:Number = 0) : void
       {
-         // method body index: 141 method index: 141
+
          var thisTextFormat:TextFormat = aField.getTextFormat();
          if(aBaseSize == 0)
          {
@@ -1129,7 +1129,7 @@ package Shared
       
       public static function shrinkMultiLineTextToFit(aField:TextField, aBaseSize:Number = 0) : void
       {
-         // method body index: 142 method index: 142
+
          var thisTextFormat:TextFormat = aField.getTextFormat();
          if(aBaseSize == 0)
          {
@@ -1148,7 +1148,7 @@ package Shared
       
       public static function getTextfieldSize(aTextfield:TextField, aVertical:Boolean = true) : *
       {
-         // method body index: 143 method index: 143
+
          var totalSize:Number = NaN;
          var i:uint = 0;
          if(aTextfield.multiline)
@@ -1165,7 +1165,7 @@ package Shared
       
       public static function getDisplayObjectSize(aObject:DisplayObject, aVertical:Boolean = false) : *
       {
-         // method body index: 144 method index: 144
+
          if(aObject is BSScrollingList)
          {
             return (aObject as BSScrollingList).shownItemsHeight;
@@ -1195,7 +1195,7 @@ package Shared
       
       public static function arrangeItems(aItems:Array, aVertical:Boolean, aAlign:uint = 0, aSpacing:Number = 0, aReverse:Boolean = false, aOffset:Number = 0) : Number
       {
-         // method body index: 145 method index: 145
+
          var positionOrigin:Number = NaN;
          var offsetMultiplier:Number = NaN;
          var itemIndex:uint = 0;
@@ -1251,7 +1251,7 @@ package Shared
       
       public static function StringTrim(astrText:String) : String
       {
-         // method body index: 146 method index: 146
+
          var strResult:String = null;
          var startIndex:Number = 0;
          var endIndex:Number = 0;
@@ -1272,7 +1272,7 @@ package Shared
       
       public static function BSASSERT(abConditional:Boolean, asMessage:String) : void
       {
-         // method body index: 147 method index: 147
+
          var callStack:String = null;
          if(!abConditional)
          {
@@ -1283,7 +1283,7 @@ package Shared
       
       public static function HasFFEvent(aDataObject:Object, asEventString:String) : Boolean
       {
-         // method body index: 148 method index: 148
+
          var obj:Object = null;
          var result:Boolean = false;
          try
@@ -1310,7 +1310,7 @@ package Shared
       
       public static function LocalizeFormattedString(aFormatString:String, ... aParameters) : String
       {
-         // method body index: 149 method index: 149
+
          var resultString:String = "";
          var localizationTextField:TextField = new TextField();
          localizationTextField.text = aFormatString;
@@ -1325,7 +1325,7 @@ package Shared
       
       public static function BuildLegendaryStarsGlyphString(aEntryObject:Object) : String
       {
-         // method body index: 150 method index: 150
+
          var legendaryModIndex:* = undefined;
          var textFieldTemp:TextField = null;
          var isLegendary:Boolean = false;

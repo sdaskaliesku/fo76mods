@@ -9,7 +9,7 @@ package
       
       public function PlasmaMineIcon()
       {
-         // method body index: 2272 method index: 2272
+
          super();
       }
    }

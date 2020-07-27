@@ -19,7 +19,7 @@ package aze.motion.specials
       
       public function PropertyFrame(target:Object, property:*, value:*, next:EazeSpecial)
       {
-         // method body index: 522 method index: 522
+
          var parts:Array = null;
          var label:String = null;
          var index:int = 0;
@@ -58,13 +58,13 @@ package aze.motion.specials
       
       public static function register() : void
       {
-         // method body index: 521 method index: 521
+
          EazeTween.specialProperties.frame = PropertyFrame;
       }
       
       override public function init(reverse:Boolean) : void
       {
-         // method body index: 523 method index: 523
+
          var mc:MovieClip = MovieClip(target);
          if(this.frameStart is String)
          {
@@ -93,7 +93,7 @@ package aze.motion.specials
       
       private function findLabel(mc:MovieClip, name:String) : int
       {
-         // method body index: 524 method index: 524
+
          var label:FrameLabel = null;
          for each(label in mc.currentLabels)
          {
@@ -107,14 +107,14 @@ package aze.motion.specials
       
       override public function update(ke:Number, isComplete:Boolean) : void
       {
-         // method body index: 525 method index: 525
+
          var mc:MovieClip = MovieClip(target);
          mc.gotoAndStop(Math.round(this.start + this.delta * ke));
       }
       
       public function getPreferredDuration() : Number
       {
-         // method body index: 526 method index: 526
+
          var mc:MovieClip = MovieClip(target);
          var fps:Number = !!mc.stage?Number(mc.stage.frameRate):Number(30);
          return Math.abs(Number(this.delta) / fps);

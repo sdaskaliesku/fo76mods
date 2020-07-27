@@ -70,7 +70,7 @@ package
       
       public function PartyListEntry()
       {
-         // method body index: 2849 method index: 2849
+
          super();
          if(!this.AccountIcon_mc)
          {
@@ -128,7 +128,7 @@ package
       
       private function doPerkAnim() : void
       {
-         // method body index: 2846 method index: 2846
+
          if(this._showSharedPerk)
          {
             this.SharedPerk_mc.gotoAndPlay("rollOn");
@@ -147,7 +147,7 @@ package
       
       public function set showSharedPerk(aShow:Boolean) : void
       {
-         // method body index: 2847 method index: 2847
+
          if(aShow != this._showSharedPerk)
          {
             this._showSharedPerk = aShow;
@@ -157,7 +157,7 @@ package
       
       public function set perkID(aNewID:Number) : void
       {
-         // method body index: 2848 method index: 2848
+
          if(aNewID != this._perkID)
          {
             this._perkID = aNewID;
@@ -167,7 +167,7 @@ package
       
       override public function SetEntryText(aEntryObject:Object, astrTextOption:String) : *
       {
-         // method body index: 2850 method index: 2850
+
          var inConvoText_tf:TextField = null;
          var nameFieldMaxPos:Number = NaN;
          this.AccountIcon_mc.mouseEnabled = false;

@@ -19,14 +19,14 @@ package
       
       public function DamageNumbers()
       {
-         // method body index: 777 method index: 777
+
          this.DamageClipVector = new Vector.<MovieClip>();
          super();
          addFrameScript(0,this.frame1);
          BSUIDataManager.Subscribe("DamageNumberUIData",function(param1:FromClientDataEvent):// method body index: 776 method index: 776
          *
          {
-            // method body index: 776 method index: 776
+
             if(param1.data != null)
             {
                _DamageNumberUIData = param1.data;
@@ -37,13 +37,13 @@ package
       
       public function TestFunction() : *
       {
-         // method body index: 778 method index: 778
+
          trace("test function called.");
       }
       
       public function RefreshView() : *
       {
-         // method body index: 779 method index: 779
+
          var _loc1_:Object = null;
          if(this._DamageNumberUIData != null)
          {
@@ -59,7 +59,7 @@ package
       
       public function UpdateItem(param1:int, param2:Number, param3:Number) : Boolean
       {
-         // method body index: 780 method index: 780
+
          var _loc4_:MovieClip = null;
          var _loc5_:DamageNumberClip = null;
          var _loc6_:Point = null;
@@ -79,7 +79,7 @@ package
       
       public function CreateNew(param1:int, param2:int, param3:int, param4:int, param5:Boolean, param6:Number, param7:Number) : *
       {
-         // method body index: 781 method index: 781
+
          var _loc8_:DamageNumberClip = new DamageNumberClip();
          _loc8_.ParentObj = this;
          _loc8_.UniqueId = param1;
@@ -102,7 +102,7 @@ package
       
       public function RemoveDamageNumber(param1:int) : *
       {
-         // method body index: 782 method index: 782
+
          var _loc2_:DamageNumberClip = null;
          var _loc3_:int = 0;
          while(_loc3_ < this.DamageClipVector.length)
@@ -119,13 +119,13 @@ package
       
       public function GetRandomNumber(param1:*, param2:*) : *
       {
-         // method body index: 783 method index: 783
+
          return param1 + Math.floor(Math.random() * (param2 + 1 - param1));
       }
       
       function frame1() : *
       {
-         // method body index: 784 method index: 784
+
       }
    }
 }

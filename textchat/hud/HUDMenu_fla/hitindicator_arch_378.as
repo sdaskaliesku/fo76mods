@@ -9,14 +9,14 @@ package HUDMenu_fla
       
       public function hitindicator_arch_378()
       {
-         // method body index: 1561 method index: 1561
+
          super();
          addFrameScript(19,this.frame20);
       }
       
       function frame20() : *
       {
-         // method body index: 1562 method index: 1562
+
          stop();
       }
    }

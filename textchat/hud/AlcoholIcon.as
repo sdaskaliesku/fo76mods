@@ -9,7 +9,7 @@ package
       
       public function AlcoholIcon()
       {
-         // method body index: 723 method index: 723
+
          super();
       }
    }

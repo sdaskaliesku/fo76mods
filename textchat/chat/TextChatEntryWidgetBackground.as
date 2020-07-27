@@ -9,7 +9,7 @@ package
       
       public function TextChatEntryWidgetBackground()
       {
-         // method body index: 273 method index: 273
+
          super();
       }
    }

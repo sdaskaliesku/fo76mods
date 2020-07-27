@@ -9,7 +9,7 @@ package
       
       public function AssaultRifleIcon()
       {
-         // method body index: 740 method index: 740
+
          super();
       }
    }

@@ -20,7 +20,7 @@ package Shared.AS3
       
       public function BSDisplayObject()
       {
-         // method body index: 2336 method index: 2336
+
          super();
          this._bIsDirty = false;
          addEventListener(Event.ADDED_TO_STAGE,this.onAddedToStageEvent);
@@ -32,26 +32,26 @@ package Shared.AS3
       
       public function get bIsDirty() : Boolean
       {
-         // method body index: 2337 method index: 2337
+
          return this._bIsDirty;
       }
       
       public function SetIsDirty() : void
       {
-         // method body index: 2338 method index: 2338
+
          this._bIsDirty = true;
          this.requestRedraw();
       }
       
       private final function ClearIsDirty() : void
       {
-         // method body index: 2339 method index: 2339
+
          this._bIsDirty = false;
       }
       
       private final function onLoadedInitEvent(param1:Event) : void
       {
-         // method body index: 2340 method index: 2340
+
          if(loaderInfo is LoaderInfo)
          {
             loaderInfo.removeEventListener(Event.INIT,this.onLoadedInitEvent);
@@ -61,7 +61,7 @@ package Shared.AS3
       
       private final function onAddedToStageEvent(param1:Event) : void
       {
-         // method body index: 2341 method index: 2341
+
          removeEventListener(Event.ADDED_TO_STAGE,this.onAddedToStageEvent);
          this.onAddedToStage();
          if(this.bIsDirty)
@@ -73,7 +73,7 @@ package Shared.AS3
       
       private final function onRemovedFromStageEvent(param1:Event) : void
       {
-         // method body index: 2342 method index: 2342
+
          removeEventListener(Event.REMOVED_FROM_STAGE,this.onRemovedFromStageEvent);
          if(stage)
          {
@@ -85,7 +85,7 @@ package Shared.AS3
       
       private final function onRenderEvent(param1:Event) : void
       {
-         // method body index: 2343 method index: 2343
+
          if(stage)
          {
             stage.removeEventListener(Event.RENDER,this.onRenderEvent);
@@ -100,7 +100,7 @@ package Shared.AS3
       
       private function requestRedraw() : void
       {
-         // method body index: 2344 method index: 2344
+
          if(stage)
          {
             stage.addEventListener(Event.RENDER,this.onRenderEvent);
@@ -110,27 +110,27 @@ package Shared.AS3
       
       public function onLoadedInit() : void
       {
-         // method body index: 2345 method index: 2345
+
       }
       
       public function redrawDisplayObject() : void
       {
-         // method body index: 2346 method index: 2346
+
       }
       
       public function onAddedToStage() : void
       {
-         // method body index: 2347 method index: 2347
+
       }
       
       public function onRemovedFromStage() : void
       {
-         // method body index: 2348 method index: 2348
+
       }
       
       override public function addChild(param1:DisplayObject) : DisplayObject
       {
-         // method body index: 2349 method index: 2349
+
          var _loc2_:DisplayObject = super.addChild(param1);
          if(this.onAddChild is Function)
          {
@@ -141,7 +141,7 @@ package Shared.AS3
       
       override public function removeChild(param1:DisplayObject) : DisplayObject
       {
-         // method body index: 2350 method index: 2350
+
          var _loc2_:DisplayObject = super.removeChild(param1);
          if(this.onRemoveChild is Function)
          {

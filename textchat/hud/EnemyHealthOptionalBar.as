@@ -7,7 +7,7 @@ package
       
       public function EnemyHealthOptionalBar()
       {
-         // method body index: 3376 method index: 3376
+
          super();
       }
    }

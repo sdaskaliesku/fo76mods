@@ -229,7 +229,7 @@ package
       
       public function HUDMenu()
       {
-         // method body index: 3356 method index: 3356
+
          this.ReviveButtonCallForHelp = new BSButtonHintData("$CALLFORHELP","$SPACEBAR","PSN_Y","Xenon_Y",1,null);
          this.ReviveButtonGiveUp = new BSButtonHintData("$GIVEUP","TAB","PSN_B","Xenon_B",1,null);
          super();
@@ -245,7 +245,7 @@ package
          BSUIDataManager.Subscribe("DeathReviveData",function(event:FromClientDataEvent):// method body index: 3347 method index: 3347
          *
          {
-            // method body index: 3347 method index: 3347
+   
             var wholeNumberTime:Number = NaN;
             var promptData:* = event.data;
             var showPrompt:Boolean = false;
@@ -300,7 +300,7 @@ package
          BSUIDataManager.Subscribe("PVPData",function(arEvent:FromClientDataEvent):// method body index: 3348 method index: 3348
          *
          {
-            // method body index: 3348 method index: 3348
+   
             var announcementData:* = arEvent.data;
             if(announcementData.announcement.length > 0)
             {
@@ -333,38 +333,38 @@ package
          addEventListener(EVENT_LEVELUP_VISIBLE,function(e:Event):// method body index: 3349 method index: 3349
          *
          {
-            // method body index: 3349 method index: 3349
+   
             levelUpVisible = true;
          });
          addEventListener(EVENT_LEVELUP_HIDDEN,function(e:Event):// method body index: 3350 method index: 3350
          *
          {
-            // method body index: 3350 method index: 3350
+   
             levelUpVisible = false;
          });
          addEventListener(HUDReputationUpdatesWidget.EVENT_LEVELUP_VISIBLE,function(e:Event):// method body index: 3351 method index: 3351
          *
          {
-            // method body index: 3351 method index: 3351
+   
             repLevelUpVisible = true;
          });
          addEventListener(HUDReputationUpdatesWidget.EVENT_CHANGE_VISIBLE,function(e:Event):// method body index: 3352 method index: 3352
          *
          {
-            // method body index: 3352 method index: 3352
+   
             repChangeVisible = true;
          });
          addEventListener(HUDReputationUpdatesWidget.EVENT_HIDDEN,function(e:Event):// method body index: 3353 method index: 3353
          *
          {
-            // method body index: 3353 method index: 3353
+   
             repLevelUpVisible = false;
             repChangeVisible = false;
          });
          addEventListener(EVENT_LEVELUP_START,function(arEvent:CustomEvent):// method body index: 3354 method index: 3354
          *
          {
-            // method body index: 3354 method index: 3354
+   
             LevelUpAnimation_mc.LevelUpText.textField.text = arEvent.params.displayText;
             LevelUpAnimation_mc.gotoAndPlay("On");
          });
@@ -378,7 +378,7 @@ package
          BSUIDataManager.Subscribe("ScoreboardFilterData",function(arEvent:FromClientDataEvent):// method body index: 3355 method index: 3355
          *
          {
-            // method body index: 3355 method index: 3355
+   
             if(arEvent.data.worldRankFilter.statType == GlobalFunc.STAT_TYPE_INVALID)
             {
                m_WorldRankFilterOverride = GlobalFunc.STAT_TYPE_SURVIVAL_SCORE;
@@ -472,20 +472,20 @@ package
       
       public function __setPerspectiveProjection_(evt:Event) : void
       {
-         // method body index: 3336 method index: 3336
+
          root.transform.perspectiveProjection.fieldOfView = 1.002611;
          root.transform.perspectiveProjection.projectionCenter = new Point(960,540);
       }
       
       private function get HUDPartyListBase_mc() : HUDTeamWidget
       {
-         // method body index: 3337 method index: 3337
+
          return this.PartyResolutionContainer_mc.HUDPartyListBase_mc;
       }
       
       private function revertScoreboardFilter() : void
       {
-         // method body index: 3338 method index: 3338
+
          if(this.m_WorldRankFilterOverride >= 0)
          {
             BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_SCOREBOARD_CATEGORY_CHANGE,{"statTypeFilter":this.m_WorldRankFilterOverride}));
@@ -498,7 +498,7 @@ package
       
       private function onHUDModeUpdate(arEvent:FromClientDataEvent) : void
       {
-         // method body index: 3339 method index: 3339
+
          var mode:String = arEvent.data.hudMode;
          var partyXOffset:Number = 0;
          var partyYOffset:Number = 0;
@@ -540,7 +540,7 @@ package
       
       private function updateHUDNotificationsOffset() : void
       {
-         // method body index: 3340 method index: 3340
+
          var notificationsXOffset:Number = 0;
          var notificationsYOffset:Number = 0;
          switch(this.m_LastHUDMode)
@@ -579,7 +579,7 @@ package
       
       private function updateRankVis() : void
       {
-         // method body index: 3341 method index: 3341
+
          var rankVisible:Boolean = this.m_ValidWantedHUDMode && this.m_WorldType == GlobalFunc.WORLD_TYPE_SURVIVAL && (this.m_ScoreboardRank > 1 || this.m_ScoreboardValue > 0);
          if(this.ScoreboardRank_mc.visible != rankVisible)
          {
@@ -602,7 +602,7 @@ package
       
       private function updateWantedVis(aBounty:Number = 0) : void
       {
-         // method body index: 3342 method index: 3342
+
          var wantedVisible:Boolean = this.m_ValidWantedHUDMode && this.m_IsWanted;
          if(this.YouAreWanted_mc.visible != wantedVisible)
          {
@@ -637,7 +637,7 @@ package
       
       private function updateCurrencyUpdatesPos() : void
       {
-         // method body index: 3343 method index: 3343
+
          if(this.m_LevelUpVisible || this.m_RepLevelUpVisible)
          {
             this.HUDNotificationsGroup_mc.CurrencyUpdates_mc.y = this.m_CurrencyUpdateBaseY + CURRENCY_UPDATE_LEVELUP_OFFSETY;
@@ -655,7 +655,7 @@ package
       
       public function set levelUpVisible(aVisible:Boolean) : void
       {
-         // method body index: 3344 method index: 3344
+
          this.m_LevelUpVisible = aVisible;
          this.updateCurrencyUpdatesPos();
          if(aVisible)
@@ -672,21 +672,21 @@ package
       
       public function set repLevelUpVisible(aVisible:Boolean) : void
       {
-         // method body index: 3345 method index: 3345
+
          this.m_RepLevelUpVisible = aVisible;
          this.updateCurrencyUpdatesPos();
       }
       
       public function set repChangeVisible(aVisible:Boolean) : void
       {
-         // method body index: 3346 method index: 3346
+
          this.m_RepChangeVisible = aVisible;
          this.updateCurrencyUpdatesPos();
       }
       
       private function onLeaderboardDataUpdate(arEvent:FromClientDataEvent) : void
       {
-         // method body index: 3357 method index: 3357
+
          var rankInfo:* = arEvent.data.localScoreboardEntry;
          this.m_ScoreboardRank = rankInfo.rank;
          this.m_ScoreboardValue = rankInfo.value;
@@ -706,7 +706,7 @@ package
       
       private function onAccountInfoUpdate(arEvent:FromClientDataEvent) : void
       {
-         // method body index: 3358 method index: 3358
+
          this.m_WorldType = arEvent.data.worldType;
          this.updateHUDNotificationsOffset();
          this.updateRankVis();
@@ -714,33 +714,33 @@ package
       
       private function onResolutionUpdate(arEvent:FromClientDataEvent) : *
       {
-         // method body index: 3359 method index: 3359
+
          gotoAndStop(arEvent.data.AspectRatio);
       }
       
       private function onFanfareActive(e:Event) : *
       {
-         // method body index: 3360 method index: 3360
+
          this.TopCenterGroup_mc.StealthMeter_mc.gotoAndPlay("rollOff");
          this.QuestTracker.SetAnimationBlocked(true);
       }
       
       private function onFanfareCleared(e:Event) : *
       {
-         // method body index: 3361 method index: 3361
+
          this.TopCenterGroup_mc.StealthMeter_mc.gotoAndPlay("rollOn");
          this.QuestTracker.SetAnimationBlocked(false);
       }
       
       private function onRadialMenuStatusUpdate(arEvent:FromClientDataEvent) : void
       {
-         // method body index: 3362 method index: 3362
+
          this.CompassWidget_mc.y = !!arEvent.data.isShowing?Number(this.m_CompassBaseY + 1500):Number(this.m_CompassBaseY);
       }
       
       private function evaluateQuestAnnounceQueue() : void
       {
-         // method body index: 3363 method index: 3363
+
          var nextEvent:QuestEvent = null;
          if(!this.m_QuestAnnounceBusy && this.m_QuestAnnounceQueue.length > 0)
          {
@@ -755,7 +755,7 @@ package
       
       public function onDpadPress(direction:String) : *
       {
-         // method body index: 3364 method index: 3364
+
          var stimpaks:String = String(Math.max(BSUIDataManager.GetDataFromClient("CharacterInfoData").data.StimpakCount - 1,0));
          this.dpadMapContainer.DpadMap_mc.StimpakText_mc.StimpakText_tf.text = stimpaks;
          this.dpadMapContainer.gotoAndPlay("dPadOn");
@@ -764,7 +764,7 @@ package
       
       public function onQuestAvailable(aEvent:QuestEvent) : void
       {
-         // method body index: 3365 method index: 3365
+
          if(this.m_QuestAnnounceBusy)
          {
             this.m_QuestAnnounceQueue.push(aEvent);
@@ -778,7 +778,7 @@ package
       
       public function onPVPAnnounced(eData:Object) : void
       {
-         // method body index: 3369 method index: 3369
+
          if(this.m_QuestAnnounceBusy)
          {
             this.m_QuestAnnounceQueue.push(new QuestEvent(QuestEvent.EVENT_AVAILABLE,eData,true,false,true));
@@ -793,19 +793,19 @@ package
          setTimeout(function():// method body index: 3366 method index: 3366
          *
          {
-            // method body index: 3366 method index: 3366
+   
             AnnounceAvailableQuest_mc.gotoAndPlay("expand");
          },3000);
          setTimeout(function():// method body index: 3367 method index: 3367
          *
          {
-            // method body index: 3367 method index: 3367
+   
             AnnounceAvailableQuest_mc.gotoAndPlay("rollOff");
          },8000);
          setTimeout(function():// method body index: 3368 method index: 3368
          *
          {
-            // method body index: 3368 method index: 3368
+   
             m_QuestAnnounceBusy = false;
             evaluateQuestAnnounceQueue();
          },11000);
@@ -813,13 +813,13 @@ package
       
       public function onAddedToStageEvent(e:Event) : void
       {
-         // method body index: 3370 method index: 3370
+
          this.onAddedToStage();
       }
       
       override public function onAddedToStage() : void
       {
-         // method body index: 3371 method index: 3371
+
          super.onAddedToStage();
          this.CharacterInfoData = BSUIDataManager.GetDataFromClient("CharacterInfoData").data;
          this.ControlMapData = BSUIDataManager.GetDataFromClient("ControlMapData").data;
@@ -828,7 +828,7 @@ package
       
       public function onCharacterInfoUpdate(arEvent:FromClientDataEvent) : void
       {
-         // method body index: 3372 method index: 3372
+
          this.LocalEmote_mc.entityID = arEvent.data.entityID;
          this.m_IsWanted = arEvent.data.wanted;
          if(arEvent.data.showNetworkIndicator)
@@ -845,7 +845,7 @@ package
       
       function enterChatMode() : *
       {
-         // method body index: 3373 method index: 3373
+
          this.HUDChatBase_mc.HUDChatEntryWidget_mc.ChatEntryText_tf.border = true;
          stage.focus = this.HUDChatBase_mc.HUDChatEntryWidget_mc.ChatEntryText_tf;
          BSUIDataManager.dispatchEvent(new CustomEvent(ON_STARTEDITTEXT,{"tag":"Chat"}));
@@ -853,7 +853,7 @@ package
       
       function resetChatMode() : *
       {
-         // method body index: 3374 method index: 3374
+
          this.HUDChatBase_mc.HUDChatEntryWidget_mc.ChatEntryText_tf.border = false;
          stage.focus = stage;
          this.HUDChatBase_mc.HUDChatEntryWidget_mc.ChatEntryText_tf.text = "";
@@ -862,7 +862,7 @@ package
       
       function chatEntryKeyUp(event:KeyboardEvent) : void
       {
-         // method body index: 3375 method index: 3375
+
          if(event.keyCode == Keyboard.ESCAPE)
          {
             this.resetChatMode();
@@ -877,13 +877,13 @@ package
       
       function chatEntryFocusOut(event:FocusEvent) : void
       {
-         // method body index: 3376 method index: 3376
+
          this.resetChatMode();
       }
       
       public function sendChatMessage(Message:String) : *
       {
-         // method body index: 3377 method index: 3377
+
          var Username:String = "NoUsername";
          if(this.CharacterInfoData)
          {
@@ -897,7 +897,7 @@ package
       
       public function OnNetworkedUIEventReceived(EventType:String, EventSender:String, EventTarget:String, EventData:String) : *
       {
-         // method body index: 3378 method index: 3378
+
          if(EventType == "ChatMessage")
          {
             this.HUDChatBase_mc.HUDChatWidget_mc.addChatMessage(EventData,EventSender);
@@ -906,7 +906,7 @@ package
       
       public function ProcessUserEvent(strEventName:String, abPressed:Boolean) : Boolean
       {
-         // method body index: 3379 method index: 3379
+
          var bhandled:Boolean = false;
          if(this.FrobberWidget_mc.show)
          {
@@ -929,44 +929,44 @@ package
       
       override protected function onSetSafeRect() : void
       {
-         // method body index: 3380 method index: 3380
+
          GlobalFunc.LockToSafeRect(this.CenterGroup_mc,"CC",SafeX,SafeY);
       }
       
       public function onCodeObjCreate() : *
       {
-         // method body index: 3381 method index: 3381
+
          (this.RightMeters_mc.PowerArmorLowBatteryWarning_mc.WarningTextHolder_mc as PAWarningText).codeObj = this.BGSCodeObj;
       }
       
       public function onCodeObjDestruction() : *
       {
-         // method body index: 3382 method index: 3382
+
          this.BGSCodeObj = null;
          (this.RightMeters_mc.PowerArmorLowBatteryWarning_mc.WarningTextHolder_mc as PAWarningText).codeObj = null;
       }
       
       private function handleTeamInviteAccept() : *
       {
-         // method body index: 3383 method index: 3383
+
          BSUIDataManager.dispatchEvent(new NetworkedUIEvent("networked::UIEVENT","TeamInviteAccepted",this.CharacterInfoData.name,this.RequestUsername,"NoData"));
       }
       
       function frame1() : *
       {
-         // method body index: 3384 method index: 3384
+
          stop();
       }
       
       function frame2() : *
       {
-         // method body index: 3385 method index: 3385
+
          stop();
       }
       
       function frame3() : *
       {
-         // method body index: 3386 method index: 3386
+
          stop();
       }
    }

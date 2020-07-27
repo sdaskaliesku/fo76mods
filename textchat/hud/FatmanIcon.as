@@ -9,7 +9,7 @@ package
       
       public function FatmanIcon()
       {
-         // method body index: 798 method index: 798
+
          super();
       }
    }

@@ -68,14 +68,14 @@ package
       
       public function EmoteContainer()
       {
-         // method body index: 2511 method index: 2511
+
          super();
          this.Image_mc.clipScale = 1;
       }
       
       public static function getModPath(param1:int) : String
       {
-         // method body index: 2510 method index: 2510
+
          var _loc2_:String = "";
          switch(param1)
          {
@@ -99,7 +99,7 @@ package
       
       public function set visAlpha(param1:Number) : void
       {
-         // method body index: 2512 method index: 2512
+
          this.m_VisAlpha = param1;
          if(this.m_FadeTween != null)
          {
@@ -113,13 +113,13 @@ package
       
       public function set removed(param1:Boolean) : void
       {
-         // method body index: 2513 method index: 2513
+
          this.m_Removed = param1;
       }
       
       public function get realWidth() : Number
       {
-         // method body index: 2514 method index: 2514
+
          if(this.m_ImageInstance != null)
          {
             if(this.m_ImageInstance.Sizer_mc != null)
@@ -133,7 +133,7 @@ package
       
       public function get realHeight() : Number
       {
-         // method body index: 2515 method index: 2515
+
          if(this.m_ImageInstance != null)
          {
             if(this.m_ImageInstance.Sizer_mc != null)
@@ -147,7 +147,7 @@ package
       
       public function set showMod(param1:Boolean) : void
       {
-         // method body index: 2516 method index: 2516
+
          if(!param1 && param1 != this.m_ShowMod)
          {
             this.m_HideModTween = new Tween(this.m_ModInstance,"alpha",None.easeNone,this.m_VisAlpha,0,ANIM_TIME / 1000,true);
@@ -157,13 +157,13 @@ package
       
       public function get removed() : Boolean
       {
-         // method body index: 2517 method index: 2517
+
          return this.m_Removed;
       }
       
       private function set imageAlpha(param1:Number) : void
       {
-         // method body index: 2518 method index: 2518
+
          if(this.m_ImageInstance != null)
          {
             this.m_ImageInstance.alpha = param1;
@@ -176,7 +176,7 @@ package
       
       public function clearTweens(param1:Boolean = false) : void
       {
-         // method body index: 2519 method index: 2519
+
          if(this.m_SlideTween != null)
          {
             this.m_SlideTween.stop();
@@ -193,7 +193,7 @@ package
       
       public function slideX(param1:Number) : void
       {
-         // method body index: 2520 method index: 2520
+
          if(!this.m_InitialPos)
          {
             this.x = param1;
@@ -208,7 +208,7 @@ package
       
       public function set image(param1:String) : void
       {
-         // method body index: 2521 method index: 2521
+
          this.m_Image = param1;
          if(this.m_ImageInstance != null)
          {
@@ -224,13 +224,13 @@ package
       
       public function get image() : String
       {
-         // method body index: 2522 method index: 2522
+
          return this.m_Image;
       }
       
       public function set mod(param1:int) : void
       {
-         // method body index: 2523 method index: 2523
+
          this.m_Mod = param1;
          if(this.m_ModInstance != null)
          {
@@ -246,25 +246,25 @@ package
       
       public function get mod() : int
       {
-         // method body index: 2524 method index: 2524
+
          return this.m_Mod;
       }
       
       public function set parentWidget(param1:EmoteWidget) : void
       {
-         // method body index: 2525 method index: 2525
+
          this.m_ParentWidget = param1;
       }
       
       public function requestRemoval() : void
       {
-         // method body index: 2526 method index: 2526
+
          this.m_ParentWidget.removeEntry(this,!this.m_RemoveFromTimer);
       }
       
       public function hide(param1:Boolean = true) : void
       {
-         // method body index: 2527 method index: 2527
+
          this.m_RemoveFromTimer = param1;
          if(this.m_Timeout != -1)
          {
@@ -278,7 +278,7 @@ package
       
       public function set timeout(param1:int) : void
       {
-         // method body index: 2528 method index: 2528
+
          if(this.m_Timeout != -1)
          {
             clearTimeout(this.m_Timeout);

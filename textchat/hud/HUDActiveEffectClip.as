@@ -22,32 +22,32 @@ package
       
       public function HUDActiveEffectClip()
       {
-         // method body index: 2834 method index: 2834
+
          super();
          addFrameScript(0,this.frame1,1,this.frame2);
       }
       
       public function set iconID(param1:String) : void
       {
-         // method body index: 2835 method index: 2835
+
          this._IconID = param1;
       }
       
       public function get iconID() : String
       {
-         // method body index: 2836 method index: 2836
+
          return this._IconID;
       }
       
       public function get IconFrame() : String
       {
-         // method body index: 2837 method index: 2837
+
          return this._IconFrame;
       }
       
       public function set IconFrame(param1:String) : void
       {
-         // method body index: 2838 method index: 2838
+
          if(this._IconFrame != param1)
          {
             this._IconFrame = param1;
@@ -57,7 +57,7 @@ package
       
       public function set IconColor(param1:uint) : *
       {
-         // method body index: 2839 method index: 2839
+
          var _loc2_:* = param1 == this.COLOR_GREEN?this.COLOR_GREEN:this.COLOR_RED;
          if(this._IconColor != _loc2_)
          {
@@ -68,7 +68,7 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 2840 method index: 2840
+
          if(this._IconColor == this.COLOR_RED)
          {
             gotoAndStop("negative");
@@ -83,13 +83,13 @@ package
       
       function frame1() : *
       {
-         // method body index: 2841 method index: 2841
+
          stop();
       }
       
       function frame2() : *
       {
-         // method body index: 2842 method index: 2842
+
          stop();
       }
    }

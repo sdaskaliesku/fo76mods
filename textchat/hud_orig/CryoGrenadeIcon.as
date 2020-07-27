@@ -9,7 +9,7 @@ package
       
       public function CryoGrenadeIcon()
       {
-         // method body index: 837 method index: 837
+
          super();
       }
    }

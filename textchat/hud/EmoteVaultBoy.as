@@ -9,14 +9,14 @@ package
       
       public function EmoteVaultBoy()
       {
-         // method body index: 3402 method index: 3402
+
          super();
          this.__setProp_VaultBoyImageInternal_mc_EmoteVaultBoy_VaultBoyImageInternal_mc_0();
       }
       
       function __setProp_VaultBoyImageInternal_mc_EmoteVaultBoy_VaultBoyImageInternal_mc_0() : *
       {
-         // method body index: 3403 method index: 3403
+
          try
          {
             VaultBoyImageInternal_mc["componentInspectorSetting"] = true;

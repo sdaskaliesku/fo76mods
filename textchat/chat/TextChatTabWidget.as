@@ -21,7 +21,7 @@ package
       
       public function TextChatTabWidget()
       {
-         // method body index: 294 method index: 294
+
          super();
       }
    }

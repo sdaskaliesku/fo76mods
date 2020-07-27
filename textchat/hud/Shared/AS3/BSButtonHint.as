@@ -158,7 +158,7 @@ package Shared.AS3
       
       public function BSButtonHint()
       {
-         // method body index: 3210 method index: 3210
+
          var _loc1_:Array = null;
          var _loc2_:FrameLabel = null;
          var _loc3_:Boolean = false;
@@ -208,7 +208,7 @@ package Shared.AS3
       
       public function set ButtonHintData(param1:BSButtonHintData) : void
       {
-         // method body index: 3211 method index: 3211
+
          if(this._buttonHintData)
          {
             this._buttonHintData.removeEventListener(BSButtonHintData.BUTTON_HINT_DATA_CHANGE,this.onButtonHintDataDirtyEvent);
@@ -223,13 +223,13 @@ package Shared.AS3
       
       private function onButtonHintDataDirtyEvent(param1:Event) : void
       {
-         // method body index: 3212 method index: 3212
+
          SetIsDirty();
       }
       
       public function get PCKey() : String
       {
-         // method body index: 3213 method index: 3213
+
          var _loc1_:String = null;
          if(this._buttonHintData.PCKey)
          {
@@ -242,7 +242,7 @@ package Shared.AS3
       
       public function get SecondaryPCKey() : String
       {
-         // method body index: 3214 method index: 3214
+
          var _loc1_:String = null;
          if(this._buttonHintData.SecondaryPCKey)
          {
@@ -255,7 +255,7 @@ package Shared.AS3
       
       private function TranslateKey(param1:String) : String
       {
-         // method body index: 3215 method index: 3215
+
          switch(uiKeyboard)
          {
             case PlatformChangeEvent.PLATFORM_PC_KB_FR:
@@ -275,13 +275,13 @@ package Shared.AS3
       
       private function get UsePCKey() : Boolean
       {
-         // method body index: 3216 method index: 3216
+
          return uiController == PlatformChangeEvent.PLATFORM_PC_KB_MOUSE && !NameToTextMap.hasOwnProperty(this._buttonHintData.PCKey);
       }
       
       public function get ControllerButton() : String
       {
-         // method body index: 3217 method index: 3217
+
          var _loc1_:String = "";
          if(uiController != PlatformChangeEvent.PLATFORM_MOBILE && this.UsePCKey)
          {
@@ -315,7 +315,7 @@ package Shared.AS3
       
       public function get SecondaryControllerButton() : String
       {
-         // method body index: 3218 method index: 3218
+
          var _loc1_:String = "";
          if(this._buttonHintData.hasSecondaryButton)
          {
@@ -352,13 +352,13 @@ package Shared.AS3
       
       public function get ButtonText() : String
       {
-         // method body index: 3219 method index: 3219
+
          return this._buttonHintData.ButtonText;
       }
       
       public function get Justification() : uint
       {
-         // method body index: 3220 method index: 3220
+
          if(CompanionAppMode.isOn)
          {
             return this._buttonHintData != null?uint(uint(this._buttonHintData.Justification)):uint(uint(JUSTIFY_LEFT));
@@ -368,37 +368,37 @@ package Shared.AS3
       
       public function get ButtonDisabled() : Boolean
       {
-         // method body index: 3221 method index: 3221
+
          return this._buttonHintData.ButtonDisabled;
       }
       
       public function get SecondaryButtonDisabled() : Boolean
       {
-         // method body index: 3222 method index: 3222
+
          return this._buttonHintData.SecondaryButtonDisabled;
       }
       
       public function get AllButtonsDisabled() : Boolean
       {
-         // method body index: 3223 method index: 3223
+
          return this.ButtonDisabled && (!this._buttonHintData.hasSecondaryButton || this.SecondaryButtonDisabled);
       }
       
       public function get ButtonVisible() : Boolean
       {
-         // method body index: 3224 method index: 3224
+
          return this._buttonHintData && this._buttonHintData.ButtonVisible;
       }
       
       public function get UseDynamicMovieClip() : Boolean
       {
-         // method body index: 3225 method index: 3225
+
          return this._buttonHintData.DynamicMovieClipName.length > 0;
       }
       
       public function onTextClick(param1:Event) : void
       {
-         // method body index: 3226 method index: 3226
+
          var _loc2_:* = undefined;
          var _loc3_:* = undefined;
          if(this.ButtonVisible)
@@ -423,13 +423,13 @@ package Shared.AS3
       
       public function get bButtonPressed() : Boolean
       {
-         // method body index: 3227 method index: 3227
+
          return this._bButtonPressed;
       }
       
       public function set bButtonPressed(param1:Boolean) : *
       {
-         // method body index: 3228 method index: 3228
+
          if(this._bButtonPressed != param1)
          {
             this._bButtonPressed = param1;
@@ -439,13 +439,13 @@ package Shared.AS3
       
       public function get bMouseOver() : Boolean
       {
-         // method body index: 3229 method index: 3229
+
          return this._bMouseOver;
       }
       
       public function set bMouseOver(param1:Boolean) : *
       {
-         // method body index: 3230 method index: 3230
+
          if(this._bMouseOver != param1)
          {
             this._bMouseOver = param1;
@@ -455,25 +455,25 @@ package Shared.AS3
       
       private function onMouseOver(param1:MouseEvent) : *
       {
-         // method body index: 3231 method index: 3231
+
          this.bMouseOver = true;
       }
       
       protected function onMouseOut(param1:MouseEvent) : *
       {
-         // method body index: 3232 method index: 3232
+
          this.bMouseOver = false;
       }
       
       public function get useVaultTecColor() : Boolean
       {
-         // method body index: 3233 method index: 3233
+
          return this.m_UseVaultTecColor;
       }
       
       public function set useVaultTecColor(param1:Boolean) : void
       {
-         // method body index: 3234 method index: 3234
+
          var _loc2_:AdjustColor = null;
          var _loc3_:Array = null;
          if(param1 != this.m_UseVaultTecColor)
@@ -508,13 +508,13 @@ package Shared.AS3
       
       public function set canHold(param1:Boolean) : void
       {
-         // method body index: 3235 method index: 3235
+
          this.m_CanHold = param1;
       }
       
       public function set holdPercent(param1:Number) : void
       {
-         // method body index: 3236 method index: 3236
+
          if(param1 != this.m_HoldPercent)
          {
             this.m_HoldPercent = param1;
@@ -524,7 +524,7 @@ package Shared.AS3
       
       private function redrawHoldIndicator() : void
       {
-         // method body index: 3237 method index: 3237
+
          if(this.HoldMeter_mc != null)
          {
             if(this.m_CanHold)
@@ -552,7 +552,7 @@ package Shared.AS3
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3238 method index: 3238
+
          var _loc1_:Number = NaN;
          var _loc2_:Number = NaN;
          var _loc3_:Number = NaN;
@@ -607,7 +607,7 @@ package Shared.AS3
       
       public function SetFlashing(param1:Boolean) : *
       {
-         // method body index: 3239 method index: 3239
+
          if(param1 != this.bButtonFlashing)
          {
             this.bButtonFlashing = param1;
@@ -617,7 +617,7 @@ package Shared.AS3
       
       private function UpdateIconTextField(param1:TextField, param2:String) : *
       {
-         // method body index: 3240 method index: 3240
+
          var _loc3_:* = undefined;
          param1.text = param2;
          var _loc4_:String = this.GetExpectedFont();
@@ -636,7 +636,7 @@ package Shared.AS3
       
       private function redrawDynamicMovieClip() : void
       {
-         // method body index: 3241 method index: 3241
+
          var _loc1_:Class = null;
          var _loc2_:Number = NaN;
          if(this._buttonHintData.DynamicMovieClipName != this._strCurrentDynamicMovieClipName)
@@ -662,7 +662,7 @@ package Shared.AS3
       
       private function redrawTextField() : void
       {
-         // method body index: 3242 method index: 3242
+
          var _loc1_:* = undefined;
          this.textField_tf.visible = !this.UseDynamicMovieClip;
          if(this.textField_tf.visible)
@@ -676,7 +676,7 @@ package Shared.AS3
       
       private function redrawSecondaryButton() : void
       {
-         // method body index: 3243 method index: 3243
+
          this.SecondaryIconHolderInstance.visible = this._buttonHintData.hasSecondaryButton;
          if(this.SecondaryIconHolderInstance.visible)
          {
@@ -688,7 +688,7 @@ package Shared.AS3
       
       private function redrawPrimaryButton() : void
       {
-         // method body index: 3244 method index: 3244
+
          this.UpdateIconTextField(this.IconHolderInstance.IconAnimInstance.Icon_tf,this.ControllerButton);
          this.IconHolderInstance.alpha = !!this.ButtonDisabled?Number(Number(DISABLED_GREY_OUT_ALPHA)):Number(Number(1));
          this.IconHolderInstance.x = this.Justification == JUSTIFY_LEFT?Number(Number(0)):Number(Number(-this.IconHolderInstance.width));
@@ -696,7 +696,7 @@ package Shared.AS3
       
       private function redrawHitArea() : void
       {
-         // method body index: 3245 method index: 3245
+
          var _loc1_:* = this.getBounds(this);
          this._hitArea.x = _loc1_.x;
          this._hitArea.width = _loc1_.width;
@@ -706,7 +706,7 @@ package Shared.AS3
       
       private function GetExpectedFont() : String
       {
-         // method body index: 3246 method index: 3246
+
          var _loc1_:String = null;
          var _loc2_:Boolean = false;
          if(this.UsePCKey)
@@ -723,14 +723,14 @@ package Shared.AS3
       
       private function SetUpTextFields(param1:TextField) : *
       {
-         // method body index: 3247 method index: 3247
+
          param1.autoSize = TextFieldAutoSize.LEFT;
          param1.antiAliasType = AntiAliasType.NORMAL;
       }
       
       private function updateButtonHintFilters() : void
       {
-         // method body index: 3248 method index: 3248
+
          var _loc1_:* = this.filters.indexOf(WarningColorMatrixFilter);
          if(this._buttonHintData.IsWarning)
          {

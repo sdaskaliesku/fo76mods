@@ -7,7 +7,7 @@ package
       
       public function HPMeter()
       {
-         // method body index: 3416 method index: 3416
+
          super();
          this.__setProp_Optional_mc_HPMeter_Optional_mc_0();
          this.__setProp_RadsBar_mc_HPMeter_RadsBar_mc_0();
@@ -15,7 +15,7 @@ package
       
       function __setProp_Optional_mc_HPMeter_Optional_mc_0() : *
       {
-         // method body index: 3417 method index: 3417
+
          try
          {
             Optional_mc["componentInspectorSetting"] = true;
@@ -48,7 +48,7 @@ package
       
       function __setProp_RadsBar_mc_HPMeter_RadsBar_mc_0() : *
       {
-         // method body index: 3418 method index: 3418
+
          try
          {
             RadsBar_mc["componentInspectorSetting"] = true;

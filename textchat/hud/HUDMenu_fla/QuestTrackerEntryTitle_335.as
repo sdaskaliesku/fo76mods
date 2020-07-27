@@ -12,14 +12,14 @@ package HUDMenu_fla
       
       public function QuestTrackerEntryTitle_335()
       {
-         // method body index: 1273 method index: 1273
+
          super();
          this.__setTab_textField_QuestTrackerEntryTitle_textField_0();
       }
       
       function __setTab_textField_QuestTrackerEntryTitle_textField_0() : *
       {
-         // method body index: 1274 method index: 1274
+
          this.textField.tabIndex = 11;
       }
    }

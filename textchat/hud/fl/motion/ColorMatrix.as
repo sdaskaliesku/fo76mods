@@ -16,14 +16,14 @@ package fl.motion
       
       public function ColorMatrix()
       {
-         // method body index: 472 method index: 472
+
          super(5,5);
          LoadIdentity();
       }
       
       public function SetBrightnessMatrix(param1:Number) : void
       {
-         // method body index: 473 method index: 473
+
          if(!m_matrix)
          {
             return;
@@ -35,7 +35,7 @@ package fl.motion
       
       public function SetContrastMatrix(param1:Number) : void
       {
-         // method body index: 474 method index: 474
+
          if(!m_matrix)
          {
             return;
@@ -52,7 +52,7 @@ package fl.motion
       
       public function SetSaturationMatrix(param1:Number) : void
       {
-         // method body index: 475 method index: 475
+
          if(!m_matrix)
          {
             return;
@@ -74,7 +74,7 @@ package fl.motion
       
       public function SetHueMatrix(param1:Number) : void
       {
-         // method body index: 476 method index: 476
+
          var _loc11_:int = 0;
          if(!m_matrix)
          {
@@ -135,7 +135,7 @@ package fl.motion
       
       public function GetFlatArray() : Array
       {
-         // method body index: 477 method index: 477
+
          var _loc4_:int = 0;
          if(!m_matrix)
          {

@@ -57,20 +57,20 @@ package
       
       public function PipboyUpdateMask(param1:uint)
       {
-         // method body index: 114 method index: 114
+
          super();
          this._Mask = param1;
       }
       
       public function Contains(param1:PipboyUpdateMask) : Boolean
       {
-         // method body index: 115 method index: 115
+
          return (this._Mask & param1._Mask) == param1._Mask;
       }
       
       public function Intersects(param1:PipboyUpdateMask) : Boolean
       {
-         // method body index: 116 method index: 116
+
          return (this._Mask & param1._Mask) != 0;
       }
    }

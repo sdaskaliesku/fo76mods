@@ -9,7 +9,7 @@ package
       
       public function ClothesIcon()
       {
-         // method body index: 755 method index: 755
+
          super();
       }
    }

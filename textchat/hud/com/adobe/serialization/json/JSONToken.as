@@ -14,7 +14,7 @@ package com.adobe.serialization.json
       
       public function JSONToken(param1:int = -1, param2:Object = null)
       {
-         // method body index: 331 method index: 331
+
          super();
          this.type = param1;
          this.value = param2;
@@ -22,7 +22,7 @@ package com.adobe.serialization.json
       
       static function create(param1:int = -1, param2:Object = null) : JSONToken
       {
-         // method body index: 330 method index: 330
+
          token.type = param1;
          token.value = param2;
          return token;

@@ -30,7 +30,7 @@ package fl.motion
       
       public function AnimatorFactoryBase(param1:MotionBase, param2:Array = null)
       {
-         // method body index: 222 method index: 222
+
          super();
          this._motion = param1;
          this._motionArray = param2;
@@ -43,13 +43,13 @@ package fl.motion
       
       public function get motion() : MotionBase
       {
-         // method body index: 223 method index: 223
+
          return this._motion;
       }
       
       public function addTarget(param1:DisplayObject, param2:int = 0, param3:Boolean = true, param4:int = -1, param5:Boolean = false) : AnimatorBase
       {
-         // method body index: 224 method index: 224
+
          if(param1)
          {
             return this.addTargetInfo(param1.parent,param1.name,param2,param3,param4,param5);
@@ -59,13 +59,13 @@ package fl.motion
       
       protected function getNewAnimator() : AnimatorBase
       {
-         // method body index: 225 method index: 225
+
          return null;
       }
       
       public function addTargetInfo(param1:DisplayObject, param2:String, param3:int = 0, param4:Boolean = true, param5:int = -1, param6:Boolean = false, param7:Array = null, param8:int = -1, param9:String = null, param10:Class = null) : AnimatorBase
       {
-         // method body index: 226 method index: 226
+
          var _loc14_:Class = null;
          if(!(param1 is DisplayObjectContainer) && !(param1 is SimpleButton))
          {
@@ -130,19 +130,19 @@ package fl.motion
       
       public function set transformationPoint(param1:Point) : void
       {
-         // method body index: 227 method index: 227
+
          this._transformationPoint = param1;
       }
       
       public function set transformationPointZ(param1:int) : void
       {
-         // method body index: 228 method index: 228
+
          this._transformationPointZ = param1;
       }
       
       public function set sceneName(param1:String) : void
       {
-         // method body index: 229 method index: 229
+
          this._sceneName = param1;
       }
    }

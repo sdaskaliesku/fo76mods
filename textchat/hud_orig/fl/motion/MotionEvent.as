@@ -21,13 +21,13 @@ package fl.motion
       
       public function MotionEvent(param1:String, param2:Boolean = false, param3:Boolean = false)
       {
-         // method body index: 433 method index: 433
+
          super(param1,param2,param3);
       }
       
       override public function clone() : Event
       {
-         // method body index: 434 method index: 434
+
          return new MotionEvent(this.type,this.bubbles,this.cancelable);
       }
    }

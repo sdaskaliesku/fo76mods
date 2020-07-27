@@ -27,7 +27,7 @@ package
       
       public function HUDFloatingTargetManager()
       {
-         // method body index: 953 method index: 953
+
          super();
          this.m_Targets = new Array();
          addEventListener(Event.ADDED_TO_STAGE,this.onAddedToStage);
@@ -35,7 +35,7 @@ package
       
       private function onAddedToStage(e:Event) : *
       {
-         // method body index: 954 method index: 954
+
          this.HUDModes = new Array(HUDModes.ALL,HUDModes.ACTIVATE_TYPE,HUDModes.SIT_WAIT_MODE,HUDModes.VERTIBIRD_MODE,HUDModes.POWER_ARMOR,HUDModes.IRON_SIGHTS,HUDModes.SCOPE_MENU,HUDModes.INSIDE_MEMORY,HUDModes.WORKSHOP_MODE,HUDModes.CAMP_PLACEMENT,HUDModes.CROSSHAIR_AND_ACTIVATE_ONLY);
          BSUIDataManager.Subscribe("MapMenuDataChanges",this.onFloatingTargetChange);
          BSUIDataManager.Subscribe("HUDModeData",this.onHudModeDataChange);
@@ -45,13 +45,13 @@ package
       
       private function onHudModeDataChange(event:FromClientDataEvent) : *
       {
-         // method body index: 955 method index: 955
+
          this.visible = event.data.showFloatingMarkers == true && this.HUDModes.indexOf(event.data.hudMode) != -1;
       }
       
       private function onFloatingTargetChange(arEvent:FromClientDataEvent) : *
       {
-         // method body index: 956 method index: 956
+
          var changeIndex:* = undefined;
          var changeType:* = undefined;
          var changeMarkerID:* = undefined;
@@ -204,7 +204,7 @@ package
       
       private function FindCenterMostTarget() : HUDFloatingTarget
       {
-         // method body index: 957 method index: 957
+
          var target:HUDFloatingTarget = null;
          var result:HUDFloatingTarget = null;
          for(var i:uint = 0; i < this.m_Targets.length; i++)
@@ -216,13 +216,13 @@ package
       
       private function IsReconMarker(aTarget:HUDFloatingTarget) : Boolean
       {
-         // method body index: 958 method index: 958
+
          return aTarget.type == "Recon" || aTarget.type == "EnemyTargeted";
       }
       
       private function onReconMarkerData(arEvent:FromClientDataEvent) : *
       {
-         // method body index: 959 method index: 959
+
          var removed:Boolean = false;
          var reconIdx:uint = 0;
          var matchIdx:uint = 0;
@@ -266,7 +266,7 @@ package
       
       private function onBabylonMarkersData(arEvent:FromClientDataEvent) : *
       {
-         // method body index: 960 method index: 960
+
          var removed:Boolean = false;
          var markerIdx:uint = 0;
          var matchIdx:uint = 0;
@@ -304,7 +304,7 @@ package
       
       private function getTargetByID(aData:Array, aMarkerID:uint) : uint
       {
-         // method body index: 961 method index: 961
+
          var foundMember:Boolean = false;
          var returnIdx:uint = uint.MAX_VALUE;
          var i:uint = 0;
@@ -322,7 +322,7 @@ package
       
       private function updateTarget(aTarget:HUDFloatingTarget, aTargetData:Object) : *
       {
-         // method body index: 962 method index: 962
+
          var centerX:* = undefined;
          var centerY:* = undefined;
          var deltaX:* = undefined;
@@ -359,7 +359,7 @@ package
       
       private function addTarget(aTargetData:Object) : HUDFloatingTarget
       {
-         // method body index: 963 method index: 963
+
          var newTarget:HUDFloatingTarget = new HUDFloatingTarget();
          addChild(newTarget);
          this.m_Targets.push(newTarget);

@@ -9,14 +9,14 @@ package HUDMenu_fla
       
       public function XPBar_293()
       {
-         // method body index: 1428 method index: 1428
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1427 method index: 1427
+
          stop();
       }
    }

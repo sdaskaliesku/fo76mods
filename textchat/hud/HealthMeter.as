@@ -57,7 +57,7 @@ package
       
       public function HealthMeter()
       {
-         // method body index: 3095 method index: 3095
+
          super();
          Extensions.enabled = true;
          if(this.OwnerInfo_mc)
@@ -78,7 +78,7 @@ package
       
       public function set IsHostile(param1:Boolean) : *
       {
-         // method body index: 3096 method index: 3096
+
          if(this._IsHostile != param1)
          {
             this._IsHostile = param1;
@@ -89,7 +89,7 @@ package
       
       public function set IsFriendly(param1:Boolean) : *
       {
-         // method body index: 3097 method index: 3097
+
          if(this._IsFriendly != param1)
          {
             this._IsFriendly = param1;
@@ -100,7 +100,7 @@ package
       
       public function set OwningPlayerName(param1:String) : void
       {
-         // method body index: 3098 method index: 3098
+
          if(param1 != this._OwningPlayerName)
          {
             this._OwningPlayerName = param1;
@@ -110,7 +110,7 @@ package
       
       public function set AvatarID(param1:String) : void
       {
-         // method body index: 3099 method index: 3099
+
          if(param1 != this._AvatarID)
          {
             this._AvatarID = param1;
@@ -120,7 +120,7 @@ package
       
       public function set IsBoss(param1:Boolean) : *
       {
-         // method body index: 3100 method index: 3100
+
          if(this._IsBoss != param1)
          {
             this._IsBoss = param1;
@@ -131,7 +131,7 @@ package
       
       public function set IsAI(param1:Boolean) : *
       {
-         // method body index: 3101 method index: 3101
+
          if(this._IsAI != param1)
          {
             this._IsAI = param1;
@@ -142,7 +142,7 @@ package
       
       public function set TargetLevel(param1:int) : *
       {
-         // method body index: 3102 method index: 3102
+
          if(this._TargetLevel != param1)
          {
             this._TargetLevel = param1;
@@ -153,7 +153,7 @@ package
       
       public function set Bounty(param1:int) : *
       {
-         // method body index: 3103 method index: 3103
+
          if(this._Bounty != param1)
          {
             this._Bounty = param1;
@@ -164,7 +164,7 @@ package
       
       public function set Wanted(param1:Boolean) : *
       {
-         // method body index: 3104 method index: 3104
+
          if(this._Wanted != param1)
          {
             this._Wanted = param1;
@@ -175,7 +175,7 @@ package
       
       private function UpdateBarFlag() : *
       {
-         // method body index: 3105 method index: 3105
+
          if(this._IsHostile || this._Wanted)
          {
             gotoAndStop("Hostile");
@@ -206,13 +206,13 @@ package
       
       public function SetMeterPercent(param1:Number) : *
       {
-         // method body index: 3106 method index: 3106
+
          this.MeterBar_mc.Percent = param1 / 100;
       }
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3107 method index: 3107
+
          var _loc1_:TextField = null;
          if(this.OwnerInfo_mc)
          {

@@ -10,7 +10,7 @@ package
       
       public function HUDMessageItemBox()
       {
-         // method body index: 3507 method index: 3507
+
          super();
          addFrameScript(4,this.frame5,15,this.frame16,177,this.frame178);
          Internal_mc.BodyText_tf.autoSize = TextFieldAutoSize.LEFT;
@@ -19,7 +19,7 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3508 method index: 3508
+
          if(data)
          {
             visible = true;
@@ -35,20 +35,20 @@ package
       
       function frame5() : *
       {
-         // method body index: 3509 method index: 3509
+
          stop();
       }
       
       function frame16() : *
       {
-         // method body index: 3510 method index: 3510
+
          OnFadeInComplete();
          stop();
       }
       
       function frame178() : *
       {
-         // method body index: 3511 method index: 3511
+
          OnFadeOutComplete();
          stop();
       }

@@ -75,7 +75,7 @@ package
       
       public function HUDQuestTrackerEntry()
       {
-         // method body index: 2116 method index: 2116
+
          super();
          addFrameScript(0,this.frame1,15,this.frame16,16,this.frame17,20,this.frame21,25,this.frame26,30,this.frame31,56,this.frame57);
          this.Timer_mc.Text_mc.visible = false;
@@ -89,7 +89,7 @@ package
       
       public function set timerCritical(aCritical:Boolean) : void
       {
-         // method body index: 2071 method index: 2071
+
          if(aCritical != this.m_TimerCritical)
          {
             this.m_TimerCritical = aCritical;
@@ -106,13 +106,13 @@ package
       
       public function set tracker(aTracker:HUDQuestTracker) : void
       {
-         // method body index: 2072 method index: 2072
+
          this.m_Tracker = aTracker;
       }
       
       public function onQuestDataChange(aQuest:Array) : void
       {
-         // method body index: 2073 method index: 2073
+
          for(var i:uint = 0; i < aQuest.length; i++)
          {
             if(aQuest[i].questID == this.m_QuestID)
@@ -125,14 +125,14 @@ package
       
       private function onProviderUpdate(arEvent:FromClientDataEvent) : *
       {
-         // method body index: 2074 method index: 2074
+
          var quests:Array = arEvent.data.quests;
          this.onQuestDataChange(quests);
       }
       
       public function set useProvider(aUse:Boolean) : void
       {
-         // method body index: 2075 method index: 2075
+
          if(aUse != this.m_UseProvider)
          {
             this.m_UseProvider = aUse;
@@ -149,7 +149,7 @@ package
       
       public function set useTimer(aUse:Boolean) : void
       {
-         // method body index: 2076 method index: 2076
+
          if(aUse != this.m_UseTimer)
          {
             this.m_UseTimer = aUse;
@@ -161,13 +161,13 @@ package
       
       public function get useTimer() : Boolean
       {
-         // method body index: 2077 method index: 2077
+
          return this.m_UseTimer;
       }
       
       public function set timer(aTimer:Number) : void
       {
-         // method body index: 2078 method index: 2078
+
          this.m_Timer = aTimer;
          if(this.m_Timer >= 0)
          {
@@ -185,7 +185,7 @@ package
       
       public function get fullHeight() : Number
       {
-         // method body index: 2079 method index: 2079
+
          var heightTotal:Number = this.Sizer_mc.height;
          for(var i:uint = 0; i < this.m_Objectives.length; i++)
          {
@@ -200,93 +200,93 @@ package
       
       public function set needArrangeObjectives(aArrange:Boolean) : void
       {
-         // method body index: 2080 method index: 2080
+
          this.m_NeedArrangeObjectives = aArrange;
       }
       
       public function get needArrangeObjectives() : Boolean
       {
-         // method body index: 2081 method index: 2081
+
          return this.m_NeedArrangeObjectives;
       }
       
       public function set sortIndex(aIndex:int) : void
       {
-         // method body index: 2082 method index: 2082
+
          this.m_SortIndex = aIndex;
       }
       
       public function get sortIndex() : int
       {
-         // method body index: 2083 method index: 2083
+
          return this.m_SortIndex;
       }
       
       public function set tempDisplay(aDislpay:Boolean) : void
       {
-         // method body index: 2084 method index: 2084
+
          this.m_TempDisplay = aDislpay;
       }
       
       public function get tempDisplay() : Boolean
       {
-         // method body index: 2085 method index: 2085
+
          return this.m_TempDisplay;
       }
       
       public function set toRemove(aRemove:Boolean) : void
       {
-         // method body index: 2086 method index: 2086
+
          this.m_ToRemove = aRemove;
       }
       
       public function get toRemove() : Boolean
       {
-         // method body index: 2087 method index: 2087
+
          return this.m_ToRemove;
       }
       
       public function set isShareable(aShareable:Boolean) : void
       {
-         // method body index: 2088 method index: 2088
+
          this.m_IsShareable = aShareable;
       }
       
       public function get isShareable() : Boolean
       {
-         // method body index: 2089 method index: 2089
+
          return this.m_IsShareable;
       }
       
       public function set questDisplayType(aType:uint) : void
       {
-         // method body index: 2090 method index: 2090
+
          this.m_QuestDisplayType = aType;
          this.updateQuestIconState();
       }
       
       public function get questDisplayType() : uint
       {
-         // method body index: 2091 method index: 2091
+
          return this.m_QuestDisplayType;
       }
       
       public function set isDisplayedToTeam(aDisplayed:Boolean) : void
       {
-         // method body index: 2092 method index: 2092
+
          this.m_IsDisplayedToTeam = aDisplayed;
          this.updateQuestIconState();
       }
       
       public function get isDisplayedToTeam() : Boolean
       {
-         // method body index: 2093 method index: 2093
+
          return this.m_IsDisplayedToTeam;
       }
       
       public function updateQuestIconState() : void
       {
-         // method body index: 2094 method index: 2094
+
          if(this.m_IsDisplayedToTeam)
          {
             this.Icon_mc.gotoAndStop("sharedQuestTracker");
@@ -319,37 +319,37 @@ package
       
       public function set isEvent(aEvent:Boolean) : void
       {
-         // method body index: 2095 method index: 2095
+
          this.m_IsEvent = aEvent;
       }
       
       public function get isEvent() : Boolean
       {
-         // method body index: 2096 method index: 2096
+
          return this.m_IsEvent;
       }
       
       public function set focusQuest(aFocus:Boolean) : void
       {
-         // method body index: 2097 method index: 2097
+
          this.m_focusQuest = aFocus;
       }
       
       public function get focusQuest() : Boolean
       {
-         // method body index: 2098 method index: 2098
+
          return this.m_focusQuest;
       }
       
       public function get state() : Number
       {
-         // method body index: 2099 method index: 2099
+
          return this.m_State;
       }
       
       public function stateUpdate(aAnimate:Boolean = false) : void
       {
-         // method body index: 2100 method index: 2100
+
          var completed:Boolean = this.m_State == HUDQuestTracker.QUEST_STATE_COMPLETE || this.m_State == HUDQuestTracker.QUEST_STATE_FAILED;
          if(completed)
          {
@@ -371,38 +371,38 @@ package
       
       public function set state(aState:Number) : void
       {
-         // method body index: 2101 method index: 2101
+
          this.m_State = aState;
       }
       
       public function get objectives() : Vector.<HUDQuestTrackerObjective>
       {
-         // method body index: 2102 method index: 2102
+
          return this.m_Objectives;
       }
       
       public function set questID(aQuestID:uint) : void
       {
-         // method body index: 2103 method index: 2103
+
          this.m_QuestID = aQuestID;
       }
       
       public function get questID() : uint
       {
-         // method body index: 2104 method index: 2104
+
          return this.m_QuestID;
       }
       
       public function set title(aTitle:String) : void
       {
-         // method body index: 2105 method index: 2105
+
          this.m_Title = aTitle;
          this.UpdateTitleText();
       }
       
       public function UpdateTitleText() : void
       {
-         // method body index: 2106 method index: 2106
+
          if(this.useTimer)
          {
             this.Title_mc.textField.text = this.m_Title.toUpperCase() + " [" + GlobalFunc.FormatTimeString(this.m_Timer) + "]";
@@ -415,13 +415,13 @@ package
       
       public function get title() : String
       {
-         // method body index: 2107 method index: 2107
+
          return this.m_Title;
       }
       
       private function clearTween() : void
       {
-         // method body index: 2108 method index: 2108
+
          if(this.m_posTween != null)
          {
             this.m_posTween.stop();
@@ -431,20 +431,20 @@ package
       
       public function fadeIn() : void
       {
-         // method body index: 2109 method index: 2109
+
          this.m_Displayed = true;
          gotoAndPlay("FadeIn");
       }
       
       public function fadeOut() : void
       {
-         // method body index: 2110 method index: 2110
+
          gotoAndPlay("FadeOut");
       }
       
       public function addObjective(newObjective:HUDQuestTrackerObjective) : void
       {
-         // method body index: 2111 method index: 2111
+
          addChild(newObjective);
          newObjective.questID = this.m_QuestID;
          this.m_Objectives.push(newObjective);
@@ -452,7 +452,7 @@ package
       
       public function deleteObjective(aObjective:HUDQuestTrackerObjective) : void
       {
-         // method body index: 2112 method index: 2112
+
          this.objectives.splice(this.objectives.indexOf(aObjective),1);
          aObjective.useProvider = false;
          this.removeChild(aObjective);
@@ -460,7 +460,7 @@ package
       
       public function setYPos(aPos:Number, aAnimate:Boolean = false) : void
       {
-         // method body index: 2113 method index: 2113
+
          this.clearTween();
          if(aAnimate && this.m_Displayed)
          {
@@ -474,13 +474,13 @@ package
       
       public function arrangeObjectives(aAnimate:Boolean = false) : void
       {
-         // method body index: 2115 method index: 2115
+
          var curClip:HUDQuestTrackerObjective = null;
          var posY:Number = this.Sizer_mc.height;
          this.m_Objectives.sort(function(a:HUDQuestTrackerObjective, b:HUDQuestTrackerObjective):// method body index: 2114 method index: 2114
          *
          {
-            // method body index: 2114 method index: 2114
+
             return Number(a.objectiveID) - Number(b.objectiveID);
          });
          for(var i:int = 0; i < this.m_Objectives.length; i++)
@@ -497,43 +497,43 @@ package
       
       function frame1() : *
       {
-         // method body index: 2117 method index: 2117
+
          stop();
       }
       
       function frame16() : *
       {
-         // method body index: 2118 method index: 2118
+
          stop();
       }
       
       function frame17() : *
       {
-         // method body index: 2119 method index: 2119
+
          stop();
       }
       
       function frame21() : *
       {
-         // method body index: 2120 method index: 2120
+
          stop();
       }
       
       function frame26() : *
       {
-         // method body index: 2121 method index: 2121
+
          stop();
       }
       
       function frame31() : *
       {
-         // method body index: 2122 method index: 2122
+
          stop();
       }
       
       function frame57() : *
       {
-         // method body index: 2123 method index: 2123
+
          stop();
       }
    }

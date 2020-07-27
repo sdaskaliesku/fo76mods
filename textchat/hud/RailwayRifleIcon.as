@@ -9,7 +9,7 @@ package
       
       public function RailwayRifleIcon()
       {
-         // method body index: 2222 method index: 2222
+
          super();
       }
    }

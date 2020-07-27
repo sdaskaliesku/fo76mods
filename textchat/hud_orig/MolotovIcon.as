@@ -9,7 +9,7 @@ package
       
       public function MolotovIcon()
       {
-         // method body index: 2248 method index: 2248
+
          super();
       }
    }

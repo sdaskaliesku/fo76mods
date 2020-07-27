@@ -59,7 +59,7 @@ package
       
       public function HUDReputationUpdateMeter()
       {
-         // method body index: 2185 method index: 2185
+
          super();
          addFrameScript(0,this.frame1,5,this.frame6,10,this.frame11);
          this.Header_mc = this.Internal_mc.Header_mc;
@@ -74,7 +74,7 @@ package
       
       public function set data(aData:Object) : void
       {
-         // method body index: 2176 method index: 2176
+
          var leftStatus:Object = null;
          var rightStatus:Object = null;
          var fullDuration:Number = NaN;
@@ -120,26 +120,26 @@ package
       
       public function get data() : Object
       {
-         // method body index: 2177 method index: 2177
+
          return this.m_Data;
       }
       
       public function set meterPercent(aPercent:Number) : void
       {
-         // method body index: 2178 method index: 2178
+
          this.m_MeterPercent = aPercent;
          this.Meter_mc.gotoAndStop(GlobalFunc.Clamp(Math.ceil(aPercent * this.m_MeterFrames),1,this.m_MeterFrames));
       }
       
       public function get meterPercent() : Number
       {
-         // method body index: 2179 method index: 2179
+
          return this.m_MeterPercent;
       }
       
       private function tweenMeter(aStartPercent:Number, aTargPercent:Number, aDuration:Number) : void
       {
-         // method body index: 2180 method index: 2180
+
          if(aStartPercent <= aTargPercent)
          {
             this.Internal_mc.UpwardIndicator_mc.gotoAndPlay("RepUp");
@@ -173,44 +173,44 @@ package
       
       public function fadeIn() : void
       {
-         // method body index: 2181 method index: 2181
+
          gotoAndPlay("rollOn");
       }
       
       public function fadeOut() : void
       {
-         // method body index: 2182 method index: 2182
+
          gotoAndPlay("rollOff");
       }
       
       private function onHoldFinish() : void
       {
-         // method body index: 2183 method index: 2183
+
          dispatchEvent(new Event(DISPLAY_COMPLETE,true));
       }
       
       private function onTweenFinish(aEvent:TweenEvent = null) : void
       {
-         // method body index: 2184 method index: 2184
+
          setTimeout(this.onHoldFinish,HOLD_TIME);
       }
       
       function frame1() : *
       {
-         // method body index: 2186 method index: 2186
+
          stop();
       }
       
       function frame6() : *
       {
-         // method body index: 2187 method index: 2187
+
          dispatchEvent(new Event("Reputation::FullyShown",true));
          stop();
       }
       
       function frame11() : *
       {
-         // method body index: 2188 method index: 2188
+
          dispatchEvent(new Event("Reputation::FadeOutEnd",true));
       }
    }

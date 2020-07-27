@@ -9,7 +9,7 @@ package
       
       public function radialCategoryIconContainerBody()
       {
-         // method body index: 2744 method index: 2744
+
          super();
       }
    }

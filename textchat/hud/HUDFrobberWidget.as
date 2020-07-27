@@ -75,7 +75,7 @@ package
       
       public function HUDFrobberWidget()
       {
-         // method body index: 2400 method index: 2400
+
          super();
          Extensions.enabled = true;
          this.ButtonHintBar_mc = this.Internal_mc.ButtonHintBar_mc;
@@ -96,19 +96,19 @@ package
       
       private function onTestMouseDown(param1:MouseEvent) : void
       {
-         // method body index: 2401 method index: 2401
+
          this.ProcessUserEvent("Activate",true);
       }
       
       private function onTestMouseUp(param1:MouseEvent) : void
       {
-         // method body index: 2402 method index: 2402
+
          this.ProcessUserEvent("Activate",false);
       }
       
       private function onTestKeyDown(param1:KeyboardEvent) : void
       {
-         // method body index: 2403 method index: 2403
+
          if(param1.keyCode == Keyboard.F6)
          {
             this.ProcessUserEvent("Activate",true);
@@ -117,7 +117,7 @@ package
       
       private function onTestKeyUp(param1:KeyboardEvent) : void
       {
-         // method body index: 2404 method index: 2404
+
          if(param1.keyCode == Keyboard.F6)
          {
             this.ProcessUserEvent("Activate",false);
@@ -126,7 +126,7 @@ package
       
       public function set isHolding(param1:Boolean) : void
       {
-         // method body index: 2405 method index: 2405
+
          if(param1 != this.m_IsHolding)
          {
             if(param1)
@@ -144,13 +144,13 @@ package
       
       public function get isHolding() : Boolean
       {
-         // method body index: 2406 method index: 2406
+
          return this.m_IsHolding;
       }
       
       public function set show(param1:Boolean) : void
       {
-         // method body index: 2407 method index: 2407
+
          if(param1 != this.m_Show)
          {
             if(param1)
@@ -167,13 +167,13 @@ package
       
       public function get show() : Boolean
       {
-         // method body index: 2408 method index: 2408
+
          return this.m_Show;
       }
       
       public function set showInventory(param1:Boolean) : void
       {
-         // method body index: 2409 method index: 2409
+
          if(param1 != this.m_ShowInventory)
          {
             if(param1)
@@ -193,25 +193,25 @@ package
       
       public function get showInventory() : Boolean
       {
-         // method body index: 2410 method index: 2410
+
          return this.m_ShowInventory;
       }
       
       public function set isSyncing(param1:Boolean) : void
       {
-         // method body index: 2411 method index: 2411
+
          this.m_IsSyncing = param1;
       }
       
       public function get isSyncing() : Boolean
       {
-         // method body index: 2412 method index: 2412
+
          return this.m_IsSyncing;
       }
       
       private function getDataForButtonHint(param1:Object) : BSButtonHintData
       {
-         // method body index: 2413 method index: 2413
+
          var _loc2_:BSButtonHintData = new BSButtonHintData(param1.text,param1.buttonHint.szTextPC,param1.buttonHint.szTextPS4,param1.buttonHint.szTextXB1,1,null);
          _loc2_.canHold = param1.pressAndHold;
          _loc2_.ButtonEnabled = param1.enabled;
@@ -221,7 +221,7 @@ package
       
       private function buildButtonInfo(param1:Array) : void
       {
-         // method body index: 2414 method index: 2414
+
          var _loc2_:HUDFrobberButtonData = null;
          var _loc3_:BSButtonHintData = null;
          this.m_ButtonHintData = new Vector.<BSButtonHintData>();
@@ -248,7 +248,7 @@ package
       
       private function onDataUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 2415 method index: 2415
+
          var _loc2_:TextLineMetrics = null;
          this.buildButtonInfo(param1.data.buttons);
          this.show = param1.data.show;
@@ -269,14 +269,14 @@ package
       
       private function getButtonTypeFromEvent(param1:String) : int
       {
-         // method body index: 2416 method index: 2416
+
          var _loc2_:Array = new Array("QCAButton","QCXButton","QCYButton","QCBButton");
          return _loc2_.indexOf(param1);
       }
       
       private function updateHeldButtons(param1:Event = null) : void
       {
-         // method body index: 2417 method index: 2417
+
          var _loc2_:HUDFrobberButtonData = null;
          var _loc3_:uint = 0;
          while(_loc3_ < BUTTON_TYPE_COUNT)
@@ -292,7 +292,7 @@ package
       
       private function updateButtonHold(param1:int, param2:Boolean) : void
       {
-         // method body index: 2418 method index: 2418
+
          var _loc3_:HUDFrobberButtonData = null;
          var _loc4_:Boolean = false;
          var _loc5_:uint = 0;
@@ -320,7 +320,7 @@ package
       
       public function ProcessUserEvent(param1:String, param2:Boolean) : Boolean
       {
-         // method body index: 2419 method index: 2419
+
          var _loc3_:HUDFrobberButtonData = null;
          var _loc4_:uint = 0;
          var _loc5_:* = false;
@@ -365,7 +365,7 @@ package
       
       private function decideHeaderTextColor() : void
       {
-         // method body index: 2420 method index: 2420
+
          var _loc1_:* = undefined;
          this.Header_mc.Header_tf.textColor = GlobalFunc.COLOR_TEXT_HEADER;
          for each(_loc1_ in this.m_ButtonHintData)

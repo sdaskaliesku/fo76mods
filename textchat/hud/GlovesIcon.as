@@ -9,7 +9,7 @@ package
       
       public function GlovesIcon()
       {
-         // method body index: 819 method index: 819
+
          super();
       }
    }

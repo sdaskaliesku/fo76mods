@@ -9,7 +9,7 @@ package
       
       public function ThirstIcon()
       {
-         // method body index: 2344 method index: 2344
+
          super();
       }
    }

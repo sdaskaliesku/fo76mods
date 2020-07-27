@@ -9,7 +9,7 @@ package
       
       public function ShotgunIcon()
       {
-         // method body index: 2244 method index: 2244
+
          super();
       }
    }

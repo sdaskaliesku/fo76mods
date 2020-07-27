@@ -9,7 +9,7 @@ package
       
       public function AdrenalineIcon()
       {
-         // method body index: 794 method index: 794
+
          super();
       }
    }

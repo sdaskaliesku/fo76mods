@@ -25,7 +25,7 @@ package
       
       public function AreaVoiceEntry()
       {
-         // method body index: 2665 method index: 2665
+
          super();
          Extensions.enabled = true;
          _HasDynamicHeight = false;
@@ -34,7 +34,7 @@ package
       
       override public function SetEntryText(param1:Object, param2:String) : *
       {
-         // method body index: 2666 method index: 2666
+
          this.NameField_mc.textField.text = "$AREA_CHAT_SUFFIX";
          this.NameField_mc.textField.text = this.NameField_mc.textField.text.replace("{1}",param1.displayName);
          this.LevelText_mc.LevelText_tf.text = param1.level;

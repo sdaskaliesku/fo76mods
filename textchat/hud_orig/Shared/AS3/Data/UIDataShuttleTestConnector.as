@@ -12,13 +12,13 @@ package Shared.AS3.Data
       
       public function UIDataShuttleTestConnector()
       {
-         // method body index: 543 method index: 543
+
          super();
       }
       
       override public function Watch(aProviderName:String, existingDataShuttle:UIDataFromClient = null) : UIDataFromClient
       {
-         // method body index: 539 method index: 539
+
          var fromClient:UIDataFromClient = new UIDataFromClient(new Object());
          var tempLoader:TestProviderLoader = new TestProviderLoader(aProviderName,fromClient);
          tempLoader.addEventListener(Event.COMPLETE,this.onLoadComplete);
@@ -30,7 +30,7 @@ package Shared.AS3.Data
       
       function onLoadComplete(e:Event) : void
       {
-         // method body index: 540 method index: 540
+
          var key:* = null;
          var testLoader:TestProviderLoader = e.target as TestProviderLoader;
          var fromClient:UIDataFromClient = testLoader.fromClient;
@@ -45,7 +45,7 @@ package Shared.AS3.Data
       
       function onLoadFailedPrimaryLocation(e:IOErrorEvent) : *
       {
-         // method body index: 541 method index: 541
+
          var loader:TestProviderLoader = e.target as TestProviderLoader;
          var tempLoader:* = new TestProviderLoader(loader.providerName,loader.fromClient);
          tempLoader.addEventListener(Event.COMPLETE,this.onLoadComplete);
@@ -55,7 +55,7 @@ package Shared.AS3.Data
       
       function onLoadFailed(e:IOErrorEvent) : *
       {
-         // method body index: 542 method index: 542
+
          var loader:TestProviderLoader = TestProviderLoader(e.target);
          var providerName:String = loader.providerName;
          trace("WARNING - UIDataShuttleTestConnector.onLoadFailed - TEST PROVIDER: " + providerName + " NOT FOUND");

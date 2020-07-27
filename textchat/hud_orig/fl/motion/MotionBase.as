@@ -35,7 +35,7 @@ package fl.motion
       
       public function MotionBase(param1:XML = null)
       {
-         // method body index: 28 method index: 28
+
          var _loc2_:KeyframeBase = null;
          super();
          this.keyframes = [];
@@ -52,67 +52,67 @@ package fl.motion
       
       motion_internal function set spanStart(param1:int) : void
       {
-         // method body index: 29 method index: 29
+
          this._spanStart = param1;
       }
       
       motion_internal function get spanStart() : int
       {
-         // method body index: 30 method index: 30
+
          return this._spanStart;
       }
       
       motion_internal function set transformationPoint(param1:Point) : void
       {
-         // method body index: 31 method index: 31
+
          this._transformationPoint = param1;
       }
       
       motion_internal function get transformationPoint() : Point
       {
-         // method body index: 32 method index: 32
+
          return this._transformationPoint;
       }
       
       motion_internal function set transformationPointZ(param1:int) : void
       {
-         // method body index: 33 method index: 33
+
          this._transformationPointZ = param1;
       }
       
       motion_internal function get transformationPointZ() : int
       {
-         // method body index: 34 method index: 34
+
          return this._transformationPointZ;
       }
       
       motion_internal function set initialPosition(param1:Array) : void
       {
-         // method body index: 35 method index: 35
+
          this._initialPosition = param1;
       }
       
       motion_internal function get initialPosition() : Array
       {
-         // method body index: 36 method index: 36
+
          return this._initialPosition;
       }
       
       motion_internal function set initialMatrix(param1:Matrix) : void
       {
-         // method body index: 37 method index: 37
+
          this._initialMatrix = param1;
       }
       
       motion_internal function get initialMatrix() : Matrix
       {
-         // method body index: 38 method index: 38
+
          return this._initialMatrix;
       }
       
       public function get duration() : int
       {
-         // method body index: 39 method index: 39
+
          if(this._duration < this.keyframes.length)
          {
             this._duration = this.keyframes.length;
@@ -122,7 +122,7 @@ package fl.motion
       
       public function set duration(param1:int) : void
       {
-         // method body index: 40 method index: 40
+
          if(param1 < this.keyframes.length)
          {
             param1 = this.keyframes.length;
@@ -132,19 +132,19 @@ package fl.motion
       
       public function get is3D() : Boolean
       {
-         // method body index: 41 method index: 41
+
          return this._is3D;
       }
       
       public function set is3D(param1:Boolean) : void
       {
-         // method body index: 42 method index: 42
+
          this._is3D = param1;
       }
       
       public function overrideTargetTransform(param1:Boolean = true, param2:Boolean = true, param3:Boolean = true) : void
       {
-         // method body index: 43 method index: 43
+
          this._overrideScale = param1;
          this._overrideSkew = param2;
          this._overrideRotate = param3;
@@ -152,13 +152,13 @@ package fl.motion
       
       private function indexOutOfRange(param1:int) : Boolean
       {
-         // method body index: 44 method index: 44
+
          return isNaN(param1) || param1 < 0 || param1 > this.duration - 1;
       }
       
       public function getCurrentKeyframe(param1:int, param2:String = "") : KeyframeBase
       {
-         // method body index: 45 method index: 45
+
          var _loc4_:KeyframeBase = null;
          if(isNaN(param1) || param1 < 0 || param1 > this.duration - 1)
          {
@@ -179,7 +179,7 @@ package fl.motion
       
       public function getNextKeyframe(param1:int, param2:String = "") : KeyframeBase
       {
-         // method body index: 46 method index: 46
+
          var _loc4_:KeyframeBase = null;
          if(isNaN(param1) || param1 < 0 || param1 > this.duration - 1)
          {
@@ -200,7 +200,7 @@ package fl.motion
       
       public function setValue(param1:int, param2:String, param3:Number) : void
       {
-         // method body index: 47 method index: 47
+
          if(param1 == 0)
          {
             return;
@@ -217,7 +217,7 @@ package fl.motion
       
       public function getColorTransform(param1:int) : ColorTransform
       {
-         // method body index: 48 method index: 48
+
          var _loc2_:ColorTransform = null;
          var _loc3_:KeyframeBase = this.getCurrentKeyframe(param1,"color");
          if(!_loc3_ || !_loc3_.color)
@@ -235,28 +235,28 @@ package fl.motion
       
       public function getMatrix3D(param1:int) : Object
       {
-         // method body index: 49 method index: 49
+
          var _loc2_:KeyframeBase = this.getCurrentKeyframe(param1,"matrix3D");
          return !!_loc2_?_loc2_.matrix3D:null;
       }
       
       public function getMatrix(param1:int) : Matrix
       {
-         // method body index: 50 method index: 50
+
          var _loc2_:KeyframeBase = this.getCurrentKeyframe(param1,"matrix");
          return !!_loc2_?_loc2_.matrix:null;
       }
       
       public function useRotationConcat(param1:int) : Boolean
       {
-         // method body index: 51 method index: 51
+
          var _loc2_:KeyframeBase = this.getCurrentKeyframe(param1,"rotationConcat");
          return !!_loc2_?Boolean(_loc2_.useRotationConcat):false;
       }
       
       public function getFilters(param1:Number) : Array
       {
-         // method body index: 52 method index: 52
+
          var _loc2_:Array = null;
          var _loc3_:KeyframeBase = this.getCurrentKeyframe(param1,"filters");
          if(!_loc3_ || _loc3_.filters && !_loc3_.filters.length)
@@ -274,13 +274,13 @@ package fl.motion
       
       protected function findTweenedValue(param1:Number, param2:String, param3:KeyframeBase, param4:Number, param5:Number) : Number
       {
-         // method body index: 53 method index: 53
+
          return NaN;
       }
       
       public function getValue(param1:Number, param2:String) : Number
       {
-         // method body index: 54 method index: 54
+
          var _loc3_:Number = NaN;
          var _loc4_:KeyframeBase = this.getCurrentKeyframe(param1,param2);
          if(!_loc4_ || _loc4_.blank)
@@ -307,7 +307,7 @@ package fl.motion
       
       public function addKeyframe(param1:KeyframeBase) : void
       {
-         // method body index: 55 method index: 55
+
          this.keyframes[param1.index] = param1;
          if(this.duration < this.keyframes.length)
          {
@@ -317,7 +317,7 @@ package fl.motion
       
       public function addPropertyArray(param1:String, param2:Array, param3:int = -1, param4:int = -1) : void
       {
-         // method body index: 56 method index: 56
+
          var _loc10_:KeyframeBase = null;
          var _loc11_:* = undefined;
          var _loc12_:int = 0;
@@ -467,7 +467,7 @@ package fl.motion
       
       public function initFilters(param1:Array, param2:Array, param3:int = -1, param4:int = -1) : void
       {
-         // method body index: 57 method index: 57
+
          var _loc6_:Class = null;
          var _loc7_:int = 0;
          var _loc8_:KeyframeBase = null;
@@ -522,7 +522,7 @@ package fl.motion
       
       public function addFilterPropertyArray(param1:int, param2:String, param3:Array, param4:int = -1, param5:int = -1) : void
       {
-         // method body index: 58 method index: 58
+
          var _loc10_:KeyframeBase = null;
          var _loc11_:* = undefined;
          var _loc12_:int = 0;
@@ -585,7 +585,7 @@ package fl.motion
       
       protected function getNewKeyframe(param1:XML = null) : KeyframeBase
       {
-         // method body index: 59 method index: 59
+
          return new KeyframeBase(param1);
       }
    }

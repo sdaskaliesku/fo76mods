@@ -18,20 +18,20 @@ package HUDMenu_fla
       
       public function command2crosshair_188()
       {
-         // method body index: 1494 method index: 1494
+
          super();
          addFrameScript(0,this.frame1,6,this.frame7);
       }
       
       function frame1() : *
       {
-         // method body index: 1492 method index: 1492
+
          stop();
       }
       
       function frame7() : *
       {
-         // method body index: 1493 method index: 1493
+
          dispatchEvent(new Event("animationComplete"));
       }
    }

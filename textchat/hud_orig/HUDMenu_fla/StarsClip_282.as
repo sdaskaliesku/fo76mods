@@ -11,14 +11,14 @@ package HUDMenu_fla
       
       public function StarsClip_282()
       {
-         // method body index: 1401 method index: 1401
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1400 method index: 1400
+
          this.Container.gotoAndStop(int(Math.random() * 11));
          this.scaleY = this.scaleX = Math.random() / 5 + 0.01;
          this.x = 0 + Math.random() * 300;

@@ -9,14 +9,14 @@ package HUDMenu_fla
       
       public function healthBar_frame_52()
       {
-         // method body index: 1557 method index: 1557
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1558 method index: 1558
+
          stop();
       }
    }

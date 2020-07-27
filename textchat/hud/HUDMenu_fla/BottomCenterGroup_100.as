@@ -17,14 +17,14 @@ package HUDMenu_fla
       
       public function BottomCenterGroup_100()
       {
-         // method body index: 951 method index: 951
+
          super();
          this.__setProp_PerkVaultBoy_mc_BottomCenterGroup_PerkVaultBoy_mc_0();
       }
       
       function __setProp_PerkVaultBoy_mc_BottomCenterGroup_PerkVaultBoy_mc_0() : *
       {
-         // method body index: 952 method index: 952
+
          try
          {
             this.PerkVaultBoy_mc["componentInspectorSetting"] = true;

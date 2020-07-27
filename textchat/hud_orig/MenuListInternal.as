@@ -18,39 +18,39 @@ package
       
       public function MenuListInternal()
       {
-         // method body index: 2831 method index: 2831
+
          this._menuListData = new Array();
          super();
       }
       
       public function get Active() : Boolean
       {
-         // method body index: 2829 method index: 2829
+
          return this._Active;
       }
       
       public function set Active(aActive:Boolean) : *
       {
-         // method body index: 2830 method index: 2830
+
          this._Active = aActive;
       }
       
       public function set itemRendererClassName(value:String) : void
       {
-         // method body index: 2832 method index: 2832
+
          _itemRendererClassName = value;
          this.InitRendererClass();
       }
       
       public function get itemRendererClassName() : String
       {
-         // method body index: 2833 method index: 2833
+
          return _itemRendererClassName;
       }
       
       public function InitRendererClass() : *
       {
-         // method body index: 2834 method index: 2834
+
          var classDef:Object = null;
          if(this.itemRendererClassName)
          {
@@ -64,13 +64,13 @@ package
       
       public function get MenuListData() : Array
       {
-         // method body index: 2835 method index: 2835
+
          return this._menuListData;
       }
       
       public function set MenuListData(aValue:Array) : void
       {
-         // method body index: 2836 method index: 2836
+
          dispatchEvent(new Event(Event.CHANGE));
          if(aValue == null)
          {
@@ -87,7 +87,7 @@ package
       
       public function RePopulateList() : *
       {
-         // method body index: 2837 method index: 2837
+
          if(this.hasBeenUpdated && selectedIndex == -1 && this.Active)
          {
             doSetSelectedIndex(0);
@@ -97,7 +97,7 @@ package
       
       public function PopulateList() : *
       {
-         // method body index: 2838 method index: 2838
+
          if(this.hasBeenUpdated && selectedIndex == -1 && this.Active)
          {
             doSetSelectedIndex(0);
@@ -109,7 +109,7 @@ package
       
       public function Collapse() : *
       {
-         // method body index: 2839 method index: 2839
+
          this._Collapsed = true;
          for(var i:Number = 0; i < entryList.length; i++)
          {
@@ -120,7 +120,7 @@ package
       
       public function Expand() : *
       {
-         // method body index: 2840 method index: 2840
+
          this._Collapsed = false;
          for(var i:Number = 0; i < entryList.length; i++)
          {
@@ -131,7 +131,7 @@ package
       
       public function EnableList() : *
       {
-         // method body index: 2841 method index: 2841
+
          for(var i:Number = 0; i < entryList.length; i++)
          {
             entryList[i].listDisabled = false;
@@ -142,7 +142,7 @@ package
       
       public function DisableList() : *
       {
-         // method body index: 2842 method index: 2842
+
          for(var i:Number = 0; i < entryList.length; i++)
          {
             entryList[i].listDisabled = true;
@@ -153,7 +153,7 @@ package
       
       override protected function PositionEntries() : *
       {
-         // method body index: 2843 method index: 2843
+
          var clip:BSScrollingListEntry = null;
          super.PositionEntries();
          var maxWidth:Number = 0;

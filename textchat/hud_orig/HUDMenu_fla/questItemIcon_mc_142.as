@@ -9,14 +9,14 @@ package HUDMenu_fla
       
       public function questItemIcon_mc_142()
       {
-         // method body index: 1769 method index: 1769
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1768 method index: 1768
+
          stop();
       }
    }

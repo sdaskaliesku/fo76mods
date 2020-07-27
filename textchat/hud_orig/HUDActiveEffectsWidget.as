@@ -38,7 +38,7 @@ package
       
       public function HUDActiveEffectsWidget()
       {
-         // method body index: 2914 method index: 2914
+
          super();
          this.ClipHolderInternal_mc = new MovieClip();
          addChild(this.ClipHolderInternal_mc);
@@ -46,13 +46,13 @@ package
       
       public function get ClipHolderInternal() : MovieClip
       {
-         // method body index: 2907 method index: 2907
+
          return this.ClipHolderInternal_mc;
       }
       
       public function set statusLabel(aLabel:String) : void
       {
-         // method body index: 2908 method index: 2908
+
          if(aLabel != this.m_StatusLabel)
          {
             this.m_StatusLabel = aLabel;
@@ -62,32 +62,32 @@ package
       
       public function get statusLabel() : String
       {
-         // method body index: 2909 method index: 2909
+
          return this.m_StatusLabel;
       }
       
       public function set statusColor(aColor:uint) : void
       {
-         // method body index: 2910 method index: 2910
+
          this.m_StatusColor = aColor == COLOR_GREEN?uint(COLOR_GREEN):uint(COLOR_RED);
          SetIsDirty();
       }
       
       public function get statusColor() : uint
       {
-         // method body index: 2911 method index: 2911
+
          return this.m_StatusColor;
       }
       
       public function get bInPowerArmorMode() : Boolean
       {
-         // method body index: 2912 method index: 2912
+
          return this._bInPowerArmorMode;
       }
       
       public function set bInPowerArmorMode(value:Boolean) : void
       {
-         // method body index: 2913 method index: 2913
+
          if(this._bInPowerArmorMode != value)
          {
             this._bInPowerArmorMode = value;
@@ -97,7 +97,7 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 2915 method index: 2915
+
          if(this.bInPowerArmorMode)
          {
             this.ClipHolderInternal_mc.x = 50;

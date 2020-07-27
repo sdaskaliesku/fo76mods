@@ -52,7 +52,7 @@ package
       
       public function HUDPvPScoreboard()
       {
-         // method body index: 1897 method index: 1897
+
          super();
          addFrameScript(0,this.frame1,349,this.frame350);
          this.m_ValidHudModes = new Array(HUDModes.ALL,HUDModes.ACTIVATE_TYPE,HUDModes.SIT_WAIT_MODE,HUDModes.VERTIBIRD_MODE,HUDModes.POWER_ARMOR,HUDModes.IRON_SIGHTS,HUDModes.SCOPE_MENU,HUDModes.INSIDE_MEMORY,HUDModes.CAMP_PLACEMENT,HUDModes.VATS_MODE,HUDModes.MOVEMENT_DISABLED,HUDModes.DEATH_RESPAWN,HUDModes.AUTO_VANITY);
@@ -64,7 +64,7 @@ package
       
       private function onDataUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 1898 method index: 1898
+
          if(param1.data.resetDisplay)
          {
             gotoAndStop("off");
@@ -90,19 +90,19 @@ package
       
       private function onHUDModeUpdate(param1:FromClientDataEvent) : void
       {
-         // method body index: 1899 method index: 1899
+
          this.visible = this.m_ValidHudModes.indexOf(param1.data.hudMode) != -1;
       }
       
       function frame1() : *
       {
-         // method body index: 1900 method index: 1900
+
          stop();
       }
       
       function frame350() : *
       {
-         // method body index: 1901 method index: 1901
+
          stop();
       }
    }

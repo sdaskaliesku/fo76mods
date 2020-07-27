@@ -21,7 +21,7 @@ package aze.motion.specials
       
       public function PropertyColorMatrix(target:Object, property:*, value:*, next:EazeSpecial)
       {
-         // method body index: 469 method index: 469
+
          var tint:uint = 0;
          super(target,property,value,next);
          this.colorMatrix = new ColorMatrix#103();
@@ -51,14 +51,14 @@ package aze.motion.specials
       
       public static function register() : void
       {
-         // method body index: 468 method index: 468
+
          EazeTween.specialProperties["colorMatrixFilter"] = PropertyColorMatrix;
          EazeTween.specialProperties[ColorMatrixFilter] = PropertyColorMatrix;
       }
       
       override public function init(reverse:Boolean) : void
       {
-         // method body index: 470 method index: 470
+
          var begin:Array = null;
          var end:Array = null;
          var disp:DisplayObject = DisplayObject(target);
@@ -89,7 +89,7 @@ package aze.motion.specials
       
       override public function update(ke:Number, isComplete:Boolean) : void
       {
-         // method body index: 471 method index: 471
+
          var disp:DisplayObject = DisplayObject(target);
          PropertyFilter.getCurrentFilter(ColorMatrixFilter,disp,true) as ColorMatrixFilter;
          if(this.removeWhenComplete && isComplete)
@@ -106,7 +106,7 @@ package aze.motion.specials
       
       override public function dispose() : void
       {
-         // method body index: 472 method index: 472
+
          this.colorMatrix = null;
          this.delta = null;
          this.start = null;

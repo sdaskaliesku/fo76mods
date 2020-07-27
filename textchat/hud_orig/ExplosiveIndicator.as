@@ -17,7 +17,7 @@ package
       
       public function ExplosiveIndicator()
       {
-         // method body index: 869 method index: 869
+
          super();
       }
    }

@@ -38,7 +38,7 @@ package Shared.AS3
       
       public function SWFLoaderClip()
       {
-         // method body index: 317 method index: 317
+
          this.AltMenuName = new String();
          super();
          this.SWF = null;
@@ -47,7 +47,7 @@ package Shared.AS3
       
       private function getIconClip(param1:String, param2:String = "", param3:String = null) : MovieClip
       {
-         // method body index: 318 method index: 318
+
          var _loc4_:Object = null;
          var _loc5_:MovieClip = null;
          if(param3 != null && (param1 == null || param1.length <= 0))
@@ -76,7 +76,7 @@ package Shared.AS3
       
       public function setContainerIconClip(param1:String, param2:String = "", param3:String = null) : MovieClip
       {
-         // method body index: 319 method index: 319
+
          var _loc4_:MovieClip = this.getIconClip(param1,param2,param3);
          if(_loc4_ != null)
          {
@@ -101,91 +101,91 @@ package Shared.AS3
       
       public function set clipAlpha(param1:Number) : *
       {
-         // method body index: 320 method index: 320
+
          this.ClipAlpha = param1;
       }
       
       public function set clipScale(param1:Number) : *
       {
-         // method body index: 321 method index: 321
+
          this.ClipScale = param1;
       }
       
       public function set clipRotation(param1:Number) : *
       {
-         // method body index: 322 method index: 322
+
          this.ClipRotation = param1;
       }
       
       public function set clipWidth(param1:Number) : *
       {
-         // method body index: 323 method index: 323
+
          this.ClipWidth = param1;
       }
       
       public function set clipHeight(param1:Number) : *
       {
-         // method body index: 324 method index: 324
+
          this.ClipHeight = param1;
       }
       
       public function get clipWidth() : Number
       {
-         // method body index: 325 method index: 325
+
          return this.ClipWidth;
       }
       
       public function get clipHeight() : Number
       {
-         // method body index: 326 method index: 326
+
          return this.ClipHeight;
       }
       
       public function get clipScale() : Number
       {
-         // method body index: 327 method index: 327
+
          return this.ClipScale;
       }
       
       public function set clipYOffset(param1:Number) : *
       {
-         // method body index: 328 method index: 328
+
          this.ClipYOffset = param1;
       }
       
       public function get clipYOffset() : Number
       {
-         // method body index: 329 method index: 329
+
          return this.ClipYOffset;
       }
       
       public function set clipXOffset(param1:Number) : *
       {
-         // method body index: 330 method index: 330
+
          this.ClipXOffset = param1;
       }
       
       public function get clipXOffset() : Number
       {
-         // method body index: 331 method index: 331
+
          return this.ClipXOffset;
       }
       
       public function set centerClip(param1:Boolean) : *
       {
-         // method body index: 332 method index: 332
+
          this.CenterClip = param1;
       }
       
       public function get centerClip() : Boolean
       {
-         // method body index: 333 method index: 333
+
          return this.CenterClip;
       }
       
       public function forceUnload() : *
       {
-         // method body index: 334 method index: 334
+
          if(this.SWF)
          {
             this.SWFUnload(this.SWF);
@@ -194,7 +194,7 @@ package Shared.AS3
       
       public function SWFLoad(param1:String) : void
       {
-         // method body index: 335 method index: 335
+
          try
          {
             this.menuLoader.close();
@@ -214,14 +214,14 @@ package Shared.AS3
       
       public function SWFLoadAlt(param1:String, param2:String) : *
       {
-         // method body index: 336 method index: 336
+
          this.AltMenuName = param2;
          this.SWFLoad(param1);
       }
       
       private function _ioErrorEventHandler(param1:IOErrorEvent) : *
       {
-         // method body index: 337 method index: 337
+
          if(this.AltMenuName.length > 0)
          {
             this.SWFLoad(this.AltMenuName);
@@ -234,7 +234,7 @@ package Shared.AS3
       
       public function onMenuLoadComplete(param1:Event) : void
       {
-         // method body index: 338 method index: 338
+
          this.SWF = param1.currentTarget.content;
          addChild(this.SWF);
          this.SWF.scaleX = this.ClipScale;
@@ -259,7 +259,7 @@ package Shared.AS3
       
       public function SWFUnload(param1:DisplayObject) : void
       {
-         // method body index: 339 method index: 339
+
          removeChild(param1);
          param1.loaderInfo.loader.unload();
          this.SWF = null;

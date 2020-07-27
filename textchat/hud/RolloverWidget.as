@@ -33,7 +33,7 @@ package
       
       public function RolloverWidget()
       {
-         // method body index: 2990 method index: 2990
+
          this.AButtonData = new BSButtonHintData("","E","PSN_A","Xenon_A",1,null);
          this.XButtonData = new BSButtonHintData("","R","PSN_X","Xenon_X",1,null);
          this.YButtonData = new BSButtonHintData("","Space","PSN_Y","Xenon_Y",1,null);
@@ -53,7 +53,7 @@ package
       
       private function PopulateButtonBar() : void
       {
-         // method body index: 2991 method index: 2991
+
          var _loc1_:Vector.<BSButtonHintData> = new Vector.<BSButtonHintData>();
          _loc1_.push(this.AButtonData);
          _loc1_.push(this.XButtonData);
@@ -68,7 +68,7 @@ package
       
       public function AdjustRolloverPositions() : *
       {
-         // method body index: 2992 method index: 2992
+
          var _loc1_:Number = this.RolloverName_tf.height;
          this.LegendaryIcon_mc.y = this.RolloverName_tf.y + 26;
          this.LegendaryIcon_mc.x = this.RolloverName_tf.getLineMetrics(0).x + this.RolloverName_tf.x - this.LegendaryIcon_mc.width - 5;
@@ -78,7 +78,7 @@ package
       
       function __setProp_ButtonHintBar_mc_RolloverWidget_ButtonHintBar_mc_0() : *
       {
-         // method body index: 2993 method index: 2993
+
          try
          {
             this.ButtonHintBar_mc["componentInspectorSetting"] = true;

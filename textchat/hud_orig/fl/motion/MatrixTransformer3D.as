@@ -19,13 +19,13 @@ package fl.motion
       
       public function MatrixTransformer3D()
       {
-         // method body index: 318 method index: 318
+
          super();
       }
       
       public static function rotateAboutAxis(param1:Number, param2:int) : Matrix3D
       {
-         // method body index: 312 method index: 312
+
          var _loc3_:Number = Math.cos(param1);
          var _loc4_:Number = Math.sin(param1);
          var _loc5_:Vector.<Number> = new Vector.<Number>();
@@ -90,7 +90,7 @@ package fl.motion
       
       public static function getVector(param1:Matrix3D, param2:int) : Vector3D
       {
-         // method body index: 313 method index: 313
+
          switch(param2)
          {
             case 0:
@@ -108,7 +108,7 @@ package fl.motion
       
       public static function getMatrix3D(param1:Vector3D, param2:Vector3D, param3:Vector3D, param4:Vector3D) : Matrix3D
       {
-         // method body index: 314 method index: 314
+
          var _loc5_:Vector.<Number> = new Vector.<Number>();
          _loc5_[0] = param1.x;
          _loc5_[1] = param1.y;
@@ -131,7 +131,7 @@ package fl.motion
       
       public static function rotateAxis(param1:Matrix3D, param2:Number, param3:int) : Matrix3D
       {
-         // method body index: 315 method index: 315
+
          var _loc7_:Vector3D = null;
          var _loc8_:Array = null;
          var _loc9_:int = 0;
@@ -173,7 +173,7 @@ package fl.motion
       
       public static function normalizeVector(param1:Vector3D) : Vector3D
       {
-         // method body index: 316 method index: 316
+
          var _loc2_:Number = 1 / param1.length;
          var _loc3_:Vector3D = new Vector3D();
          _loc3_.x = param1.x * _loc2_;
@@ -185,7 +185,7 @@ package fl.motion
       
       public static function getRawDataVector(param1:Matrix3D) : Vector.<Number>
       {
-         // method body index: 317 method index: 317
+
          var _loc2_:Vector.<Number> = new Vector.<Number>();
          _loc2_[0] = param1.rawData[0];
          _loc2_[1] = param1.rawData[1];

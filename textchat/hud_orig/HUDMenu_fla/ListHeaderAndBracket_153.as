@@ -13,14 +13,14 @@ package HUDMenu_fla
       
       public function ListHeaderAndBracket_153()
       {
-         // method body index: 1137 method index: 1137
+
          super();
          this.__setProp_BracketPairHolder_mc_ListHeaderAndBracket_BracketPairHolder_mc_0();
       }
       
       function __setProp_BracketPairHolder_mc_ListHeaderAndBracket_BracketPairHolder_mc_0() : *
       {
-         // method body index: 1136 method index: 1136
+
          try
          {
             this.BracketPairHolder_mc["componentInspectorSetting"] = true;

@@ -18,20 +18,20 @@ package HUDMenu_fla
       
       public function none2command_167()
       {
-         // method body index: 1579 method index: 1579
+
          super();
          addFrameScript(0,this.frame1,5,this.frame6);
       }
       
       function frame1() : *
       {
-         // method body index: 1580 method index: 1580
+
          stop();
       }
       
       function frame6() : *
       {
-         // method body index: 1581 method index: 1581
+
          dispatchEvent(new Event("animationComplete"));
       }
    }

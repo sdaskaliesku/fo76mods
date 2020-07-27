@@ -9,7 +9,7 @@ package
       
       public function TeammateNameplateEmote()
       {
-         // method body index: 2738 method index: 2738
+
          super();
       }
    }

@@ -58,7 +58,7 @@ package Shared.AS3
       
       public function BSButtonHintBar()
       {
-         // method body index: 3158 method index: 3158
+
          this.SetButtonHintData = this.SetButtonHintData_Impl;
          super();
          visible = false;
@@ -72,26 +72,26 @@ package Shared.AS3
       
       public function set useBackground(param1:Boolean) : void
       {
-         // method body index: 3159 method index: 3159
+
          this.m_UseBackground = param1;
          SetIsDirty();
       }
       
       public function get useBackground() : Boolean
       {
-         // method body index: 3160 method index: 3160
+
          return this.m_UseBackground;
       }
       
       public function get bRedirectToButtonBarMenu_Inspectable() : Boolean
       {
-         // method body index: 3161 method index: 3161
+
          return this._bRedirectToButtonBarMenu;
       }
       
       public function set bRedirectToButtonBarMenu_Inspectable(param1:Boolean) : *
       {
-         // method body index: 3162 method index: 3162
+
          if(this._bRedirectToButtonBarMenu != param1)
          {
             this._bRedirectToButtonBarMenu = param1;
@@ -101,13 +101,13 @@ package Shared.AS3
       
       public function get useVaultTecColor() : Boolean
       {
-         // method body index: 3163 method index: 3163
+
          return this.m_UseVaultTecColor;
       }
       
       public function set useVaultTecColor(param1:Boolean) : void
       {
-         // method body index: 3164 method index: 3164
+
          if(this.m_UseVaultTecColor != param1)
          {
             this.m_UseVaultTecColor = param1;
@@ -117,20 +117,20 @@ package Shared.AS3
       
       public function set align(param1:uint) : *
       {
-         // method body index: 3165 method index: 3165
+
          this.Alignment = param1;
          SetIsDirty();
       }
       
       private function CanBeVisible() : Boolean
       {
-         // method body index: 3166 method index: 3166
+
          return !this.bRedirectToButtonBarMenu_Inspectable || !bAcquiredByNativeCode;
       }
       
       override public function onAcquiredByNativeCode() : *
       {
-         // method body index: 3167 method index: 3167
+
          var _loc1_:Vector.<BSButtonHintData> = null;
          super.onAcquiredByNativeCode();
          if(this.bRedirectToButtonBarMenu_Inspectable)
@@ -144,12 +144,12 @@ package Shared.AS3
       
       private function SetButtonHintData_Impl(param1:Vector.<BSButtonHintData>) : void
       {
-         // method body index: 3170 method index: 3170
+
          var abuttonHintDataV:Vector.<BSButtonHintData> = param1;
          this._buttonHintDataV.forEach(function(param1:BSButtonHintData, param2:int, param3:Vector.<BSButtonHintData>):// method body index: 3168 method index: 3168
          *
          {
-            // method body index: 3168 method index: 3168
+
             if(param1)
             {
                param1.removeEventListener(BSButtonHintData.BUTTON_HINT_DATA_CHANGE,this.onButtonHintDataDirtyEvent);
@@ -159,7 +159,7 @@ package Shared.AS3
          this._buttonHintDataV.forEach(function(param1:BSButtonHintData, param2:int, param3:Vector.<BSButtonHintData>):// method body index: 3169 method index: 3169
          *
          {
-            // method body index: 3169 method index: 3169
+
             if(param1)
             {
                param1.addEventListener(BSButtonHintData.BUTTON_HINT_DATA_CHANGE,this.onButtonHintDataDirtyEvent);
@@ -170,13 +170,13 @@ package Shared.AS3
       
       public function onButtonHintDataDirtyEvent(param1:Event) : void
       {
-         // method body index: 3171 method index: 3171
+
          SetIsDirty();
       }
       
       private function CreateButtonHints() : *
       {
-         // method body index: 3172 method index: 3172
+
          visible = false;
          while(this.ButtonPoolV.length < this._buttonHintDataV.length)
          {
@@ -200,13 +200,13 @@ package Shared.AS3
       
       override public function onAddedToStage() : void
       {
-         // method body index: 3173 method index: 3173
+
          super.onAddedToStage();
       }
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3174 method index: 3174
+
          var _loc1_:BSButtonHint = null;
          super.redrawUIComponent();
          var _loc2_:* = false;

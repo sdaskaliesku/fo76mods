@@ -88,13 +88,13 @@ package Overlay.PublicTeams
       
       public function PublicTeamsShared()
       {
-         // method body index: 205 method index: 205
+
          super();
       }
       
       public static function DecideTeamTypeString(aTeamType:uint) : String
       {
-         // method body index: 203 method index: 203
+
          switch(aTeamType)
          {
             case TEAM_TYPE_NEW:
@@ -128,7 +128,7 @@ package Overlay.PublicTeams
       
       public static function IsValidPublicTeamType(aTeamType:uint) : Boolean
       {
-         // method body index: 204 method index: 204
+
          var returnBool:Boolean = false;
          if(aTeamType && aTeamType != TEAM_TYPE_PRIVATE && aTeamType != TEAM_TYPE_INVALID && aTeamType != TEAM_TYPE_UNAVAILABLE && aTeamType != TEAM_TYPE_NEW && DecideTeamTypeString(aTeamType) != "")
          {

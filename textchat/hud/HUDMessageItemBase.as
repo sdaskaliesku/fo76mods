@@ -13,19 +13,19 @@ package
       
       public function HUDMessageItemBase()
       {
-         // method body index: 3433 method index: 3433
+
          super();
       }
       
       public function get data() : HUDMessageItemData
       {
-         // method body index: 3434 method index: 3434
+
          return this.m_Data;
       }
       
       public function set data(param1:HUDMessageItemData) : void
       {
-         // method body index: 3435 method index: 3435
+
          this.m_Data = param1;
          SetIsDirty();
       }

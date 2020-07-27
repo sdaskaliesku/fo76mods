@@ -17,20 +17,20 @@ package Shared.AS3
       
       public function ListFilterer()
       {
-         // method body index: 203 method index: 203
+
          super();
          this.iItemFilter = 4294967295;
       }
       
       public function get itemFilter() : int
       {
-         // method body index: 204 method index: 204
+
          return this.iItemFilter;
       }
       
       public function set itemFilter(param1:int) : *
       {
-         // method body index: 205 method index: 205
+
          var _loc2_:* = this.iItemFilter != param1;
          this.iItemFilter = param1;
          if(_loc2_ == true)
@@ -41,25 +41,25 @@ package Shared.AS3
       
       public function get filterArray() : Array
       {
-         // method body index: 206 method index: 206
+
          return this._filterArray;
       }
       
       public function set filterArray(param1:Array) : *
       {
-         // method body index: 207 method index: 207
+
          this._filterArray = param1;
       }
       
       public function EntryMatchesFilter(param1:Object) : Boolean
       {
-         // method body index: 208 method index: 208
+
          return param1 != null && (!param1.hasOwnProperty("filterFlag") || (param1.filterFlag & this.iItemFilter) != 0);
       }
       
       public function GetPrevFilterMatch(param1:int) : int
       {
-         // method body index: 209 method index: 209
+
          var _loc2_:int = 0;
          var _loc3_:int = int.MAX_VALUE;
          if(param1 != int.MAX_VALUE && this._filterArray != null)
@@ -79,7 +79,7 @@ package Shared.AS3
       
       public function GetNextFilterMatch(param1:int) : int
       {
-         // method body index: 210 method index: 210
+
          var _loc2_:int = 0;
          var _loc3_:int = int.MAX_VALUE;
          if(param1 != int.MAX_VALUE && this._filterArray != null)
@@ -99,7 +99,7 @@ package Shared.AS3
       
       public function FindArrayIndexOfFilteredPosition(param1:int) : int
       {
-         // method body index: 211 method index: 211
+
          var _loc2_:Number = this.ClampIndex(0);
          while(param1 > 0 && _loc2_ != int.MAX_VALUE)
          {
@@ -111,7 +111,7 @@ package Shared.AS3
       
       public function ClampIndex(param1:int) : int
       {
-         // method body index: 212 method index: 212
+
          var _loc2_:int = 0;
          var _loc3_:int = 0;
          var _loc4_:* = param1;
@@ -141,7 +141,7 @@ package Shared.AS3
       
       public function IsFilterEmpty(param1:int) : Boolean
       {
-         // method body index: 213 method index: 213
+
          var _loc2_:* = false;
          var _loc3_:int = this.iItemFilter;
          this.iItemFilter = param1;
@@ -152,7 +152,7 @@ package Shared.AS3
       
       public function IsValidIndex(param1:int) : Boolean
       {
-         // method body index: 214 method index: 214
+
          return param1 != int.MAX_VALUE && this._filterArray != null && this.EntryMatchesFilter(this._filterArray[param1]);
       }
    }

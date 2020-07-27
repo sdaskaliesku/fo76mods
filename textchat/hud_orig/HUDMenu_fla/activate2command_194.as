@@ -18,20 +18,20 @@ package HUDMenu_fla
       
       public function activate2command_194()
       {
-         // method body index: 1460 method index: 1460
+
          super();
          addFrameScript(0,this.frame1,9,this.frame10);
       }
       
       function frame1() : *
       {
-         // method body index: 1458 method index: 1458
+
          stop();
       }
       
       function frame10() : *
       {
-         // method body index: 1459 method index: 1459
+
          dispatchEvent(new Event("animationComplete"));
       }
    }

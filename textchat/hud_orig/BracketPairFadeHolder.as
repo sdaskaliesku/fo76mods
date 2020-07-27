@@ -9,7 +9,7 @@ package
       
       public function BracketPairFadeHolder()
       {
-         // method body index: 2862 method index: 2862
+
          super();
       }
    }

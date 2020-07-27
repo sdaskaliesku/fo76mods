@@ -63,7 +63,7 @@ package
       
       public function HUDTeamWidget()
       {
-         // method body index: 2968 method index: 2968
+
          this.partyListData = new Array();
          this.partyListMenuData = new Array();
          super();
@@ -83,11 +83,11 @@ package
       
       override public function onAddedToStage() : void
       {
-         // method body index: 2971 method index: 2971
+
          BSUIDataManager.Subscribe("PartyMenuList",function(arEvent:FromClientDataEvent):// method body index: 2969 method index: 2969
          *
          {
-            // method body index: 2969 method index: 2969
+
             m_TeamType = arEvent.data.teamType;
             partyListData = arEvent.data.members;
             var len:uint = partyListData.length;
@@ -110,7 +110,7 @@ package
          BSUIDataManager.Subscribe("HUDModeData",function(arEvent:FromClientDataEvent):// method body index: 2970 method index: 2970
          *
          {
-            // method body index: 2970 method index: 2970
+
             m_HudMode = arEvent.data.hudMode;
             SetIsDirty();
          });
@@ -118,7 +118,7 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 2972 method index: 2972
+
          var partyListClip:BSScrollingListEntry = null;
          var clipHeight:* = undefined;
          this.PartyList.visible = this.partyListMenuData.length > 0 && this.m_HudMode != HUDModes.INSPECT_MODE && this.m_HudMode != HUDModes.CONTAINER_MODE && this.m_HudMode != HUDModes.PERKS_MODE && this.m_HudMode != HUDModes.LEGENDARY_PERKS_MODE;
@@ -141,7 +141,7 @@ package
       
       private function UpdatePublicTeamsHeader() : void
       {
-         // method body index: 2973 method index: 2973
+
          var teamType:uint = 0;
          var typeString:String = null;
          var numOfBonds:int = 0;
@@ -181,7 +181,7 @@ package
       
       private function onBondComplete(aEvent:Event) : void
       {
-         // method body index: 2974 method index: 2974
+
          this.UpdatePublicTeamsHeader();
       }
    }

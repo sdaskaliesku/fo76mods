@@ -9,7 +9,7 @@ package
       
       public function JunkJetIcon()
       {
-         // method body index: 2142 method index: 2142
+
          super();
       }
    }

@@ -9,7 +9,7 @@ package
       
       public function CryoMineIcon()
       {
-         // method body index: 840 method index: 840
+
          super();
       }
    }

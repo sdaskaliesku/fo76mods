@@ -25,14 +25,14 @@ package HUDMenu_fla
       
       public function HUDReputationMeterInternal_551()
       {
-         // method body index: 1108 method index: 1108
+
          super();
          this.__setProp_Meter_mc_HUDReputationMeterInternal_Meter_mc_0();
       }
       
       function __setProp_Meter_mc_HUDReputationMeterInternal_Meter_mc_0() : *
       {
-         // method body index: 1107 method index: 1107
+
          try
          {
             this.Meter_mc["componentInspectorSetting"] = true;

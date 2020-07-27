@@ -9,7 +9,7 @@ package
       
       public function SyringerIcon()
       {
-         // method body index: 2267 method index: 2267
+
          super();
       }
    }

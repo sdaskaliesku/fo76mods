@@ -9,14 +9,14 @@ package HUDMenu_fla
       
       public function survivalMeterHUD_mc_68()
       {
-         // method body index: 1931 method index: 1931
+
          super();
          addFrameScript(0,this.frame1);
       }
       
       function frame1() : *
       {
-         // method body index: 1930 method index: 1930
+
          stop();
       }
    }

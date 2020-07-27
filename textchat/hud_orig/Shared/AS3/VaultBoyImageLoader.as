@@ -35,7 +35,7 @@ package Shared.AS3
       
       public function VaultBoyImageLoader()
       {
-         // method body index: 3134 method index: 3134
+
          this.onLastFrame = this.onLastFrame_Impl;
          super();
          this.SWF = null;
@@ -44,91 +44,91 @@ package Shared.AS3
       
       public function get bUseFixedQuestStageSize_Inspectable() : Boolean
       {
-         // method body index: 3120 method index: 3120
+
          return this._bUseFixedQuestStageSize;
       }
       
       public function set bUseFixedQuestStageSize_Inspectable(abUseFixedQuestStageSize:Boolean) : *
       {
-         // method body index: 3121 method index: 3121
+
          this._bUseFixedQuestStageSize = abUseFixedQuestStageSize;
       }
       
       public function get bPlayClipOnce_Inspectable() : Boolean
       {
-         // method body index: 3122 method index: 3122
+
          return this._bPlayClipOnce;
       }
       
       public function set bPlayClipOnce_Inspectable(abPlayClipOnce:Boolean) : *
       {
-         // method body index: 3123 method index: 3123
+
          this._bPlayClipOnce = abPlayClipOnce;
       }
       
       public function get ClipAlignment_Inspectable() : String
       {
-         // method body index: 3124 method index: 3124
+
          return this._clipAlignment;
       }
       
       public function set ClipAlignment_Inspectable(aClipAlignment:String) : *
       {
-         // method body index: 3125 method index: 3125
+
          this._clipAlignment = aClipAlignment;
       }
       
       public function get DefaultBoySwfName_Inspectable() : String
       {
-         // method body index: 3126 method index: 3126
+
          return this._defaultBoySwfName;
       }
       
       public function set DefaultBoySwfName_Inspectable(aDefaultBoySwfName:String) : *
       {
-         // method body index: 3127 method index: 3127
+
          this._defaultBoySwfName = aDefaultBoySwfName;
       }
       
       public function get questAnimStageWidth_Inspectable() : Number
       {
-         // method body index: 3128 method index: 3128
+
          return this._questAnimStageWidth;
       }
       
       public function set questAnimStageWidth_Inspectable(aQuestAnimStageWidth:Number) : void
       {
-         // method body index: 3129 method index: 3129
+
          this._questAnimStageWidth = aQuestAnimStageWidth;
       }
       
       public function get questAnimStageHeight_Inspectable() : Number
       {
-         // method body index: 3130 method index: 3130
+
          return this._questAnimStageHeight;
       }
       
       public function set questAnimStageHeight_Inspectable(aQuestAnimStageHeight:Number) : void
       {
-         // method body index: 3131 method index: 3131
+
          this._questAnimStageHeight = aQuestAnimStageHeight;
       }
       
       public function get maxClipHeight_Inspectable() : Number
       {
-         // method body index: 3132 method index: 3132
+
          return this._maxClipHeight;
       }
       
       public function set maxClipHeight_Inspectable(aMaxClipHeight:Number) : void
       {
-         // method body index: 3133 method index: 3133
+
          this._maxClipHeight = aMaxClipHeight;
       }
       
       public function SWFLoad(aSwfLoaderURL:String) : void
       {
-         // method body index: 3136 method index: 3136
+
          this.VaultBoyImageInternal_mc.visible = false;
          if(this.menuLoader)
          {
@@ -138,7 +138,7 @@ package Shared.AS3
          var loadCompleteCallback:Function = function(loadCompleteEvent:Event):// method body index: 3135 method index: 3135
          *
          {
-            // method body index: 3135 method index: 3135
+
             onMenuLoadComplete(loadCompleteEvent,aSwfLoaderURL);
          };
          var menuLoadRequest:URLRequest = new URLRequest(!!aSwfLoaderURL?aSwfLoaderURL:this.DefaultBoySwfName_Inspectable);
@@ -150,7 +150,7 @@ package Shared.AS3
       
       public function onMenuLoadComplete(loadCompleteEvent:Event, aSwfLoaderURL:String) : void
       {
-         // method body index: 3137 method index: 3137
+
          var nextQuestClip:MovieClip = null;
          if(loadCompleteEvent && loadCompleteEvent.currentTarget && loadCompleteEvent.currentTarget.content)
          {
@@ -166,7 +166,7 @@ package Shared.AS3
       
       public function SetQuestMovieClip(nextQuestMovieClip:MovieClip) : void
       {
-         // method body index: 3138 method index: 3138
+
          var bgGraphics:Graphics = null;
          this.VaultBoyImageInternal_mc.visible = true;
          this.SWF = nextQuestMovieClip;
@@ -198,12 +198,12 @@ package Shared.AS3
       
       public function onLastFrame_Impl(aSwfName:String) : *
       {
-         // method body index: 3139 method index: 3139
+
       }
       
       public function onSWFEnterFrame(aEvent:Event) : *
       {
-         // method body index: 3140 method index: 3140
+
          if(this.bPlayClipOnce_Inspectable && this.SWF && this.SWF.currentFrame == this.SWF.totalFrames)
          {
             this.SWF.removeEventListener(Event.ENTER_FRAME,this.onSWFEnterFrame);
@@ -214,7 +214,7 @@ package Shared.AS3
       
       public function SWFUnload() : void
       {
-         // method body index: 3141 method index: 3141
+
          if(this.SWF)
          {
             this.SWF.removeEventListener(Event.ENTER_FRAME,this.onSWFEnterFrame);

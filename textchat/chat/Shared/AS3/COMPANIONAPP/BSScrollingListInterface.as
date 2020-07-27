@@ -78,13 +78,13 @@ package Shared.AS3.COMPANIONAPP
       
       public function BSScrollingListInterface()
       {
-         // method body index: 83 method index: 83
+
          super();
       }
       
       public static function GetMobileScrollListProperties(param1:String) : MobileScrollListProperties
       {
-         // method body index: 82 method index: 82
+
          var _loc2_:MobileScrollListProperties = new MobileScrollListProperties();
          switch(param1)
          {

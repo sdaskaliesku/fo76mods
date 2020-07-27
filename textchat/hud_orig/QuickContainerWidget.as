@@ -57,7 +57,7 @@ package
       
       public function QuickContainerWidget()
       {
-         // method body index: 3018 method index: 3018
+
          var curFrame:FrameLabel = null;
          var clip:QuickContainerItem = null;
          this.AButton = new BSButtonHintData("$TAKE","E","PSN_A","Xenon_A",1,null);
@@ -105,13 +105,13 @@ package
       
       public function get numClips() : uint
       {
-         // method body index: 3016 method index: 3016
+
          return cuiNumClips;
       }
       
       private function onCharacterInfoUpdate(arEvent:FromClientDataEvent) : void
       {
-         // method body index: 3017 method index: 3017
+
          var weightCur:Number = Math.floor(arEvent.data.currWeight);
          var weightMax:Number = Math.floor(arEvent.data.maxWeight);
          var weightLimit:Number = Math.floor(arEvent.data.absoluteWeightLimit);
@@ -138,7 +138,7 @@ package
       
       public function onQuickContainerOpen() : void
       {
-         // method body index: 3019 method index: 3019
+
          alpha = 1;
          if(this._bracketsVisible)
          {
@@ -159,7 +159,7 @@ package
       
       public function onQuickContainerClose() : void
       {
-         // method body index: 3020 method index: 3020
+
          if(this._bracketsVisible)
          {
             this.gotoAndPlay("rollOff");
@@ -177,13 +177,13 @@ package
       
       public function onQuickContainerForceHide() : void
       {
-         // method body index: 3021 method index: 3021
+
          this.gotoAndStop("off");
       }
       
       protected function PopulateButtonBar() : void
       {
-         // method body index: 3022 method index: 3022
+
          var buttonHintDataV:Vector.<BSButtonHintData> = new Vector.<BSButtonHintData>();
          buttonHintDataV.push(this.AButton);
          buttonHintDataV.push(this.XButton);
@@ -196,7 +196,7 @@ package
       
       public function UpdateList(aSelectedIndex:int, aIsNewContainer:Boolean) : void
       {
-         // method body index: 3023 method index: 3023
+
          var clip:QuickContainerItem = null;
          this._selectedIndex = aSelectedIndex;
          for(var i:uint = 0; i < cuiNumClips; i++)
@@ -222,31 +222,31 @@ package
       
       public function onInventorySynced() : *
       {
-         // method body index: 3024 method index: 3024
+
          this.Spinner_mc.visible = false;
       }
       
       public function set containerName(astrName:String) : *
       {
-         // method body index: 3025 method index: 3025
+
          GlobalFunc.SetText(this.ListHeaderAndBracket_mc.ContainerName_mc.textField_tf,astrName,false,true);
       }
       
       public function set bracketsVisible(value:Boolean) : void
       {
-         // method body index: 3026 method index: 3026
+
          this._bracketsVisible = value;
       }
       
       public function DisableConditionMeter() : *
       {
-         // method body index: 3027 method index: 3027
+
          this._ConditionMeterEnabled = false;
       }
       
       function __setProp_ButtonHintBar_mc_QuickContainerWidget_ButtonHintBar_mc_0() : *
       {
-         // method body index: 3028 method index: 3028
+
          try
          {
             this.ButtonHintBar_mc["componentInspectorSetting"] = true;
@@ -275,50 +275,50 @@ package
       
       function frame1() : *
       {
-         // method body index: 3029 method index: 3029
+
          stop();
          this.visible = false;
       }
       
       function frame2() : *
       {
-         // method body index: 3030 method index: 3030
+
          stop();
       }
       
       function frame3() : *
       {
-         // method body index: 3031 method index: 3031
+
          this.visible = true;
       }
       
       function frame12() : *
       {
-         // method body index: 3032 method index: 3032
+
          stop();
       }
       
       function frame13() : *
       {
-         // method body index: 3033 method index: 3033
+
          this.visible = false;
       }
       
       function frame22() : *
       {
-         // method body index: 3034 method index: 3034
+
          stop();
       }
       
       function frame23() : *
       {
-         // method body index: 3035 method index: 3035
+
          this.visible = true;
       }
       
       function frame29() : *
       {
-         // method body index: 3036 method index: 3036
+
          stop();
       }
    }

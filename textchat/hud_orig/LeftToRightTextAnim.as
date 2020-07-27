@@ -14,13 +14,13 @@ package
       
       public function LeftToRightTextAnim()
       {
-         // method body index: 2228 method index: 2228
+
          super();
       }
       
       public function AnimateText(aDisplayText:String) : *
       {
-         // method body index: 2229 method index: 2229
+
          this.DisplayText = aDisplayText;
          this["textField"].SetText("",true);
          var myTimer:Timer = new Timer(60,this.DisplayText.length - 1);
@@ -31,7 +31,7 @@ package
       
       public function AddLetter() : *
       {
-         // method body index: 2230 method index: 2230
+
          var myTimer:Timer = null;
          this["textField"].SetText(this.DisplayText.substr(0,this["textField"].text.length + 1),true);
          var metrics:TextLineMetrics = this["textField"].getLineMetrics(0);
@@ -46,7 +46,7 @@ package
       
       public function StartAnimOut() : *
       {
-         // method body index: 2231 method index: 2231
+
          var myTimer:Timer = new Timer(60,this.DisplayText.length);
          myTimer.addEventListener(TimerEvent.TIMER,this.RemoveLetter);
          myTimer.start();
@@ -54,7 +54,7 @@ package
       
       public function RemoveLetter() : *
       {
-         // method body index: 2232 method index: 2232
+
          var bstopBlink:* = this["textField"].text.length - 1 == 0;
          this["textField"].SetText(this.DisplayText.substr(0,this["textField"].text.length - 1),true);
          var metrics:TextLineMetrics = this["textField"].getLineMetrics(0);

@@ -12,26 +12,26 @@ package HUDMenu_fla
       
       public function pvpIdentifierLabel_mc_22()
       {
-         // method body index: 1621 method index: 1621
+
          super();
          addFrameScript(3,this.frame4,8,this.frame9,13,this.frame14);
       }
       
       function frame4() : *
       {
-         // method body index: 1622 method index: 1622
+
          stop();
       }
       
       function frame9() : *
       {
-         // method body index: 1623 method index: 1623
+
          stop();
       }
       
       function frame14() : *
       {
-         // method body index: 1624 method index: 1624
+
          stop();
       }
    }

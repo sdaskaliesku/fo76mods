@@ -52,7 +52,7 @@ package
       
       public function QuickContainerItem()
       {
-         // method body index: 3010 method index: 3010
+
          super();
          this.BaseTextFieldWidth = this.ItemName_tf.width;
          Extensions.enabled = true;
@@ -66,7 +66,7 @@ package
       
       protected function updateConditionMeter(aEntryObject:Object) : void
       {
-         // method body index: 3004 method index: 3004
+
          if(aEntryObject.maximumHealth > 0 && this.ConditionMeterEnabled)
          {
             GlobalFunc.updateConditionMeter(this.ConditionMeter_mc,aEntryObject.currentHealth,aEntryObject.maximumHealth,aEntryObject.durability);
@@ -79,33 +79,33 @@ package
       
       public function get data() : QuickContainerItemData
       {
-         // method body index: 3005 method index: 3005
+
          return this._data;
       }
       
       public function set data(value:QuickContainerItemData) : void
       {
-         // method body index: 3006 method index: 3006
+
          this._data = value;
          SetIsDirty();
       }
       
       public function get selected() : Boolean
       {
-         // method body index: 3007 method index: 3007
+
          return this._selected;
       }
       
       public function set selected(value:Boolean) : void
       {
-         // method body index: 3008 method index: 3008
+
          this._selected = value;
          SetIsDirty();
       }
       
       private function selectedColorTransform(aClip:MovieClip, aSelected:Boolean) : void
       {
-         // method body index: 3009 method index: 3009
+
          var colorTrans:ColorTransform = aClip.transform.colorTransform;
          colorTrans.redOffset = !!aSelected?Number(255):Number(0);
          colorTrans.greenOffset = !!aSelected?Number(255):Number(0);
@@ -115,7 +115,7 @@ package
       
       private function BuildIconList() : Array
       {
-         // method body index: 3011 method index: 3011
+
          var iconList:Array = [];
          iconList.push({
             "clip":this.FavoriteIcon_mc,
@@ -146,7 +146,7 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3012 method index: 3012
+
          var playerLevel:Number = NaN;
          var skipLevel:Boolean = false;
          var iconList:Array = null;
@@ -250,7 +250,7 @@ package
       
       public function AddIconsToEntry(aIconList:Array) : *
       {
-         // method body index: 3013 method index: 3013
+
          var curIcon:Object = null;
          var xBase:* = this.ItemName_tf.getLineMetrics(0).width + this.ItemName_tf.getLineMetrics(0).x + this.ItemName_tf.x + 2;
          var xDelta:* = 0;

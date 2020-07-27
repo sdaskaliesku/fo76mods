@@ -18,19 +18,19 @@ package
       
       public function MeterBarWidget()
       {
-         // method body index: 3117 method index: 3117
+
          super();
       }
       
       public function get Percent() : Number
       {
-         // method body index: 3111 method index: 3111
+
          return this._percent;
       }
       
       public function set Percent(aPercent:Number) : *
       {
-         // method body index: 3112 method index: 3112
+
          this._previousPercent = this._percent;
          if(this._percent != aPercent)
          {
@@ -41,13 +41,13 @@ package
       
       public function get BarAlpha() : Number
       {
-         // method body index: 3113 method index: 3113
+
          return this._barAlpha;
       }
       
       public function set BarAlpha(aBarAlpha:Number) : *
       {
-         // method body index: 3114 method index: 3114
+
          if(this._barAlpha != aBarAlpha)
          {
             this._barAlpha = aBarAlpha;
@@ -57,14 +57,14 @@ package
       
       override public function onAddedToStage() : void
       {
-         // method body index: 3115 method index: 3115
+
          super.onAddedToStage();
          this.MeterBarInternal_mc.alpha = this.BarAlpha;
       }
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 3116 method index: 3116
+
          super.redrawUIComponent();
          this.MeterBarInternal_mc.alpha = this.BarAlpha;
          this.MeterBarInternal_mc.Contents.Fill.gotoAndStop(this.Percent * 300 + 1);

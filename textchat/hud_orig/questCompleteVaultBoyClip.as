@@ -9,7 +9,7 @@ package
       
       public function questCompleteVaultBoyClip()
       {
-         // method body index: 2741 method index: 2741
+
          super();
       }
    }

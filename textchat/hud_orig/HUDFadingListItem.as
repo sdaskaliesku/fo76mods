@@ -29,7 +29,7 @@ package
       
       public function HUDFadingListItem()
       {
-         // method body index: 3160 method index: 3160
+
          var i:int = 0;
          super();
          this._fadeInStarted = false;
@@ -50,13 +50,13 @@ package
       
       public function get endAnimFrame() : int
       {
-         // method body index: 3159 method index: 3159
+
          return this.m_EndAnimFrame;
       }
       
       public function FadeIn() : *
       {
-         // method body index: 3161 method index: 3161
+
          if(!this._fadeInStarted)
          {
             visible = true;
@@ -67,7 +67,7 @@ package
       
       public function FastFadeOut() : *
       {
-         // method body index: 3162 method index: 3162
+
          this._fadeOutStarted = true;
          this._fastFadeOutStarted = true;
          gotoAndPlay("FastFadeOut");
@@ -75,38 +75,38 @@ package
       
       public function FadeOut() : *
       {
-         // method body index: 3163 method index: 3163
+
          this._fadeOutStarted = true;
          gotoAndPlay("FadeOut");
       }
       
       public function get fadeInStarted() : Boolean
       {
-         // method body index: 3164 method index: 3164
+
          return this._fadeInStarted;
       }
       
       public function get fadeOutStarted() : Boolean
       {
-         // method body index: 3165 method index: 3165
+
          return this._fadeOutStarted;
       }
       
       public function get fullyFadedIn() : Boolean
       {
-         // method body index: 3166 method index: 3166
+
          return this._fullyFadedIn;
       }
       
       public function get fullyFadedOut() : Boolean
       {
-         // method body index: 3167 method index: 3167
+
          return this._fullyFadedOut;
       }
       
       public function ResetFadeState() : *
       {
-         // method body index: 3168 method index: 3168
+
          gotoAndPlay("Reset");
          visible = false;
          this._fadeInStarted = false;
@@ -118,37 +118,37 @@ package
       
       public function CanFadeIn() : Boolean
       {
-         // method body index: 3169 method index: 3169
+
          return !this.fadeInStarted && !bIsDirty;
       }
       
       public function CanFastFadeOut() : Boolean
       {
-         // method body index: 3170 method index: 3170
+
          return this._fullyFadedIn && !this._fastFadeOutStarted && !bIsDirty;
       }
       
       public function CanFadeOut() : Boolean
       {
-         // method body index: 3171 method index: 3171
+
          return this._fullyFadedIn && !this._fadeOutStarted && !bIsDirty;
       }
       
       protected function OnFastFadeOutStarted() : *
       {
-         // method body index: 3172 method index: 3172
+
          this._fastFadeOutStarted = true;
       }
       
       protected function OnFadeInComplete() : *
       {
-         // method body index: 3173 method index: 3173
+
          this._fullyFadedIn = true;
       }
       
       protected function OnFadeOutComplete() : *
       {
-         // method body index: 3174 method index: 3174
+
          visible = false;
          this._fullyFadedOut = true;
       }

@@ -48,12 +48,12 @@ package
       
       public function Messages()
       {
-         // method body index: 2991 method index: 2991
+
          super();
          var processEvent:Function = function(data:Object, cb:Function):// method body index: 2988 method index: 2988
          *
          {
-            // method body index: 2988 method index: 2988
+
             var event:* = undefined;
             var events:* = data.events;
             var numEvents:* = events.length;
@@ -72,12 +72,12 @@ package
          BSUIDataManager.Subscribe("MessageEvents",function(arEvent:FromClientDataEvent):// method body index: 2990 method index: 2990
          *
          {
-            // method body index: 2990 method index: 2990
+
             var messages:* = MessagePayload.data.messages;
             processEvent(arEvent.data,function(messageEvent:Object):// method body index: 2989 method index: 2989
             *
             {
-               // method body index: 2989 method index: 2989
+
                var msg:* = undefined;
                var isThrottled:* = undefined;
                var alreadyShow:Boolean = false;
@@ -142,19 +142,19 @@ package
       
       public function get maxClipHeight_Inspectable() : Number
       {
-         // method body index: 2986 method index: 2986
+
          return this._maxClipHeight;
       }
       
       public function set maxClipHeight_Inspectable(aMaxClipHeight:Number) : void
       {
-         // method body index: 2987 method index: 2987
+
          this._maxClipHeight = aMaxClipHeight;
       }
       
       public function set TutorialShowing(aShowing:Boolean) : *
       {
-         // method body index: 2992 method index: 2992
+
          if(this.bPauseUpdates && !aShowing)
          {
             this.lastTime = getTimer();
@@ -165,13 +165,13 @@ package
       
       public function get ShownCount() : int
       {
-         // method body index: 2993 method index: 2993
+
          return this.ShownMessageArray.length;
       }
       
       public function UpdatePositions() : *
       {
-         // method body index: 2994 method index: 2994
+
          var onlyMessage:HUDFadingListItem = null;
          var topClipIndex:* = undefined;
          var topMessage:HUDMessageItemBase = null;
@@ -249,7 +249,7 @@ package
       
       public function RemoveMessages(abConditional:Boolean) : *
       {
-         // method body index: 2995 method index: 2995
+
          var removedMessageArray:Vector.<HUDMessageItemBase> = null;
          for(var i:int = this.ShownMessageArray.length - 1; i >= 0; i--)
          {
@@ -265,19 +265,19 @@ package
       
       private function DiscardMessage(messageId:Number) : *
       {
-         // method body index: 2996 method index: 2996
+
          BSUIDataManager.dispatchEvent(new CustomEvent("HUDMessages::DiscardMessage",{"id":messageId}));
       }
       
       public function get CanAddMessage() : Boolean
       {
-         // method body index: 2997 method index: 2997
+
          return !this.bAnimating && !this.fadingOutMessage && this.ShownCount < MAX_SHOWN;
       }
       
       public function Update(e:Event) : *
       {
-         // method body index: 2998 method index: 2998
+
          var frameTime:* = undefined;
          var deltaTime:* = undefined;
          var numThrottled:* = undefined;

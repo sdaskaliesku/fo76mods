@@ -17,7 +17,7 @@ package Shared.AS3.Data
       
       public function BSUIDataManager()
       {
-         // method body index: 229 method index: 229
+
          super();
          if(_instance != null)
          {
@@ -29,7 +29,7 @@ package Shared.AS3.Data
       
       private static function GetInstance() : BSUIDataManager
       {
-         // method body index: 217 method index: 217
+
          if(!_instance)
          {
             _instance = new BSUIDataManager();
@@ -39,7 +39,7 @@ package Shared.AS3.Data
       
       public static function ConnectDataShuttleConnector(param1:UIDataShuttleConnector) : UIDataShuttleConnector
       {
-         // method body index: 218 method index: 218
+
          var _loc2_:UIDataFromClient = null;
          var _loc3_:* = null;
          var _loc4_:Array = null;
@@ -71,13 +71,13 @@ package Shared.AS3.Data
       
       public static function InitDataManager(param1:BSUIEventDispatcherBackend) : void
       {
-         // method body index: 219 method index: 219
+
          GetInstance().eventDispatcherBackend = param1;
       }
       
       public static function Subscribe(param1:String, param2:Function, param3:Boolean = false) : Function
       {
-         // method body index: 220 method index: 220
+
          var _loc4_:UIDataFromClient = BSUIDataManager.GetDataFromClient(param1,true,param3);
          if(_loc4_ != null)
          {
@@ -89,7 +89,7 @@ package Shared.AS3.Data
       
       public static function Flush(param1:Array) : *
       {
-         // method body index: 221 method index: 221
+
          var _loc2_:UIDataFromClient = null;
          var _loc3_:Number = param1.length;
          var _loc4_:BSUIDataManager = GetInstance();
@@ -104,7 +104,7 @@ package Shared.AS3.Data
       
       public static function Unsubscribe(param1:String, param2:Function, param3:Boolean = false) : void
       {
-         // method body index: 222 method index: 222
+
          var _loc4_:UIDataFromClient = BSUIDataManager.GetDataFromClient(param1,true,param3);
          if(_loc4_ != null)
          {
@@ -114,7 +114,7 @@ package Shared.AS3.Data
       
       public static function GetDataFromClient(param1:String, param2:Boolean = true, param3:Boolean = false) : UIDataFromClient
       {
-         // method body index: 223 method index: 223
+
          var _loc4_:UIDataShuttleConnector = null;
          var _loc5_:UIDataShuttleTestConnector = null;
          var _loc6_:UIDataFromClient = null;
@@ -147,31 +147,31 @@ package Shared.AS3.Data
       
       public static function addEventListener(param1:String, param2:Function, param3:Boolean = false, param4:int = 0, param5:Boolean = false) : void
       {
-         // method body index: 224 method index: 224
+
          GetInstance().addEventListener(param1,param2,param3,param4,param5);
       }
       
       public static function removeEventListener(param1:String, param2:Function, param3:Boolean = false) : void
       {
-         // method body index: 225 method index: 225
+
          GetInstance().removeEventListener(param1,param2,param3);
       }
       
       public static function dispatchEvent(param1:Event) : Boolean
       {
-         // method body index: 226 method index: 226
+
          return GetInstance().dispatchEvent(param1);
       }
       
       public static function hasEventListener(param1:String) : Boolean
       {
-         // method body index: 227 method index: 227
+
          return GetInstance().hasEventListener(param1);
       }
       
       public static function willTrigger(param1:String) : Boolean
       {
-         // method body index: 228 method index: 228
+
          return GetInstance().willTrigger(param1);
       }
    }

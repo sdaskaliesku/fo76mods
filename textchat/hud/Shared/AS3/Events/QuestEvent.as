@@ -22,7 +22,7 @@ package Shared.AS3.Events
       
       public function QuestEvent(param1:String, param2:Object, param3:Boolean = false, param4:Boolean = false, param5:Boolean = false)
       {
-         // method body index: 377 method index: 377
+
          this.m_Data = param2;
          this.pvpFlag = param5;
          super(param1,param3,param4);
@@ -30,13 +30,13 @@ package Shared.AS3.Events
       
       public function get data() : Object
       {
-         // method body index: 378 method index: 378
+
          return this.m_Data;
       }
       
       override public function clone() : Event
       {
-         // method body index: 379 method index: 379
+
          return new QuestEvent(type,this.data,bubbles,cancelable);
       }
    }

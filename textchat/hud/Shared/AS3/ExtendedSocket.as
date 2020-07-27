@@ -37,7 +37,7 @@ package Shared.AS3
       
       public function ExtendedSocket(param1:*)
       {
-         // method body index: 2388 method index: 2388
+
          this.connectTimer = new Timer(5,1);
          this.dataTimer = new Timer(50,1);
          this.message = new TextField();
@@ -54,7 +54,7 @@ package Shared.AS3
       
       public function connect(param1:String, param2:String) : void
       {
-         // method body index: 2389 method index: 2389
+
          var _loc3_:String = this.name;
          var _loc4_:Object = this;
          if(this.connected)
@@ -76,18 +76,18 @@ package Shared.AS3
       
       public function close() : void
       {
-         // method body index: 2390 method index: 2390
+
       }
       
       public function readByte() : int
       {
-         // method body index: 2391 method index: 2391
+
          return this.sfCodeObject.call("readByte");
       }
       
       public function readUTFBytes(param1:uint) : String
       {
-         // method body index: 2392 method index: 2392
+
          if(param1 > this.bytesAvailable)
          {
             param1 = this.bytesAvailable;
@@ -108,7 +108,7 @@ package Shared.AS3
       
       public function writeUTFBytes(param1:String) : void
       {
-         // method body index: 2393 method index: 2393
+
          var _loc2_:Boolean = this.sfCodeObject.call("writeUTFBytes",param1);
          if(!_loc2_)
          {
@@ -119,12 +119,12 @@ package Shared.AS3
       
       public function flush() : void
       {
-         // method body index: 2394 method index: 2394
+
       }
       
       public function onConnectLoop() : void
       {
-         // method body index: 2395 method index: 2395
+
          if(this.connected)
          {
             this.dispatchEvent(new Event("ExtendedSocket::CONNECT"));
@@ -138,7 +138,7 @@ package Shared.AS3
       
       public function onSocketLoop() : void
       {
-         // method body index: 2396 method index: 2396
+
          if(this.bytesAvailable > this.prevBytesAvailable)
          {
             this.dispatchEvent(new Event("ExtendedSocket::SocketData"));
@@ -150,7 +150,7 @@ package Shared.AS3
       
       private function displayError(param1:String) : void
       {
-         // method body index: 2397 method index: 2397
+
          this.message.width = 1600;
          GlobalFunc.SetText(this.message,this.message.text + "\n" + param1,false);
          TextFieldEx.setTextAutoSize(this.message,TextFieldEx.TEXTAUTOSZ_SHRINK);

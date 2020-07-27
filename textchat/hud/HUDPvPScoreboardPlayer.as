@@ -43,7 +43,7 @@ package
       
       public function HUDPvPScoreboardPlayer()
       {
-         // method body index: 1904 method index: 1904
+
          super();
          TextFieldEx.setTextAutoSize(this.pvpPlayerName_mc.pvpPlayerName_tf,TextFieldEx.TEXTAUTOSZ_SHRINK);
          var _loc1_:ImageFixture = this.pvpPlayerIcon_mc.pvpIconTransform_mc.PlayerIcon_mc as ImageFixture;
@@ -53,13 +53,13 @@ package
       
       public function get data() : Object
       {
-         // method body index: 1905 method index: 1905
+
          return this.m_Data;
       }
       
       public function set data(param1:Object) : void
       {
-         // method body index: 1906 method index: 1906
+
          this.m_Data = param1;
          var _loc2_:String = "gold";
          var _loc3_:String = "gold";

@@ -14,13 +14,13 @@ package
       
       public function LeftToRightTextAnim()
       {
-         // method body index: 2154 method index: 2154
+
          super();
       }
       
       public function AnimateText(param1:String) : *
       {
-         // method body index: 2155 method index: 2155
+
          this.DisplayText = param1;
          this["textField"].SetText("",true);
          var _loc2_:Timer = new Timer(60,this.DisplayText.length - 1);
@@ -31,7 +31,7 @@ package
       
       public function AddLetter() : *
       {
-         // method body index: 2156 method index: 2156
+
          var _loc1_:Timer = null;
          this["textField"].SetText(this.DisplayText.substr(0,this["textField"].text.length + 1),true);
          var _loc2_:TextLineMetrics = this["textField"].getLineMetrics(0);
@@ -46,7 +46,7 @@ package
       
       public function StartAnimOut() : *
       {
-         // method body index: 2157 method index: 2157
+
          var _loc1_:Timer = new Timer(60,this.DisplayText.length);
          _loc1_.addEventListener(TimerEvent.TIMER,this.RemoveLetter);
          _loc1_.start();
@@ -54,7 +54,7 @@ package
       
       public function RemoveLetter() : *
       {
-         // method body index: 2158 method index: 2158
+
          var _loc1_:* = this["textField"].text.length - 1 == 0;
          this["textField"].SetText(this.DisplayText.substr(0,this["textField"].text.length - 1),true);
          var _loc2_:TextLineMetrics = this["textField"].getLineMetrics(0);

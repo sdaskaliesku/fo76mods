@@ -13,7 +13,7 @@ package Overlay.PublicTeams
       
       public function PublicTeamsIcon()
       {
-         // method body index: 2747 method index: 2747
+
          super();
          this.m_originalWidth = this.width;
          this.m_originalHeight = this.height;
@@ -21,7 +21,7 @@ package Overlay.PublicTeams
       
       public function setIconType(aTeamType:uint) : void
       {
-         // method body index: 2748 method index: 2748
+
          var typeString:String = null;
          if(PublicTeamsShared.IsValidPublicTeamType(aTeamType))
          {

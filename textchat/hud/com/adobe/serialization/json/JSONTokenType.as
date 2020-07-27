@@ -46,7 +46,7 @@ package com.adobe.serialization.json
       
       public function JSONTokenType()
       {
-         // method body index: 349 method index: 349
+
          super();
       }
    }

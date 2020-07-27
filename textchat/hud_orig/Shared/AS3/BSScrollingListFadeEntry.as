@@ -9,13 +9,13 @@ package Shared.AS3
       
       public function BSScrollingListFadeEntry()
       {
-         // method body index: 2732 method index: 2732
+
          super();
       }
       
       override public function SetEntryText(aEntryObject:Object, astrTextOption:String) : *
       {
-         // method body index: 2731 method index: 2731
+
          super.SetEntryText(aEntryObject,astrTextOption);
          var focus:* = stage.focus == this.parent;
          if(!focus && this.parent != null)

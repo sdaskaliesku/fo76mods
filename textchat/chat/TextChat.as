@@ -63,7 +63,7 @@ package
       
       public function TextChat()
       {
-         // method body index: 263 method index: 263
+
          this.message = new TextField();
          this.tabOneSquare = new Shape();
          this.tabTwoSquare = new Shape();
@@ -84,12 +84,12 @@ package
       
       public function ProcessUserEvent(param1:String, param2:Boolean) : void
       {
-         // method body index: 264 method index: 264
+
       }
       
       private function addedToStageHandler(param1:Event) : void
       {
-         // method body index: 265 method index: 265
+
          this.topLevel = stage.getChildAt(0);
          if(this.topLevel != null && getQualifiedClassName(this.topLevel) == "HUDMenu")
          {
@@ -103,13 +103,13 @@ package
       
       private function initialize() : void
       {
-         // method body index: 266 method index: 266
+
          this.SettingsBase_mc.visible = false;
       }
       
       private function displayError(param1:String) : void
       {
-         // method body index: 267 method index: 267
+
          this.message.width = 1600;
          GlobalFunc.SetText(this.message,this.message.text + "\n" + param1,false);
          TextFieldEx.setTextAutoSize(this.message,TextFieldEx.TEXTAUTOSZ_SHRINK);
@@ -126,7 +126,7 @@ package
       
       public function setIniProperties(param1:*, param2:*, param3:*, param4:*, param5:*, param6:*, param7:*, param8:*, param9:*, param10:*, param11:*, param12:*, param13:*, param14:*, param15:*, param16:*) : void
       {
-         // method body index: 268 method index: 268
+
          var _loc19_:Number = NaN;
          var _loc17_:Number = param1;
          if(param1 > 120)
@@ -265,13 +265,13 @@ package
       
       public function getCurrentTab() : Number
       {
-         // method body index: 269 method index: 269
+
          return this.chatTabIndex;
       }
       
       public function changeTab() : void
       {
-         // method body index: 270 method index: 270
+
          if(this.chatTabIndex == 5)
          {
             this.chatTabIndex = 0;

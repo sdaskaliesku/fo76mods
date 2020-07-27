@@ -31,13 +31,13 @@ package Shared.AS3
       
       public function Factions()
       {
-         // method body index: 200 method index: 200
+
          super();
       }
       
       public static function updateFaceIcon(param1:MovieClip, param2:Object) : void
       {
-         // method body index: 193 method index: 193
+
          param1.gotoAndStop(param2.code);
          param1.Face_mc.gotoAndStop(getReputationFaceFromFromTier(param2.tier));
          param1.Backer_mc.gotoAndStop(getReputationBackerFrameFromTier(param2.tier));
@@ -45,7 +45,7 @@ package Shared.AS3
       
       public static function getFactionByID(param1:uint, param2:Array) : Object
       {
-         // method body index: 194 method index: 194
+
          var _loc3_:uint = 0;
          while(_loc3_ < param2.length)
          {
@@ -60,7 +60,7 @@ package Shared.AS3
       
       public static function buildFactionInfo(param1:Object) : Array
       {
-         // method body index: 195 method index: 195
+
          var _loc2_:Object = null;
          var _loc3_:String = null;
          var _loc4_:int = 0;
@@ -88,7 +88,7 @@ package Shared.AS3
       
       public static function getNextReputationTierPercent(param1:int, param2:uint, param3:Array) : Number
       {
-         // method body index: 196 method index: 196
+
          if(param2 + 1 >= param3.length)
          {
             return 1;
@@ -101,7 +101,7 @@ package Shared.AS3
       
       public static function getReputationTier(param1:int, param2:Array) : uint
       {
-         // method body index: 197 method index: 197
+
          var _loc3_:uint = param2.length - 1;
          while(_loc3_ > 0)
          {
@@ -116,7 +116,7 @@ package Shared.AS3
       
       public static function getReputationBackerFrameFromTier(param1:uint) : String
       {
-         // method body index: 198 method index: 198
+
          var _loc2_:String = "";
          switch(param1)
          {
@@ -134,7 +134,7 @@ package Shared.AS3
       
       public static function getReputationFaceFromFromTier(param1:uint) : String
       {
-         // method body index: 199 method index: 199
+
          var _loc2_:String = "";
          switch(param1)
          {

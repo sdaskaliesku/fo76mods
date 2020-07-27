@@ -33,26 +33,26 @@ package Shared.AS3
       
       public function PerkVaultBoyContainer()
       {
-         // method body index: 2757 method index: 2757
+
          super();
          addEventListener(ANIM_END_AS_EVENT,this.OnAnimComplete);
       }
       
       public function get DefaultBoySwfName_Inspectable() : String
       {
-         // method body index: 2758 method index: 2758
+
          return this._defaultVaultBoyName;
       }
       
       public function set DefaultBoySwfName_Inspectable(param1:String) : *
       {
-         // method body index: 2759 method index: 2759
+
          this._defaultVaultBoyName = param1;
       }
       
       private function OnAnimComplete(param1:Event) : *
       {
-         // method body index: 2760 method index: 2760
+
          if(!this.Loop)
          {
             this.CurrentClip.stop();
@@ -67,7 +67,7 @@ package Shared.AS3
       
       public function DisplayPerkVaultBoy(param1:String, param2:Boolean, param3:Boolean, param4:Boolean) : *
       {
-         // method body index: 2761 method index: 2761
+
          var aPerkName:String = param1;
          var abAnimate:Boolean = param2;
          var abLoop:Boolean = param3;

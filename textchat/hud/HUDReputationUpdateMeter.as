@@ -59,7 +59,7 @@ package
       
       public function HUDReputationUpdateMeter()
       {
-         // method body index: 2102 method index: 2102
+
          super();
          addFrameScript(0,this.frame1,5,this.frame6,10,this.frame11);
          this.Header_mc = this.Internal_mc.Header_mc;
@@ -74,7 +74,7 @@ package
       
       public function set data(param1:Object) : void
       {
-         // method body index: 2103 method index: 2103
+
          var _loc2_:Object = null;
          var _loc3_:Object = null;
          var _loc4_:Number = NaN;
@@ -120,26 +120,26 @@ package
       
       public function get data() : Object
       {
-         // method body index: 2104 method index: 2104
+
          return this.m_Data;
       }
       
       public function set meterPercent(param1:Number) : void
       {
-         // method body index: 2105 method index: 2105
+
          this.m_MeterPercent = param1;
          this.Meter_mc.gotoAndStop(GlobalFunc.Clamp(Math.ceil(param1 * this.m_MeterFrames),1,this.m_MeterFrames));
       }
       
       public function get meterPercent() : Number
       {
-         // method body index: 2106 method index: 2106
+
          return this.m_MeterPercent;
       }
       
       private function tweenMeter(param1:Number, param2:Number, param3:Number) : void
       {
-         // method body index: 2107 method index: 2107
+
          if(param1 <= param2)
          {
             this.Internal_mc.UpwardIndicator_mc.gotoAndPlay("RepUp");
@@ -173,44 +173,44 @@ package
       
       public function fadeIn() : void
       {
-         // method body index: 2108 method index: 2108
+
          gotoAndPlay("rollOn");
       }
       
       public function fadeOut() : void
       {
-         // method body index: 2109 method index: 2109
+
          gotoAndPlay("rollOff");
       }
       
       private function onHoldFinish() : void
       {
-         // method body index: 2110 method index: 2110
+
          dispatchEvent(new Event(DISPLAY_COMPLETE,true));
       }
       
       private function onTweenFinish(param1:TweenEvent = null) : void
       {
-         // method body index: 2111 method index: 2111
+
          setTimeout(this.onHoldFinish,HOLD_TIME);
       }
       
       function frame1() : *
       {
-         // method body index: 2112 method index: 2112
+
          stop();
       }
       
       function frame6() : *
       {
-         // method body index: 2113 method index: 2113
+
          dispatchEvent(new Event("Reputation::FullyShown",true));
          stop();
       }
       
       function frame11() : *
       {
-         // method body index: 2114 method index: 2114
+
          dispatchEvent(new Event("Reputation::FadeOutEnd",true));
       }
    }

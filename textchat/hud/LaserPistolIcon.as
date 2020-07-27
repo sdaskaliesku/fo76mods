@@ -9,7 +9,7 @@ package
       
       public function LaserPistolIcon()
       {
-         // method body index: 2148 method index: 2148
+
          super();
       }
    }

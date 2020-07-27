@@ -14,14 +14,14 @@ package Shared.AS3.Events
       
       public function CustomEvent(param1:String, param2:Object, param3:Boolean = false, param4:Boolean = false)
       {
-         // method body index: 161 method index: 161
+
          super(param1,param3,param4);
          this.params = param2;
       }
       
       override public function clone() : Event
       {
-         // method body index: 162 method index: 162
+
          return new CustomEvent(type,this.params,bubbles,cancelable);
       }
    }

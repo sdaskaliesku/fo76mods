@@ -15,7 +15,7 @@ package
       
       public function TeammateMarkersManager()
       {
-         // method body index: 2774 method index: 2774
+
          this.TeamNameplates = new Vector.<TeammateNameplate>();
          this.UnusedTeamNameplates = new Vector.<TeammateNameplate>();
          super();
@@ -23,14 +23,14 @@ package
       
       override public function onAddedToStage() : void
       {
-         // method body index: 2771 method index: 2771
+
          super.onAddedToStage();
          BSUIDataManager.Subscribe("TeamMarkers",this.onTeamMarkersUpdate);
       }
       
       private function UpdateTeammate(namePlate:TeammateNameplate, marker:Object) : void
       {
-         // method body index: 2772 method index: 2772
+
          namePlate.isLeader = marker.isLeader;
          namePlate.displayName = marker.displayName;
          namePlate.playerState = marker.playerState;
@@ -77,7 +77,7 @@ package
       
       private function onTeamMarkersUpdate(event:FromClientDataEvent) : void
       {
-         // method body index: 2773 method index: 2773
+
          var teamMarkerData:Array = null;
          var marker:Object = null;
          var numNameplates:int = 0;

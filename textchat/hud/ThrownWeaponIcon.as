@@ -9,7 +9,7 @@ package
       
       public function ThrownWeaponIcon()
       {
-         // method body index: 2273 method index: 2273
+
          super();
       }
    }

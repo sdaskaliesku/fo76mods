@@ -9,7 +9,7 @@ package
       
       public function NukaGrenadeIcon()
       {
-         // method body index: 2254 method index: 2254
+
          super();
       }
    }

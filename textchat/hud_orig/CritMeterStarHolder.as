@@ -18,14 +18,14 @@ package
       
       public function CritMeterStarHolder()
       {
-         // method body index: 2871 method index: 2871
+
          super();
          this._starClips = new Vector.<MovieClip>();
       }
       
       public function SetCritStars(aCurrCount:uint, aMaxCount:uint) : *
       {
-         // method body index: 2872 method index: 2872
+
          if(this._numStarsFilled != aCurrCount)
          {
             this._numStarsFilled = aCurrCount;
@@ -40,7 +40,7 @@ package
       
       override public function redrawUIComponent() : void
       {
-         // method body index: 2873 method index: 2873
+
          var newStar:CritMeterStar = null;
          var oldStar:* = undefined;
          super.redrawUIComponent();

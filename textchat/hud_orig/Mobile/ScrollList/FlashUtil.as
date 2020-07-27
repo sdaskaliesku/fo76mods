@@ -17,13 +17,13 @@ package Mobile.ScrollList
       
       public function FlashUtil()
       {
-         // method body index: 330 method index: 330
+
          super();
       }
       
       public static function getLibraryItem(mc:MovieClip, className:String) : DisplayObject
       {
-         // method body index: 328 method index: 328
+
          var classRef:Class = getLibraryClass(mc,className);
          if(getQualifiedSuperclassName(classRef) == BITMAP_DATA_CLASS_NAME)
          {
@@ -34,7 +34,7 @@ package Mobile.ScrollList
       
       public static function getLibraryClass(mc:MovieClip, className:String) : Class
       {
-         // method body index: 329 method index: 329
+
          var classRef:Class = mc.loaderInfo.applicationDomain.getDefinition(className) as Class;
          return classRef;
       }

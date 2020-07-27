@@ -113,7 +113,7 @@ package fl.motion
       
       public function AnimatorBase(param1:XML = null, param2:DisplayObject = null)
       {
-         // method body index: 567 method index: 567
+
          super();
          this.target = param2;
          this._isAnimator3D = false;
@@ -128,13 +128,13 @@ package fl.motion
       
       protected static function colorTransformsEqual(param1:ColorTransform, param2:ColorTransform) : Boolean
       {
-         // method body index: 562 method index: 562
+
          return param1.alphaMultiplier == param2.alphaMultiplier && param1.alphaOffset == param2.alphaOffset && param1.blueMultiplier == param2.blueMultiplier && param1.blueOffset == param2.blueOffset && param1.greenMultiplier == param2.greenMultiplier && param1.greenOffset == param2.greenOffset && param1.redMultiplier == param2.redMultiplier && param1.redOffset == param2.redOffset;
       }
       
       public static function registerParentFrameHandler(param1:MovieClip, param2:AnimatorBase, param3:int, param4:int = 0, param5:Boolean = false) : void
       {
-         // method body index: 563 method index: 563
+
          param2._registeredParent = true;
          if(param3 == -1)
          {
@@ -152,7 +152,7 @@ package fl.motion
       
       public static function processCurrentFrame(param1:MovieClip, param2:AnimatorBase, param3:Boolean, param4:Boolean = false) : void
       {
-         // method body index: 564 method index: 564
+
          var _loc5_:int = 0;
          var _loc6_:int = 0;
          if(param2 && param1)
@@ -222,7 +222,7 @@ package fl.motion
       
       public static function registerButtonState(param1:SimpleButton, param2:AnimatorBase, param3:int, param4:int = -1, param5:String = null, param6:String = null, param7:Class = null) : void
       {
-         // method body index: 565 method index: 565
+
          var newTarget:DisplayObject = null;
          var container:DisplayObjectContainer = null;
          var targetParentBtn:SimpleButton = param1;
@@ -282,7 +282,7 @@ package fl.motion
       
       public static function registerSpriteParent(param1:Sprite, param2:AnimatorBase, param3:String, param4:String = null, param5:Class = null) : void
       {
-         // method body index: 566 method index: 566
+
          var _loc6_:DisplayObject = null;
          if(param1 == null || param2 == null || param3 == null)
          {
@@ -318,13 +318,13 @@ package fl.motion
       
       public function get motion() : MotionBase
       {
-         // method body index: 568 method index: 568
+
          return this._motion;
       }
       
       public function set motion(param1:MotionBase) : void
       {
-         // method body index: 569 method index: 569
+
          this._motion = param1;
          if(param1)
          {
@@ -338,13 +338,13 @@ package fl.motion
       
       public function get motionArray() : Array
       {
-         // method body index: 570 method index: 570
+
          return this._motionArray;
       }
       
       public function set motionArray(param1:Array) : void
       {
-         // method body index: 571 method index: 571
+
          var _loc2_:int = 0;
          this._motionArray = param1 && param1.length > 0?param1:null;
          if(this._motionArray)
@@ -363,19 +363,19 @@ package fl.motion
       
       public function get isPlaying() : Boolean
       {
-         // method body index: 572 method index: 572
+
          return this._isPlaying;
       }
       
       public function get target() : DisplayObject
       {
-         // method body index: 573 method index: 573
+
          return this._target;
       }
       
       public function set target(param1:DisplayObject) : void
       {
-         // method body index: 574 method index: 574
+
          if(!param1)
          {
             return;
@@ -414,23 +414,23 @@ package fl.motion
       
       protected function setTargetState() : void
       {
-         // method body index: 575 method index: 575
+
       }
       
       public function set initialPosition(param1:Array) : void
       {
-         // method body index: 576 method index: 576
+
       }
       
       public function get time() : int
       {
-         // method body index: 577 method index: 577
+
          return this._time;
       }
       
       public function set time(param1:int) : void
       {
-         // method body index: 578 method index: 578
+
          var _loc2_:Array = null;
          var _loc3_:DisplayObject = null;
          var _loc4_:int = 0;
@@ -570,73 +570,73 @@ package fl.motion
       
       protected function setTime3D(param1:int, param2:MotionBase) : Boolean
       {
-         // method body index: 579 method index: 579
+
          return false;
       }
       
       protected function setTimeClassic(param1:int, param2:MotionBase, param3:KeyframeBase) : Boolean
       {
-         // method body index: 580 method index: 580
+
          return false;
       }
       
       public function get targetParent() : DisplayObjectContainer
       {
-         // method body index: 581 method index: 581
+
          return this._targetParent;
       }
       
       public function set targetParent(param1:DisplayObjectContainer) : void
       {
-         // method body index: 582 method index: 582
+
          this._targetParent = param1;
       }
       
       public function get targetParentButton() : SimpleButton
       {
-         // method body index: 583 method index: 583
+
          return this._targetParentBtn;
       }
       
       public function set targetParentButton(param1:SimpleButton) : *
       {
-         // method body index: 584 method index: 584
+
          this._targetParentBtn = param1;
       }
       
       public function get targetName() : String
       {
-         // method body index: 585 method index: 585
+
          return this._targetName;
       }
       
       public function set targetName(param1:String) : void
       {
-         // method body index: 586 method index: 586
+
          this._targetName = param1;
       }
       
       public function get placeholderName() : String
       {
-         // method body index: 587 method index: 587
+
          return this._placeholderName;
       }
       
       public function set placeholderName(param1:String) : void
       {
-         // method body index: 588 method index: 588
+
          this._placeholderName = param1;
       }
       
       public function get instanceFactoryClass() : Class
       {
-         // method body index: 589 method index: 589
+
          return this._instanceFactoryClass;
       }
       
       public function set instanceFactoryClass(param1:Class) : void
       {
-         // method body index: 590 method index: 590
+
          var f:Class = param1;
          if(f == this._instanceFactoryClass)
          {
@@ -657,7 +657,7 @@ package fl.motion
       
       public function useCurrentFrame(param1:Boolean, param2:int) : void
       {
-         // method body index: 591 method index: 591
+
          this._useCurrentFrame = param1;
          if(!this.motionArray)
          {
@@ -667,19 +667,19 @@ package fl.motion
       
       public function get usingCurrentFrame() : Boolean
       {
-         // method body index: 592 method index: 592
+
          return this._useCurrentFrame;
       }
       
       public function get spanStart() : int
       {
-         // method body index: 593 method index: 593
+
          return this._spanStart;
       }
       
       public function get spanEnd() : int
       {
-         // method body index: 594 method index: 594
+
          if(this._spanEnd >= 0)
          {
             return this._spanEnd;
@@ -693,19 +693,19 @@ package fl.motion
       
       public function get sceneName() : String
       {
-         // method body index: 595 method index: 595
+
          return this._sceneName;
       }
       
       public function set sceneName(param1:String) : void
       {
-         // method body index: 596 method index: 596
+
          this._sceneName = param1;
       }
       
       private function handleEnterFrame(param1:Event) : void
       {
-         // method body index: 597 method index: 597
+
          var _loc2_:MovieClip = null;
          if(this._registeredParent)
          {
@@ -730,7 +730,7 @@ package fl.motion
       
       private function removeChildren() : void
       {
-         // method body index: 598 method index: 598
+
          var _loc1_:Object = null;
          var _loc2_:MovieClip = null;
          var _loc3_:int = 0;
@@ -759,7 +759,7 @@ package fl.motion
       
       protected function removeChildTarget(param1:MovieClip, param2:DisplayObject, param3:String) : void
       {
-         // method body index: 599 method index: 599
+
          param1.removeChild(param2);
          if(param1.hasOwnProperty(param3) && param1[param3] == param2)
          {
@@ -777,31 +777,31 @@ package fl.motion
       
       public function get frameEvent() : String
       {
-         // method body index: 600 method index: 600
+
          return this._frameEvent;
       }
       
       public function set frameEvent(param1:String) : void
       {
-         // method body index: 601 method index: 601
+
          this._frameEvent = param1;
       }
       
       public function get targetState3D() : Array
       {
-         // method body index: 602 method index: 602
+
          return this._targetState3D;
       }
       
       public function set targetState3D(param1:Array) : void
       {
-         // method body index: 603 method index: 603
+
          this._targetState3D = param1;
       }
       
       public function nextFrame(param1:Boolean = false, param2:Boolean = true) : void
       {
-         // method body index: 604 method index: 604
+
          if(this.motionArray && this.time >= this.spanEnd || !this.motionArray && this.time >= this.motion.duration - 1)
          {
             this.handleLastFrame(param1,param2);
@@ -814,7 +814,7 @@ package fl.motion
       
       public function play(param1:int = -1, param2:Boolean = true) : void
       {
-         // method body index: 605 method index: 605
+
          var _loc3_:DisplayObject = null;
          var _loc4_:DisplayObject = null;
          var _loc5_:DisplayObject = null;
@@ -883,7 +883,7 @@ package fl.motion
       
       public function end(param1:Boolean = false, param2:Boolean = true, param3:Boolean = false) : void
       {
-         // method body index: 606 method index: 606
+
          var _loc4_:MovieClip = null;
          if(param2)
          {
@@ -933,7 +933,7 @@ package fl.motion
       
       public function stop() : void
       {
-         // method body index: 607 method index: 607
+
          enterFrameBeacon.removeEventListener(this.frameEvent,this.handleEnterFrame);
          this._isPlaying = false;
          this.playCount = 0;
@@ -943,33 +943,33 @@ package fl.motion
       
       public function pause() : void
       {
-         // method body index: 608 method index: 608
+
          enterFrameBeacon.removeEventListener(this.frameEvent,this.handleEnterFrame);
          this._isPlaying = false;
       }
       
       public function resume() : void
       {
-         // method body index: 609 method index: 609
+
          enterFrameBeacon.addEventListener(this.frameEvent,this.handleEnterFrame,false,0,true);
          this._isPlaying = true;
       }
       
       public function startFrameEvents() : void
       {
-         // method body index: 610 method index: 610
+
          enterFrameBeacon.addEventListener(this.frameEvent,this.handleEnterFrame,false,0,true);
       }
       
       public function rewind() : void
       {
-         // method body index: 611 method index: 611
+
          this.time = !!this.motionArray?int(int(this._spanStart)):0;
       }
       
       private function placeholderButtonEnterFrameHandler(param1:Event) : void
       {
-         // method body index: 612 method index: 612
+
          var _loc2_:DisplayObjectContainer = null;
          if(this._targetParentBtn == null || this.instanceFactory == null)
          {
@@ -1014,7 +1014,7 @@ package fl.motion
       
       private function placeholderSpriteEnterFrameHandler(param1:Event) : void
       {
-         // method body index: 613 method index: 613
+
          if(this._targetParent == null || this.instanceFactory == null)
          {
             this._target.removeEventListener(this.frameEvent,this.placeholderSpriteEnterFrameHandler);
@@ -1037,7 +1037,7 @@ package fl.motion
       
       private function handleLastFrame(param1:Boolean = false, param2:Boolean = true) : void
       {
-         // method body index: 614 method index: 614
+
          this.playCount++;
          if(this.repeatCount == 0 || this.playCount < this.repeatCount)
          {

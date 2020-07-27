@@ -49,7 +49,7 @@ package Shared.AS3
       
       public function IMenu()
       {
-         // method body index: 2803 method index: 2803
+
          this.textFieldSizeMap = new Object();
          this.colorFilter = new AdjustColor();
          this.mMatrix = [];
@@ -64,73 +64,73 @@ package Shared.AS3
       
       public function get uiPlatform() : uint
       {
-         // method body index: 2792 method index: 2792
+
          return this._uiPlatform;
       }
       
       public function get bPS3Switch() : Boolean
       {
-         // method body index: 2793 method index: 2793
+
          return this._bPS3Switch;
       }
       
       public function get uiController() : uint
       {
-         // method body index: 2794 method index: 2794
+
          return this._uiController;
       }
       
       public function get uiKeyboard() : uint
       {
-         // method body index: 2795 method index: 2795
+
          return this._uiKeyboard;
       }
       
       public function get bNuclearWinterMode() : Boolean
       {
-         // method body index: 2796 method index: 2796
+
          return this._bNuclearWinterMode;
       }
       
       public function get SafeX() : Number
       {
-         // method body index: 2797 method index: 2797
+
          return this.safeX;
       }
       
       public function get SafeY() : Number
       {
-         // method body index: 2798 method index: 2798
+
          return this.safeY;
       }
       
       public function get buttonHintBar() : BSButtonHintBar
       {
-         // method body index: 2799 method index: 2799
+
          return this._ButtonHintBar;
       }
       
       public function set buttonHintBar(aObj:BSButtonHintBar) : *
       {
-         // method body index: 2800 method index: 2800
+
          this._ButtonHintBar = aObj;
       }
       
       public function set overrideColors(aOverride:Boolean) : *
       {
-         // method body index: 2801 method index: 2801
+
          this.bOverrideColors = aOverride;
       }
       
       public function get overrideColors() : Boolean
       {
-         // method body index: 2802 method index: 2802
+
          return this.bOverrideColors;
       }
       
       protected function onPlatformRequestEvent(arEvent:Event) : *
       {
-         // method body index: 2804 method index: 2804
+
          if(this.uiPlatform != PlatformChangeEvent.PLATFORM_INVALID)
          {
             (arEvent as PlatformRequestEvent).RespondToRequest(this.uiPlatform,this.bPS3Switch,this.uiController,this.uiKeyboard);
@@ -139,7 +139,7 @@ package Shared.AS3
       
       override public function onAddedToStage() : void
       {
-         // method body index: 2806 method index: 2806
+
          var menu:* = undefined;
          stage.stageFocusRect = false;
          stage.addEventListener(FocusEvent.FOCUS_OUT,this.onFocusLostEvent);
@@ -149,7 +149,7 @@ package Shared.AS3
          BSUIDataManager.Subscribe("HUDColors",function(arEvent:FromClientDataEvent):// method body index: 2805 method index: 2805
          *
          {
-            // method body index: 2805 method index: 2805
+
             if(!overrideColors)
             {
                return;
@@ -175,7 +175,7 @@ package Shared.AS3
       
       override public function onRemovedFromStage() : void
       {
-         // method body index: 2807 method index: 2807
+
          stage.removeEventListener(FocusEvent.FOCUS_OUT,this.onFocusLostEvent);
          stage.removeEventListener(FocusEvent.MOUSE_FOCUS_CHANGE,this.onMouseFocusEvent);
          stage.removeEventListener(MenuComponentLoadedEvent.MENU_COMPONENT_LOADED,this.OnMenuComponentLoadedEvent);
@@ -183,13 +183,13 @@ package Shared.AS3
       
       private function OnMenuComponentLoadedEvent(arEvent:MenuComponentLoadedEvent) : *
       {
-         // method body index: 2808 method index: 2808
+
          arEvent.RespondToEvent(this);
       }
       
       public function SetPlatform(auiPlatform:uint, abPS3Switch:Boolean, auiController:uint, auiKeyboard:uint) : *
       {
-         // method body index: 2809 method index: 2809
+
          this._uiPlatform = auiPlatform;
          this._bPS3Switch = this.bPS3Switch;
          this._uiController = auiController;
@@ -199,13 +199,13 @@ package Shared.AS3
       
       public function SetNuclearWinterMode(abNuclearWinterMode:Boolean) : *
       {
-         // method body index: 2810 method index: 2810
+
          this._bNuclearWinterMode = abNuclearWinterMode;
       }
       
       public function SetSafeRect(aSafeX:Number, aSafeY:Number) : *
       {
-         // method body index: 2811 method index: 2811
+
          this.safeX = aSafeX;
          this.safeY = aSafeY;
          this.onSetSafeRect();
@@ -213,12 +213,12 @@ package Shared.AS3
       
       protected function onSetSafeRect() : void
       {
-         // method body index: 2812 method index: 2812
+
       }
       
       private function onFocusLostEvent(event:FocusEvent) : *
       {
-         // method body index: 2813 method index: 2813
+
          if(this._bRestoreLostFocus)
          {
             this._bRestoreLostFocus = false;
@@ -229,12 +229,12 @@ package Shared.AS3
       
       public function onFocusLost(event:FocusEvent) : *
       {
-         // method body index: 2814 method index: 2814
+
       }
       
       protected function onMouseFocusEvent(event:FocusEvent) : *
       {
-         // method body index: 2815 method index: 2815
+
          if(event.target == null || !(event.target is InteractiveObject))
          {
             stage.focus = null;
@@ -247,7 +247,7 @@ package Shared.AS3
       
       public function ShrinkFontToFit(textField:TextField, amaxScrollV:int) : *
       {
-         // method body index: 2816 method index: 2816
+
          var tfSize:int = 0;
          var textFormat:TextFormat = textField.getTextFormat();
          if(this.textFieldSizeMap[textField] == null)

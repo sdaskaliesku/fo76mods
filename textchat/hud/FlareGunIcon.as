@@ -9,7 +9,7 @@ package
       
       public function FlareGunIcon()
       {
-         // method body index: 804 method index: 804
+
          super();
       }
    }
