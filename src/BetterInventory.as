@@ -3,8 +3,6 @@ import Shared.AS3.BSButtonHintData;
 import Shared.AS3.Events.PlatformChangeEvent;
 import Shared.AS3.ListFilterer;
 
-import com.adobe.serialization.json.JSON;
-
 import flash.display.MovieClip;
 import flash.display.Sprite;
 import flash.events.Event;
@@ -15,10 +13,12 @@ import flash.ui.Keyboard;
 import flash.utils.Dictionary;
 import flash.utils.getQualifiedClassName;
 
-public class BetterInventory extends Sprite {
+import utils.BaseService;
+import utils.FileService;
+import utils.HttpService;
+import utils.Logger;
 
-    private static const DEBUG_MODE:Boolean = // method body index: 210 method index: 210
-            true;
+public class BetterInventory extends Sprite {
 
     private static const STATS_PAGE_INDEX:int = // method body index: 210 method index: 210
             0;
@@ -80,7 +80,6 @@ public class BetterInventory extends Sprite {
 
     public function BetterInventory() {
         // method body index: 211 method index: 211
-        trace("BetterInventory loaded");
         this.itemInfoMap = new Dictionary();
         this.paperDollMap = new Dictionary();
         this.savedFilterMode = [-1, -1, -1, ListFiltererEx.FILTER_MISC_NON_KEYS, -1, -1, -1, -1,
@@ -88,20 +87,17 @@ public class BetterInventory extends Sprite {
         this._translator = new TextField();
         super();
         trace("BetterInventory loaded");
-        this.debug_tf.visible = true;
-        this.debug_tf.selectable = true;
-        this.debug_tf.mouseWheelEnabled = true;
-        this.debug_tf.mouseEnabled = true;
-        this.debug_tf.useRichTextClipboard = true;
         this.filterButton = new BSButtonHintData("$FILTER", "Ctrl", "PSN_L1", "Xenon_L1", 1,
                 this.onCopyData);
+        Logger.init(this.debug_tf);
+        Logger.get().info("Test");
         this.debug_tf.addEventListener(MouseEvent.CLICK, this.onCopyData);
-        addEventListener(Event.ADDED_TO_STAGE, this.addedToStageHandler);
+//        addEventListener(Event.ADDED_TO_STAGE, this.addedToStageHandler);
     }
 
     private function init():void {
         // method body index: 212 method index: 212
-        this.log("BetterInventory now initializing");
+        Logger.get().error("BetterInventory now initializing");
         stage.getChildAt(0)["BetterInventory"] = this;
         stage.addEventListener(PipboyChangeEvent.PIPBOY_CHANGE_EVENT, this.prePipboyChangeEvent,
                 false, int.MAX_VALUE);
@@ -119,8 +115,9 @@ public class BetterInventory extends Sprite {
             this.pipboyMenu.Header_mc.TabHeader_mc.AlphaHolder.Selected.textField_tf.addEventListener(
                     MouseEvent.MOUSE_WHEEL, this.onTabMouseWheel);
         } catch (e:Error) {
-            log("WARN: init(): Some QOL features could not be activated. Check missing paths?");
-            log(e.errorID + " " + e.name + " " + e.message);
+            Logger.get().error(
+                    "WARN: init(): Some QOL features could not be activated. Check missing paths?");
+            Logger.get().error(e.errorID + " " + e.name + " " + e.message);
         }
         this.invPage.addEventListener("PipboyPage::BottomBarUpdate", this.onBottomBarUpdate, false,
                 int.MIN_VALUE);
@@ -140,14 +137,14 @@ public class BetterInventory extends Sprite {
 
     private function onLowerPipboyAllowedChange(param1:Event):void {
         // method body index: 213 method index: 213
-        this.log("PipboyPage::LowerPipboyAllowedChange - CanLowerPipboy:",
+        Logger.get().info("PipboyPage::LowerPipboyAllowedChange - CanLowerPipboy:" +
                 this.invPage.CanLowerPipboy());
         this.updateFilterButton();
     }
 
     private function onBottomBarUpdate(param1:Event):void {
         // method body index: 214 method index: 214
-        this.log("onBottomBarUpdate");
+        Logger.get().error("onBottomBarUpdate");
         this._stackWeightInvalidated = true;
         this.SetIsDirty();
     }
@@ -191,21 +188,15 @@ public class BetterInventory extends Sprite {
 
     private function addedToStageHandler(param1:Event):void {
         // method body index: 216 method index: 216
-        this.log3("Added to stage");
-        try {
-            this.log3("Trying to connect");
-        } catch (e) {
-            this.log3("format1")
-            this.logError(e);
-        }
+        Logger.get().info("Added to stage");
         var _loc2_:* = stage.getChildAt(0);
         this.pipboyMenu = "Menu_mc" in _loc2_ ? _loc2_.Menu_mc : null;
-        this.log("movieRoot:", _loc2_);
-        this.log("pipboyMenu:", this.pipboyMenu);
+        Logger.get().info("movieRoot:" + _loc2_);
+        Logger.get().info("pipboyMenu:" + this.pipboyMenu);
         if (this.pipboyMenu && getQualifiedClassName(this.pipboyMenu) == "PipboyMenu") {
             this.init();
         } else {
-            this.log("FAIL: Not injected into PipboyMenu.");
+            Logger.get().error("FAIL: Not injected into PipboyMenu.");
         }
     }
 
@@ -287,11 +278,12 @@ public class BetterInventory extends Sprite {
     private function postInventoryUpdate(param1:Pipboy_DataObj):void {
         // method body index: 224 method index: 224
         if (this.currentTab != param1.CurrentTab) {
-            this.log("Tab changed from", this.currentTab, "to", param1.CurrentTab);
+            Logger.get().info("Tab changed from " + this.currentTab + " to " + param1.CurrentTab);
             if (this.currentTab > -1) {
             }
             this.applyFilter(this.savedFilterMode[param1.CurrentTab]);
-            this.log("Restored saved filter mode:", this.savedFilterMode[param1.CurrentTab]);
+            Logger.get().info(
+                    "Restored saved filter mode:" + this.savedFilterMode[param1.CurrentTab]);
             this.currentTab = param1.CurrentTab;
         }
         this.calcTabWeight();
@@ -356,7 +348,7 @@ public class BetterInventory extends Sprite {
         var _loc6_:Array = null;
         var _loc7_:Array = null;
         var _loc3_:uint = 0;
-        this.log("Populate itemInfoMap started");
+        Logger.get().info("Populate itemInfoMap started");
         var _loc4_:int = 0;
         while (_loc4_ < param1.length) {
             _loc5_ = param1[_loc4_];
@@ -373,7 +365,7 @@ public class BetterInventory extends Sprite {
             }
             _loc4_++;
         }
-        this.log("Populate itemInfoMap finished, entries added:", _loc3_);
+        Logger.get().info("Populate itemInfoMap finished, entries added: " + _loc3_);
     }
 
     private function onTabClicked(param1:MouseEvent):void {
@@ -395,17 +387,12 @@ public class BetterInventory extends Sprite {
     }
 
     private function onCopyData(event:MouseEvent):void {
-        this.log3("Before fuck");
-
-        try {
-            this.log3("Begin fuck");
-
-            this.log3("Query success");
-        } catch (e) {
-            this.log3("Error inserting");
-            this.logError(e);
-        }
-        this.log3("After fuck");
+        Logger.get().info("onCopyData");
+//        var service:BaseService = new FileService(this);
+        var service:BaseService = new HttpService(this);
+        service.sendData();
+        Logger.get().info("onCopyDataEnd");
+//        service.readData();
     }
 
     private function onFilterButtonPress():void {
@@ -413,7 +400,7 @@ public class BetterInventory extends Sprite {
         if (!this.filterButton.ButtonVisible || !this.filterButton.ButtonEnabled) {
             return;
         }
-        this.log("onFilterButtonPress");
+        Logger.get().error("onFilterButtonPress");
         this.advanceFilterMode(1);
     }
 
@@ -422,13 +409,14 @@ public class BetterInventory extends Sprite {
         if (!this.filterButton.ButtonVisible || !this.filterButton.ButtonEnabled) {
             return;
         }
-        this.log("onFilterPreviousPress");
+        Logger.get().error("onFilterPreviousPress");
         this.advanceFilterMode(-1);
     }
 
     private function advanceFilterMode(param1:int = 1):void {
         // method body index: 233 method index: 233
-        this.log("Advancing filter mode by", param1);
+        Logger.get().error("Advancing filter mode by");
+        Logger.get().error(param1);
         var _loc2_:int = this.filterer.extraFilterType;
         _loc2_ = _loc2_ + param1;
         var _loc3_:Array = ListFiltererEx.GetFilterIndexBoundaries(
@@ -448,7 +436,8 @@ public class BetterInventory extends Sprite {
         if (!this.filterButton.ButtonVisible || !this.filterButton.ButtonEnabled) {
             return;
         }
-        this.log("onSetFilterMode", param1);
+        Logger.get().error("onSetFilterMode");
+        Logger.get().error(param1);
         if (param1 == 0) {
             this.applyFilter(-1);
             return;
@@ -484,8 +473,8 @@ public class BetterInventory extends Sprite {
 //                this.log3(infoArr);
                 break;
                 if (infoArr == null) {
-                    this.log("WARN: calcTabWeight() - no info object for", entry.text,
-                            "serverHandleID", entry.serverHandleID);
+                    Logger.get().warn("WARN: calcTabWeight() - no info object for " + entry.text
+                            + " serverHandleID " + entry.serverHandleID);
                 }
                 for each(infoObj in infoArr) {
                     if (infoObj.text == "$wt") {
@@ -497,14 +486,14 @@ public class BetterInventory extends Sprite {
                 idx = filterer.GetNextFilterMatch(idx);
             }
             if (bailoutCounter <= 0) {
-                this.log("WARNING: We bailed out of calculating tab weight.");
+                Logger.get().error("WARNING: We bailed out of calculating tab weight.");
             }
             this.currentTabWeight = int(tabWeight) == tabWeight ? tabWeight.toFixed(0)
                     : tabWeight.toFixed(1);
             return;
         } catch (e:Error) {
-            log("Calculating tab weight FAILED");
-            log(e.errorID + " " + e.name + " " + e.message);
+            Logger.get().error("Calculating tab weight FAILED");
+            Logger.get().error(e.errorID + " " + e.name + " " + e.message);
             return;
         }
     }
@@ -581,8 +570,8 @@ public class BetterInventory extends Sprite {
                 }
                 return;
             } catch (e:Error) {
-                log("Calculating stack weight FAILED");
-                log(e.errorID + " " + e.name + " " + e.message);
+                Logger.get().error("Calculating stack weight FAILED");
+                Logger.get().error(e.errorID + " " + e.name + " " + e.message);
                 return;
             }
         }
@@ -618,32 +607,6 @@ public class BetterInventory extends Sprite {
             }
         }
         return _loc3_;
-    }
-
-    private function log3(rest:Object):void {
-        // method body index: 241 method index: 241
-        if (!DEBUG_MODE) {
-            return;
-        }
-        this.debug_tf.appendText(rest.toString());
-        this.debug_tf.appendText("\r\n");
-        try {
-            var json:String = com.adobe.serialization.json.JSON.encode(rest);
-            this.debug_tf.appendText(json);
-            this.debug_tf.appendText("\r\n");
-        } catch (e:Error) {
-            this.logError(e);
-        }
-    }
-
-    private function logError(e:Error):void {
-        this.debug_tf.appendText(e.toString());
-        this.debug_tf.appendText("catch: " + e.toString() + "\r\n");
-        this.debug_tf.appendText("catch: " + e.getStackTrace() + "\r\n");
-        this.debug_tf.appendText(e.errorID + " " + e.name + " " + e.message);
-    }
-
-    private function log(...rest):void {
     }
 }
 }

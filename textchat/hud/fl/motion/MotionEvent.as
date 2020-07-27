@@ -1,0 +1,34 @@
+ 
+package fl.motion
+{
+   import flash.events.Event;
+   
+   public class MotionEvent extends Event
+   {
+      
+      public static const MOTION_START:String = // method body index: 429 method index: 429
+      "motionStart";
+      
+      public static const MOTION_END:String = // method body index: 429 method index: 429
+      "motionEnd";
+      
+      public static const MOTION_UPDATE:String = // method body index: 429 method index: 429
+      "motionUpdate";
+      
+      public static const TIME_CHANGE:String = // method body index: 429 method index: 429
+      "timeChange";
+       
+      
+      public function MotionEvent(param1:String, param2:Boolean = false, param3:Boolean = false)
+      {
+         // method body index: 430 method index: 430
+         super(param1,param2,param3);
+      }
+      
+      override public function clone() : Event
+      {
+         // method body index: 431 method index: 431
+         return new MotionEvent(this.type,this.bubbles,this.cancelable);
+      }
+   }
+}

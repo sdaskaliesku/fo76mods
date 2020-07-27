@@ -1,0 +1,23 @@
+ 
+package HUDMenu_fla
+{
+   import flash.display.MovieClip;
+   
+   public dynamic class healthBar_63 extends MovieClip
+   {
+       
+      
+      public function healthBar_63()
+      {
+         // method body index: 1628 method index: 1628
+         super();
+         addFrameScript(0,this.frame1);
+      }
+      
+      function frame1() : *
+      {
+         // method body index: 1627 method index: 1627
+         stop();
+      }
+   }
+}
