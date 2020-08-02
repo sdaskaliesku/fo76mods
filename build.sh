@@ -1,6 +1,6 @@
 currentDir=$(pwd)
 # YOU SHOULD MODIFY THIS VALUES
-finalArchiveName="BetterInventory.ba2"
+finalArchiveName="MansonMod.ba2"
 flashPath="D://Program Files//Adobe//Adobe Flash CS6//Flash.exe"
 outputDir="output"
 archiveRootFolder="Interface"
