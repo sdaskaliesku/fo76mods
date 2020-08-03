@@ -11,12 +11,14 @@ import utils.Logger;
 public class MansonMod extends MovieClip {
 
     public var debugLogger:TextField;
+    public var __SFCodeObj:Object;
 
     public function MansonMod() {
         super();
         Logger.init(this.debugLogger);
         Logger.get().info("load 100500");
-        this.debugLogger.addEventListener(MouseEvent.CLICK, onMouseClick);
+//        this.__SFCodeObj = new Object();
+//        this.debugLogger.addEventListener(MouseEvent.CLICK, onMouseClick);
         Logger.get().info("Loaded");
     }
 
@@ -26,7 +28,8 @@ public class MansonMod extends MovieClip {
 
     private function onMouseClick(e:Event):void {
         try {
-            GlobalFunc.ShowHUDMessage("mytestmessage");
+            var sfe:Boolean = this.__SFCodeObj != null && this.__SFCodeObj.call != null;
+            GlobalFunc.ShowHUDMessage("mytestmessage: " + sfe);
         } catch (e:Error) {
             Logger.get().errorHandler("onMouseClick", e);
         }
