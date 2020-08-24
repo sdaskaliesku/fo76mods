@@ -1,12 +1,11 @@
 ﻿package {
+import Shared.AS3.BSButtonHintBar;
 import Shared.AS3.BSButtonHintData;
 
-import fl.controls.Button;
-
 import flash.display.MovieClip;
-import flash.events.Event;
-import flash.events.MouseEvent;
 import flash.text.TextField;
+
+import scaleform.gfx.Extensions;
 
 import utils.Logger;
 
@@ -33,68 +32,83 @@ public class ItemExtractorMod extends MovieClip {
     public static const MODE_INVALID:uint = uint.MAX_VALUE;
 
     public var debugLogger:TextField;
-    public var btn:Button;
     private var _itemExtractor:ItemExtractor;
     private var _parent:MovieClip;
     public var extractButton:BSButtonHintData;
+    public var buttonHintBar:BSButtonHintBar = null;
 
     public function ItemExtractorMod() {
         super();
         try {
             this._itemExtractor = new ItemExtractor();
             Logger.DEBUG_MODE = false;
-            this.btn.addEventListener(MouseEvent.CLICK, extractDataCallback);
             Logger.init(this.debugLogger);
-            this.addEventListener(Event.ADDED, init)
+            this.extractButton = new BSButtonHintData("Extract items", "O", "PSN_R3", "Xenon_R3", 1,
+                    this.extractDataCallback);
+            this.extractButton.ButtonVisible = true;
+            this.extractButton.ButtonDisabled = false;
+            Extensions.enabled = true;
         } catch (e:Error) {
             ItemExtractor.ShowHUDMessage("Error loading mod " + e);
         }
     }
 
-    private function init(e:Event):void {
-        this.btn.label = "Extract";
-        this.extractButton = new BSButtonHintData("Extract", "O", "PSN_Y", "Xenon_Y", 1,
-                this.extractItems);
-        this.extractButton.visible = true;
-        this.extractButton.ButtonVisible = true;
-        initButtonHints();
+    private function init():void {
+        try {
+            initButtonHints();
+        } catch (e:Error) {
+            Logger.get().errorHandler("Error init buttons", e);
+        }
     }
 
     private function initButtonHints():void {
-        this.parentClip.ButtonHintDataV.splice(0, 0, this.extractButton);
-        this.parentClip.ButtonHintBar_mc.SetButtonHintData(this.parentClip.buttonHintDataV);
+        if (buttonHintBar == null) {
+            ItemExtractor.ShowHUDMessage("Unexpected error while adding extract button!");
+            Logger.get().error("Error getting button hint bar from parent.");
+            return;
+        }
+        var buttons:Vector.<BSButtonHintData> = new Vector.<BSButtonHintData>();
+        try {
+            buttons = this.parentClip.ButtonHintDataV;
+        } catch (e:Error) {
+            Logger.get().error("Error getting button hints from parent " + e);
+        }
+        buttons.push(this.extractButton);
+        try {
+            buttonHintBar.SetButtonHintData(buttons);
+        } catch (e:Error) {
+            Logger.get().error("Error setting new button hints data" + e);
+        }
     }
 
     private function extractItems():void {
         try {
-//            GlobalFunc.ShowHUDMessage("Extracting items... ");
             var playerInventory:Object = this.parentClip.PlayerInventory_mc.ItemList_mc.List_mc.MenuListData;
             var stashInventory:Object = this.parentClip.OfferInventory_mc.ItemList_mc.List_mc.MenuListData;
             this._itemExtractor.extractItems(playerInventory, stashInventory);
-//            GlobalFunc.ShowHUDMessage("Finished extracting items... ");
         } catch (e:Error) {
-            ItemExtractor.ShowHUDMessage("Error loading mod. " + e);
+            ItemExtractor.ShowHUDMessage("Error extracting items: " + e);
         }
     }
 
-    private function extractDataCallback(e:MouseEvent):void {
+    public function extractDataCallback():void {
         try {
-//            if (e.keyCode == 112) {
             if (this.parentClip.m_MenuMode != MODE_CONTAINER) {
                 ItemExtractor.ShowHUDMessage(
                         "Please, use this function only in your stash box.");
                 return;
             }
             this.extractItems();
-//            }
         } catch (e:Error) {
-            ItemExtractor.ShowHUDMessage("Error loading mod. " + e);
+            ItemExtractor.ShowHUDMessage("Error extracting items: " + e);
         }
     }
 
     public function setParent(parent:MovieClip):void {
         this._parent = parent;
         this._itemExtractor.sfeObj = parent.__SFCodeObj;
+        this.buttonHintBar = parent.ButtonHintBar_mc;
+        init();
     }
 
     public function get parentClip():MovieClip {

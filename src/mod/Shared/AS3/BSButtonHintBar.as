@@ -89,7 +89,7 @@ package Shared.AS3
          return this._bRedirectToButtonBarMenu;
       }
       
-      public function set bRedirectToButtonBarMenu_Inspectable(param1:Boolean) : *
+      public function set bRedirectToButtonBarMenu_Inspectable(param1:Boolean) : void
       {
          // method body index: 705 method index: 705
          if(this._bRedirectToButtonBarMenu != param1)
@@ -115,7 +115,7 @@ package Shared.AS3
          }
       }
       
-      public function set align(param1:uint) : *
+      public function set align(param1:uint) : void
       {
          // method body index: 708 method index: 708
          this.Alignment = param1;

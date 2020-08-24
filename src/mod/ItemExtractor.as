@@ -11,7 +11,7 @@ import flash.net.URLRequest;
 
 public class ItemExtractor {
 
-    public static const VERSION:Number = 0.1;
+    public static const VERSION:Number = 0.2;
 
     private var _sfeObj:Object;
     private var _config:Object;
