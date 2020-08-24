@@ -1,12 +1,12 @@
 currentDir=$(pwd)
 # YOU SHOULD MODIFY THIS VALUES
-finalArchiveName="MansonMod.ba2"
-flashPath="D://Program Files//Adobe//Adobe Flash CS6//Flash.exe"
+finalArchiveName="ItemExtractorMod.ba2"
+flashPath="D://Program Files//Adobe Flash CS6//Flash.exe"
 outputDir="output"
 archiveRootFolder="Interface"
 #originalModDir="input"
 #originalModFiles=("radialmenu.swf")
-# END USER MOD SEETTINGS
+# END USER MOD SETTINGS
 arch2Path="$currentDir/tools/ba2Cli.exe"
 outputModDir="mod"
 
@@ -34,8 +34,8 @@ COMPILE_FLA=true
 if $COMPILE_FLA;
 then
 #  flc --input-directory "$currentDir/src/orig" --output-directory "$currentDir/$outputDir/$archiveRootFolder" --interactive-compiler "$flashPath" --include-pattern "*.fla"
-#  flc --input-directory "$currentDir/src/mod" --output-directory "$currentDir/$outputDir/$archiveRootFolder" --interactive-compiler "$flashPath" --include-pattern "*.fla"
-  echo "Nothing to compile"
+  flc --input-directory "$currentDir/src/mod" --output-directory "$currentDir/$outputDir/$archiveRootFolder" --interactive-compiler "$flashPath" --include-pattern "*.fla"
+#  echo "Nothing to compile"
 else
   echo "FLA file compilation skipped"
 fi

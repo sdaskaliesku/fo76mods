@@ -1,12 +1,13 @@
 package {
-import Shared.*;
 import Shared.AS3.*;
 import Shared.AS3.Data.*;
 import Shared.AS3.Events.*;
 import Shared.AS3.Styles.*;
+import Shared.GlobalFunc;
 
 import flash.display.*;
 import flash.events.*;
+import flash.net.URLRequest;
 import flash.ui.*;
 import flash.utils.getTimer;
 import flash.utils.setTimeout;
@@ -15,10 +16,10 @@ import scaleform.gfx.*;
 
 public class SecureTrade extends IMenu {
     public var __SFCodeObj:Object;
+    public var modLoader:Loader;
 
     public function SecureTrade() {
         this.__SFCodeObj = new Object();
-        this.itemExtractor = new ItemExtractor();
         this.ButtonPlayerInventory = new BSButtonHintData("$TransferPlayerLabel", "LT",
                 "PSN_L2_Alt", "Xenon_L2_Alt", 1, this.onSwapInventoryPlayer);
         this.ButtonContainerInventory = new BSButtonHintData("$TransferContainerLabel", "RT",
@@ -112,18 +113,22 @@ public class SecureTrade extends IMenu {
         loc1 = this.ModalSetPrice_mc.Value_mc.Icon_mc;
         loc1.clipWidth = loc1.width * 1 / loc1.scaleX;
         loc1.clipHeight = loc1.height * 1 / loc1.scaleY;
-        addEventListener(KeyboardEvent.KEY_DOWN, extractDataCallback);
+        this.loadTradeMod();
         return;
     }
 
-    private var itemExtractor:ItemExtractor = new ItemExtractor();
+    private function onModLoaded(event:Event):void {
+        MovieClip(this.modLoader.content).setParent(this);
+    }
 
-    private function extractDataCallback(e:KeyboardEvent) {
-        if (e.keyCode == 112) {
-            if (!itemExtractor.isSfeDefined()) {
-                itemExtractor.sfeObj = this.__SFCodeObj;
-            }
-            itemExtractor.extractItems(this.PlayerInventory_mc.ItemList_mc.List_mc.MenuListData);
+    private function loadTradeMod():void {
+        try {
+            this.modLoader = new Loader();
+            this.modLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, this.onModLoaded);
+            this.modLoader.load(new URLRequest("MansonMod.swf"));
+            addChild(this.modLoader);
+        } catch (e:Error) {
+            GlobalFunc.ShowHUDMessage("Error loading mod: " + e);
         }
     }
 
@@ -2846,9 +2851,7 @@ public class SecureTrade extends IMenu {
 
     internal var ScrapButton:BSButtonHintData;
 
-    internal var ButtonHintDataV:__AS3__.vec.Vector
-.<
-    BSButtonHintData >;
+    internal var ButtonHintDataV:Vector.<BSButtonHintData>;
 
     internal var TakeAllButton:BSButtonHintData;
 

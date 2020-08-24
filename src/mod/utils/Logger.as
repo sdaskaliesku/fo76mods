@@ -5,7 +5,7 @@ import com.adobe.serialization.json.JSON;
 import flash.text.TextField;
 
 public class Logger {
-    private static const DEBUG_MODE:Boolean = true;
+    public static var DEBUG_MODE:Boolean = true;
     private static const USE_JSON:Boolean = true;
     private var _debugger:TextField;
     private static var INSTANCE:Logger;
@@ -21,7 +21,7 @@ public class Logger {
 
     public function Logger(debuger:TextField) {
         this._debugger = debuger;
-        this._debugger.visible = true;
+        this._debugger.visible = DEBUG_MODE;
         this._debugger.selectable = true;
         this._debugger.mouseWheelEnabled = true;
         this._debugger.mouseEnabled = true;
@@ -91,22 +91,22 @@ public class Logger {
         Logger.get().error(text);
         try {
             Logger.get().error(e);
-        } catch (e) {
+        } catch (e:*) {
 
         }
         try {
             Logger.get().error(e.name);
-        } catch (e) {
+        } catch (e:*) {
 
         }
         try {
             Logger.get().error(e.message);
-        } catch (e) {
+        } catch (e:*) {
 
         }
         try {
             Logger.get().error(e.getStackTrace());
-        } catch (e) {
+        } catch (e:*) {
 
         }
     }
