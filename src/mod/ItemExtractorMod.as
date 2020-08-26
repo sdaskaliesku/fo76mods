@@ -3,6 +3,7 @@ import Shared.AS3.BSButtonHintBar;
 import Shared.AS3.BSButtonHintData;
 
 import flash.display.MovieClip;
+import flash.events.KeyboardEvent;
 import flash.text.TextField;
 
 import scaleform.gfx.Extensions;
@@ -43,10 +44,12 @@ public class ItemExtractorMod extends MovieClip {
             this._itemExtractor = new ItemExtractor();
             Logger.DEBUG_MODE = false;
             Logger.init(this.debugLogger);
-            this.extractButton = new BSButtonHintData("Extract items", "O", "PSN_R3", "Xenon_R3", 1,
+            this.extractButton = new BSButtonHintData("Extract items", "O", "PSN_Start",
+                    "Xenon_Start", 1,
                     this.extractDataCallback);
             this.extractButton.ButtonVisible = true;
             this.extractButton.ButtonDisabled = false;
+            this.extractButton.secondaryButtonCallback = this.extractDataCallback;
             Extensions.enabled = true;
         } catch (e:Error) {
             ItemExtractor.ShowHUDMessage("Error loading mod " + e);
@@ -55,7 +58,9 @@ public class ItemExtractorMod extends MovieClip {
 
     private function init():void {
         try {
-            initButtonHints();
+            this.initButtonHints();
+            stage.getChildAt(0)["ItemExtractorMod"] = this;
+            stage.addEventListener(KeyboardEvent.KEY_UP, this.keyUpHandler);
         } catch (e:Error) {
             Logger.get().errorHandler("Error init buttons", e);
         }
@@ -76,6 +81,9 @@ public class ItemExtractorMod extends MovieClip {
         buttons.push(this.extractButton);
         try {
             buttonHintBar.SetButtonHintData(buttons);
+            buttonHintBar.onRemovedFromStage();
+            buttonHintBar.onAddedToStage();
+            buttonHintBar.redrawDisplayObject();
         } catch (e:Error) {
             Logger.get().error("Error setting new button hints data" + e);
         }
@@ -91,16 +99,26 @@ public class ItemExtractorMod extends MovieClip {
         }
     }
 
+    private function isValidMode() : Boolean {
+        try {
+            return this.parentClip.m_MenuMode === MODE_CONTAINER;
+        } catch (e: Error) {
+            Logger.get().error("Error while getting mode" + e);
+        }
+        return false;
+    }
+
     public function extractDataCallback():void {
         try {
-            if (this.parentClip.m_MenuMode != MODE_CONTAINER) {
+            if (!this.isValidMode()) {
                 ItemExtractor.ShowHUDMessage(
                         "Please, use this function only in your stash box.");
                 return;
             }
+            this._itemExtractor.init();
             this.extractItems();
         } catch (e:Error) {
-            ItemExtractor.ShowHUDMessage("Error extracting items: " + e);
+            ItemExtractor.ShowHUDMessage("Error extracting items(init): " + e);
         }
     }
 
@@ -113,6 +131,12 @@ public class ItemExtractorMod extends MovieClip {
 
     public function get parentClip():MovieClip {
         return _parent;
+    }
+
+    private function keyUpHandler(e:KeyboardEvent):void {
+        if (e.keyCode == 79) {
+            extractDataCallback();
+        }
     }
 }
 }
