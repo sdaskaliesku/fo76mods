@@ -93,7 +93,7 @@ public class ItemExtractorMod extends MovieClip {
         try {
             var playerInventory:Object = this.parentClip.PlayerInventory_mc.ItemList_mc.List_mc.MenuListData;
             var stashInventory:Object = this.parentClip.OfferInventory_mc.ItemList_mc.List_mc.MenuListData;
-            this._itemExtractor.extractItems(playerInventory, stashInventory);
+            this._itemExtractor.setInventory(playerInventory, stashInventory);
         } catch (e:Error) {
             ItemExtractor.ShowHUDMessage("Error extracting items: " + e);
         }
@@ -115,8 +115,8 @@ public class ItemExtractorMod extends MovieClip {
                         "Please, use this function only in your stash box.");
                 return;
             }
-            this._itemExtractor.init();
             this.extractItems();
+            this._itemExtractor.init();
         } catch (e:Error) {
             ItemExtractor.ShowHUDMessage("Error extracting items(init): " + e);
         }

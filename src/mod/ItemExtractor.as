@@ -1,4 +1,5 @@
 package {
+import Shared.AS3.Data.BSUIDataManager;
 import Shared.GlobalFunc;
 
 import com.adobe.serialization.json.JSONDecoder;
@@ -10,31 +11,51 @@ import flash.net.URLRequest;
 
 public class ItemExtractor {
 
-    public static const VERSION:Number = 0.3;
+    public static const VERSION:Number = 0.4;
 
     private var _sfeObj:Object;
     private var _config:Object;
+    private var itemsModIni:Object;
+    private var playerInventory:Object;
+    private var stashInventory:Object;
 
     public function ItemExtractor() {
         this._sfeObj = null;
+        this.itemsModIni = null;
     }
 
     public function set sfeObj(value:Object):void {
         _sfeObj = value;
     }
 
-    public function extractItems(playerInventory:Object, stashInventory:Object):void {
+    public function setInventory(playerInventory:Object, stashInventory:Object):void {
+        this.playerInventory = playerInventory;
+        this.stashInventory = stashInventory;
+    }
+
+    public function extractItems():void {
         try {
             if (!isSfeDefined()) {
                 ShowHUDMessage("SFE cannot be found. Items extraction cancelled.");
+                return;
             }
-//            var clientData:Object = BSUIDataManager.GetDataFromClient("PlayerInventoryData").data;
-            var clientData:Object = {};
-            clientData.playerInventory = playerInventory;
-            clientData.stashInventory = stashInventory;
-            clientData.user = _config;
-            clientData.version = VERSION;
-            writeData(toString(clientData));
+            if (itemsModIni === null) {
+                itemsModIni = {};
+                itemsModIni.characterInventories = {};
+            }
+            var CharacterInfoData:Object = BSUIDataManager.GetDataFromClient("CharacterInfoData").data;
+            var AccountInfoData:Object = BSUIDataManager.GetDataFromClient("AccountInfoData").data;
+
+            var characterInventory:Object = {};
+            characterInventory.playerInventory = this.playerInventory;
+            characterInventory.stashInventory = this.stashInventory;
+            characterInventory.AccountInfoData = AccountInfoData;
+            characterInventory.CharacterInfoData = CharacterInfoData;
+
+            itemsModIni.characterInventories[CharacterInfoData.name] = characterInventory;
+            itemsModIni.user = _config;
+            itemsModIni.version = VERSION;
+            writeData(toString(itemsModIni));
         } catch (e:Error) {
             ShowHUDMessage("Error extracting items(core): " + e);
         }
@@ -63,6 +84,23 @@ public class ItemExtractor {
         GlobalFunc.ShowHUDMessage("[ItemExtractorMod v" + VERSION + "] " + text);
     }
 
+    private function readItemsModIniFile():void {
+        try {
+            var url:String = "../itemsmod.ini";
+            var loader:URLLoader = new URLLoader(new URLRequest(url));
+            loader.addEventListener(Event.COMPLETE, onFileLoaded);
+            function onFileLoaded(e:Event):void {
+                var loader:URLLoader = e.target as URLLoader;
+                var data:String = loader.data;
+                itemsModIni = new JSONDecoder(data, true).getValue();
+                ShowHUDMessage("Loaded previous item dump");
+                extractItems();
+            }
+        } catch (e:Error) {
+            ShowHUDMessage("Error loading previous item dump: " + e);
+        }
+    }
+
     public function init():void {
         try {
             var url:String = "../trademod.json";
@@ -74,6 +112,11 @@ public class ItemExtractor {
                 var data:String = loader.data;
                 _config = new JSONDecoder(data, true).getValue();
                 ShowHUDMessage("Config loaded for user: " + _config.user);
+                if (_config.append) {
+                    readItemsModIniFile();
+                } else {
+                    extractItems();
+                }
             }
         } catch (e:Error) {
             _config = {
