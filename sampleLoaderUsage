@@ -1,0 +1,10 @@
+         try {
+            var modLoader:ModLoader = new ModLoader(this, "MansonMod.swf");
+            modLoader.notifyUser = true;
+            modLoader.onCompleteCallBack = function (e:Event): void {
+               GlobalFunc.ShowHUDMessage("Manson mod loaded");
+            };
+            modLoader.load();
+         } catch (e: Error) {
+            trace(e);
+         }
