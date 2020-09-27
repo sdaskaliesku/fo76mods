@@ -12,23 +12,25 @@ import utils.Logger;
 
 public class ItemExtractorMod extends MovieClip {
 
+    public static const IS_FED_ENABLED:Boolean = true;
+
     public static const MODE_CONTAINER:uint = 0;
 
-//    public static const MODE_PLAYERVENDING:uint = 1;
-//
-//    public static const MODE_NPCVENDING:uint = 2;
-//
-//    public static const MODE_VENDING_MACHINE:int = 3;
-//
-//    public static const MODE_DISPLAY_CASE:int = 4;
-//
-//    public static const MODE_CAMP_DISPENSER:int = 5;
-//
-//    public static const MODE_FERMENTER:int = 6;
-//
-//    public static const MODE_REFRIGERATOR:int = 7;
-//
-//    public static const MODE_ALLY:int = 8;
+    public static const MODE_PLAYERVENDING:uint = 1;
+
+    public static const MODE_NPCVENDING:uint = 2;
+
+    public static const MODE_VENDING_MACHINE:int = 3;
+
+    public static const MODE_DISPLAY_CASE:int = 4;
+
+    public static const MODE_CAMP_DISPENSER:int = 5;
+
+    public static const MODE_FERMENTER:int = 6;
+
+    public static const MODE_REFRIGERATOR:int = 7;
+
+    public static const MODE_ALLY:int = 8;
 
     public static const MODE_INVALID:uint = uint.MAX_VALUE;
 
@@ -36,6 +38,7 @@ public class ItemExtractorMod extends MovieClip {
     private var _itemExtractor:ItemExtractor;
     private var _parent:MovieClip;
     public var extractButton:BSButtonHintData;
+    public var fed76extractButton:BSButtonHintData;
     public var buttonHintBar:BSButtonHintBar = null;
 
     public function ItemExtractorMod() {
@@ -50,8 +53,19 @@ public class ItemExtractorMod extends MovieClip {
             this.extractButton.ButtonVisible = true;
             this.extractButton.ButtonDisabled = false;
             this.extractButton.secondaryButtonCallback = this.extractDataCallback;
+
+            if (IS_FED_ENABLED) {
+                this.fed76extractButton = new BSButtonHintData("Fed76Extract", "F", "PSN_Select",
+                        "Xenon_Select", 1,
+                        this.fed76ExtractDataCallback);
+                this.fed76extractButton.ButtonVisible = true;
+                this.fed76extractButton.ButtonDisabled = false;
+                this.fed76extractButton.secondaryButtonCallback = this.fed76ExtractDataCallback;
+            }
+
             Extensions.enabled = true;
         } catch (e:Error) {
+            Logger.get().error(e);
             ItemExtractor.ShowHUDMessage("Error loading mod " + e);
         }
     }
@@ -76,34 +90,47 @@ public class ItemExtractorMod extends MovieClip {
         try {
             buttons = this.parentClip.ButtonHintDataV;
         } catch (e:Error) {
-            Logger.get().error("Error getting button hints from parent " + e);
+            Logger.get().error("Error getting button hints from parent: " + e);
         }
         buttons.push(this.extractButton);
+        if (IS_FED_ENABLED) {
+            buttons.push(this.fed76extractButton);
+        }
         try {
             buttonHintBar.SetButtonHintData(buttons);
             buttonHintBar.onRemovedFromStage();
             buttonHintBar.onAddedToStage();
             buttonHintBar.redrawDisplayObject();
         } catch (e:Error) {
-            Logger.get().error("Error setting new button hints data" + e);
+            Logger.get().error("Error setting new button hints data: " + e);
         }
     }
 
-    private function extractItems():void {
+    private function setInventoryObjects():void {
         try {
             var playerInventory:Object = this.parentClip.PlayerInventory_mc.ItemList_mc.List_mc.MenuListData;
             var stashInventory:Object = this.parentClip.OfferInventory_mc.ItemList_mc.List_mc.MenuListData;
             this._itemExtractor.setInventory(playerInventory, stashInventory);
         } catch (e:Error) {
-            ItemExtractor.ShowHUDMessage("Error extracting items: " + e);
+            ItemExtractor.ShowHUDMessage("Error extracting items(inv objects): " + e);
         }
     }
 
-    private function isValidMode() : Boolean {
+    private function isFed76ValidMode():Boolean {
+        try {
+            return this.parentClip.m_MenuMode === MODE_PLAYERVENDING || this.parentClip.m_MenuMode
+                    === MODE_NPCVENDING || this.parentClip.m_MenuMode === MODE_VENDING_MACHINE;
+        } catch (e:Error) {
+            Logger.get().error("Error while getting mode: " + e);
+        }
+        return false;
+    }
+
+    private function isValidMode():Boolean {
         try {
             return this.parentClip.m_MenuMode === MODE_CONTAINER;
-        } catch (e: Error) {
-            Logger.get().error("Error while getting mode" + e);
+        } catch (e:Error) {
+            Logger.get().error("Error while getting mode: " + e);
         }
         return false;
     }
@@ -115,8 +142,22 @@ public class ItemExtractorMod extends MovieClip {
                         "Please, use this function only in your stash box.");
                 return;
             }
-            this.extractItems();
-            this._itemExtractor.init();
+            this.setInventoryObjects();
+            this._itemExtractor.extractItems();
+        } catch (e:Error) {
+            ItemExtractor.ShowHUDMessage("Error extracting items(init): " + e);
+        }
+    }
+
+    public function fed76ExtractDataCallback():void {
+        try {
+            if (!this.isFed76ValidMode()) {
+                ItemExtractor.ShowHUDMessage(
+                        "Please, use this function only in player's vendor!");
+                return;
+            }
+            this.setInventoryObjects();
+            this._itemExtractor.extractFed76Items();
         } catch (e:Error) {
             ItemExtractor.ShowHUDMessage("Error extracting items(init): " + e);
         }
@@ -136,6 +177,10 @@ public class ItemExtractorMod extends MovieClip {
     private function keyUpHandler(e:KeyboardEvent):void {
         if (e.keyCode == 79) {
             extractDataCallback();
+            return;
+        }
+        if (IS_FED_ENABLED && e.keyCode == 70) {
+            fed76ExtractDataCallback();
         }
     }
 }
