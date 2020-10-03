@@ -224,7 +224,6 @@ package Shared.AS3
             if(_loc4_.ButtonVisible && this.CanBeVisible())
             {
                _loc1_ = true;
-               _loc4_.useVaultTecColor = this.useVaultTecColor;
                _loc5_ = _loc6_;
                if(!this.ButtonHintBarInternal_mc.contains(_loc4_))
                {
