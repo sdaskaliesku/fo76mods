@@ -1,6 +1,12 @@
 ﻿package {
 import Shared.AS3.BSButtonHintBar;
 import Shared.AS3.BSButtonHintData;
+import Shared.GlobalFunc;
+
+import extractors.BaseItemExtractor;
+import extractors.Fed76ItemExtractor;
+import extractors.ItemExtractor;
+import extractors.VendorPriceCheckExtractor;
 
 import flash.display.MovieClip;
 import flash.events.KeyboardEvent;
@@ -12,61 +18,27 @@ import utils.Logger;
 
 public class ItemExtractorMod extends MovieClip {
 
-    public static const IS_FED_ENABLED:Boolean = true;
-
-    public static const MODE_CONTAINER:uint = 0;
-
-    public static const MODE_PLAYERVENDING:uint = 1;
-
-    public static const MODE_NPCVENDING:uint = 2;
-
-    public static const MODE_VENDING_MACHINE:int = 3;
-
-    public static const MODE_DISPLAY_CASE:int = 4;
-
-    public static const MODE_CAMP_DISPENSER:int = 5;
-
-    public static const MODE_FERMENTER:int = 6;
-
-    public static const MODE_REFRIGERATOR:int = 7;
-
-    public static const MODE_ALLY:int = 8;
-
-    public static const MODE_INVALID:uint = uint.MAX_VALUE;
+    public static const VERSION:Number = 0.6;
+    public static const IS_FED_ENABLED:Boolean = false;
 
     public var debugLogger:TextField;
-    private var _itemExtractor:ItemExtractor;
+    private var _itemExtractor:BaseItemExtractor;
+    private var _fedItemExtractor:BaseItemExtractor;
+    private var _priceCheckItemExtractor:BaseItemExtractor;
     private var _parent:MovieClip;
     public var extractButton:BSButtonHintData;
     public var fed76extractButton:BSButtonHintData;
-    public var buttonHintBar:BSButtonHintBar = null;
+    public var buttonHintBar:BSButtonHintBar;
 
     public function ItemExtractorMod() {
         super();
         try {
-            this._itemExtractor = new ItemExtractor();
             Logger.DEBUG_MODE = false;
             Logger.init(this.debugLogger);
-            this.extractButton = new BSButtonHintData("Extract items", "O", "PSN_Start",
-                    "Xenon_Start", 1,
-                    this.extractDataCallback);
-            this.extractButton.ButtonVisible = true;
-            this.extractButton.ButtonDisabled = false;
-            this.extractButton.secondaryButtonCallback = this.extractDataCallback;
-
-            if (IS_FED_ENABLED) {
-                this.fed76extractButton = new BSButtonHintData("Fed76Extract", "F", "PSN_Select",
-                        "Xenon_Select", 1,
-                        this.fed76ExtractDataCallback);
-                this.fed76extractButton.ButtonVisible = true;
-                this.fed76extractButton.ButtonDisabled = false;
-                this.fed76extractButton.secondaryButtonCallback = this.fed76ExtractDataCallback;
-            }
-
             Extensions.enabled = true;
         } catch (e:Error) {
             Logger.get().error(e);
-            ItemExtractor.ShowHUDMessage("Error loading mod " + e);
+            ShowHUDMessage("Error loading mod " + e);
         }
     }
 
@@ -82,9 +54,24 @@ public class ItemExtractorMod extends MovieClip {
 
     private function initButtonHints():void {
         if (buttonHintBar == null) {
-            ItemExtractor.ShowHUDMessage("Unexpected error while adding extract button!");
+            ShowHUDMessage("Unexpected error while adding extract button!");
             Logger.get().error("Error getting button hint bar from parent.");
             return;
+        }
+        this.extractButton = new BSButtonHintData("Extract items", "O", "PSN_Start",
+                "Xenon_Start", 1,
+                this.extractDataCallback);
+        this.extractButton.ButtonVisible = true;
+        this.extractButton.ButtonDisabled = false;
+        this.extractButton.secondaryButtonCallback = this.extractDataCallback;
+
+        if (IS_FED_ENABLED) {
+            this.fed76extractButton = new BSButtonHintData("Fed76Extract", "F", "PSN_Select",
+                    "Xenon_Select", 1,
+                    this.fed76ExtractDataCallback);
+            this.fed76extractButton.ButtonVisible = true;
+            this.fed76extractButton.ButtonDisabled = false;
+            this.fed76extractButton.secondaryButtonCallback = this.fed76ExtractDataCallback;
         }
         var buttons:Vector.<BSButtonHintData> = new Vector.<BSButtonHintData>();
         try {
@@ -111,61 +98,49 @@ public class ItemExtractorMod extends MovieClip {
             var playerInventory:Object = this.parentClip.PlayerInventory_mc.ItemList_mc.List_mc.MenuListData;
             var stashInventory:Object = this.parentClip.OfferInventory_mc.ItemList_mc.List_mc.MenuListData;
             this._itemExtractor.setInventory(playerInventory, stashInventory);
+            this._priceCheckItemExtractor.setInventory(playerInventory, stashInventory);
+            this._fedItemExtractor.setInventory(playerInventory, stashInventory);
         } catch (e:Error) {
-            ItemExtractor.ShowHUDMessage("Error extracting items(inv objects): " + e);
+            ShowHUDMessage("Error extracting items(inv objects): " + e);
         }
-    }
-
-    private function isFed76ValidMode():Boolean {
-        try {
-            return this.parentClip.m_MenuMode === MODE_PLAYERVENDING || this.parentClip.m_MenuMode
-                    === MODE_NPCVENDING || this.parentClip.m_MenuMode === MODE_VENDING_MACHINE;
-        } catch (e:Error) {
-            Logger.get().error("Error while getting mode: " + e);
-        }
-        return false;
-    }
-
-    private function isValidMode():Boolean {
-        try {
-            return this.parentClip.m_MenuMode === MODE_CONTAINER;
-        } catch (e:Error) {
-            Logger.get().error("Error while getting mode: " + e);
-        }
-        return false;
     }
 
     public function extractDataCallback():void {
         try {
-            if (!this.isValidMode()) {
-                ItemExtractor.ShowHUDMessage(
-                        "Please, use this function only in your stash box.");
+            var extractorToUse:BaseItemExtractor = this._priceCheckItemExtractor;
+            if (!extractorToUse.isValidMode(this.parentClip.m_MenuMode)) {
+                extractorToUse = this._itemExtractor;
+            }
+            if (!extractorToUse.isValidMode(this.parentClip.m_MenuMode)) {
+                extractorToUse.showInvalidModeMessage();
                 return;
             }
             this.setInventoryObjects();
-            this._itemExtractor.extractItems();
+            extractorToUse.extractItems();
         } catch (e:Error) {
-            ItemExtractor.ShowHUDMessage("Error extracting items(init): " + e);
+            ShowHUDMessage("Error extracting items(init): " + e);
         }
     }
 
     public function fed76ExtractDataCallback():void {
         try {
-            if (!this.isFed76ValidMode()) {
-                ItemExtractor.ShowHUDMessage(
-                        "Please, use this function only in player's vendor!");
+            var extractorToUse:BaseItemExtractor = this._fedItemExtractor;
+            if (!extractorToUse.isValidMode(this.parentClip.m_MenuMode)) {
+                extractorToUse.showInvalidModeMessage();
                 return;
             }
             this.setInventoryObjects();
-            this._itemExtractor.extractFed76Items();
+            extractorToUse.extractItems();
         } catch (e:Error) {
-            ItemExtractor.ShowHUDMessage("Error extracting items(init): " + e);
+            ShowHUDMessage("Error extracting items(init): " + e);
         }
     }
 
     public function setParent(parent:MovieClip):void {
         this._parent = parent;
-        this._itemExtractor.sfeObj = parent.__SFCodeObj;
+        this._itemExtractor = new ItemExtractor(parent.__SFCodeObj);
+        this._fedItemExtractor = new Fed76ItemExtractor(parent.__SFCodeObj);
+        this._priceCheckItemExtractor = new VendorPriceCheckExtractor(parent.__SFCodeObj);
         this.buttonHintBar = parent.ButtonHintBar_mc;
         init();
     }
@@ -182,6 +157,10 @@ public class ItemExtractorMod extends MovieClip {
         if (IS_FED_ENABLED && e.keyCode == 70) {
             fed76ExtractDataCallback();
         }
+    }
+
+    public static function ShowHUDMessage(text:String):void {
+        GlobalFunc.ShowHUDMessage("[ItemExtractorLoader v" + VERSION + "] " + text);
     }
 }
 }

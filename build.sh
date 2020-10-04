@@ -1,11 +1,14 @@
 currentDir=$(pwd)
 # YOU SHOULD MODIFY THIS VALUES
-finalArchiveName="ItemExtractorMod.ba2"
-flashPath="D://Program Files//Adobe Flash CS6//Flash.exe"
+#finalArchiveName="LoggerMod.ba2"
+modName="ItemExtractorMod"
+finalArchiveName="$modName.ba2"
+finalSwfName="$modName.swf"
+pathToModSources="$currentDir/src/itemExtractorMod"
+mainAsFile="$pathToModSources/mod/$modName.as"
+#flashPath="D://Program Files//Adobe Flash CS6//Flash.exe"
 outputDir="output"
 archiveRootFolder="Interface"
-#originalModDir="input"
-#originalModFiles=("radialmenu.swf")
 # END USER MOD SETTINGS
 arch2Path="$currentDir/tools/ba2Cli.exe"
 outputModDir="mod"
@@ -34,21 +37,22 @@ COMPILE_FLA=true
 if $COMPILE_FLA;
 then
 #  flc --input-directory "$currentDir/src/orig" --output-directory "$currentDir/$outputDir/$archiveRootFolder" --interactive-compiler "$flashPath" --include-pattern "*.fla"
-  flc --input-directory "$currentDir/src/mod" --output-directory "$currentDir/$outputDir/$archiveRootFolder" --interactive-compiler "$flashPath" --include-pattern "*.fla"
+#  flc --input-directory "$pathToModSources/mod" --output-directory "$currentDir/$outputDir/$archiveRootFolder" --interactive-compiler "$flashPath" --include-pattern "*.fla"
+sh /d/SDK/air/bin/mxmlc "$mainAsFile" -warnings=false -output $outputDir/$archiveRootFolder/$finalSwfName -swf-version 10 -target-player 11.1
 #  echo "Nothing to compile"
 else
   echo "FLA file compilation skipped"
 fi
 
-if $DEBUG;
-then
-  cd "$currentDir/$outputDir/$archiveRootFolder"
-  rm commands.txt
-  rm error.txt
-  rm info.txt
-  cd "$currentDir"
-else
-  echo "Debug is off"
-fi
-
+#if $DEBUG;
+#then
+#  cd "$currentDir/$outputDir/$archiveRootFolder"
+#  rm commands.txt
+#  rm error.txt
+#  rm info.txt
+#  cd "$currentDir"
+#else
+#  echo "Debug is off"
+#fi
+find "$pathToModSources" -name \*.swf -exec cp {} "$currentDir/$outputDir/$archiveRootFolder" \;
 $arch2Path -i "$currentDir/$outputDir/$archiveRootFolder" -o "$currentDir/$outputDir/$outputModDir/$finalArchiveName"

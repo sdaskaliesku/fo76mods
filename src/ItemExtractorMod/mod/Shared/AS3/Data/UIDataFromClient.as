@@ -56,7 +56,7 @@ package Shared.AS3.Data
          return this.m_IsTest;
       }
       
-      public function set isTest(param1:Boolean) : *
+      public function set isTest(param1:Boolean) : void
       {
          // method body index: 279 method index: 279
          this.m_IsTest = param1;
