@@ -4,6 +4,7 @@ package Shared.AS3
    import Shared.AS3.COMPANIONAPP.CompanionAppMode;
    import Shared.AS3.Events.PlatformChangeEvent;
    import Shared.GlobalFunc;
+   import fl.motion.AdjustColor;
    import flash.display.FrameLabel;
    import flash.display.MovieClip;
    import flash.display.Sprite;
@@ -470,6 +471,41 @@ package Shared.AS3
       {
          // method body index: 684 method index: 684
          return this.m_UseVaultTecColor;
+      }
+
+      public function set useVaultTecColor(param1:Boolean) : void
+      {
+         // method body index: 685 method index: 685
+         var _loc2_:AdjustColor = null;
+         var _loc3_:Array = null;
+         if(param1 != this.m_UseVaultTecColor)
+         {
+            this.m_UseVaultTecColor = param1;
+            if(param1)
+            {
+               if(colorMatrix == null)
+               {
+                  _loc2_ = new AdjustColor();
+                  _loc2_.brightness = 100;
+                  _loc2_.contrast = 0;
+                  _loc2_.saturation = -77;
+                  _loc2_.hue = -55;
+                  _loc3_ = _loc2_.CalculateFinalFlatArray();
+                  colorMatrix = new ColorMatrixFilter(_loc3_);
+               }
+               this.HoldMeter_mc.filters = [colorMatrix];
+               this.textField_tf.textColor = 16777163;
+               this.IconHolderInstance.IconAnimInstance.Icon_tf.textColor = 16777163;
+               this.SecondaryIconHolderInstance.IconAnimInstance.Icon_tf.textColor = 16777163;
+            }
+            else
+            {
+               this.HoldMeter_mc.filters = null;
+               this.textField_tf.textColor = 65280;
+               this.IconHolderInstance.IconAnimInstance.Icon_tf.textColor = 65280;
+               this.SecondaryIconHolderInstance.IconAnimInstance.Icon_tf.textColor = 65280;
+            }
+         }
       }
 
       public function set canHold(param1:Boolean) : void
