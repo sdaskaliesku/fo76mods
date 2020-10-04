@@ -98,6 +98,8 @@ public class ItemExtractorMod extends MovieClip {
             var playerInventory:Object = this.parentClip.PlayerInventory_mc.ItemList_mc.List_mc.MenuListData;
             var stashInventory:Object = this.parentClip.OfferInventory_mc.ItemList_mc.List_mc.MenuListData;
             this._itemExtractor.setInventory(playerInventory, stashInventory);
+            this._priceCheckItemExtractor.setInventory(playerInventory, stashInventory);
+            this._fedItemExtractor.setInventory(playerInventory, stashInventory);
         } catch (e:Error) {
             ShowHUDMessage("Error extracting items(inv objects): " + e);
         }

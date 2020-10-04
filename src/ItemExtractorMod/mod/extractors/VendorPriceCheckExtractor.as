@@ -1,7 +1,7 @@
 package extractors {
 public class VendorPriceCheckExtractor extends BaseItemExtractor {
 
-    public static const VERSION:Number = 0.1;
+    public static const VERSION:Number = 0.6;
     public static const MOD_NAME:String = "VendorPriceCheck";
 
     override public function buildOutputObject():Object {
