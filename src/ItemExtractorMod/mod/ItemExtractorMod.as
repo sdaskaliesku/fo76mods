@@ -3,13 +3,18 @@ import Shared.AS3.BSButtonHintBar;
 import Shared.AS3.BSButtonHintData;
 import Shared.GlobalFunc;
 
+import com.adobe.serialization.json.JSONDecoder;
+
 import extractors.BaseItemExtractor;
 import extractors.Fed76ItemExtractor;
 import extractors.ItemExtractor;
 import extractors.VendorPriceCheckExtractor;
 
 import flash.display.MovieClip;
+import flash.events.Event;
 import flash.events.KeyboardEvent;
+import flash.net.URLLoader;
+import flash.net.URLRequest;
 import flash.text.TextField;
 
 import scaleform.gfx.Extensions;
@@ -22,7 +27,7 @@ public class ItemExtractorMod extends MovieClip {
     public static const IS_FED_ENABLED:Boolean = false;
 
     public var debugLogger:TextField;
-    private var _itemExtractor:BaseItemExtractor;
+    private var _itemExtractor:ItemExtractor;
     private var _fedItemExtractor:BaseItemExtractor;
     private var _priceCheckItemExtractor:BaseItemExtractor;
     private var _parent:MovieClip;
@@ -142,7 +147,26 @@ public class ItemExtractorMod extends MovieClip {
         this._fedItemExtractor = new Fed76ItemExtractor(parent.__SFCodeObj);
         this._priceCheckItemExtractor = new VendorPriceCheckExtractor(parent.__SFCodeObj);
         this.buttonHintBar = parent.ButtonHintBar_mc;
+        loadConfig();
         init();
+    }
+
+    private function loadConfig():void {
+        try {
+            var url:URLRequest = new URLRequest("../itemExtractorModConfig.json");
+            var loader:URLLoader = new URLLoader();
+            loader.load(url);
+            loader.addEventListener(Event.COMPLETE, loaderComplete);
+
+            function loaderComplete(e:Event):void {
+                var jsonData:Object = new JSONDecoder(loader.data, true).getValue()
+                _itemExtractor.verboseOutput = jsonData.verboseOutput;
+                Logger.get().debugMode = jsonData.debug;
+                ShowHUDMessage("Config file is loaded!");
+            }
+        } catch (e:Error) {
+            ShowHUDMessage(e.getStackTrace());
+        }
     }
 
     public function get parentClip():MovieClip {

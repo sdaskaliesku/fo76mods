@@ -28,6 +28,11 @@ public class Logger {
         this._debugger.useRichTextClipboard = true;
     }
 
+    public function set debugMode(value:Boolean):void {
+        DEBUG_MODE = value;
+        this._debugger.visible = DEBUG_MODE;
+    }
+
     public function debug(object:Object):void {
         if (!DEBUG_MODE) {
             return;

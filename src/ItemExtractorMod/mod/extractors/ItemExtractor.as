@@ -1,26 +1,32 @@
 package extractors {
-import Shared.AS3.Data.BSUIDataManager;
-
 public class ItemExtractor extends BaseItemExtractor {
 
     public static const VERSION:Number = 0.6;
     public static const MOD_NAME:String = "ItemExtractorMod";
 
+    private var _verboseOutput:Boolean = false;
+
     override public function buildOutputObject():Object {
         var itemsModIni:Object = super.buildOutputObject();
         itemsModIni.characterInventories = {};
-        var CharacterInfoData:Object = BSUIDataManager.GetDataFromClient(
-                "CharacterInfoData").data;
-        var AccountInfoData:Object = BSUIDataManager.GetDataFromClient("AccountInfoData").data;
+        var CharacterInfoData:Object = GameApiDataExtractor.getCharacterInfoData();
+        var AccountInfoData:Object = GameApiDataExtractor.getAccountInfoData();
 
         var characterInventory:Object = {};
         characterInventory.playerInventory = this.playerInventory;
         characterInventory.stashInventory = this.stashInventory;
         characterInventory.AccountInfoData = AccountInfoData;
         characterInventory.CharacterInfoData = CharacterInfoData;
+        if (_verboseOutput) {
+            characterInventory.fullGameData = GameApiDataExtractor.getFullApiData();
+        }
 
         itemsModIni.characterInventories[CharacterInfoData.name] = characterInventory;
         return itemsModIni;
+    }
+
+    public function set verboseOutput(value:Boolean):void {
+        _verboseOutput = value;
     }
 
     public function ItemExtractor(value:Object) {
