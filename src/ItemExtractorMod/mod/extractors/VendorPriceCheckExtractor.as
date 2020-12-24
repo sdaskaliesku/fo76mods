@@ -1,7 +1,11 @@
 package extractors {
+import Shared.AS3.SecureTradeShared;
+
+import flash.display.MovieClip;
+import flash.utils.setTimeout;
+
 public class VendorPriceCheckExtractor extends BaseItemExtractor {
 
-    public static const VERSION:Number = 0.6;
     public static const MOD_NAME:String = "VendorPriceCheck";
 
     override public function buildOutputObject():Object {
@@ -20,10 +24,24 @@ public class VendorPriceCheckExtractor extends BaseItemExtractor {
         return itemsModIni;
     }
 
+    public override function setInventory(parent:MovieClip):void {
+        if (!isSfeDefined()) {
+            ShowHUDMessage('SFE cannot be found. Items extraction cancelled.');
+            return;
+        }
+        ShowHUDMessage("Starting gathering items data from stash!");
+        var delay:Number = populateItemCards(parent, parent.OfferInventory_mc, true,
+                stashInventory);
+        setTimeout(function ():void {
+            populateItemCardEntries(stashInventory);
+            extractItems();
+        }, delay);
+    }
+
     override public function isValidMode(menuMode:uint):Boolean {
-        return menuMode === MODE_PLAYERVENDING
-                || menuMode === MODE_NPCVENDING
-                || menuMode === MODE_VENDING_MACHINE;
+        return menuMode === SecureTradeShared.MODE_PLAYERVENDING
+                || menuMode === SecureTradeShared.MODE_NPCVENDING
+                || menuMode === SecureTradeShared.MODE_VENDING_MACHINE;
     }
 
     override public function getInvalidModeMessage():String {
@@ -31,7 +49,7 @@ public class VendorPriceCheckExtractor extends BaseItemExtractor {
     }
 
     public function VendorPriceCheckExtractor(value:Object) {
-        super(value, MOD_NAME, VERSION);
+        super(value, MOD_NAME, Version.VENDOR);
     }
 }
 }

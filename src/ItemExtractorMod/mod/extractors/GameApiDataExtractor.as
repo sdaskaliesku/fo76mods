@@ -1,10 +1,14 @@
-package extractors {
+﻿package extractors {
 import Shared.AS3.Data.BSUIDataManager;
+import Shared.AS3.Events.CustomEvent;
 
 internal class GameApiDataExtractor {
+    public static const EVENT_INSPECT_ITEM:String = "Container::InspectItem";
+    public static const EVENT_ITEM_SELECTED:String = "SecureTrade::OnItemSelected";
     public static var PlayerInventoryData:String = "PlayerInventoryData";
     public static var CharacterInfoData:String = "CharacterInfoData";
     public static var AccountInfoData:String = "AccountInfoData";
+    public static var InventoryItemCardData:String = "InventoryItemCardData";
     private static var GAME_API_METHODS:Array = [
         "FriendsContextMenuData",
         "StoreCategoryData",
@@ -32,16 +36,33 @@ internal class GameApiDataExtractor {
         "LoginInfoData",
         "LoginResponseData",
         "HubMenuShuttle",
-        "WorkshopStateData"
+        "WorkshopStateData",
+        "WorkshopBudgetData",
+        "WorkshopButtonBarData",
+        "WorkshopCategoryData",
+        "WorkshopConfigData",
+        "WorkshopItemCardData",
+        "WorkshopMessageData",
+        "OtherInventoryTypeData",
+        "OtherInventoryData",
+        "MyOffersData",
+        "TheirOffersData",
+        "ContainerOptionsData",
+        "CampVendingOfferData",
+        "FireForgetEvent"
         // IGNORED FIELDS
+//        "InventoryItemCardData"
 //        "PlayerInventoryData",
 //        "CharacterInfoData",
 //        "AccountInfoData"
     ];
 
-    public static function getFullApiData():Object {
+    public static function getFullApiData(array:Array):Object {
         var gameApiData:Object = {};
-        GAME_API_METHODS.forEach(function (apiMethodName:String):void {
+        if (array == null || array.length < 1) {
+            array = GAME_API_METHODS;
+        }
+        array.forEach(function (apiMethodName:String):void {
             gameApiData[apiMethodName] = getApiData(apiMethodName);
         });
         return gameApiData;
@@ -64,6 +85,28 @@ internal class GameApiDataExtractor {
 
     public static function getCharacterInfoData():Object {
         return getApiData(CharacterInfoData);
+    }
+
+    public static function getInventoryItemCardData():Object {
+        return getApiData(InventoryItemCardData);
+    }
+
+    public static function inspectItem(serverHandleId:Number, fromContainer:Boolean):void {
+        BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_INSPECT_ITEM, {
+            "serverHandleId": serverHandleId,
+            "fromContainer": fromContainer
+        }));
+    }
+
+    public static function selectItem(serverHandleId:Number, fromContainer:Boolean):void {
+        BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_ITEM_SELECTED, {
+            "serverHandleId": serverHandleId,
+            "isSelectionValid": true,
+            "fromContainer": fromContainer
+        }));
+    }
+    public static function subscribeInventoryItemCardData(callback: Function): void {
+        BSUIDataManager.Subscribe(InventoryItemCardData, callback);
     }
 }
 }

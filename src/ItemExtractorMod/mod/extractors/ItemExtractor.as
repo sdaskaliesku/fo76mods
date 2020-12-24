@@ -1,40 +1,35 @@
 package extractors {
 public class ItemExtractor extends BaseItemExtractor {
 
-    public static const VERSION:Number = 0.6;
     public static const MOD_NAME:String = "ItemExtractorMod";
 
-    private var _verboseOutput:Boolean = false;
+    public override function buildOutputObject():Object {
+        var outputObject:Object = super.buildOutputObject();
 
-    override public function buildOutputObject():Object {
-        var itemsModIni:Object = super.buildOutputObject();
-        itemsModIni.characterInventories = {};
-        var CharacterInfoData:Object = GameApiDataExtractor.getCharacterInfoData();
-        var AccountInfoData:Object = GameApiDataExtractor.getAccountInfoData();
+        var charData:Object = GameApiDataExtractor.getCharacterInfoData();
+        var acData:Object = GameApiDataExtractor.getAccountInfoData();
 
         var characterInventory:Object = {};
         characterInventory.playerInventory = this.playerInventory;
         characterInventory.stashInventory = this.stashInventory;
-        characterInventory.AccountInfoData = AccountInfoData;
-        characterInventory.CharacterInfoData = CharacterInfoData;
+        characterInventory.AccountInfoData = charData;
+        characterInventory.CharacterInfoData = acData;
+
         if (_verboseOutput) {
-            characterInventory.fullGameData = GameApiDataExtractor.getFullApiData();
+            characterInventory.fullGameData = GameApiDataExtractor.getFullApiData(this._apiMethods);
         }
 
-        itemsModIni.characterInventories[CharacterInfoData.name] = characterInventory;
-        return itemsModIni;
-    }
-
-    public function set verboseOutput(value:Boolean):void {
-        _verboseOutput = value;
+        outputObject.characterInventories = {};
+        outputObject.characterInventories[charData.name] = characterInventory
+        return outputObject;
     }
 
     public function ItemExtractor(value:Object) {
-        super(value, MOD_NAME, VERSION);
+        super(value, MOD_NAME, Version.ITEM_EXTRACTOR);
     }
 
     override public function isValidMode(menuMode:uint):Boolean {
-        return menuMode === MODE_CONTAINER;
+        return true;
     }
 
     override public function getInvalidModeMessage():String {

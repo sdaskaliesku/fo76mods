@@ -15,6 +15,7 @@ public class Logger {
     }
 
     public static function init(debuger:TextField):void {
+        // noinspection JSValidateTypes
         INSTANCE = new Logger(debuger);
         INSTANCE.info("###### INIT ######")
     }
@@ -26,6 +27,10 @@ public class Logger {
         this._debugger.mouseWheelEnabled = true;
         this._debugger.mouseEnabled = true;
         this._debugger.useRichTextClipboard = true;
+    }
+
+    public function clear(): void {
+        this._debugger.text = "";
     }
 
     public function set debugMode(value:Boolean):void {
