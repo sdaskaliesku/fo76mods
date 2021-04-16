@@ -130,7 +130,7 @@ public class InventOmaticPipboy extends MovieClip {
             if (config.drop && config.drop.length > 0) {
                 config.drop.forEach(function (sectionConfig:Object):void {
                     if (e.keyCode === sectionConfig.hotkey) {
-                        ShowHUDMessage("Dropping items for config: " + sectionConfig.name, true);
+                        ShowHUDMessage("[Drop] " + sectionConfig.name, true);
                         dropItemsCallback(sectionConfig.itemNames, sectionConfig.matchMode);
                     }
                 });
@@ -138,7 +138,7 @@ public class InventOmaticPipboy extends MovieClip {
             if (config.consume && config.consume.length > 0) {
                 config.consume.forEach(function (sectionConfig:Object):void {
                     if (e.keyCode === sectionConfig.hotkey) {
-                        ShowHUDMessage("Consuming items for config: " + sectionConfig.name, true);
+                        ShowHUDMessage("[Consume] " + sectionConfig.name, true);
                         consumeItemsCallback(sectionConfig.itemNames, sectionConfig.matchMode);
                     }
                 });
@@ -147,14 +147,19 @@ public class InventOmaticPipboy extends MovieClip {
     }
 
     private function consumeItem(index:int):void {
-        BGSExternalInterface.call(this.parentClip.codeObj, "SelectItem", index);
+        try {
+            BGSExternalInterface.call(this.parentClip.codeObj, "SelectItem", index);
+        } catch (e:Error) {
+            Logger.get().error("Error consuming item: " + e);
+        }
     }
 
     private function dropItem(item:Object):void {
         try {
-            this.parentClip.DropItem(item);
+            BGSExternalInterface.call(this.parentClip.codeObj, "ItemDrop", item.serverHandleID,
+                    item.count);
         } catch (e:Error) {
-            Logger.get().error("Error dropping items from parent: " + e);
+            Logger.get().error("Error dropping item: " + e);
         }
     }
 
