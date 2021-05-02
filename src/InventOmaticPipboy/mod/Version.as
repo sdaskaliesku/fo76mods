@@ -1,6 +1,6 @@
 package {
 public class Version {
 
-    public static const MOD:Number = 0.2;
+    public static const MOD:Number = 0.3;
 }
 }
