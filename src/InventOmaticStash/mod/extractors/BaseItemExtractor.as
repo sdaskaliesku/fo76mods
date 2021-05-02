@@ -6,6 +6,7 @@ import com.adobe.serialization.json.JSONDecoder;
 import com.adobe.serialization.json.JSONEncoder;
 
 import flash.display.MovieClip;
+import flash.globalization.DateTimeFormatter;
 import flash.utils.setTimeout;
 
 import utils.Logger;
@@ -22,8 +23,8 @@ public class BaseItemExtractor {
     protected static var ITEM_CARD_ENTRY_DELAY_STEP:Number = 100;
     protected var _verboseOutput:Boolean = false;
     protected var _apiMethods:Array = [];
-    protected var _additionalItemDataForAll: Boolean = false;
-    protected var _modNameToUse: String;
+    protected var _additionalItemDataForAll:Boolean = false;
+    protected var _modNameToUse:String;
 
     public function BaseItemExtractor(
             value:Object, modName:String, version:Number) {
@@ -44,17 +45,19 @@ public class BaseItemExtractor {
             return;
         }
         ShowHUDMessage("Starting gathering items data from inventory!");
-        var delay:Number = populateItemCards(parent, parent.PlayerInventory_mc, false, playerInventory);
-        setTimeout(function (): void {
+        var delay:Number = populateItemCards(parent, parent.PlayerInventory_mc, false,
+                playerInventory);
+        setTimeout(function ():void {
             ShowHUDMessage("Starting gathering items data from stash!");
-            var delay2:Number = populateItemCards(parent, parent.OfferInventory_mc, true, stashInventory);
-            setTimeout(function (): void {
+            var delay2:Number = populateItemCards(parent, parent.OfferInventory_mc, true,
+                    stashInventory);
+            setTimeout(function ():void {
                 ShowHUDMessage("Building output object...");
                 try {
                     populateItemCardEntries(playerInventory);
                     populateItemCardEntries(stashInventory);
                     extractItems();
-                } catch (e: Error) {
+                } catch (e:Error) {
                     ShowHUDMessage("Error building output object " + e);
                 }
             }, delay2);
@@ -71,7 +74,7 @@ public class BaseItemExtractor {
     }
 
     protected function populateItemCards(parent:MovieClip, inventory:SecureTradeInventory,
-            fromContainer:Boolean, output: Array):Number {
+            fromContainer:Boolean, output:Array):Number {
         var inv:Array = inventory.ItemList_mc.List_mc.MenuListData;
         var delay:Number = ITEM_CARD_ENTRY_DELAY_STEP;
         inv.forEach(function (item:Object):void {
@@ -135,9 +138,13 @@ public class BaseItemExtractor {
     }
 
     public function buildOutputObject():Object {
+        var df:DateTimeFormatter = new DateTimeFormatter("");
+        df.setDateTimePattern("yyyy-MM-dd HH:mm:ss");
+        var extractionTime:String = df.format(new Date());
         return {
             modName: modName,
-            version: version
+            version: version,
+            extractionTIme: extractionTime
         };
     }
 
@@ -153,7 +160,7 @@ public class BaseItemExtractor {
         try {
             if (isSfeDefined()) {
                 this._sfeObj.call('writeItemsModFile', data);
-                ShowHUDMessage('Done saving items!');
+                ShowHUDMessage('Done saving items!', true);
             } else {
                 ShowHUDMessage('Cannot find SFE, writing to file cancelled!');
             }
@@ -162,8 +169,10 @@ public class BaseItemExtractor {
         }
     }
 
-    public function ShowHUDMessage(text:String):void {
-        GlobalFunc.ShowHUDMessage('[' + modName + ' v' + version + '] ' + text);
+    public function ShowHUDMessage(text:String, force:Boolean = false):void {
+        if (_verboseOutput || force) {
+            GlobalFunc.ShowHUDMessage('[' + modName + ' v' + version + '] ' + text);
+        }
     }
 
     public function isValidMode(menuMode:uint):Boolean {

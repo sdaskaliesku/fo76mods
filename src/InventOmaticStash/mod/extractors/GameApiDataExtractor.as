@@ -2,7 +2,8 @@
 import Shared.AS3.Data.BSUIDataManager;
 import Shared.AS3.Events.CustomEvent;
 
-internal class GameApiDataExtractor {
+public class GameApiDataExtractor {
+    public static const EVENT_TRANSFER_ITEM:String = "Container::TransferItem";
     public static const EVENT_INSPECT_ITEM:String = "Container::InspectItem";
     public static const EVENT_ITEM_SELECTED:String = "SecureTrade::OnItemSelected";
     public static var PlayerInventoryData:String = "PlayerInventoryData";
@@ -105,8 +106,18 @@ internal class GameApiDataExtractor {
             "fromContainer": fromContainer
         }));
     }
-    public static function subscribeInventoryItemCardData(callback: Function): void {
+
+    public static function subscribeInventoryItemCardData(callback:Function):void {
         BSUIDataManager.Subscribe(InventoryItemCardData, callback);
+    }
+
+    // fromContainer = true, means moving items from pipboy to container
+    public static function transferItem(item:Object, fromContainer:Boolean = false):void {
+        BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_TRANSFER_ITEM, {
+            "serverHandleId": item.serverHandleId,
+            "quantity": item.count,
+            "fromContainer": fromContainer
+        }));
     }
 }
 }

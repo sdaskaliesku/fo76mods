@@ -18,17 +18,19 @@ import flash.text.TextField;
 
 import utils.Logger;
 
-public class ItemExtractorMod extends MovieClip {
+public class InventOmaticStash extends MovieClip {
 
     public var debugLogger:TextField;
     private var _itemExtractor:ItemExtractor;
     private var _priceCheckItemExtractor:VendorPriceCheckExtractor;
+    private var _itemTransferer:ItemTransferer = new ItemTransferer();
     private var _parent:MovieClip;
     public var extractButton:BSButtonHintData;
+    public var transferButton:BSButtonHintData;
     public var buttonHintBar:BSButtonHintBar;
-    protected var extractorToUse: BaseItemExtractor;
+    public var config:Object;
 
-    public function ItemExtractorMod() {
+    public function InventOmaticStash() {
         super();
         try {
             Logger.DEBUG_MODE = false;
@@ -65,6 +67,11 @@ public class ItemExtractorMod extends MovieClip {
         this.extractButton.ButtonVisible = true;
         this.extractButton.ButtonDisabled = false;
 
+        this.transferButton = new BSButtonHintData("Transfer items", "P", "PSN_Start",
+                "Xenon_Start", 1, this.transferItemsCallback);
+        this.transferButton.ButtonVisible = true;
+        this.transferButton.ButtonDisabled = false;
+
         // noinspection JSValidateTypes
         var buttons:Vector.<BSButtonHintData> = new Vector.<BSButtonHintData>();
         try {
@@ -73,6 +80,7 @@ public class ItemExtractorMod extends MovieClip {
             Logger.get().error("Error getting button hints from parent: " + e);
         }
         buttons.push(this.extractButton);
+        buttons.push(this.transferButton);
 
         try {
             buttonHintBar.SetButtonHintData(buttons);
@@ -92,7 +100,18 @@ public class ItemExtractorMod extends MovieClip {
             }
             extractorToUse.setInventory(this.parentClip);
         } catch (e:Error) {
-            ShowHUDMessage("Error extracting items(init): " + e);
+            ShowHUDMessage("Error extracting items(init): " + e, true);
+        }
+    }
+
+    public function transferItemsCallback():void {
+        try {
+            _itemTransferer.stashInventory = this.parentClip.OfferInventory_mc.ItemList_mc.List_mc.MenuListData;
+            _itemTransferer.playerInventory = this.parentClip.PlayerInventory_mc.ItemList_mc.List_mc.MenuListData;
+            _itemTransferer.config = config;
+            _itemTransferer.transferItems();
+        } catch (e:Error) {
+            ShowHUDMessage("Error transferring items: " + e, true);
         }
     }
 
@@ -108,7 +127,7 @@ public class ItemExtractorMod extends MovieClip {
 
     private function loadConfig():void {
         try {
-            var url:URLRequest = new URLRequest("../itemExtractorModConfig.json");
+            var url:URLRequest = new URLRequest("../inventOmaticStashConfig.json");
             var loader:URLLoader = new URLLoader();
             loader.load(url);
             loader.addEventListener(Event.COMPLETE, loaderComplete);
@@ -119,6 +138,7 @@ public class ItemExtractorMod extends MovieClip {
                 _itemExtractor.apiMethods = jsonData.apiMethods;
                 _itemExtractor.additionalItemDataForAll = jsonData.additionalItemDataForAll;
                 Logger.get().debugMode = jsonData.debug;
+                config = jsonData;
                 ShowHUDMessage("Config file is loaded!");
             }
         } catch (e:Error) {
@@ -133,11 +153,15 @@ public class ItemExtractorMod extends MovieClip {
     private function keyUpHandler(e:KeyboardEvent):void {
         if (e.keyCode == 79) {
             extractDataCallback();
+        } else if (e.keyCode == 80) {
+            transferItemsCallback();
         }
     }
 
-    public static function ShowHUDMessage(text:String):void {
-        GlobalFunc.ShowHUDMessage("[ItemExtractorLoader v" + Version.LOADER + "] " + text);
+    public static function ShowHUDMessage(text:String, force:Boolean = false):void {
+        if (Logger.DEBUG_MODE || force) {
+            GlobalFunc.ShowHUDMessage("[Invent-O-Matic-Stash v" + Version.LOADER + "] " + text);
+        }
     }
 }
 }

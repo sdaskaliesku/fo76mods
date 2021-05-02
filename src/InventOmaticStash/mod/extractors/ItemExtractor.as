@@ -1,7 +1,7 @@
 package extractors {
 public class ItemExtractor extends BaseItemExtractor {
 
-    public static const MOD_NAME:String = "ItemExtractorMod";
+    public static const MOD_NAME:String = "Invent-O-Matic-Extractor";
 
     public override function buildOutputObject():Object {
         var outputObject:Object = super.buildOutputObject();
@@ -12,8 +12,8 @@ public class ItemExtractor extends BaseItemExtractor {
         var characterInventory:Object = {};
         characterInventory.playerInventory = this.playerInventory;
         characterInventory.stashInventory = this.stashInventory;
-        characterInventory.AccountInfoData = acData;
-        characterInventory.CharacterInfoData = charData;
+        characterInventory.AccountInfoData = acData.name;
+        characterInventory.CharacterInfoData = charData.name;
 
         if (_verboseOutput) {
             characterInventory.fullGameData = GameApiDataExtractor.getFullApiData(this._apiMethods);

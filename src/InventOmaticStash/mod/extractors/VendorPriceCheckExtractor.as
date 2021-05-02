@@ -6,7 +6,7 @@ import flash.utils.setTimeout;
 
 public class VendorPriceCheckExtractor extends BaseItemExtractor {
 
-    public static const MOD_NAME:String = "VendorPriceCheck";
+    public static const MOD_NAME:String = "Invent-O-Matic-Vendor-Extractor";
 
     override public function buildOutputObject():Object {
         var itemsModIni:Object = super.buildOutputObject();
