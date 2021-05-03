@@ -6,7 +6,6 @@ import com.adobe.serialization.json.JSONDecoder;
 import com.adobe.serialization.json.JSONEncoder;
 
 import flash.display.MovieClip;
-import flash.globalization.DateTimeFormatter;
 import flash.utils.setTimeout;
 
 import utils.Logger;
@@ -138,13 +137,9 @@ public class BaseItemExtractor {
     }
 
     public function buildOutputObject():Object {
-        var df:DateTimeFormatter = new DateTimeFormatter("");
-        df.setDateTimePattern("yyyy-MM-dd HH:mm:ss");
-        var extractionTime:String = df.format(new Date());
         return {
             modName: modName,
-            version: version,
-            extractionTIme: extractionTime
+            version: version
         };
     }
 

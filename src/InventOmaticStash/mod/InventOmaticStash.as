@@ -23,7 +23,7 @@ public class InventOmaticStash extends MovieClip {
     public var debugLogger:TextField;
     private var _itemExtractor:ItemExtractor;
     private var _priceCheckItemExtractor:VendorPriceCheckExtractor;
-    private var _itemTransferer:ItemTransferer = new ItemTransferer();
+    private var _itemTransferer:ItemTransferer;
     private var _parent:MovieClip;
     public var extractButton:BSButtonHintData;
     public var transferButton:BSButtonHintData;
@@ -120,6 +120,7 @@ public class InventOmaticStash extends MovieClip {
         this._parent = parent;
         this._itemExtractor = new ItemExtractor(_parent.__SFCodeObj);
         this._priceCheckItemExtractor = new VendorPriceCheckExtractor(_parent.__SFCodeObj);
+        this._itemTransferer = new ItemTransferer();
         this.buttonHintBar = _parent.ButtonHintBar_mc;
         loadConfig();
         init();
