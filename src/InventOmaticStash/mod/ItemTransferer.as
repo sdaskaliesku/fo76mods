@@ -54,23 +54,25 @@ public class ItemTransferer {
         }
     }
 
-    private static function isMatchingItemName(itemName:String, config:Object):Boolean {
+    private static function isMatchingItemName(item:String, config:Object):Boolean {
         var matches:Boolean = false;
         const matchMode:String = config.matchMode;
-        config.itemNames.forEach(function (configItemName:String):void {
+        var itemName: String = item.toLowerCase();
+        for ( var i:int = 0; i < config.itemNames.length; i++ ) {
+            var configItemName:String = config.itemNames[i].toLowerCase();
             if (matchMode === MatchMode.EXACT) {
                 matches = itemName === configItemName;
             } else if (matchMode === MatchMode.CONTAINS) {
-                matches = itemName.toLowerCase().indexOf(configItemName.toLowerCase()) >= 0;
+                matches = itemName.indexOf(configItemName) >= 0;
             } else if (matchMode === MatchMode.STARTS) {
-                matches = itemName.toLowerCase().indexOf(configItemName.toLowerCase()) === 0;
+                matches = itemName.indexOf(configItemName) === 0;
             } else if (matchMode === MatchMode.ALL) {
                 matches = true;
             }
             if (matches) {
-                return;
+                return matches;
             }
-        });
+        }
         return matches;
     }
 
