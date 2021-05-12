@@ -12,8 +12,13 @@ public class ItemExtractor extends BaseItemExtractor {
         var characterInventory:Object = {};
         characterInventory.playerInventory = this.playerInventory;
         characterInventory.stashInventory = this.stashInventory;
-        characterInventory.AccountInfoData = acData.name;
-        characterInventory.CharacterInfoData = charData.name;
+        characterInventory.AccountInfoData = {
+            name: acData.name
+        };
+        characterInventory.CharacterInfoData = {
+            name: charData.name,
+            level: charData.level
+        };
 
         if (_verboseOutput) {
             characterInventory.fullGameData = GameApiDataExtractor.getFullApiData(this._apiMethods);
