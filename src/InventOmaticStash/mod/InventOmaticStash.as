@@ -23,10 +23,11 @@ public class InventOmaticStash extends MovieClip {
     public var debugLogger:TextField;
     private var _itemExtractor:ItemExtractor;
     private var _priceCheckItemExtractor:VendorPriceCheckExtractor;
-    private var _itemTransferer:ItemTransferer;
+    private var _itemWorker:ItemWorker;
     private var _parent:MovieClip;
     public var extractButton:BSButtonHintData;
     public var transferButton:BSButtonHintData;
+    public var scrapItemsButton:BSButtonHintData;
     public var buttonHintBar:BSButtonHintBar;
     public var config:Object;
 
@@ -72,6 +73,11 @@ public class InventOmaticStash extends MovieClip {
         this.transferButton.ButtonVisible = true;
         this.transferButton.ButtonDisabled = false;
 
+        this.scrapItemsButton = new BSButtonHintData("Scrap items", "I", "PSN_Start",
+                "Xenon_Start", 1, this.scrapItemsCallback);
+        this.scrapItemsButton.ButtonVisible = true;
+        this.scrapItemsButton.ButtonDisabled = false;
+
         // noinspection JSValidateTypes
         var buttons:Vector.<BSButtonHintData> = new Vector.<BSButtonHintData>();
         try {
@@ -81,6 +87,7 @@ public class InventOmaticStash extends MovieClip {
         }
         buttons.push(this.extractButton);
         buttons.push(this.transferButton);
+        buttons.push(this.scrapItemsButton);
 
         try {
             buttonHintBar.SetButtonHintData(buttons);
@@ -106,12 +113,26 @@ public class InventOmaticStash extends MovieClip {
 
     public function transferItemsCallback():void {
         try {
-            _itemTransferer.stashInventory = this.parentClip.OfferInventory_mc.ItemList_mc.List_mc.MenuListData;
-            _itemTransferer.playerInventory = this.parentClip.PlayerInventory_mc.ItemList_mc.List_mc.MenuListData;
-            _itemTransferer.config = config;
-            _itemTransferer.transferItems();
+            _itemWorker.stashInventory = this.parentClip.OfferInventory_mc.ItemList_mc.List_mc.MenuListData;
+            _itemWorker.playerInventory = this.parentClip.PlayerInventory_mc.ItemList_mc.List_mc.MenuListData;
+            _itemWorker.config = config;
+            _itemWorker.transferItems();
         } catch (e:Error) {
             ShowHUDMessage("Error transferring items: " + e, true);
+        }
+    }
+
+    public function scrapItemsCallback(): void {
+        try {
+            if (!this.parentClip.m_isWorkbench) {
+                ShowHUDMessage("Items auto scrap allowed only on workbenches!", true);
+                return;
+            }
+            _itemWorker.playerInventory = this.parentClip.PlayerInventory_mc.ItemList_mc.List_mc.MenuListData;
+            _itemWorker.config = config;
+            _itemWorker.scrapItems();
+        } catch (e:Error) {
+            ShowHUDMessage("Error scrapping items: " + e, true);
         }
     }
 
@@ -120,7 +141,7 @@ public class InventOmaticStash extends MovieClip {
         this._parent = parent;
         this._itemExtractor = new ItemExtractor(_parent.__SFCodeObj);
         this._priceCheckItemExtractor = new VendorPriceCheckExtractor(_parent.__SFCodeObj);
-        this._itemTransferer = new ItemTransferer();
+        this._itemWorker = new ItemWorker();
         this.buttonHintBar = _parent.ButtonHintBar_mc;
         loadConfig();
         init();
@@ -152,10 +173,15 @@ public class InventOmaticStash extends MovieClip {
     }
 
     private function keyUpHandler(e:KeyboardEvent):void {
+        // o
         if (e.keyCode == 79) {
             extractDataCallback();
+            // p
         } else if (e.keyCode == 80) {
             transferItemsCallback();
+            // i
+        } else if (e.keyCode == 73) {
+            scrapItemsCallback();
         }
     }
 

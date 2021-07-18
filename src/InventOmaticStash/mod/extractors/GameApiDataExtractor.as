@@ -6,6 +6,7 @@ public class GameApiDataExtractor {
     public static const EVENT_TRANSFER_ITEM:String = "Container::TransferItem";
     public static const EVENT_INSPECT_ITEM:String = "Container::InspectItem";
     public static const EVENT_ITEM_SELECTED:String = "SecureTrade::OnItemSelected";
+    private static const EVENT_SCRAP_ITEM:String = "Workbench::ScrapItem";
     public static var PlayerInventoryData:String = "PlayerInventoryData";
     public static var CharacterInfoData:String = "CharacterInfoData";
     public static var AccountInfoData:String = "AccountInfoData";
@@ -117,6 +118,14 @@ public class GameApiDataExtractor {
             "serverHandleId": item.serverHandleId,
             "quantity": item.count,
             "fromContainer": fromContainer
+        }));
+    }
+
+    public static function scrapItem(item:Object, amount:int = -1): void {
+        var quantity:int = amount === -1 ? item.count : amount;
+        BSUIDataManager.dispatchEvent(new CustomEvent(EVENT_SCRAP_ITEM, {
+            "serverHandleId": item.serverHandleId,
+            "quantity": quantity
         }));
     }
 }
