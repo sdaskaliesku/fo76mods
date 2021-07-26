@@ -1,6 +1,6 @@
 currentDir=$(pwd)
 # YOU SHOULD MODIFY THIS VALUES
-modName="InventOmaticStash"
+modName="InventOmaticPipboy"
 flashPath="D://Program Files//AdobeAnimateCC//Adobe Animate CC 2019//Animate.exe"
 archiveRootFolder="Interface"
 

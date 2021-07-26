@@ -1,0 +1,9 @@
+{
+  "debug": true,
+  "SecureTrade": [
+    {
+      "name": "InventOmaticStash.swf",
+      "enabled": true
+    }
+  ]
+}

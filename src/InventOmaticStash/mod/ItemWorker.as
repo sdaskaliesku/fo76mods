@@ -26,9 +26,12 @@ public class ItemWorker {
 
     private function transfer(inventory:Array, fromContainer:Boolean, config:Object):void {
         if (inventory && inventory.length > 0 && isValidTransferConfig()) {
+            var executor:DelayedExecutor = new DelayedExecutor(config.initialDelay, config.step);
             inventory.forEach(function (item:Object):void {
                 if (isItemMatchingConfig(item, config)) {
-                    GameApiDataExtractor.transferItem(item, fromContainer);
+                    executor.execute(function ():void {
+                        GameApiDataExtractor.transferItem(item, fromContainer);
+                    });
                 }
             });
         }
@@ -37,13 +40,16 @@ public class ItemWorker {
     private function scrap(inventory:Array, config:Object):void {
         try {
             if (inventory && inventory.length > 0 && isValidScrapConfig()) {
+                var executor:DelayedExecutor = new DelayedExecutor(config.initialDelay, config.step);
                 inventory.forEach(function (item:Object):void {
                     if (!item.isLegendary && shouldScrap(item, config)) {
                         if (config.debug) {
                             Logger.get().info("Going to scrap: " + item.text);
                             GlobalFunc.ShowHUDMessage("Going to scrap: " + item.text);
                         }
-                        GameApiDataExtractor.scrapItem(item);
+                        executor.execute(function ():void {
+                            GameApiDataExtractor.scrapItem(item);
+                        });
                     }
                 });
             }

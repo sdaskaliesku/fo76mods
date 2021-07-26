@@ -15,6 +15,8 @@ import flash.text.TextField;
 
 import utils.Logger;
 
+import flash.utils.setTimeout;
+
 public class InventOmaticPipboy extends MovieClip {
 
     public static const MOD_NAME:String = "Invent-O-Matic-Pipboy";
@@ -105,14 +107,17 @@ public class InventOmaticPipboy extends MovieClip {
     }
 
     public function consumeItemsCallback(sectionConfig:Object):void {
+        var executor:DelayedExecutor = new DelayedExecutor();
         sectionConfig.itemNames.forEach(function (itemName:String):void {
             var listMc:Array = parentClip.List_mc.entryList;
             for (var index:int = 0; index < listMc.length; index++) {
                 var item:Object = listMc[index];
                 var matches:Boolean = isItemMatchingConfig(item, itemName, sectionConfig.matchMode);
                 if (matches) {
-                    ShowHUDMessage("Trying to consume item: " + item.text);
-                    consumeItem(index);
+                    executor.execute(function ():void {
+                        ShowHUDMessage("Trying to consume item: " + item.text);
+                        consumeItem(index);
+                    });
                 }
             }
         });
@@ -149,6 +154,7 @@ public class InventOmaticPipboy extends MovieClip {
     }
 
     public function dropItemsCallback(sectionConfig:Object):void {
+        var executor:DelayedExecutor = new DelayedExecutor();
         sectionConfig.itemNames.forEach(function (itemName:String):void {
             var listMc:Array = parentClip.List_mc.entryList;
             for (var index:int = 0; index < listMc.length; index++) {
@@ -157,9 +163,12 @@ public class InventOmaticPipboy extends MovieClip {
                 if (matches && !isProtected(item, sectionConfig)) {
                     var serverHandleID:String = item.serverHandleID;
                     var amount:int = item.count;
-                    ShowHUDMessage("Trying to drop item: " + item.text + "(" + amount + "), "
-                            + serverHandleID);
-                    dropItem(item);
+                    var txt:String = "Trying to drop item: " + item.text + "(" + amount + "), "
+                            + serverHandleID;
+                    executor.execute(function ():void {
+                        ShowHUDMessage(txt);
+                        dropItem(item);
+                    });
                 }
             }
         });
