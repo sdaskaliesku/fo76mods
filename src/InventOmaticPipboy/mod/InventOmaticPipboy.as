@@ -5,6 +5,15 @@ import Shared.GlobalFunc;
 
 import com.adobe.serialization.json.JSONDecoder;
 
+import config.CharacterConfig;
+import config.ExcludedConfig;
+import config.IgnoreConfig;
+import config.ItemConfig;
+
+import config.ModConfig;
+import config.SectionConfig;
+import config.TeeNoodleTradegyProtectionConfig;
+
 import flash.display.MovieClip;
 import flash.events.Event;
 import flash.events.IOErrorEvent;
@@ -19,7 +28,7 @@ public class InventOmaticPipboy extends MovieClip {
 
     public static const MOD_NAME:String = "Invent-O-Matic-Pipboy";
 
-    public static const EMBEDDED_CONFIG:Object = {
+    public static const EMBEDDED_CONFIG:ModConfig = {
         "debug": false,
         "drop": {
             "enabled": true,
@@ -78,7 +87,7 @@ public class InventOmaticPipboy extends MovieClip {
 
     public var debugLogger:TextField;
     private var _parent:MovieClip;
-    public var config:Object;
+    public var config:ModConfig;
     public var characterName:String;
     public static const USE_EMBEDDED_CONFIG:Boolean = false;
     public static const DROP_ACTION:String = "drop";
@@ -104,27 +113,24 @@ public class InventOmaticPipboy extends MovieClip {
         }
     }
 
-    public function consumeItemsCallback(sectionConfig:Object):void {
-        sectionConfig.itemNames.forEach(function (itemName:String):void {
-            var listMc:Array = parentClip.List_mc.entryList;
-            for (var index:int = 0; index < listMc.length; index++) {
-                var item:Object = listMc[index];
-                var matches:Boolean = isItemMatchingConfig(item, itemName, sectionConfig.matchMode);
-                if (matches) {
-                    ShowHUDMessage("Trying to consume item: " + item.text);
-                    consumeItem(index);
-                }
+    public function consumeItemsCallback(itemConfig:ItemConfig):void {
+        var listMc:Array = parentClip.List_mc.entryList;
+        for (var index:int = 0; index < listMc.length; index++) {
+            var item:Object = listMc[index];
+            var matches:Boolean = isItemMatchingConfig(item.text, itemConfig.matchMode, itemConfig.name);
+            if (matches) {
+                ShowHUDMessage("Trying to consume item: " + item.text);
+                consumeItem(index);
             }
-        });
+        }
     }
 
-    public function isProtected(item:Object, sectionConfig:Object):Boolean {
-        var teenoodleTragedyProtection:Object = sectionConfig.teenoodleTragedyProtection;
-        if (teenoodleTragedyProtection) {
-            if (teenoodleTragedyProtection.typesToDrop
-                    && teenoodleTragedyProtection.typesToDrop.length > 0) {
-                var types:Array = teenoodleTragedyProtection.typesToDrop;
+    public function isProtected(item:Object, protection:TeeNoodleTradegyProtectionConfig):Boolean {
+        if (protection) {
+            if (protection.excludedItems && protection.excludedItems.length > 0) {
+                var types:Vector.<ExcludedConfig> = protection.excludedItems;
                 var matchingFilterFlags:Array = [];
+                // TODO
                 for (var i:int = 0; i < types.length; i++) {
                     matchingFilterFlags = matchingFilterFlags.concat(matchingFilterFlags,
                             ItemTypes.ITEM_TYPES[types[i]]);
@@ -134,12 +140,14 @@ public class InventOmaticPipboy extends MovieClip {
                     return true;
                 }
             }
-            if (teenoodleTragedyProtection.ignoreLegendaries) {
+
+            var ignoreConfig:IgnoreConfig = protection.ignoreConfig;
+            if (ignoreConfig.legendary) {
                 if (item.isLegendary) {
                     return true;
                 }
             }
-            if (teenoodleTragedyProtection.ignoreNonTradable) {
+            if (ignoreConfig.nonTradable) {
                 if (!item.isTradable) {
                     return true;
                 }
@@ -148,37 +156,34 @@ public class InventOmaticPipboy extends MovieClip {
         return false;
     }
 
-    public function dropItemsCallback(sectionConfig:Object):void {
-        sectionConfig.itemNames.forEach(function (itemName:String):void {
-            var listMc:Array = parentClip.List_mc.entryList;
-            for (var index:int = 0; index < listMc.length; index++) {
-                var item:Object = listMc[index];
-                var matches:Boolean = isItemMatchingConfig(item, itemName, sectionConfig.matchMode);
-                if (matches && !isProtected(item, sectionConfig)) {
-                    var serverHandleID:String = item.serverHandleID;
-                    var amount:int = item.count;
-                    ShowHUDMessage("Trying to drop item: " + item.text + "(" + amount + "), "
-                            + serverHandleID);
-                    dropItem(item);
-                }
+    public function dropItemsCallback(itemConfig:ItemConfig, protection:TeeNoodleTradegyProtectionConfig):void {
+        var listMc:Array = parentClip.List_mc.entryList;
+        for (var index:int = 0; index < listMc.length; index++) {
+            var item:Object = listMc[index];
+            var matches:Boolean = isItemMatchingConfig(item.text, itemConfig.matchMode, itemConfig.name);
+            if (matches && !isProtected(item, protection)) {
+                var serverHandleID:String = item.serverHandleID;
+                var amount:int = item.count;
+                ShowHUDMessage("Trying to drop item: " + item.text + "(" + amount + "), "
+                        + serverHandleID);
+                dropItem(item);
             }
-        });
+        }
     }
 
-    private static function isItemMatchingConfig(item:Object, itemConfig:String,
-            matchMode:String):Boolean {
-        var itemText:String = item.text;
+    private static function isItemMatchingConfig(text:String, matchMode: String, configName:String):Boolean {
+        var itemText:String = text;
         if (itemText === null || itemText == null || itemText.length < 1 || itemText === ''
                 || itemText == '') {
             return false;
         }
         var matches:Boolean = false;
         if (matchMode === MatchMode.EXACT) {
-            matches = itemText === itemConfig;
+            matches = itemText === configName;
         } else if (matchMode === MatchMode.CONTAINS) {
-            matches = itemText.toLowerCase().indexOf(itemConfig.toLowerCase()) >= 0;
+            matches = itemText.toLowerCase().indexOf(configName.toLowerCase()) >= 0;
         } else if (matchMode === MatchMode.STARTS) {
-            matches = itemText.toLowerCase().indexOf(itemConfig.toLowerCase()) === 0;
+            matches = itemText.toLowerCase().indexOf(configName.toLowerCase()) === 0;
         } else if (matchMode === MatchMode.ALL) {
             matches = true;
         }
@@ -194,9 +199,10 @@ public class InventOmaticPipboy extends MovieClip {
         return null;
     }
 
-    private function isTheSameCharacterName(sectionConfig:Object):Boolean {
-        if (sectionConfig.checkCharacterName) {
-            return this.characterName === sectionConfig.characterName;
+    private function isTheSameCharacterName(sectionConfig:SectionConfig):Boolean {
+        var charConfig:CharacterConfig = sectionConfig.charConfig;
+        if (charConfig && charConfig.enabled && charConfig.name && charConfig.name.length > 0) {
+            return this.characterName === charConfig.name;
         }
         return true;
     }
@@ -244,35 +250,31 @@ public class InventOmaticPipboy extends MovieClip {
         return _parent;
     }
 
-    private function isMatchingConfigSection(e:KeyboardEvent, sectionConfig:Object):Boolean {
+    private function isMatchingConfigSection(e:KeyboardEvent, sectionConfig:SectionConfig):Boolean {
         return e.keyCode === sectionConfig.hotkey && sectionConfig.enabled
                 && isTheSameCharacterName(sectionConfig);
     }
 
-    public function isConfigEnabled(configName:String):Boolean {
-        return config[configName]
-                && config[configName].enabled
-                && config[configName].configs
-                && config[configName].configs.length > 0;
+    public function isConfigEnabled(config:SectionConfig):Boolean {
+        return config.enabled && config.itemConfigs && config.itemConfigs.length > 0;
     }
 
     private function keyUpHandler(e:KeyboardEvent):void {
-        if (config) {
-            if (isConfigEnabled(DROP_ACTION)) {
-                config.drop.configs.forEach(function (sectionConfig:Object):void {
-                    if (isMatchingConfigSection(e, sectionConfig)) {
-                        ShowHUDMessage("[Drop] " + sectionConfig.name, true);
-                        dropItemsCallback(sectionConfig);
+        if (config && config.configs.length > 0) {
+            var configs:Vector.<SectionConfig> = config.configs;
+            for (var i:int = 0; i < configs.length; i++) {
+                var conf:SectionConfig = configs[i];
+                if (isConfigEnabled(conf) && isMatchingConfigSection(e, conf)) {
+                    for (var j:int = 0; j < conf.itemConfigs; j++) {
+                        var itemConfig:ItemConfig = conf.itemConfigs[j];
+                        if (itemConfig.action === DROP_ACTION) {
+                            var protection:TeeNoodleTradegyProtectionConfig = conf.tragedyProtection;
+                            dropItemsCallback(itemConfig, protection);
+                        } else if (itemConfig.action === CONSUME_ACTION) {
+                            consumeItemsCallback(itemConfig);
+                        }
                     }
-                });
-            }
-            if (isConfigEnabled(CONSUME_ACTION)) {
-                config.consume.configs.forEach(function (sectionConfig:Object):void {
-                    if (isMatchingConfigSection(e, sectionConfig)) {
-                        ShowHUDMessage("[Consume] " + sectionConfig.name, true);
-                        consumeItemsCallback(sectionConfig);
-                    }
-                });
+                }
             }
         }
     }
