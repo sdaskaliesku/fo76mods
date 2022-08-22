@@ -12,7 +12,7 @@ import utils.Logger;
 
 public class BaseItemExtractor {
 
-    protected var _sfeObj:Object;
+    protected var secureTrade:Object;
     protected var playerInventory:Array = [];
     protected var stashInventory:Array = [];
     protected var version:Number;
@@ -26,8 +26,8 @@ public class BaseItemExtractor {
     protected var _modNameToUse:String;
 
     public function BaseItemExtractor(
-            value:Object, modName:String, version:Number) {
-        this._sfeObj = value;
+            secureTrade:Object, modName:String, version:Number) {
+        this.secureTrade = secureTrade;
         this.modName = modName;
         this.version = version;
         this._modNameToUse = modName;
@@ -148,13 +148,13 @@ public class BaseItemExtractor {
     }
 
     public function isSfeDefined():Boolean {
-        return this._sfeObj != null && this._sfeObj.call != null;
+        return this.secureTrade._sfeObj != null && this.secureTrade._sfeObj.call != null;
     }
 
     protected function writeData(data:String):void {
         try {
             if (isSfeDefined()) {
-                this._sfeObj.call('writeItemsModFile', data);
+                this.secureTrade._sfeObj.call('writeItemsModFile', data);
                 ShowHUDMessage('Done saving items!', true);
             } else {
                 ShowHUDMessage('Cannot find SFE, writing to file cancelled!');
