@@ -148,13 +148,13 @@ public class BaseItemExtractor {
     }
 
     public function isSfeDefined():Boolean {
-        return this.secureTrade._sfeObj != null && this.secureTrade._sfeObj.call != null;
+        return this.secureTrade.__SFCodeObj != null && this.secureTrade.__SFCodeObj.call != null;
     }
 
     protected function writeData(data:String):void {
         try {
             if (isSfeDefined()) {
-                this.secureTrade._sfeObj.call('writeItemsModFile', data);
+                this.secureTrade.__SFCodeObj.call('writeItemsModFile', data);
                 ShowHUDMessage('Done saving items!', true);
             } else {
                 ShowHUDMessage('Cannot find SFE, writing to file cancelled!');
