@@ -112,7 +112,7 @@ public class InventOmaticPipboy extends MovieClip {
                 var matches:Boolean = isItemMatchingConfig(item, itemName, sectionConfig.matchMode);
                 if (matches) {
                     ShowHUDMessage("Trying to consume item: " + item.text);
-                    consumeItem(index);
+                    consumeItem(item.nodeID);
                 }
             }
         });
