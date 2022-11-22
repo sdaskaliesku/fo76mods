@@ -12,13 +12,10 @@ public class VendorPriceCheckExtractor extends BaseItemExtractor {
         var itemsModIni:Object = super.buildOutputObject();
         itemsModIni.characterInventories = {};
         var characterInventory:Object = {};
-        var items:Array = [];
-        for each (var item:Object in this.stashInventory) {
-            item.serverHandleId = -1;
-            items.push(item);
-        }
-        characterInventory.stashInventory = items;
-        characterInventory.AccountInfoData = {};
+        characterInventory.stashInventory = this.stashInventory;
+        characterInventory.AccountInfoData = {
+            name: secureTrade.m_DefaultHeaderText
+        };
         characterInventory.CharacterInfoData = {};
         itemsModIni.characterInventories['priceCheck'] = characterInventory;
         return itemsModIni;

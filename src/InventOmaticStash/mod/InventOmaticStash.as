@@ -139,8 +139,8 @@ public class InventOmaticStash extends MovieClip {
     //noinspection JSUnusedGlobalSymbols
     public function setParent(parent:MovieClip):void {
         this._parent = parent;
-        this._itemExtractor = new ItemExtractor(_parent.__SFCodeObj);
-        this._priceCheckItemExtractor = new VendorPriceCheckExtractor(_parent.__SFCodeObj);
+        this._itemExtractor = new ItemExtractor(_parent);
+        this._priceCheckItemExtractor = new VendorPriceCheckExtractor(_parent);
         this._itemWorker = new ItemWorker();
         this.buttonHintBar = _parent.ButtonHintBar_mc;
         loadConfig();
@@ -159,6 +159,9 @@ public class InventOmaticStash extends MovieClip {
                 _itemExtractor.verboseOutput = jsonData.verboseOutput;
                 _itemExtractor.apiMethods = jsonData.apiMethods;
                 _itemExtractor.additionalItemDataForAll = jsonData.additionalItemDataForAll;
+                _priceCheckItemExtractor.verboseOutput = jsonData.verboseOutput;
+                _priceCheckItemExtractor.apiMethods = jsonData.apiMethods;
+                _priceCheckItemExtractor.additionalItemDataForAll = jsonData.additionalItemDataForAll;
                 Logger.get().debugMode = jsonData.debug;
                 config = jsonData;
                 ShowHUDMessage("Config file is loaded!");
